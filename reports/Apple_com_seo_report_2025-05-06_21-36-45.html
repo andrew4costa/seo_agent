@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEO Report - Apple.com</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2, h3, h4 {
+            color: #2c3e50;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+        }
+        .scores-container {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        .score-card {
+            flex: 1;
+            min-width: 200px;
+            text-align: center;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .technical {
+            background-color: #e3f2fd;
+        }
+        .onpage {
+            background-color: #e8f5e9;
+        }
+        .offpage {
+            background-color: #fff3e0;
+        }
+        .score {
+            font-size: 36px;
+            font-weight: bold;
+        }
+        .recommendations {
+            margin-top: 30px;
+        }
+        .recommendation {
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            background-color: #f8f9fa;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .recommendation h3 {
+            margin-top: 0;
+        }
+        .recommendation-meta {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+        .meta-item {
+            background-color: #e9ecef;
+            padding: 5px 10px;
+            border-radius: 15px;
+            margin-right: 10px;
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+        .priority-high {
+            background-color: #ffcccc;
+        }
+        .priority-medium {
+            background-color: #ffffcc;
+        }
+        .priority-low {
+            background-color: #e6f2ff;
+        }
+        .issues {
+            margin-top: 30px;
+        }
+        .issue {
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+        .severity-high {
+            background-color: #ffebee;
+            border-left: 5px solid #f44336;
+        }
+        .severity-medium {
+            background-color: #fff8e1;
+            border-left: 5px solid #ffc107;
+        }
+        .severity-low {
+            background-color: #e8f5e9;
+            border-left: 5px solid #4caf50;
+        }
+        .pages {
+            margin-top: 30px;
+        }
+        .page {
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            background-color: #f8f9fa;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .collapse-btn {
+            background-color: #f1f1f1;
+            padding: 10px 15px;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+            border-radius: 5px;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .collapse-content {
+            display: none;
+            padding: 15px;
+            overflow: hidden;
+            background-color: #fafafa;
+            border-radius: 5px;
+        }
+        .recommendations-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .recommendations-table th {
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            padding: 10px;
+        }
+        .recommendations-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            vertical-align: top;
+        }
+        .priority-level {
+            font-weight: bold;
+            text-align: center;
+        }
+        .high {
+            color: #d32f2f;
+        }
+        .medium {
+            color: #f57c00;
+        }
+        .low {
+            color: #388e3c;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>SEO Analysis Report</h1>
+        <h2>Apple.com</h2>
+        <p>URL: <a href="https://apple.com" target="_blank">https://apple.com</a></p>
+        <p>Generated on: 2025-05-06 21:36:45</p>
+        <p>Pages analyzed: 2</p>
+    </div>
+
+    <div class="scores-container">
+        <div class="score-card technical">
+            <h3>Technical SEO</h3>
+            <div class="score">10.0/10</div>
+        </div>
+        <div class="score-card onpage">
+            <h3>On-Page SEO</h3>
+            <div class="score">7.5/10</div>
+        </div>
+        <div class="score-card offpage">
+            <h3>Off-Page SEO</h3>
+            <div class="score">5.0/10</div>
+        </div>
+    </div>
+
+    <div class="recommendations">
+        <h2>SEO Recommendations</h2>
+
+        <table class="recommendations-table">
+            <thead>
+                <tr>
+                    <th>Recommendation</th>
+                    <th>Priority</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td colspan="3" style="background-color: #e9ecef; font-weight: bold; text-align: center;">Technical</td>
+                </tr>
+            
+                    <tr>
+                        <td style="width: 25%;">Implement structured data for product reviews to leverage rich snippets and increase click-through rates from search results</td>
+                        <td style="width: 15%;" class="priority-level high">High</td>
+                        <td style="width: 60%;">Implement structured data for product reviews to leverage rich snippets and increase click-through rates from search results. This will particularly benefit product pages.</td>
+                    </tr>
+                
+                <tr>
+                    <td colspan="3" style="background-color: #e9ecef; font-weight: bold; text-align: center;">On-Page</td>
+                </tr>
+            
+                    <tr>
+                        <td style="width: 25%;">Implement schema markup (e</td>
+                        <td style="width: 15%;" class="priority-level high">High</td>
+                        <td style="width: 60%;">Implement schema markup (e.g., Product, Organization, Review) on all product and service pages to enhance rich snippets in search results and improve click-through rates.  Prioritize products like iPhones, Macs, and Apple Watches.</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Create compelling and keyword-rich meta descriptions (minimum 150-160 characters) for all pages currently missing them, focusing on unique selling propositions and enticing users to click</td>
+                        <td style="width: 15%;" class="priority-level high">High</td>
+                        <td style="width: 60%;">Create compelling and keyword-rich meta descriptions (minimum 150-160 characters) for all pages currently missing them, focusing on unique selling propositions and enticing users to click.</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Conduct a comprehensive keyword research study focusing on high-volume, low-competition keywords related to Apple's product categories (iPhones, Macs, iPads, etc</td>
+                        <td style="width: 15%;" class="priority-level high">High</td>
+                        <td style="width: 60%;">Conduct a comprehensive keyword research study focusing on high-volume, low-competition keywords related to Apple's product categories (iPhones, Macs, iPads, etc.) and services (App Store, Apple Music, etc.). Integrate these keywords naturally into page titles, meta descriptions, headings, and body content.</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Lengthen all titles that are currently under 60 characters to be between 50-60 characters, ensuring they accurately reflect the page content and include relevant keywords</td>
+                        <td style="width: 15%;" class="priority-level high">High</td>
+                        <td style="width: 60%;">Lengthen all titles that are currently under 60 characters to be between 50-60 characters, ensuring they accurately reflect the page content and include relevant keywords.  Prioritize product pages.</td>
+                    </tr>
+                
+                <tr>
+                    <td colspan="3" style="background-color: #e9ecef; font-weight: bold; text-align: center;">ARCHITECTURE</td>
+                </tr>
+            
+                    <tr>
+                        <td style="width: 25%;">Url Structure Assessment: 3/10</td>
+                        <td style="width: 15%;" class="priority-level high">High</td>
+                        <td style="width: 60%;">Insufficient data provided to assess URL structure.  The sample data shows only the root domain, preventing analysis of URL patterns, keyword usage, and overall structure.
+
+Recommendation: Improve Url Structure</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Gather comprehensive URL data</td>
+                        <td style="width: 15%;" class="priority-level high">High</td>
+                        <td style="width: 60%;">Collect a representative sample of URLs from across the Apple website to analyze patterns, keyword usage, and length. This data is crucial for a proper URL structure assessment.</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Implement consistent URL structure</td>
+                        <td style="width: 15%;" class="priority-level high">High</td>
+                        <td style="width: 60%;">Once sufficient data is gathered, establish a clear and consistent URL structure using descriptive keywords and a logical hierarchy.  This will improve crawlability and user experience.</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Information Architecture Assessment: 3/10</td>
+                        <td style="width: 15%;" class="priority-level high">High</td>
+                        <td style="width: 60%;">Lack of data on site hierarchy and depth prevents a meaningful assessment.  The provided data is insufficient to determine the organization and structure of information on the site.
+
+Recommendation: Improve Information Architecture</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Map the site's information architecture</td>
+                        <td style="width: 15%;" class="priority-level high">High</td>
+                        <td style="width: 60%;">Create a visual representation of the website's hierarchy, showing the relationships between different sections and pages. This will reveal potential areas for improvement in organization and navigation.</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Navigation Structure Assessment: 2/10</td>
+                        <td style="width: 15%;" class="priority-level high">High</td>
+                        <td style="width: 60%;">The provided internal linking data is extremely limited, offering no insight into the website's navigation structure or internal linking strategy.
+
+Recommendation: Improve Navigation Structure</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Analyze internal linking comprehensively</td>
+                        <td style="width: 15%;" class="priority-level high">High</td>
+                        <td style="width: 60%;">Crawl the website to map internal links and identify any broken links or areas with poor internal linking.  This will reveal opportunities to improve navigation and distribute link equity.</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Implement intuitive navigation menus</td>
+                        <td style="width: 15%;" class="priority-level high">High</td>
+                        <td style="width: 60%;">Ensure the website's navigation menus are clear, concise, and easy to use.  This will improve user experience and allow users to easily find the information they need.</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Content Categorization Assessment: 1/10</td>
+                        <td style="width: 15%;" class="priority-level high">High</td>
+                        <td style="width: 60%;">No data on content categorization was provided.  It's impossible to assess how content is grouped and organized without this information.
+
+Recommendation: Improve Content Categorization</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Conduct a content audit</td>
+                        <td style="width: 15%;" class="priority-level high">High</td>
+                        <td style="width: 60%;">Perform a thorough review of the website's content to identify gaps, overlaps, and opportunities for improved categorization.  This will help organize content logically and improve findability.</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Implement a clear content taxonomy</td>
+                        <td style="width: 15%;" class="priority-level high">High</td>
+                        <td style="width: 60%;">Develop a structured system for categorizing and organizing website content. This will improve site navigation and search engine crawlability.</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Mobile Architecture Assessment: 3/10</td>
+                        <td style="width: 15%;" class="priority-level high">High</td>
+                        <td style="width: 60%;">No data on mobile responsiveness or mobile architecture was provided.  An assessment cannot be made without this information.
+
+Recommendation: Improve Mobile Architecture</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Conduct a mobile usability test</td>
+                        <td style="width: 15%;" class="priority-level high">High</td>
+                        <td style="width: 60%;">Test the website's responsiveness and usability on various mobile devices to identify any issues that may impact user experience.</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Ensure mobile-first indexing</td>
+                        <td style="width: 15%;" class="priority-level high">High</td>
+                        <td style="width: 60%;">Confirm that Google is using the mobile version of the site for indexing.  If not, implement necessary changes to ensure mobile-first indexing.</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Reduce information architecture depth</td>
+                        <td style="width: 15%;" class="priority-level medium">Medium</td>
+                        <td style="width: 60%;">Analyze the depth of the site's hierarchy.  Aim to reduce the number of clicks required to reach important content, improving user experience and crawlability.</td>
+                    </tr>
+                
+                <tr>
+                    <td colspan="3" style="background-color: #e9ecef; font-weight: bold; text-align: center;">UX & PAGE DESIGN</td>
+                </tr>
+            
+                    <tr>
+                        <td style="width: 25%;">Accessibility Audit</td>
+                        <td style="width: 15%;" class="priority-level high">High</td>
+                        <td style="width: 60%;">Conduct a thorough accessibility audit to ensure compliance with WCAG guidelines and address any potential barriers for users with disabilities.</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Enhance Product Page CTA Clarity</td>
+                        <td style="width: 15%;" class="priority-level medium">Medium</td>
+                        <td style="width: 60%;">Improve visual prominence of primary calls to action (e.g., "Buy," "Learn More") on product pages through color contrast, size, and strategic placement.  A/B test different approaches.</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Improve Section Separation</td>
+                        <td style="width: 15%;" class="priority-level medium">Medium</td>
+                        <td style="width: 60%;">Introduce subtle visual dividers (e.g., thin lines, increased padding) between sections to improve readability and scannability, particularly on longer pages.</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Enhance Secondary Navigation</td>
+                        <td style="width: 15%;" class="priority-level medium">Medium</td>
+                        <td style="width: 60%;">Improve the prominence and clarity of secondary navigation elements, ensuring they are easily accessible and understandable for all users.</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Improve Button Feedback</td>
+                        <td style="width: 15%;" class="priority-level medium">Medium</td>
+                        <td style="width: 60%;">Implement subtle animations or visual feedback (e.g., change in color or opacity) on button clicks to provide users with confirmation of their actions.</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Visual Design Assessment: 9/10</td>
+                        <td style="width: 15%;" class="priority-level low">Low</td>
+                        <td style="width: 60%;">Apple's visual design is clean, modern, and consistent with brand identity.  High-quality imagery and minimalist approach are strengths.  However, some product pages could benefit from clearer visual hierarchy to guide users towards key actions.
+
+Recommendation: Improve Visual Design</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Refine Hero Image Consistency</td>
+                        <td style="width: 15%;" class="priority-level low">Low</td>
+                        <td style="width: 60%;">Maintain a consistent style and aspect ratio for hero images across different sections and pages to enhance visual harmony.</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Layout Structure Assessment: 8/10</td>
+                        <td style="width: 15%;" class="priority-level low">Low</td>
+                        <td style="width: 60%;">The layout effectively uses whitespace and a grid system to create a clean and uncluttered experience.  Information architecture is generally intuitive.  However, some sections could benefit from improved visual separation between content blocks.
+
+Recommendation: Improve Layout Structure</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Optimize Footer Navigation</td>
+                        <td style="width: 15%;" class="priority-level low">Low</td>
+                        <td style="width: 60%;">Re-evaluate the footer navigation structure for better organization and user discoverability of key links.</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Navigation Accessibility Assessment: 9/10</td>
+                        <td style="width: 15%;" class="priority-level low">Low</td>
+                        <td style="width: 60%;">Main navigation is clear and intuitive.  Accessibility features seem well-implemented.  However, some secondary navigation elements could be improved for discoverability.
+
+Recommendation: Improve Navigation Accessibility</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Interactive Elements Assessment: 8/10</td>
+                        <td style="width: 15%;" class="priority-level low">Low</td>
+                        <td style="width: 60%;">Buttons and forms are generally well-designed and user-friendly.  However, some micro-interactions could be enhanced for better feedback and engagement.
+
+Recommendation: Improve Interactive Elements</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Optimize Form Design</td>
+                        <td style="width: 15%;" class="priority-level low">Low</td>
+                        <td style="width: 60%;">Review form design for optimal usability, including clear labels, helpful error messages, and appropriate input field types.</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Mobile Experience Assessment: 10/10</td>
+                        <td style="width: 15%;" class="priority-level low">Low</td>
+                        <td style="width: 60%;">The mobile experience is excellent, demonstrating seamless responsiveness and a touch-friendly design.  The provided data confirms high mobile optimization.
+
+Recommendation: Improve Mobile Experience</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Maintain Mobile Excellence</td>
+                        <td style="width: 15%;" class="priority-level low">Low</td>
+                        <td style="width: 60%;">Continue to monitor and optimize the mobile experience to ensure it remains consistent with best practices and adapts to evolving screen sizes and devices.</td>
+                    </tr>
+                
+                <tr>
+                    <td colspan="3" style="background-color: #e9ecef; font-weight: bold; text-align: center;">Content Strategy</td>
+                </tr>
+            
+                    <tr>
+                        <td style="width: 25%;">Analyze competitor websites (Samsung, Google, Microsoft) to identify opportunities for content gap analysis</td>
+                        <td style="width: 15%;" class="priority-level medium">Medium</td>
+                        <td style="width: 60%;">Analyze competitor websites (Samsung, Google, Microsoft) to identify opportunities for content gap analysis. Create high-quality, in-depth content that addresses topics not covered by competitors, showcasing Apple's unique selling propositions and brand values.</td>
+                    </tr>
+                
+            </tbody>
+        </table>
+    </div>
+
+    <div class="recommendations">
+        <h2>Top Recommendations Details</h2>
+
+        <div class="recommendation">
+            <h3>1. Implement schema markup (e.g., Product, Organization, Review) on all product and service pages to enhance rich snippets in search results and improve click-through rates.  Prioritize products like iPhones, Macs, and Apple Watches.</h3>
+            <div class="recommendation-meta">
+                <div class="meta-item priority-high">Priority: 10/10</div>
+                <div class="meta-item">Impact: high</div>
+                <div class="meta-item">Difficulty: medium</div>
+                <div class="meta-item">Est. Time: 40 hrs</div>
+                <div class="meta-item">Category: On-Page</div>
+            </div>
+        </div>
+        <div class="recommendation">
+            <h3>2. Create compelling and keyword-rich meta descriptions (minimum 150-160 characters) for all pages currently missing them, focusing on unique selling propositions and enticing users to click.</h3>
+            <div class="recommendation-meta">
+                <div class="meta-item priority-high">Priority: 9/10</div>
+                <div class="meta-item">Impact: high</div>
+                <div class="meta-item">Difficulty: medium</div>
+                <div class="meta-item">Est. Time: 20 hrs</div>
+                <div class="meta-item">Category: On-Page</div>
+            </div>
+        </div>
+        <div class="recommendation">
+            <h3>3. Lengthen all titles that are currently under 60 characters to be between 50-60 characters, ensuring they accurately reflect the page content and include relevant keywords.  Prioritize product pages.</h3>
+            <div class="recommendation-meta">
+                <div class="meta-item priority-high">Priority: 8/10</div>
+                <div class="meta-item">Impact: medium</div>
+                <div class="meta-item">Difficulty: easy</div>
+                <div class="meta-item">Est. Time: 10 hrs</div>
+                <div class="meta-item">Category: On-Page</div>
+            </div>
+        </div>
+        <div class="recommendation">
+            <h3>4. Conduct a comprehensive keyword research study focusing on high-volume, low-competition keywords related to Apple's product categories (iPhones, Macs, iPads, etc.) and services (App Store, Apple Music, etc.). Integrate these keywords naturally into page titles, meta descriptions, headings, and body content.</h3>
+            <div class="recommendation-meta">
+                <div class="meta-item priority-high">Priority: 9/10</div>
+                <div class="meta-item">Impact: high</div>
+                <div class="meta-item">Difficulty: medium</div>
+                <div class="meta-item">Est. Time: 30 hrs</div>
+                <div class="meta-item">Category: On-Page</div>
+            </div>
+        </div>
+        <div class="recommendation">
+            <h3>5. Analyze competitor websites (Samsung, Google, Microsoft) to identify opportunities for content gap analysis. Create high-quality, in-depth content that addresses topics not covered by competitors, showcasing Apple's unique selling propositions and brand values.</h3>
+            <div class="recommendation-meta">
+                <div class="meta-item priority-medium">Priority: 7/10</div>
+                <div class="meta-item">Impact: medium</div>
+                <div class="meta-item">Difficulty: hard</div>
+                <div class="meta-item">Est. Time: 80 hrs</div>
+                <div class="meta-item">Category: Content Strategy</div>
+            </div>
+        </div>
+        <div class="recommendation">
+            <h3>6. Implement structured data for product reviews to leverage rich snippets and increase click-through rates from search results. This will particularly benefit product pages.</h3>
+            <div class="recommendation-meta">
+                <div class="meta-item priority-high">Priority: 9/10</div>
+                <div class="meta-item">Impact: high</div>
+                <div class="meta-item">Difficulty: medium</div>
+                <div class="meta-item">Est. Time: 20 hrs</div>
+                <div class="meta-item">Category: Technical</div>
+            </div>
+        </div>
+    <div class="issues">
+        <h2>Key Issues Found</h2>
+
+        <div class="issue severity-medium">
+            <h4>Short Title</h4>
+            <p></p>
+            <p><strong>Page:</strong> https://apple.com</p>
+        </div>
+        <div class="issue severity-medium">
+            <h4>Missing Meta Description</h4>
+            <p></p>
+            <p><strong>Page:</strong> https://apple.com</p>
+        </div>
+        <div class="issue severity-medium">
+            <h4>Missing Schema</h4>
+            <p></p>
+            <p><strong>Page:</strong> https://apple.com</p>
+        </div>
+        <div class="issue severity-medium">
+            <h4>Short Title</h4>
+            <p></p>
+            <p><strong>Page:</strong> https://apple.com/</p>
+        </div>
+        <div class="issue severity-medium">
+            <h4>Missing Meta Description</h4>
+            <p></p>
+            <p><strong>Page:</strong> https://apple.com/</p>
+        </div>
+        <div class="issue severity-medium">
+            <h4>Missing Schema</h4>
+            <p></p>
+            <p><strong>Page:</strong> https://apple.com/</p>
+        </div>
+    </div>
+    
+    <div class="pages">
+        <h2>Analyzed Pages</h2>
+
+        <button class="collapse-btn" onclick="toggleCollapse('technical-details')">Technical SEO Details</button>
+        <div id="technical-details" class="collapse-content">
+
+            <h3>Site Speed</h3>
+            <p>Average Load Time: 0.29750895500183105 seconds</p>
+            
+            <h3>Mobile Optimization</h3>
+            <p>Mobile-Friendly: Yes</p>
+            
+            <h3>Security</h3>
+            <p>HTTPS Implemented: Yes</p>
+            
+            <h3>Indexation</h3>
+            <p>Robots.txt: Found</p>
+            <p>Sitemap.xml: Found</p>
+    
+        </div>
+        
+        <button class="collapse-btn" onclick="toggleCollapse('onpage-details')">On-Page SEO Details</button>
+        <div id="onpage-details" class="collapse-content">
+
+            <h3>Content Quality</h3>
+            <p>Average Word Count: 871.0 words</p>
+            <p>Pages with Thin Content: 0</p>
+            
+            <h3>Meta Tags</h3>
+            <p>Pages Missing Title Tags: 0</p>
+            <p>Pages Missing Meta Descriptions: 2</p>
+            
+            <h3>Heading Structure</h3>
+            <p>Pages Missing H1 Headings: 0</p>
+            
+            <h3>Image Optimization</h3>
+            <p>Images Without Alt Text: 0</p>
+    
+        </div>
+        
+        <button class="collapse-btn" onclick="toggleCollapse('ux-details')">UX & Page Design Details</button>
+        <div id="ux-details" class="collapse-content">
+
+                <h3>Visual Design</h3>
+                <p><strong>Score:</strong> 9/10</p>
+                <p>Apple's visual design is clean, modern, and consistent with brand identity.  High-quality imagery and minimalist approach are strengths.  However, some product pages could benefit from clearer visual hierarchy to guide users towards key actions.</p>
+                
+                <h3>Layout Structure</h3>
+                <p><strong>Score:</strong> 8/10</p>
+                <p>The layout effectively uses whitespace and a grid system to create a clean and uncluttered experience.  Information architecture is generally intuitive.  However, some sections could benefit from improved visual separation between content blocks.</p>
+                
+                <h3>Navigation Accessibility</h3>
+                <p><strong>Score:</strong> 9/10</p>
+                <p>Main navigation is clear and intuitive.  Accessibility features seem well-implemented.  However, some secondary navigation elements could be improved for discoverability.</p>
+                
+                <h3>Interactive Elements</h3>
+                <p><strong>Score:</strong> 8/10</p>
+                <p>Buttons and forms are generally well-designed and user-friendly.  However, some micro-interactions could be enhanced for better feedback and engagement.</p>
+                
+                <h3>Mobile Experience</h3>
+                <p><strong>Score:</strong> 10/10</p>
+                <p>The mobile experience is excellent, demonstrating seamless responsiveness and a touch-friendly design.  The provided data confirms high mobile optimization.</p>
+                
+        </div>
+        
+        <button class="collapse-btn" onclick="toggleCollapse('pages-details')">Page Details</button>
+        <div id="pages-details" class="collapse-content">
+
+            <table>
+                <tr>
+                    <th>URL</th>
+                    <th>Title</th>
+                    <th>Word Count</th>
+                    <th>Issues</th>
+                </tr>
+    
+                <tr>
+                    <td><a href="https://apple.com" target="_blank">https://apple.com</a></td>
+                    <td>Apple</td>
+                    <td>871</td>
+                    <td>3</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://apple.com/" target="_blank">https://apple.com/</a></td>
+                    <td>Apple</td>
+                    <td>871</td>
+                    <td>3</td>
+                </tr>
+        
+            </table>
+        </div>
+    </div>
+
+    <script>
+        function toggleCollapse(id) {
+            var content = document.getElementById(id);
+            if (content.style.display === "block") {
+                content.style.display = "none";
+            } else {
+                content.style.display = "block";
+            }
+        }
+    </script>
+
+</body>
+</html>

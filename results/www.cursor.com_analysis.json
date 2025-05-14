@@ -1,0 +1,431 @@
+{
+  "analysis": {
+    "technical_seo": {
+      "score": 9.4,
+      "site_speed": {
+        "avg_load_time": 0.1484971284866333,
+        "issues": []
+      },
+      "mobile_optimisation": {
+        "score": 9.0,
+        "has_viewport_meta": false
+      },
+      "indexation": {
+        "robots_txt": {
+          "exists": true,
+          "content": "# *\nUser-agent: *\nAllow: /\n\n# Host\nHost: https://cursor.com\n\n# Sitemaps\nSitemap: https://cursor.com/sitemap.xml\n",
+          "issues": []
+        },
+        "sitemap": {
+          "exists": true,
+          "urls_count": 645,
+          "issues": []
+        }
+      },
+      "security": {
+        "has_ssl": true
+      },
+      "structured_data": {
+        "pages_with_schema": 0,
+        "schema_types": []
+      }
+    },
+    "on_page_seo": {
+      "score": 7.0,
+      "content_quality": {
+        "avg_word_count": 1038.4,
+        "thin_content_pages": 1
+      },
+      "meta_tags": {
+        "pages_without_title": 1,
+        "pages_without_description": 1
+      },
+      "heading_structure": {
+        "pages_without_h1": 3
+      },
+      "image_optimization": {
+        "images_without_alt": 71
+      }
+    },
+    "off_page_seo": {
+      "score": 5.0,
+      "backlinks": {
+        "note": "Backlink data requires third-party API integration"
+      },
+      "social_signals": {
+        "note": "Social signal data requires third-party API integration"
+      }
+    },
+    "analyzed_pages": {
+      "https://www.cursor.com": {
+        "title": "Cursor - The AI Code Editor",
+        "description": "Built to make you extraordinarily productive, Cursor is the best way to code with AI.",
+        "word_count": 1408,
+        "load_time": 0.04533195495605469,
+        "issues": [
+          {
+            "type": "images_missing_alt",
+            "severity": "medium",
+            "description": "7 images missing alt text"
+          },
+          {
+            "type": "missing_schema",
+            "severity": "medium",
+            "description": "Page has no schema markup (structured data)"
+          }
+        ]
+      },
+      "https://www.cursor.com/": {
+        "title": "Cursor - The AI Code Editor",
+        "description": "Built to make you extraordinarily productive, Cursor is the best way to code with AI.",
+        "word_count": 1408,
+        "load_time": 0.03652596473693848,
+        "issues": [
+          {
+            "type": "images_missing_alt",
+            "severity": "medium",
+            "description": "7 images missing alt text"
+          },
+          {
+            "type": "missing_schema",
+            "severity": "medium",
+            "description": "Page has no schema markup (structured data)"
+          }
+        ]
+      },
+      "https://www.cursor.com/pricing": {
+        "title": "Pricing | Cursor - The AI Code Editor",
+        "description": "Choose the plan that works for you.",
+        "word_count": 482,
+        "load_time": 0.07674598693847656,
+        "issues": [
+          {
+            "type": "short_meta_description",
+            "severity": "low",
+            "description": "Meta description is too short (35 chars)"
+          },
+          {
+            "type": "images_missing_alt",
+            "severity": "medium",
+            "description": "1 images missing alt text"
+          },
+          {
+            "type": "missing_schema",
+            "severity": "medium",
+            "description": "Page has no schema markup (structured data)"
+          }
+        ]
+      },
+      "https://www.cursor.com/features": {
+        "title": "Features | Cursor - The AI Code Editor",
+        "description": "Build software faster",
+        "word_count": 514,
+        "load_time": 0.051194190979003906,
+        "issues": [
+          {
+            "type": "short_meta_description",
+            "severity": "low",
+            "description": "Meta description is too short (21 chars)"
+          },
+          {
+            "type": "images_missing_alt",
+            "severity": "medium",
+            "description": "39 images missing alt text"
+          },
+          {
+            "type": "missing_schema",
+            "severity": "medium",
+            "description": "Page has no schema markup (structured data)"
+          }
+        ]
+      },
+      "https://www.cursor.com/enterprise": {
+        "title": "Enterprise | Cursor - The AI Code Editor",
+        "description": "The editor of choice for modern engineering organizations.",
+        "word_count": 677,
+        "load_time": 0.05524921417236328,
+        "issues": [
+          {
+            "type": "images_missing_alt",
+            "severity": "medium",
+            "description": "4 images missing alt text"
+          },
+          {
+            "type": "missing_schema",
+            "severity": "medium",
+            "description": "Page has no schema markup (structured data)"
+          }
+        ]
+      },
+      "https://www.cursor.com/blog": {
+        "title": "Blog | Cursor - The AI Code Editor",
+        "description": "Compiled notes from the team.",
+        "word_count": 326,
+        "load_time": 0.04541730880737305,
+        "issues": [
+          {
+            "type": "short_meta_description",
+            "severity": "low",
+            "description": "Meta description is too short (29 chars)"
+          },
+          {
+            "type": "images_missing_alt",
+            "severity": "medium",
+            "description": "1 images missing alt text"
+          },
+          {
+            "type": "missing_schema",
+            "severity": "medium",
+            "description": "Page has no schema markup (structured data)"
+          }
+        ]
+      },
+      "https://www.cursor.com/api/auth/login": {
+        "title": null,
+        "description": null,
+        "word_count": 0,
+        "load_time": 1.021265983581543,
+        "issues": [
+          {
+            "type": "http_status",
+            "severity": "high",
+            "description": "HTTP status code 403"
+          }
+        ]
+      },
+      "https://www.cursor.com/downloads": {
+        "title": "Downloads | Cursor - The AI Code Editor",
+        "description": "Download Cursor",
+        "word_count": 141,
+        "load_time": 0.05255603790283203,
+        "issues": [
+          {
+            "type": "short_meta_description",
+            "severity": "low",
+            "description": "Meta description is too short (15 chars)"
+          },
+          {
+            "type": "missing_h1",
+            "severity": "medium",
+            "description": "Page is missing an H1 tag"
+          },
+          {
+            "type": "images_missing_alt",
+            "severity": "medium",
+            "description": "1 images missing alt text"
+          },
+          {
+            "type": "thin_content",
+            "severity": "medium",
+            "description": "Page has thin content (141 words)"
+          },
+          {
+            "type": "missing_schema",
+            "severity": "medium",
+            "description": "Page has no schema markup (structured data)"
+          }
+        ]
+      },
+      "https://www.cursor.com/blog/shadow-workspace": {
+        "title": "Iterating with Shadow Workspaces | Cursor - The AI Code Editor",
+        "description": "Hidden windows and kernel-level folder proxies to let AIs iterate on code without affecting the user.",
+        "word_count": 4149,
+        "load_time": 0.04808664321899414,
+        "issues": [
+          {
+            "type": "long_title",
+            "severity": "medium",
+            "description": "Title is too long (62 chars)"
+          },
+          {
+            "type": "missing_h1",
+            "severity": "medium",
+            "description": "Page is missing an H1 tag"
+          },
+          {
+            "type": "images_missing_alt",
+            "severity": "medium",
+            "description": "7 images missing alt text"
+          },
+          {
+            "type": "missing_schema",
+            "severity": "medium",
+            "description": "Page has no schema markup (structured data)"
+          }
+        ]
+      },
+      "https://www.cursor.com/students": {
+        "title": "Cursor for Students | Cursor - The AI Code Editor",
+        "description": "Cursor for Students: Build faster with AI.",
+        "word_count": 1279,
+        "load_time": 0.052597999572753906,
+        "issues": [
+          {
+            "type": "short_meta_description",
+            "severity": "low",
+            "description": "Meta description is too short (42 chars)"
+          },
+          {
+            "type": "images_missing_alt",
+            "severity": "medium",
+            "description": "4 images missing alt text"
+          },
+          {
+            "type": "missing_schema",
+            "severity": "medium",
+            "description": "Page has no schema markup (structured data)"
+          }
+        ]
+      }
+    }
+  },
+  "recommendations": [
+    {
+      "recommendation": "Add schema markup to all pages",
+      "category": "Technical",
+      "priority_score": 9,
+      "impact": "High",
+      "implementation_difficulty": "Medium",
+      "estimated_time_hours": 6,
+      "reasoning": "This technical improvement is crucial for www.cursor.com as a e-commerce website. Add schema markup to all pages will directly address technical issues that are impacting both search engine crawling and user experience. Implementing this change will improve search visibility and create a more stable foundation for your website."
+    },
+    {
+      "recommendation": "Add alt text to all missing images",
+      "category": "Technical",
+      "priority_score": 8,
+      "impact": "Medium",
+      "implementation_difficulty": "Low",
+      "estimated_time_hours": 2,
+      "reasoning": "This technical improvement is crucial for www.cursor.com as a e-commerce website. Add alt text to all missing images will directly address technical issues that are impacting both search engine crawling and user experience. Implementing this change will improve search visibility and create a more stable foundation for your website."
+    },
+    {
+      "recommendation": "Fix missing title tags and H1 headings",
+      "category": "On-Page",
+      "priority_score": 9,
+      "impact": "High",
+      "implementation_difficulty": "Medium",
+      "estimated_time_hours": 4,
+      "reasoning": "For www.cursor.com in the e-commerce industry, this on-page optimization is essential. Fix missing title tags and H1 headings will enhance your content's relevance and clarity for both users and search engines. This directly impacts how well your pages perform in search results for your target keywords."
+    },
+    {
+      "recommendation": "Improve meta descriptions",
+      "category": "On-Page",
+      "priority_score": 7,
+      "impact": "Medium",
+      "implementation_difficulty": "Low",
+      "estimated_time_hours": 3,
+      "reasoning": "For www.cursor.com in the e-commerce industry, this on-page optimization is essential. Improve meta descriptions will enhance your content's relevance and clarity for both users and search engines. This directly impacts how well your pages perform in search results for your target keywords."
+    },
+    {
+      "recommendation": "Improve Sitemap.xml Entry Count",
+      "reasoning": "The sitemap currently has 0 entries, rendering it ineffective for search engine crawlers.  A comprehensive sitemap is crucial for ensuring all important pages are indexed.",
+      "priority_score": 10,
+      "impact": "High",
+      "implementation_difficulty": "Medium",
+      "estimated_time_hours": 2,
+      "category": "ARCHITECTURE"
+    },
+    {
+      "recommendation": "Enhance Internal Linking Strategy",
+      "reasoning": "The provided internal linking sample is limited.  A robust internal linking structure is needed to improve site navigation and distribute link equity, boosting SEO and user experience.  Focus on linking relevant pages together, particularly from the homepage and high-authority pages.",
+      "priority_score": 9,
+      "impact": "High",
+      "implementation_difficulty": "Medium",
+      "estimated_time_hours": 8,
+      "category": "ARCHITECTURE"
+    },
+    {
+      "recommendation": "Standardize URL Structure",
+      "reasoning": "The current URL structure shows inconsistencies (e.g., 'api/auth/login' vs. other simpler structures).  Implement a consistent and SEO-friendly URL structure using descriptive keywords and a logical hierarchy.  This improves crawlability and user understanding.",
+      "priority_score": 8,
+      "impact": "Medium",
+      "implementation_difficulty": "Medium",
+      "estimated_time_hours": 6,
+      "category": "ARCHITECTURE"
+    },
+    {
+      "recommendation": "Improve Blog Organization",
+      "reasoning": "The 'blog' category has children, suggesting a need for better organization within the blog section.  Implement a clear blog category structure with relevant subcategories to improve navigation and content discoverability.",
+      "priority_score": 7,
+      "impact": "Medium",
+      "implementation_difficulty": "Low",
+      "estimated_time_hours": 4,
+      "category": "ARCHITECTURE"
+    },
+    {
+      "recommendation": "Assess and Improve API Documentation Architecture",
+      "reasoning": "The 'api' category suggests the presence of an API. Ensure the API documentation is well-structured, easily navigable, and accessible to developers. This is crucial for developer experience and adoption.",
+      "priority_score": 7,
+      "impact": "Medium",
+      "implementation_difficulty": "High",
+      "estimated_time_hours": 12,
+      "category": "ARCHITECTURE"
+    },
+    {
+      "recommendation": "Conduct a Thorough Mobile-Friendliness Audit",
+      "reasoning": "While no explicit mobile issues are mentioned, a comprehensive audit is necessary to ensure responsiveness across all devices and screen sizes.  This is crucial for user experience and SEO.",
+      "priority_score": 6,
+      "impact": "Medium",
+      "implementation_difficulty": "Medium",
+      "estimated_time_hours": 4,
+      "category": "ARCHITECTURE"
+    },
+    {
+      "recommendation": "Implement a responsive design with viewport meta tag",
+      "reasoning": "Despite a high mobile optimization score, the lack of a viewport meta tag indicates potential inconsistencies across devices.  Adding this tag ensures proper scaling and rendering on all screen sizes, improving mobile usability and SEO.",
+      "priority_score": 9,
+      "impact": "High",
+      "implementation_difficulty": "Low",
+      "estimated_time_hours": 2,
+      "category": "UX_DESIGN"
+    },
+    {
+      "recommendation": "Improve visual hierarchy and readability",
+      "reasoning": "Analyze text sizes, font weights, and spacing to ensure clear visual hierarchy.  Improve readability by increasing contrast between text and background, and using appropriate line heights.",
+      "priority_score": 8,
+      "impact": "Medium",
+      "implementation_difficulty": "Medium",
+      "estimated_time_hours": 6,
+      "category": "UX_DESIGN"
+    },
+    {
+      "recommendation": "Conduct user testing to identify pain points",
+      "reasoning": "Real user feedback is crucial for identifying usability issues not apparent through automated analysis.  Testing will reveal areas for improvement in navigation, information architecture, and overall user flow.",
+      "priority_score": 10,
+      "impact": "High",
+      "implementation_difficulty": "Medium",
+      "estimated_time_hours": 12,
+      "category": "UX_DESIGN"
+    },
+    {
+      "recommendation": "Optimize call-to-action (CTA) placement and design",
+      "reasoning": "Strategically place CTAs throughout the site to guide users towards desired actions (e.g., signing up, requesting a demo).  Ensure CTAs are visually prominent and use clear, concise language.",
+      "priority_score": 7,
+      "impact": "Medium",
+      "implementation_difficulty": "Low",
+      "estimated_time_hours": 4,
+      "category": "UX_DESIGN"
+    },
+    {
+      "recommendation": "Enhance navigation and information architecture",
+      "reasoning": "Review the site's navigation structure to ensure it's intuitive and easy to use.  Improve information architecture by organizing content logically and making it easily discoverable.",
+      "priority_score": 9,
+      "impact": "High",
+      "implementation_difficulty": "Medium",
+      "estimated_time_hours": 8,
+      "category": "UX_DESIGN"
+    }
+  ],
+  "competitor_data": {
+    "competitors": []
+  },
+  "dataforseo_data": {
+    "backlinks": {},
+    "domain_info": {},
+    "rank_overview": {},
+    "competitors": {
+      "competitors": []
+    }
+  },
+  "report_path": "/Users/andrewcosta/Desktop/seo_agent/reports/Cursor.com_seo_report_2025-05-09_13-52-23.html"
+}

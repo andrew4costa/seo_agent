@@ -1,0 +1,101 @@
+{
+  "url": "https://happy-skin.com",
+  "date": "2025-05-12T15:04:59.593170",
+  "pages_analyzed": 4,
+  "overall_score": 95,
+  "recommendations": [
+    {
+      "title": "Improve meta descriptions",
+      "description": "Fix meta description issues on 1 pages. Ensure descriptions are 120-160 characters and compelling.",
+      "impact": "medium",
+      "effort": "medium"
+    },
+    {
+      "title": "Add missing alt text",
+      "description": "Add alt text to images on 1 pages for better accessibility and SEO.",
+      "impact": "medium",
+      "effort": "medium"
+    },
+    {
+      "title": "Improve page loading speed",
+      "description": "Optimize images and use browser caching to improve page loading speed.",
+      "impact": "high",
+      "effort": "medium"
+    },
+    {
+      "title": "Add structured data",
+      "description": "Implement schema markup to help search engines understand your content better.",
+      "impact": "medium",
+      "effort": "high"
+    }
+  ],
+  "page_insights": [
+    {
+      "url": "https://happy-skin.com/cookie-policy/",
+      "title": "Cookie Policy : HappySkin | HappySkin",
+      "meta_description": "This is our HappySkin Cookie Policy. By accepting these cookies, your our helping the website run smoother.",
+      "h1": "Cookie Policy",
+      "word_count": 965,
+      "load_time": 1.21,
+      "issues": 0,
+      "issue_details": []
+    },
+    {
+      "url": "https://happy-skin.com",
+      "title": "Eczema Clothing UK for Kids, Babies & Children | HappySkin",
+      "meta_description": "Relieve and protect baby\u2019s sensitive skin with HappySkin eczema clothing UK. Our baby eczema clothing soothes, repairs, and shields dry, damaged skin, offering a steroid-free, permanent solution for eczema in babies, toddlers, and children. Experience comfort and care with HappySkin",
+      "h1": "HappySkin Baby Eczema-Friendly Clothes",
+      "word_count": 1716,
+      "load_time": 1.44,
+      "issues": 2,
+      "issue_details": [
+        "Meta description too long",
+        "Missing alt text on 6 images"
+      ]
+    },
+    {
+      "url": "https://happy-skin.com/terms-conditions/",
+      "title": "Terms and Conditions : HappySkin | HappySkin",
+      "meta_description": "Terms and Conditions for HappySkin. Please read these carefully and make sure you agree with them.",
+      "h1": "Terms & Conditions",
+      "word_count": 2745,
+      "load_time": 1.34,
+      "issues": 0,
+      "issue_details": []
+    },
+    {
+      "url": "https://happy-skin.com/privacy-policy",
+      "title": "Privacy Policy HappySkin\u00ae | HappySkin",
+      "meta_description": "Please review our HappySkin\u00ae Privacy Policy. If you have any concerns please do not hesitate to contact us.",
+      "h1": "Privacy Policy",
+      "word_count": 2010,
+      "load_time": 1.29,
+      "issues": 0,
+      "issue_details": []
+    }
+  ],
+  "performance_metrics": {
+    "page_speed": 73,
+    "mobile_friendly": true,
+    "load_time": 1.32,
+    "render_time": 0.92,
+    "server_response_time": 0.4
+  },
+  "technical_issues": [
+    {
+      "type": "meta_description_too_long",
+      "count": 1,
+      "impact": "medium"
+    },
+    {
+      "type": "missing_alt_text_on_x_images",
+      "count": 1,
+      "impact": "low"
+    }
+  ],
+  "status": "completed",
+  "progress": 100,
+  "current_step": "completed",
+  "steps_completed": 5,
+  "end_time": "2025-05-12T13:05:05.136395+00:00"
+}

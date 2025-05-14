@@ -1,0 +1,1405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEO Report - Karbonhq.com</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2, h3, h4 {
+            color: #2c3e50;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+        }
+        .scores-container {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        .score-card {
+            flex: 1;
+            min-width: 200px;
+            text-align: center;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .technical {
+            background-color: #e3f2fd;
+        }
+        .onpage {
+            background-color: #e8f5e9;
+        }
+        .offpage {
+            background-color: #fff3e0;
+        }
+        .score {
+            font-size: 36px;
+            font-weight: bold;
+        }
+        .recommendations {
+            margin-top: 30px;
+        }
+        .recommendation {
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            background-color: #f8f9fa;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .recommendation h3 {
+            margin-top: 0;
+        }
+        .recommendation-meta {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+        .meta-item {
+            background-color: #e9ecef;
+            padding: 5px 10px;
+            border-radius: 15px;
+            margin-right: 10px;
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+        .priority-high {
+            background-color: #ffcccc;
+        }
+        .priority-medium {
+            background-color: #ffffcc;
+        }
+        .priority-low {
+            background-color: #e6f2ff;
+        }
+        .issues {
+            margin-top: 30px;
+        }
+        .issue {
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+        .severity-high {
+            background-color: #ffebee;
+            border-left: 5px solid #f44336;
+        }
+        .severity-medium {
+            background-color: #fff8e1;
+            border-left: 5px solid #ffc107;
+        }
+        .severity-low {
+            background-color: #e8f5e9;
+            border-left: 5px solid #4caf50;
+        }
+        .pages {
+            margin-top: 30px;
+        }
+        .page {
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            background-color: #f8f9fa;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .collapse-btn {
+            background-color: #f1f1f1;
+            padding: 10px 15px;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+            border-radius: 5px;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .collapse-content {
+            display: none;
+            padding: 15px;
+            overflow: hidden;
+            background-color: #fafafa;
+            border-radius: 5px;
+        }
+        .recommendations-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .recommendations-table th {
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            padding: 10px;
+        }
+        .recommendations-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            vertical-align: top;
+        }
+        .priority-level {
+            font-weight: bold;
+            text-align: center;
+        }
+        .high {
+            color: #d32f2f;
+        }
+        .medium {
+            color: #f57c00;
+        }
+        .low {
+            color: #388e3c;
+        }
+        .competitor-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 2px 3px rgba(0,0,0,0.1);
+        }
+        .competitor-table th {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 12px;
+            border: 1px solid #ddd;
+            font-weight: bold;
+        }
+        .competitor-table td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+        .competitor-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .competitor-table tr:hover {
+            background-color: #f1f1f1;
+        }
+        .competitor-heading {
+            background-color: #f8f9fa;
+            padding: 10px;
+            margin-top: 30px;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: bold;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>SEO Analysis Report</h1>
+        <h2>Karbonhq.com</h2>
+        <p>URL: <a href="https://karbonhq.com" target="_blank">https://karbonhq.com</a></p>
+        <p>Generated on: 2025-05-08 01:13:24</p>
+        <p>Pages analyzed: 100</p>
+    </div>
+
+    <div class="scores-container">
+        <div class="score-card technical">
+            <h3>Technical SEO</h3>
+            <div class="score">9.0/10</div>
+        </div>
+        <div class="score-card onpage">
+            <h3>On-Page SEO</h3>
+            <div class="score">6.5/10</div>
+        </div>
+        <div class="score-card offpage">
+            <h3>Off-Page SEO</h3>
+            <div class="score">5.0/10</div>
+        </div>
+    </div>
+
+    <div class="recommendations">
+        <h2>SEO Recommendations</h2>
+
+        <table class="recommendations-table">
+            <thead>
+                <tr>
+                    <th>Recommendation</th>
+                    <th>Priority</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td colspan="3" style="background-color: #e9ecef; font-weight: bold; text-align: center;">Technical</td>
+                </tr>
+            
+                    <tr>
+                        <td style="width: 25%;">Implement a sitemap</td>
+                        <td style="width: 15%;" class="priority-level high">High</td>
+                        <td style="width: 60%;">Implement a sitemap.xml to improve crawlability and indexing of all pages, especially crucial for a complex software platform with many features.</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Implement schema markup (e</td>
+                        <td style="width: 15%;" class="priority-level high">High</td>
+                        <td style="width: 60%;">Implement schema markup (e.g., SoftwareApplication schema) on all relevant product and service pages to improve search engine understanding and potentially increase rich snippet visibility in SERPs.</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Optimize page speed for karbonhq</td>
+                        <td style="width: 15%;" class="priority-level low">Low</td>
+                        <td style="width: 60%;">Optimize page speed for karbonhq.com</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Check for duplicate content on karbonhq</td>
+                        <td style="width: 15%;" class="priority-level low">Low</td>
+                        <td style="width: 60%;">Check for duplicate content on karbonhq.com</td>
+                    </tr>
+                
+                <tr>
+                    <td colspan="3" style="background-color: #e9ecef; font-weight: bold; text-align: center;">On-Page</td>
+                </tr>
+            
+                    <tr>
+                        <td style="width: 25%;">Conduct a thorough keyword research focused on terms accounting firms use when searching for practice management software</td>
+                        <td style="width: 15%;" class="priority-level high">High</td>
+                        <td style="width: 60%;">Conduct a thorough keyword research focused on terms accounting firms use when searching for practice management software. Optimize existing content and create new content targeting these keywords.</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Add comprehensive meta descriptions to all 80 pages currently missing them</td>
+                        <td style="width: 15%;" class="priority-level high">High</td>
+                        <td style="width: 60%;">Add comprehensive meta descriptions to all 80 pages currently missing them.  Focus on highlighting key features and benefits relevant to accounting firms (e.g., improved workflow, client communication, time savings).</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Develop case studies showcasing how KarbonHQ has helped accounting firms improve efficiency, reduce costs, and enhance client service</td>
+                        <td style="width: 15%;" class="priority-level high">High</td>
+                        <td style="width: 60%;">Develop case studies showcasing how KarbonHQ has helped accounting firms improve efficiency, reduce costs, and enhance client service.  Promote these case studies on the website and through other marketing channels.</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Add alt text to all 14 + 14 + 34 = 62 images missing it</td>
+                        <td style="width: 15%;" class="priority-level high">High</td>
+                        <td style="width: 60%;">Add alt text to all 14 + 14 + 34 = 62 images missing it. Use descriptive alt text that accurately reflects the image content and is relevant to accounting firm workflows and software features.</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Analyze the 3 pages with thin content and expand them with valuable, keyword-rich content focusing on specific features, benefits, and use cases relevant to accounting firms</td>
+                        <td style="width: 15%;" class="priority-level medium">Medium</td>
+                        <td style="width: 60%;">Analyze the 3 pages with thin content and expand them with valuable, keyword-rich content focusing on specific features, benefits, and use cases relevant to accounting firms.  Consider case studies or client testimonials.</td>
+                    </tr>
+                
+                <tr>
+                    <td colspan="3" style="background-color: #e9ecef; font-weight: bold; text-align: center;">Off-Page</td>
+                </tr>
+            
+                    <tr>
+                        <td style="width: 25%;">Build high-quality backlinks from reputable accounting industry websites, blogs, and publications</td>
+                        <td style="width: 15%;" class="priority-level high">High</td>
+                        <td style="width: 60%;">Build high-quality backlinks from reputable accounting industry websites, blogs, and publications. Focus on earning links from authoritative sources to improve domain authority and search engine rankings.</td>
+                    </tr>
+                
+                <tr>
+                    <td colspan="3" style="background-color: #e9ecef; font-weight: bold; text-align: center;">ARCHITECTURE</td>
+                </tr>
+            
+                    <tr>
+                        <td style="width: 25%;">Fix broken links & 404 errors</td>
+                        <td style="width: 15%;" class="priority-level medium">Medium</td>
+                        <td style="width: 60%;">Identify and fix all broken internal and external links. Broken links create a poor user experience and prevent search engines from crawling your site effectively.</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Implement local SEO strategy</td>
+                        <td style="width: 15%;" class="priority-level medium">Medium</td>
+                        <td style="width: 60%;">If you have a local business, optimize your Google Business Profile, ensure NAP (Name, Address, Phone) consistency across the web, and target local keywords.</td>
+                    </tr>
+                
+                <tr>
+                    <td colspan="3" style="background-color: #e9ecef; font-weight: bold; text-align: center;">UX & PAGE DESIGN</td>
+                </tr>
+            
+                    <tr>
+                        <td style="width: 25%;">Enhance Hero Images with Clearer CTAs</td>
+                        <td style="width: 15%;" class="priority-level high">High</td>
+                        <td style="width: 60%;">Integrate more prominent calls to action within hero images on key pages (e.g., homepage, landing pages). Consider overlaying text or using interactive elements to guide users towards desired actions.</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Implement Form Validation Feedback</td>
+                        <td style="width: 15%;" class="priority-level high">High</td>
+                        <td style="width: 60%;">Provide real-time feedback during form completion, indicating errors or incomplete fields.  Use clear and concise error messages.</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Improve Visual Hierarchy with Typography</td>
+                        <td style="width: 15%;" class="priority-level medium">Medium</td>
+                        <td style="width: 60%;">Explore subtle variations in typography (weight, size) to create a clearer visual hierarchy, particularly within longer content sections. This will improve readability and guide user attention.</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Optimize Above-the-Fold Content</td>
+                        <td style="width: 15%;" class="priority-level medium">Medium</td>
+                        <td style="width: 60%;">Refine the above-the-fold content on key pages to ensure the most important information is immediately visible and engaging.  Consider A/B testing different layouts.</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Enhance Keyboard Navigation</td>
+                        <td style="width: 15%;" class="priority-level medium">Medium</td>
+                        <td style="width: 60%;">Ensure all interactive elements are easily accessible via keyboard navigation for users with disabilities.  Thoroughly test keyboard navigation functionality.</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Improve Button Clarity</td>
+                        <td style="width: 15%;" class="priority-level medium">Medium</td>
+                        <td style="width: 60%;">Ensure buttons clearly communicate their function and intended action.  Use action-oriented verbs and consistent styling.</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Maintain Mobile Performance</td>
+                        <td style="width: 15%;" class="priority-level medium">Medium</td>
+                        <td style="width: 60%;">Continue to monitor and optimize page load times on mobile devices to ensure a consistently fast and smooth user experience.</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Visual Design Assessment: 8/10</td>
+                        <td style="width: 15%;" class="priority-level low">Low</td>
+                        <td style="width: 60%;">Clean and modern aesthetic.  Effective use of whitespace.  Branding is consistent. However, some hero images could benefit from stronger calls to action and more visual interest.
+
+Recommendation: Improve Visual Design</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Layout Structure Assessment: 9/10</td>
+                        <td style="width: 15%;" class="priority-level low">Low</td>
+                        <td style="width: 60%;">Well-structured layout with consistent use of whitespace.  Information architecture is logical and easy to follow.  Grid system is effectively implemented.
+
+Recommendation: Improve Layout Structure</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Improve Section Dividers</td>
+                        <td style="width: 15%;" class="priority-level low">Low</td>
+                        <td style="width: 60%;">Explore more visually appealing section dividers to enhance the overall visual flow and readability.  Consider using subtle lines, icons, or whitespace variations.</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Navigation Accessibility Assessment: 9/10</td>
+                        <td style="width: 15%;" class="priority-level low">Low</td>
+                        <td style="width: 60%;">Intuitive navigation.  Clear menu structure.  Accessibility features are generally good, but could be enhanced.
+
+Recommendation: Improve Navigation Accessibility</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Improve Contrast Ratios</td>
+                        <td style="width: 15%;" class="priority-level low">Low</td>
+                        <td style="width: 60%;">Review contrast ratios between text and background colors to ensure sufficient contrast for users with visual impairments.  Use a contrast checker tool to verify compliance with WCAG guidelines.</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Interactive Elements Assessment: 8/10</td>
+                        <td style="width: 15%;" class="priority-level low">Low</td>
+                        <td style="width: 60%;">Buttons and forms are generally well-designed and user-friendly.  However, some forms could benefit from improved feedback mechanisms.
+
+Recommendation: Improve Interactive Elements</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Mobile Experience Assessment: 10/10</td>
+                        <td style="width: 15%;" class="priority-level low">Low</td>
+                        <td style="width: 60%;">Excellent mobile responsiveness and touch-friendly design.  The site adapts seamlessly to different screen sizes and orientations.
+
+Recommendation: Improve Mobile Experience</td>
+                    </tr>
+                
+            </tbody>
+        </table>
+    </div>
+
+    <div class="recommendations">
+        <h2>Top Recommendations Details</h2>
+
+        <div class="recommendation">
+            <h3>1. Implement a sitemap.xml to improve crawlability and indexing of all pages, especially crucial for a complex software platform with many features.</h3>
+            <div class="recommendation-meta">
+                <div class="meta-item priority-high">Priority: 10/10</div>
+                <div class="meta-item">Impact: high</div>
+                <div class="meta-item">Difficulty: easy</div>
+                <div class="meta-item">Est. Time: 2 hrs</div>
+                <div class="meta-item">Category: Technical</div>
+            </div>
+        </div>
+        <div class="recommendation">
+            <h3>2. Add comprehensive meta descriptions to all 80 pages currently missing them.  Focus on highlighting key features and benefits relevant to accounting firms (e.g., improved workflow, client communication, time savings).</h3>
+            <div class="recommendation-meta">
+                <div class="meta-item priority-high">Priority: 9/10</div>
+                <div class="meta-item">Impact: high</div>
+                <div class="meta-item">Difficulty: medium</div>
+                <div class="meta-item">Est. Time: 16 hrs</div>
+                <div class="meta-item">Category: On-Page</div>
+            </div>
+        </div>
+        <div class="recommendation">
+            <h3>3. Implement schema markup (e.g., SoftwareApplication schema) on all relevant product and service pages to improve search engine understanding and potentially increase rich snippet visibility in SERPs.</h3>
+            <div class="recommendation-meta">
+                <div class="meta-item priority-high">Priority: 9/10</div>
+                <div class="meta-item">Impact: high</div>
+                <div class="meta-item">Difficulty: medium</div>
+                <div class="meta-item">Est. Time: 8 hrs</div>
+                <div class="meta-item">Category: Technical</div>
+            </div>
+        </div>
+        <div class="recommendation">
+            <h3>4. Add alt text to all 14 + 14 + 34 = 62 images missing it. Use descriptive alt text that accurately reflects the image content and is relevant to accounting firm workflows and software features.</h3>
+            <div class="recommendation-meta">
+                <div class="meta-item priority-high">Priority: 8/10</div>
+                <div class="meta-item">Impact: medium</div>
+                <div class="meta-item">Difficulty: medium</div>
+                <div class="meta-item">Est. Time: 12 hrs</div>
+                <div class="meta-item">Category: On-Page</div>
+            </div>
+        </div>
+        <div class="recommendation">
+            <h3>5. Analyze the 3 pages with thin content and expand them with valuable, keyword-rich content focusing on specific features, benefits, and use cases relevant to accounting firms.  Consider case studies or client testimonials.</h3>
+            <div class="recommendation-meta">
+                <div class="meta-item priority-medium">Priority: 7/10</div>
+                <div class="meta-item">Impact: medium</div>
+                <div class="meta-item">Difficulty: medium</div>
+                <div class="meta-item">Est. Time: 6 hrs</div>
+                <div class="meta-item">Category: On-Page</div>
+            </div>
+        </div>
+        <div class="recommendation">
+            <h3>6. Conduct a thorough keyword research focused on terms accounting firms use when searching for practice management software. Optimize existing content and create new content targeting these keywords.</h3>
+            <div class="recommendation-meta">
+                <div class="meta-item priority-high">Priority: 10/10</div>
+                <div class="meta-item">Impact: high</div>
+                <div class="meta-item">Difficulty: hard</div>
+                <div class="meta-item">Est. Time: 20 hrs</div>
+                <div class="meta-item">Category: On-Page</div>
+            </div>
+        </div>
+    <div class="issues">
+        <h2>Key Issues Found</h2>
+
+        <div class="issue severity-medium">
+            <h4>Missing Meta Description</h4>
+            <p></p>
+            <p><strong>Page:</strong> https://karbonhq.com</p>
+        </div>
+        <div class="issue severity-medium">
+            <h4>Images Missing Alt</h4>
+            <p></p>
+            <p><strong>Page:</strong> https://karbonhq.com</p>
+        </div>
+        <div class="issue severity-medium">
+            <h4>Missing Schema</h4>
+            <p></p>
+            <p><strong>Page:</strong> https://karbonhq.com</p>
+        </div>
+        <div class="issue severity-medium">
+            <h4>Missing Meta Description</h4>
+            <p></p>
+            <p><strong>Page:</strong> https://karbonhq.com/</p>
+        </div>
+        <div class="issue severity-medium">
+            <h4>Images Missing Alt</h4>
+            <p></p>
+            <p><strong>Page:</strong> https://karbonhq.com/</p>
+        </div>
+        <div class="issue severity-medium">
+            <h4>Missing Schema</h4>
+            <p></p>
+            <p><strong>Page:</strong> https://karbonhq.com/</p>
+        </div>
+        <div class="issue severity-medium">
+            <h4>Missing Meta Description</h4>
+            <p></p>
+            <p><strong>Page:</strong> https://karbonhq.com/why-karbon/visibility-and-control/</p>
+        </div>
+        <div class="issue severity-medium">
+            <h4>Images Missing Alt</h4>
+            <p></p>
+            <p><strong>Page:</strong> https://karbonhq.com/why-karbon/visibility-and-control/</p>
+        </div>
+        <div class="issue severity-medium">
+            <h4>Missing Schema</h4>
+            <p></p>
+            <p><strong>Page:</strong> https://karbonhq.com/why-karbon/visibility-and-control/</p>
+        </div>
+        <div class="issue severity-medium">
+            <h4>Missing Meta Description</h4>
+            <p></p>
+            <p><strong>Page:</strong> https://karbonhq.com/why-karbon/automation-and-efficiency/</p>
+        </div>
+    </div>
+    
+    <div class="pages">
+        <h2>Analyzed Pages</h2>
+
+        <button class="collapse-btn" onclick="toggleCollapse('technical-details')">Technical SEO Details</button>
+        <div id="technical-details" class="collapse-content">
+
+            <h3>Site Speed</h3>
+            <p>Average Load Time: 0.3627246904373169 seconds</p>
+            
+            <h3>Mobile Optimization</h3>
+            <p>Mobile-Friendly: Yes</p>
+            
+            <h3>Security</h3>
+            <p>HTTPS Implemented: Yes</p>
+            
+            <h3>Indexation</h3>
+            <p>Robots.txt: Found</p>
+            <p>Sitemap.xml: Not Found</p>
+    
+        </div>
+        
+        <button class="collapse-btn" onclick="toggleCollapse('onpage-details')">On-Page SEO Details</button>
+        <div id="onpage-details" class="collapse-content">
+
+            <h3>Content Quality</h3>
+            <p>Average Word Count: 1302.59 words</p>
+            <p>Pages with Thin Content: 3</p>
+            
+            <h3>Meta Tags</h3>
+            <p>Pages Missing Title Tags: 0</p>
+            <p>Pages Missing Meta Descriptions: 80</p>
+            
+            <h3>Heading Structure</h3>
+            <p>Pages Missing H1 Headings: 0</p>
+            
+            <h3>Image Optimization</h3>
+            <p>Images Without Alt Text: 1268</p>
+    
+        </div>
+        
+        <button class="collapse-btn" onclick="toggleCollapse('ux-details')">UX & Page Design Details</button>
+        <div id="ux-details" class="collapse-content">
+
+                <h3>Visual Design</h3>
+                <p><strong>Score:</strong> 8/10</p>
+                <p>Clean and modern aesthetic.  Effective use of whitespace.  Branding is consistent. However, some hero images could benefit from stronger calls to action and more visual interest.</p>
+                
+                <h3>Layout Structure</h3>
+                <p><strong>Score:</strong> 9/10</p>
+                <p>Well-structured layout with consistent use of whitespace.  Information architecture is logical and easy to follow.  Grid system is effectively implemented.</p>
+                
+                <h3>Navigation Accessibility</h3>
+                <p><strong>Score:</strong> 9/10</p>
+                <p>Intuitive navigation.  Clear menu structure.  Accessibility features are generally good, but could be enhanced.</p>
+                
+                <h3>Interactive Elements</h3>
+                <p><strong>Score:</strong> 8/10</p>
+                <p>Buttons and forms are generally well-designed and user-friendly.  However, some forms could benefit from improved feedback mechanisms.</p>
+                
+                <h3>Mobile Experience</h3>
+                <p><strong>Score:</strong> 10/10</p>
+                <p>Excellent mobile responsiveness and touch-friendly design.  The site adapts seamlessly to different screen sizes and orientations.</p>
+                
+        </div>
+        
+        <button class="collapse-btn" onclick="toggleCollapse('pages-details')">Page Details</button>
+        <div id="pages-details" class="collapse-content">
+
+            <table>
+                <tr>
+                    <th>URL</th>
+                    <th>Title</th>
+                    <th>Word Count</th>
+                    <th>Issues</th>
+                </tr>
+    
+                <tr>
+                    <td><a href="https://karbonhq.com" target="_blank">https://karbonhq.com</a></td>
+                    <td>Practice Management Software for Accounting Firms | Karbon</td>
+                    <td>1225</td>
+                    <td>3</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://karbonhq.com/" target="_blank">https://karbonhq.com/</a></td>
+                    <td>Practice Management Software for Accounting Firms | Karbon</td>
+                    <td>1225</td>
+                    <td>3</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://karbonhq.com/why-karbon/visibility-and-control/" target="_blank">https://karbonhq.com/why-karbon/visibility-and-control/</a></td>
+                    <td>Visibility & Control for Accounting Firms | Karbon</td>
+                    <td>1406</td>
+                    <td>3</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://karbonhq.com/why-karbon/automation-and-efficiency/" target="_blank">https://karbonhq.com/why-karbon/automation-and-efficiency/</a></td>
+                    <td>Automation & Efficiency for Accounting Firms | Karbon</td>
+                    <td>1289</td>
+                    <td>3</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://karbonhq.com/why-karbon/collaboration-and-connectivity/" target="_blank">https://karbonhq.com/why-karbon/collaboration-and-connectivity/</a></td>
+                    <td>Collaboration & Connectivity for Accounting Firms | Karbon</td>
+                    <td>1334</td>
+                    <td>3</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://karbonhq.com/feature/ai/" target="_blank">https://karbonhq.com/feature/ai/</a></td>
+                    <td>Karbon AI | Karbon</td>
+                    <td>1550</td>
+                    <td>4</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://karbonhq.com/why-karbon/compare/" target="_blank">https://karbonhq.com/why-karbon/compare/</a></td>
+                    <td>Discover how Karbon Compares | Karbon</td>
+                    <td>999</td>
+                    <td>3</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://karbonhq.com/small-firms/" target="_blank">https://karbonhq.com/small-firms/</a></td>
+                    <td>Practice Management Software for Small Accounting Firms | Karbon</td>
+                    <td>1180</td>
+                    <td>4</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://karbonhq.com/mid-sized-firms/" target="_blank">https://karbonhq.com/mid-sized-firms/</a></td>
+                    <td>Practice Management Software for Mid-Sized Accounting Firms | Karbon</td>
+                    <td>1226</td>
+                    <td>4</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://karbonhq.com/enterprise/" target="_blank">https://karbonhq.com/enterprise/</a></td>
+                    <td>Karbon for Enterprise | Karbon</td>
+                    <td>897</td>
+                    <td>3</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://karbonhq.com/private-equity/" target="_blank">https://karbonhq.com/private-equity/</a></td>
+                    <td>Practice Management Software for Private Equity | Karbon</td>
+                    <td>1007</td>
+                    <td>3</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://karbonhq.com/solution/team-collaboration/" target="_blank">https://karbonhq.com/solution/team-collaboration/</a></td>
+                    <td>Team collaboration for accounting firms | Karbon</td>
+                    <td>1043</td>
+                    <td>3</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://karbonhq.com/solution/workflow-automation/" target="_blank">https://karbonhq.com/solution/workflow-automation/</a></td>
+                    <td>Workflow automation for accounting firms | Karbon</td>
+                    <td>1077</td>
+                    <td>3</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://karbonhq.com/solution/project-management/" target="_blank">https://karbonhq.com/solution/project-management/</a></td>
+                    <td>Project management for accounting firms | Karbon</td>
+                    <td>1068</td>
+                    <td>3</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://karbonhq.com/feature/time-and-budgets/" target="_blank">https://karbonhq.com/feature/time-and-budgets/</a></td>
+                    <td>Time & Budgets | Karbon</td>
+                    <td>772</td>
+                    <td>3</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://karbonhq.com/feature/billing-and-payments/" target="_blank">https://karbonhq.com/feature/billing-and-payments/</a></td>
+                    <td>Simplify billing and automate payment collection | Karbon</td>
+                    <td>1185</td>
+                    <td>3</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://karbonhq.com/feature/practice-intelligence/" target="_blank">https://karbonhq.com/feature/practice-intelligence/</a></td>
+                    <td>Karbon Practice Intelligence for accounting firms | Karbon</td>
+                    <td>1223</td>
+                    <td>3</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://karbonhq.com/solution/email-management/" target="_blank">https://karbonhq.com/solution/email-management/</a></td>
+                    <td>Email management for accounting firms | Karbon</td>
+                    <td>1175</td>
+                    <td>3</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://karbonhq.com/feature/shared-inbox/" target="_blank">https://karbonhq.com/feature/shared-inbox/</a></td>
+                    <td>A shared inbox for collaboration, efficiency, and client satisfaction | Karbon</td>
+                    <td>924</td>
+                    <td>4</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://karbonhq.com/feature/calendar-integration/" target="_blank">https://karbonhq.com/feature/calendar-integration/</a></td>
+                    <td>Calendar Integration for Accounting Firms | Karbon</td>
+                    <td>689</td>
+                    <td>3</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://karbonhq.com/solution/client-management/" target="_blank">https://karbonhq.com/solution/client-management/</a></td>
+                    <td>Client management for modern teams | Karbon</td>
+                    <td>1107</td>
+                    <td>3</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://karbonhq.com/feature/client-portal/" target="_blank">https://karbonhq.com/feature/client-portal/</a></td>
+                    <td>Karbon for Clients - Accounting Client Portal Software | Karbon</td>
+                    <td>1562</td>
+                    <td>4</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://karbonhq.com/feature/e-signatures/" target="_blank">https://karbonhq.com/feature/e-signatures/</a></td>
+                    <td>Collaborative and secure eSignature software for your accounting firm | Karbon</td>
+                    <td>1086</td>
+                    <td>4</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://karbonhq.com/feature/document-management/" target="_blank">https://karbonhq.com/feature/document-management/</a></td>
+                    <td>Document Management for Accounting Firms | Karbon</td>
+                    <td>1172</td>
+                    <td>3</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://karbonhq.com/integrations/" target="_blank">https://karbonhq.com/integrations/</a></td>
+                    <td>With Karbon, your firm’s apps connect better | Karbon</td>
+                    <td>1466</td>
+                    <td>3</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://karbonhq.com/security/" target="_blank">https://karbonhq.com/security/</a></td>
+                    <td>Enterprise-grade security | Karbon</td>
+                    <td>2274</td>
+                    <td>3</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://karbonhq.com/release-notes/" target="_blank">https://karbonhq.com/release-notes/</a></td>
+                    <td>Release Notes | Karbon</td>
+                    <td>993</td>
+                    <td>4</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://karbonhq.com/services/" target="_blank">https://karbonhq.com/services/</a></td>
+                    <td>Training Implementation and Consulting Services | Karbon</td>
+                    <td>877</td>
+                    <td>3</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://karbonhq.com/resources/" target="_blank">https://karbonhq.com/resources/</a></td>
+                    <td>Karbon Magazine | Karbon resources</td>
+                    <td>675</td>
+                    <td>3</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://karbonhq.com/resources/practice-excellence-weekly/" target="_blank">https://karbonhq.com/resources/practice-excellence-weekly/</a></td>
+                    <td>Practice Excellence Weekly</td>
+                    <td>211</td>
+                    <td>5</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://karbonhq.com/resources/webinars/" target="_blank">https://karbonhq.com/resources/webinars/</a></td>
+                    <td>Webinars | Karbon resources</td>
+                    <td>665</td>
+                    <td>3</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://karbonhq.com/customer-stories/" target="_blank">https://karbonhq.com/customer-stories/</a></td>
+                    <td>Customer Stories | Karbon</td>
+                    <td>1339</td>
+                    <td>3</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://karbonhq.com/templates/" target="_blank">https://karbonhq.com/templates/</a></td>
+                    <td>Karbon Template Library</td>
+                    <td>893</td>
+                    <td>2</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://karbonhq.com/live-training/" target="_blank">https://karbonhq.com/live-training/</a></td>
+                    <td>Live Training Workshops | Karbon</td>
+                    <td>837</td>
+                    <td>3</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://karbonhq.com/practice-excellence/" target="_blank">https://karbonhq.com/practice-excellence/</a></td>
+                    <td>Practice Excellence for Accounting Firms | Karbon</td>
+                    <td>744</td>
+                    <td>4</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://karbonhq.com/pricing/" target="_blank">https://karbonhq.com/pricing/</a></td>
+                    <td>Practice Management Plans to Suit Every Accounting Firm | Karbon</td>
+                    <td>1760</td>
+                    <td>4</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://karbonhq.com/solution/centralized-knowledge/" target="_blank">https://karbonhq.com/solution/centralized-knowledge/</a></td>
+                    <td>Centralized knowledge for accounting firms | Karbon</td>
+                    <td>1063</td>
+                    <td>3</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://karbonhq.com/solution/business-analytics/" target="_blank">https://karbonhq.com/solution/business-analytics/</a></td>
+                    <td>Business analytics for accounting firms | Karbon</td>
+                    <td>1033</td>
+                    <td>3</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://karbonhq.com/resources/state-of-ai-accounting-report-2025" target="_blank">https://karbonhq.com/resources/state-of-ai-accounting-report-2025</a></td>
+                    <td>The State of AI in Accounting Report 2025 | Karbon resources</td>
+                    <td>1047</td>
+                    <td>3</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://karbonhq.com/resources/accounting-practice-management-software-selection-guide" target="_blank">https://karbonhq.com/resources/accounting-practice-management-software-selection-guide</a></td>
+                    <td>The Accounting Practice Management Software Selection Guide 2025 | Karbon resources</td>
+                    <td>523</td>
+                    <td>4</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://karbonhq.com/resources/rising-beyond-the-challenge-2024-practice-excellence-report" target="_blank">https://karbonhq.com/resources/rising-beyond-the-challenge-2024-practice-excellence-report</a></td>
+                    <td>Rising Beyond the Challenge: A Practice Excellence Special Report | Karbon resources</td>
+                    <td>591</td>
+                    <td>4</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://karbonhq.com/why-karbon/compare/karbon-vs-canopy/" target="_blank">https://karbonhq.com/why-karbon/compare/karbon-vs-canopy/</a></td>
+                    <td>Karbon vs. Canopy: Which is a better practice management platform? | Karbon</td>
+                    <td>1677</td>
+                    <td>4</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://karbonhq.com/why-karbon/compare/karbon-vs-jetpack-workflow/" target="_blank">https://karbonhq.com/why-karbon/compare/karbon-vs-jetpack-workflow/</a></td>
+                    <td>Jetpack Workflow vs. Karbon: Why accounting firms choose Karbon over Jetpack Workflow | Karbon</td>
+                    <td>1473</td>
+                    <td>4</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://karbonhq.com/why-karbon/compare/karbon-vs-taxdome/" target="_blank">https://karbonhq.com/why-karbon/compare/karbon-vs-taxdome/</a></td>
+                    <td>TaxDome vs. Karbon: Which’s a better accounting practice management platform? | Karbon</td>
+                    <td>1437</td>
+                    <td>4</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://karbonhq.com/why-karbon/compare/karbon-vs-fyidocs/" target="_blank">https://karbonhq.com/why-karbon/compare/karbon-vs-fyidocs/</a></td>
+                    <td>FYI Docs vs. Karbon: What’s Better for Practice Management? | Karbon</td>
+                    <td>1539</td>
+                    <td>4</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://karbonhq.com/services/group-onboarding/" target="_blank">https://karbonhq.com/services/group-onboarding/</a></td>
+                    <td>Group Onboarding | Karbon</td>
+                    <td>796</td>
+                    <td>3</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://karbonhq.com/services/guided-implementation/" target="_blank">https://karbonhq.com/services/guided-implementation/</a></td>
+                    <td>Guided Implementation | Karbon</td>
+                    <td>790</td>
+                    <td>3</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://karbonhq.com/karbon-certification/" target="_blank">https://karbonhq.com/karbon-certification/</a></td>
+                    <td>Become a certified Karbon Expert | Karbon</td>
+                    <td>614</td>
+                    <td>3</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://karbonhq.com/resources/ebooks/" target="_blank">https://karbonhq.com/resources/ebooks/</a></td>
+                    <td>Ebooks | Karbon resources</td>
+                    <td>466</td>
+                    <td>4</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://karbonhq.com/resources/videos/" target="_blank">https://karbonhq.com/resources/videos/</a></td>
+                    <td>Videos | Karbon resources</td>
+                    <td>513</td>
+                    <td>4</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://karbonhq.com/about/" target="_blank">https://karbonhq.com/about/</a></td>
+                    <td>Enabling Accounting Firms Through Technology & Innovation | Karbon</td>
+                    <td>1400</td>
+                    <td>4</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://karbonhq.com/leadership/" target="_blank">https://karbonhq.com/leadership/</a></td>
+                    <td>Meet the Karbon Leadership Team | Karbon</td>
+                    <td>1039</td>
+                    <td>3</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://karbonhq.com/careers/" target="_blank">https://karbonhq.com/careers/</a></td>
+                    <td>Careers at Karbon | Karbon</td>
+                    <td>1557</td>
+                    <td>3</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://karbonhq.com/contact-us/" target="_blank">https://karbonhq.com/contact-us/</a></td>
+                    <td>Contact Karbon | Karbon</td>
+                    <td>631</td>
+                    <td>3</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://karbonhq.com/privacy-policy/" target="_blank">https://karbonhq.com/privacy-policy/</a></td>
+                    <td>Privacy Policy | Karbon</td>
+                    <td>4097</td>
+                    <td>3</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://karbonhq.com/terms-of-use/" target="_blank">https://karbonhq.com/terms-of-use/</a></td>
+                    <td>Terms Of Use | Karbon | Karbon</td>
+                    <td>10760</td>
+                    <td>3</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://karbonhq.com/security/vulnerability-disclosure/" target="_blank">https://karbonhq.com/security/vulnerability-disclosure/</a></td>
+                    <td>Vulnerability Disclosure | Karbon | Karbon</td>
+                    <td>1369</td>
+                    <td>3</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://karbonhq.com/resources/karbon-data-privacy-and-gdpr-compliance-roadmap/" target="_blank">https://karbonhq.com/resources/karbon-data-privacy-and-gdpr-compliance-roadmap/</a></td>
+                    <td>Karbon data privacy and GDPR compliance roadmap | Karbon resources</td>
+                    <td>1575</td>
+                    <td>4</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://karbonhq.com/use-of-google-api-services/" target="_blank">https://karbonhq.com/use-of-google-api-services/</a></td>
+                    <td>Use Of Google API Services | Karbon | Karbon</td>
+                    <td>1010</td>
+                    <td>3</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://karbonhq.com/integrations/zapier/" target="_blank">https://karbonhq.com/integrations/zapier/</a></td>
+                    <td>Zapier + Karbon | Karbon</td>
+                    <td>731</td>
+                    <td>3</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://karbonhq.com/integrations/xpm/" target="_blank">https://karbonhq.com/integrations/xpm/</a></td>
+                    <td>Xero + Karbon | Karbon</td>
+                    <td>575</td>
+                    <td>3</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://karbonhq.com/integrations/quickbooks/" target="_blank">https://karbonhq.com/integrations/quickbooks/</a></td>
+                    <td>QuickBooks Online Accountant + Karbon | Karbon</td>
+                    <td>774</td>
+                    <td>3</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://karbonhq.com/templates" target="_blank">https://karbonhq.com/templates</a></td>
+                    <td>Karbon Template Library</td>
+                    <td>893</td>
+                    <td>2</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://karbonhq.com/templates/operating-mechanisms/" target="_blank">https://karbonhq.com/templates/operating-mechanisms/</a></td>
+                    <td>Operating Mechanisms | Karbon Template Library</td>
+                    <td>414</td>
+                    <td>1</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://karbonhq.com/templates/soc-2-control-activities-risk-management/" target="_blank">https://karbonhq.com/templates/soc-2-control-activities-risk-management/</a></td>
+                    <td>SOC 2 Control Activities Pack: Risk Management | Karbon Template Library</td>
+                    <td>504</td>
+                    <td>3</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://karbonhq.com/templates/resource-planning/" target="_blank">https://karbonhq.com/templates/resource-planning/</a></td>
+                    <td>Resource Planning Dashboard | Karbon Template Library</td>
+                    <td>468</td>
+                    <td>3</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://karbonhq.com/customer-stories/maccounting/" target="_blank">https://karbonhq.com/customer-stories/maccounting/</a></td>
+                    <td>How mAccounting found their single source of truth | Karbon</td>
+                    <td>1704</td>
+                    <td>3</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://karbonhq.com/customer-stories/change-accountants/" target="_blank">https://karbonhq.com/customer-stories/change-accountants/</a></td>
+                    <td>How Change Accountants & Advisors achieved full visibility and control | Karbon</td>
+                    <td>1554</td>
+                    <td>4</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://karbonhq.com/customer-stories/avalon-accounting/" target="_blank">https://karbonhq.com/customer-stories/avalon-accounting/</a></td>
+                    <td>Focusing on the best parts of being an accountant with Avalon Accounting | Karbon</td>
+                    <td>706</td>
+                    <td>4</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://karbonhq.com/integrations/ignition/" target="_blank">https://karbonhq.com/integrations/ignition/</a></td>
+                    <td>Ignition + Karbon | Karbon</td>
+                    <td>605</td>
+                    <td>3</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://karbonhq.com/integrations/onedrive/" target="_blank">https://karbonhq.com/integrations/onedrive/</a></td>
+                    <td>OneDrive, Sharepoint + Karbon | Karbon</td>
+                    <td>616</td>
+                    <td>3</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://karbonhq.com/templates/client-onboarding-checklist-template/" target="_blank">https://karbonhq.com/templates/client-onboarding-checklist-template/</a></td>
+                    <td>Client Onboarding Checklist Template | Karbon | Karbon Template Library</td>
+                    <td>393</td>
+                    <td>3</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://karbonhq.com/templates/best-practice-bookkeeping-checklist/" target="_blank">https://karbonhq.com/templates/best-practice-bookkeeping-checklist/</a></td>
+                    <td>Bookkeeping Best Practice | Karbon Template Library</td>
+                    <td>256</td>
+                    <td>3</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://karbonhq.com/templates/monthly-accounting/" target="_blank">https://karbonhq.com/templates/monthly-accounting/</a></td>
+                    <td>Monthly Accounting | Karbon | Karbon Template Library</td>
+                    <td>358</td>
+                    <td>1</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://karbonhq.com/customer-stories/envolta/" target="_blank">https://karbonhq.com/customer-stories/envolta/</a></td>
+                    <td>How Envolta Cloud Accounting is building their ultimate tech stack | Karbon</td>
+                    <td>1897</td>
+                    <td>4</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://karbonhq.com/customer-stories/3p/" target="_blank">https://karbonhq.com/customer-stories/3p/</a></td>
+                    <td>How 3P doubled their efficiency | Karbon</td>
+                    <td>1587</td>
+                    <td>3</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://karbonhq.com/customer-stories/oyster-hub/" target="_blank">https://karbonhq.com/customer-stories/oyster-hub/</a></td>
+                    <td>How Oyster Hub added 42% additional revenue during the coronavirus pandemic | Karbon</td>
+                    <td>1982</td>
+                    <td>4</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://karbonhq.com/integrations/office-365/" target="_blank">https://karbonhq.com/integrations/office-365/</a></td>
+                    <td>Microsoft Office 365 + Karbon | Karbon</td>
+                    <td>593</td>
+                    <td>3</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://karbonhq.com/integrations/gmail/" target="_blank">https://karbonhq.com/integrations/gmail/</a></td>
+                    <td>Gmail + Karbon | Karbon</td>
+                    <td>586</td>
+                    <td>3</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://karbonhq.com/integrations/google-calendar/" target="_blank">https://karbonhq.com/integrations/google-calendar/</a></td>
+                    <td>Google Calendar + Karbon | Karbon</td>
+                    <td>576</td>
+                    <td>3</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://karbonhq.com/templates/staff-onboarding/" target="_blank">https://karbonhq.com/templates/staff-onboarding/</a></td>
+                    <td>Staff Onboarding | Karbon Template Library</td>
+                    <td>421</td>
+                    <td>2</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://karbonhq.com/customer-stories/officeheads/" target="_blank">https://karbonhq.com/customer-stories/officeheads/</a></td>
+                    <td>How Officeheads transitioned to remote work, consolidated their tech stack, and strengthened company culture | Karbon</td>
+                    <td>1692</td>
+                    <td>4</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://karbonhq.com/customer-stories/bwco/" target="_blank">https://karbonhq.com/customer-stories/bwco/</a></td>
+                    <td>Humanizing client relationships with BWCO CPAs | Karbon</td>
+                    <td>894</td>
+                    <td>3</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://karbonhq.com/resources/accounting-custom-gpt-examples" target="_blank">https://karbonhq.com/resources/accounting-custom-gpt-examples</a></td>
+                    <td>Should accountants build custom GPTs? 8 Real-Life Examples To Get You Thinking | Karbon resources</td>
+                    <td>2294</td>
+                    <td>4</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://karbonhq.com/resources/accounting-technology" target="_blank">https://karbonhq.com/resources/accounting-technology</a></td>
+                    <td>6 accounting technology trends to watch in 2025 (and how to use them to your advantage) | Karbon resources</td>
+                    <td>2418</td>
+                    <td>4</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://karbonhq.com/karbon-ai-beta-terms-of-use" target="_blank">https://karbonhq.com/karbon-ai-beta-terms-of-use</a></td>
+                    <td>Karbon AI Supplemental Terms | Karbon | Karbon</td>
+                    <td>3375</td>
+                    <td>3</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://karbonhq.com/get-started/" target="_blank">https://karbonhq.com/get-started/</a></td>
+                    <td>Get started with Karbon Practice Management | Karbon</td>
+                    <td>265</td>
+                    <td>4</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://karbonhq.com/why-karbon/compare/karbon-vs-pixie/" target="_blank">https://karbonhq.com/why-karbon/compare/karbon-vs-pixie/</a></td>
+                    <td>Pixie vs. Karbon, which practice management tool to use for your accountancy practice | Karbon</td>
+                    <td>1270</td>
+                    <td>4</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://karbonhq.com/why-karbon/compare/karbon-vs-senta/" target="_blank">https://karbonhq.com/why-karbon/compare/karbon-vs-senta/</a></td>
+                    <td>Senta vs. Karbon: What’s the difference | Karbon</td>
+                    <td>1257</td>
+                    <td>3</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://karbonhq.com/why-karbon/compare/karbon-vs-accountancy-manager/" target="_blank">https://karbonhq.com/why-karbon/compare/karbon-vs-accountancy-manager/</a></td>
+                    <td>BrightManager (formerly AccountancyManager) vs. Karbon: Which is Better for Practice Management? | Karbon</td>
+                    <td>1224</td>
+                    <td>4</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://karbonhq.com/why-karbon/compare/karbon-vs-clickup/" target="_blank">https://karbonhq.com/why-karbon/compare/karbon-vs-clickup/</a></td>
+                    <td>ClickUp vs. Karbon, which tool to use for accounting practice management | Karbon</td>
+                    <td>1696</td>
+                    <td>4</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://karbonhq.com/why-karbon/compare/karbon-vs-asana/" target="_blank">https://karbonhq.com/why-karbon/compare/karbon-vs-asana/</a></td>
+                    <td>Asana vs. Karbon: Which tool is best for your accounting firm? | Karbon</td>
+                    <td>1645</td>
+                    <td>4</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://karbonhq.com/why-karbon/compare/karbon-vs-financial-cents/" target="_blank">https://karbonhq.com/why-karbon/compare/karbon-vs-financial-cents/</a></td>
+                    <td>Financial Cents vs. Karbon: Which accounting practice management platform is better for your firm? | Karbon</td>
+                    <td>1403</td>
+                    <td>4</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://karbonhq.com/resources/best-accounting-practice-management-software-uk/" target="_blank">https://karbonhq.com/resources/best-accounting-practice-management-software-uk/</a></td>
+                    <td>The 7 best accounting practice management software solutions in 2025 (UK) | Karbon resources</td>
+                    <td>3082</td>
+                    <td>4</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://karbonhq.com/resources/best-accounting-workflow-software/" target="_blank">https://karbonhq.com/resources/best-accounting-workflow-software/</a></td>
+                    <td>10 best accounting workflow software platforms for firms [2023] | Karbon resources</td>
+                    <td>3712</td>
+                    <td>4</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://karbonhq.com/customer-stories/black-sheep-services/" target="_blank">https://karbonhq.com/customer-stories/black-sheep-services/</a></td>
+                    <td>How Black Sheep Services saves more than 40 hours a week | Karbon</td>
+                    <td>1456</td>
+                    <td>4</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://karbonhq.com/customer-stories/miss-efficiency/" target="_blank">https://karbonhq.com/customer-stories/miss-efficiency/</a></td>
+                    <td>How Miss Efficiency found freedom through flexibility (despite scary challenges) | Karbon</td>
+                    <td>1989</td>
+                    <td>4</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://karbonhq.com/customer-stories/gauvreau/" target="_blank">https://karbonhq.com/customer-stories/gauvreau/</a></td>
+                    <td>How Gauvreau and Envolta used tech to successfully merge accounting practices | Karbon</td>
+                    <td>1901</td>
+                    <td>4</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://karbonhq.com/customer-stories/bkl/" target="_blank">https://karbonhq.com/customer-stories/bkl/</a></td>
+                    <td>How BKL uses Karbon to save 4 days per month | Karbon</td>
+                    <td>1877</td>
+                    <td>3</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://karbonhq.com/customer-stories/bna/" target="_blank">https://karbonhq.com/customer-stories/bna/</a></td>
+                    <td>How BNA deliver tax returns in 3 days | Karbon</td>
+                    <td>1461</td>
+                    <td>3</td>
+                </tr>
+        
+            </table>
+        </div>
+    </div>
+
+    <div class="competitor-heading">Competitor Brands</div>
+    <table class="competitor-table">
+        <tr>
+            <th>Brand</th>
+            <th>DR</th>
+            <th>Referring Domains</th>
+            <th>Backlinks</th>
+            <th>Total Keywords</th>
+        </tr>
+
+        <tr>
+            <td>Canopy</td>
+            <td>55</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+        </tr>
+
+        <tr>
+            <td>Jetpack Workflow</td>
+            <td>40</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+        </tr>
+
+        <tr>
+            <td>TaxDome</td>
+            <td>60</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+        </tr>
+
+        <tr>
+            <td>Zoho CRM</td>
+            <td>70</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+        </tr>
+
+        <tr>
+            <td>QuickBooks Online</td>
+            <td>85</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+        </tr>
+
+    </table>
+
+    <script>
+        function toggleCollapse(id) {
+            var content = document.getElementById(id);
+            if (content.style.display === "block") {
+                content.style.display = "none";
+            } else {
+                content.style.display = "block";
+            }
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,18 @@
+{
+  "user_id": null,
+  "guest_session_id": "fdeb4522-587e-4f83-8fc6-39686b1e5a0f",
+  "filename": "apple.com_20250514_083701_analysis.json",
+  "url": "https://apple.com",
+  "pages": 25,
+  "keyword": "",
+  "status": "pending",
+  "progress": 0,
+  "current_step": "initializing",
+  "steps_completed": 0,
+  "total_steps": 10,
+  "start_time": "2025-05-14T08:37:01.490993+00:00",
+  "end_time": null,
+  "error": null,
+  "storage_url": null,
+  "raw_results": null
+}

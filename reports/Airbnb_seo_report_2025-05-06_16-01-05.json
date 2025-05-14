@@ -1,0 +1,61 @@
+{
+  "company": "Airbnb",
+  "url": "https://airbnb.com",
+  "date": "2025-05-06 16:01:05",
+  "recommendations": [
+    {
+      "recommendation": "Implement a sitemap.xml to improve crawlability and indexing of Airbnb's vast inventory of listings across various locations and property types.  This will help search engines discover and index all pages efficiently, particularly important given the scale of Airbnb's global listings.",
+      "category": "Technical",
+      "priority_score": 10,
+      "impact": "high",
+      "implementation_difficulty": "medium",
+      "estimated_time_hours": 8
+    },
+    {
+      "recommendation": "Add alt text to the 85 images missing alt text. Use descriptive and relevant alt text that reflects the image content and enhances accessibility.  For example, instead of \"image1.jpg\", use descriptive alt text like \"Luxury beachfront villa in Bali with private pool\". This improves accessibility and SEO.",
+      "category": "On-Page",
+      "priority_score": 9,
+      "impact": "medium",
+      "implementation_difficulty": "medium",
+      "estimated_time_hours": 16
+    },
+    {
+      "recommendation": "Given Airbnb's global reach and diverse user base, implement structured data markup (JSON-LD) beyond ListItem to include additional schema types such as Accommodation, Event, and Offer.  This rich data will improve search result visibility and attract more qualified traffic.",
+      "category": "Technical",
+      "priority_score": 9,
+      "impact": "high",
+      "implementation_difficulty": "hard",
+      "estimated_time_hours": 24
+    },
+    {
+      "recommendation": "Add H1 headings to the two pages identified as missing them.  Ensure these H1 tags accurately reflect the page's main content, improving on-page SEO and user experience.  For example, a page listing properties in Paris might have an H1 like \"Find your perfect Paris apartment rental.\"",
+      "category": "On-Page",
+      "priority_score": 8,
+      "impact": "medium",
+      "implementation_difficulty": "easy",
+      "estimated_time_hours": 4
+    },
+    {
+      "recommendation": "Conduct a thorough audit of all images across Airbnb to identify and add alt text where missing.  Prioritize images of accommodations, focusing on key features like location, amenities, and property type.  This improves accessibility for visually impaired users and provides valuable context to search engines.",
+      "category": "On-Page",
+      "priority_score": 7,
+      "impact": "high",
+      "implementation_difficulty": "hard",
+      "estimated_time_hours": 40
+    },
+    {
+      "recommendation": "Analyze competitor strategies on Booking.com and Expedia, focusing on their content marketing and outreach efforts.  Identify opportunities to leverage Airbnb's unique selling propositions (e.g., peer-to-peer model, unique accommodations) in content to differentiate from competitors and attract high-value users.",
+      "category": "Off-Page",
+      "priority_score": 6,
+      "impact": "medium",
+      "implementation_difficulty": "medium",
+      "estimated_time_hours": 12
+    }
+  ],
+  "summary": {
+    "technical_score": 9.0,
+    "on_page_score": 6.5,
+    "off_page_score": 5.0,
+    "total_pages_analyzed": 2
+  }
+}

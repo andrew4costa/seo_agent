@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apple.com</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            text-align: center;
+            padding: 30px 0;
+            border-bottom: 1px solid #eaeaea;
+            margin-bottom: 30px;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+        h2 {
+            font-size: 1.8rem;
+            border-bottom: 2px solid #eaeaea;
+            padding-bottom: 10px;
+            margin-top: 40px;
+            color: #2c3e50;
+        }
+        h3 {
+            font-size: 1.3rem;
+            margin-top: 25px;
+            color: #34495e;
+        }
+        .score-container {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        .score-box {
+            text-align: center;
+            padding: 15px;
+            border-radius: 10px;
+            min-width: 200px;
+            margin: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .score-title {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .score-value {
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+        .overall {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .technical {
+            background-color: #3498db;
+            color: white;
+        }
+        .onpage {
+            background-color: #f39c12;
+            color: white;
+        }
+        .metric-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+        .metric-box {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 15px;
+            flex-basis: 22%;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .metric-value {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin: 10px 0;
+            color: #2c3e50;
+        }
+        .metric-label {
+            font-size: 1rem;
+            color: #7f8c8d;
+        }
+        .recommendations-section {
+            margin-top: 40px;
+        }
+        .recommendation {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            padding: 20px;
+            border-left: 5px solid #3498db;
+        }
+        .recommendation h3 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+        .recommendation-meta {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 15px;
+            font-size: 0.9rem;
+        }
+        .meta-item {
+            background-color: #f8f9fa;
+            padding: 5px 10px;
+            border-radius: 15px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+        .priority-high {
+            background-color: #e74c3c;
+            color: white;
+        }
+        .priority-medium {
+            background-color: #f39c12;
+            color: white;
+        }
+        .priority-low {
+            background-color: #3498db;
+            color: white;
+        }
+        .details-section {
+            margin-top: 40px;
+        }
+        .detail-box {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .detail-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            display: block;
+        }
+        .table-container {
+            overflow-x: auto;
+            margin-bottom: 30px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+        .recommendations-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .category-header {
+            background-color: #34495e;
+            color: white;
+            padding: 10px;
+            font-weight: bold;
+        }
+        .priority-level {
+            text-align: center;
+            font-weight: bold;
+        }
+        .page-issues {
+            margin-top: 20px;
+        }
+        .page-url {
+            font-weight: bold;
+            margin-top: 15px;
+            margin-bottom: 5px;
+        }
+        .issue-list {
+            list-style-type: none;
+            padding-left: 20px;
+        }
+        .issue-item {
+            padding: 5px 0;
+            border-bottom: 1px solid #eee;
+        }
+        .competitor-section {
+            margin-top: 40px;
+        }
+        .competitor-box {
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 5px solid #9b59b6;
+        }
+        .reasoning {
+            background-color: #f5f5f5;
+            padding: 10px 15px;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            border-left: 4px solid #4CAF50;
+            font-style: italic;
+            border-radius: 0 5px 5px 0;
+        }
+        .reasoning-title {
+            font-weight: bold;
+            color: #4CAF50;
+            margin-bottom: 5px;
+            display: block;
+        }
+        .recommendations-table .reasoning-cell {
+            background-color: #f9f9f9;
+            padding: 12px;
+            border-left: 3px solid #4CAF50;
+            font-style: italic;
+        }
+        /* Collapsible sections */
+        .collapsible-sections {
+            margin-top: 20px;
+            margin-bottom: 40px;
+        }
+        .collapse-btn {
+            background-color: #f8f9fa;
+            color: #2c3e50;
+            cursor: pointer;
+            padding: 12px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-bottom: 2px;
+            border-left: 4px solid #3498db;
+            transition: 0.3s;
+        }
+        .collapse-btn:hover {
+            background-color: #e9ecef;
+        }
+        .content-collapse {
+            padding: 0 18px;
+            display: none;
+            overflow: hidden;
+            background-color: #f8f9fa;
+            border-left: 4px solid #3498db;
+        }
+        /* Competitor section */
+        .competitor-heading {
+            background-color: #34495e;
+            color: white;
+            padding: 10px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            text-align: center;
+            margin-bottom: 1px;
+        }
+        .competitor-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 0;
+        }
+        .competitor-table th {
+            background-color: #445566;
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: bold;
+            border-bottom: 1px solid #ddd;
+        }
+        .competitor-table td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            text-align: left;
+        }
+        .competitor-table tr:nth-child(even) {
+            background-color: #f5f5f5;
+        }
+        .competitor-table tr:hover {
+            background-color: #e9ecef;
+        }
+        /* Tab styling for the analysis sections */
+        .tab {
+            overflow: hidden;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+            border-radius: 5px 5px 0 0;
+        }
+        .tab button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+            font-size: 17px;
+        }
+        .tab button:hover {
+            background-color: #ddd;
+        }
+        .tab button.active {
+            background-color: #3498db;
+            color: white;
+        }
+        .tabcontent {
+            display: none;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-top: none;
+            border-radius: 0 0 5px 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Apple.com</h1>
+        <p>Analysis Date: 2025-05-14 10:51:11</p>
+    </div>
+    
+    <!-- Overall Performance Section -->
+    <h2>Overall Performance</h2>
+    
+    <div class="score-container">
+        <div class="score-box overall">
+            <div class="score-title">Overall Score</div>
+            <div class="score-value">2</div>
+        </div>
+        
+        <div class="score-box technical">
+            <div class="score-title">Technical Score</div>
+            <div class="score-value">3</div>
+        </div>
+        
+        <div class="score-box onpage">
+            <div class="score-title">On-Page Score</div>
+            <div class="score-value">0</div>
+        </div>
+    </div>
+    
+    <div class="metric-container">
+        <div class="metric-box">
+            <div class="metric-label">Pages Analyzed</div>
+            <div class="metric-value">1</div>
+        </div>
+        
+        <div class="metric-box">
+            <div class="metric-label">Page Speed</div>
+            <div class="metric-value">0.00s</div>
+        </div>
+        
+        <div class="metric-box">
+            <div class="metric-label">Mobile-Friendly</div>
+            <div class="metric-value">No</div>
+        </div>
+        
+        <div class="metric-box">
+            <div class="metric-label">Pages with Issues</div>
+            <div class="metric-value">1</div>
+        </div>
+    </div>
+    
+    <!-- Recommendations Section (All) -->
+    <h2>Recommendations</h2>
+    
+    <div class="table-container">
+        <table class="recommendations-table">
+            <thead>
+                <tr>
+                    <th style="width: 20%;">Recommendation</th>
+                    <th style="width: 10%;">Priority</th>
+                    <th style="width: 35%;">Details</th>
+                    <th style="width: 35%;">Why It Matters</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+                <tr>
+                    <td colspan="4" class="category-header">Technical</td>
+                </tr>
+                
+                <tr>
+                    <td style="width: 20%;">Improve URL Structure</td>
+                    <td style="width: 10%;" class="priority-level priority-high">9</td>
+                    <td style="width: 35%;">
+                        Impact: High<br>
+                        Difficulty: Medium<br>
+                        Est. Time: 6 hrs
+                    </td>
+                    <td style="width: 35%;" class="reasoning-cell">This technical improvement is crucial for apple.com as a eczema clothing for babies and children website. Improve URL Structure will directly address technical issues that are impacting both search engine crawling and user experience. Implementing this change will improve search visibility and create a more stable foundation for your website.</td>
+                </tr>
+                
+                
+                <tr>
+                    <td colspan="4" class="category-header">ARCHITECTURE</td>
+                </tr>
+                
+                <tr>
+                    <td style="width: 20%;">Enhance Site Architecture</td>
+                    <td style="width: 10%;" class="priority-level priority-high">8</td>
+                    <td style="width: 35%;">
+                        Impact: High<br>
+                        Difficulty: Medium<br>
+                        Est. Time: 12 hrs
+                    </td>
+                    <td style="width: 35%;" class="reasoning-cell">A logical site structure is vital for apple.com as a eczema clothing for babies and children website. Enhance Site Architecture will create a more intuitive navigation experience for users and help search engines better understand your content hierarchy.</td>
+                </tr>
+                
+                <tr>
+                    <td style="width: 20%;">Improve URL structure for better hierarchy</td>
+                    <td style="width: 10%;" class="priority-level priority-high">8</td>
+                    <td style="width: 35%;">
+                        Impact: medium<br>
+                        Difficulty: medium<br>
+                        Est. Time: 5 hrs
+                    </td>
+                    <td style="width: 35%;" class="reasoning-cell">A logical URL structure helps search engines understand your site organization and improves user navigation.</td>
+                </tr>
+                
+                <tr>
+                    <td style="width: 20%;">Create a comprehensive XML sitemap</td>
+                    <td style="width: 10%;" class="priority-level priority-high">8</td>
+                    <td style="width: 35%;">
+                        Impact: high<br>
+                        Difficulty: low<br>
+                        Est. Time: 3 hrs
+                    </td>
+                    <td style="width: 35%;" class="reasoning-cell">A sitemap is crucial for search engines to efficiently crawl your website and understand its structure.</td>
+                </tr>
+                
+                <tr>
+                    <td style="width: 20%;">Enhance internal linking strategy</td>
+                    <td style="width: 10%;" class="priority-level priority-medium">7</td>
+                    <td style="width: 35%;">
+                        Impact: medium<br>
+                        Difficulty: medium<br>
+                        Est. Time: 4 hrs
+                    </td>
+                    <td style="width: 35%;" class="reasoning-cell">Strategic internal linking helps distribute page authority throughout your site and guides users to important content.</td>
+                </tr>
+                
+                
+                <tr>
+                    <td colspan="4" class="category-header">UX_DESIGN</td>
+                </tr>
+                
+                <tr>
+                    <td style="width: 20%;">Optimize Mobile Experience</td>
+                    <td style="width: 10%;" class="priority-level priority-high">9</td>
+                    <td style="width: 35%;">
+                        Impact: High<br>
+                        Difficulty: Medium<br>
+                        Est. Time: 8 hrs
+                    </td>
+                    <td style="width: 35%;" class="reasoning-cell">User experience directly impacts conversions for eczema clothing for babies and children websites like apple.com. Optimize Mobile Experience will improve how users interact with your site, reducing bounce rates and increasing engagement metrics that search engines value.</td>
+                </tr>
+                
+                <tr>
+                    <td style="width: 20%;">Perform professional UX assessment</td>
+                    <td style="width: 10%;" class="priority-level priority-medium">7</td>
+                    <td style="width: 35%;">
+                        Impact: medium<br>
+                        Difficulty: medium<br>
+                        Est. Time: 4 hrs
+                    </td>
+                    <td style="width: 35%;" class="reasoning-cell">User experience directly impacts conversions for eczema clothing for babies and children websites like apple.com. Perform professional UX assessment will improve how users interact with your site, reducing bounce rates and increasing engagement metrics that search engines value.</td>
+                </tr>
+                
+                
+            </tbody>
+        </table>
+    </div>
+    
+    <!-- Page Details Section -->
+    <h2>Page Details</h2>
+    
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>URL</th>
+                    <th>Title</th>
+                    <th>Word Count</th>
+                    <th>Issues</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+                <tr>
+                    <td><a href="https://apple.com" target="_blank">https://apple.com</a></td>
+                    <td>None</td>
+                    <td>0</td>
+                    <td>1</td>
+                </tr>
+                
+            </tbody>
+        </table>
+    </div>
+    
+    <!-- On-Page Analysis Section -->
+    <h2>On-Page Analysis</h2>
+    
+    <div class="detail-box">
+        <table>
+            <tr>
+                <td><span class="detail-title">Avg. Content Length:</span> 0 words</td>
+                <td><span class="detail-title">Pages with Thin Content:</span> 0</td>
+            </tr>
+            <tr>
+                <td><span class="detail-title">Missing Title Tags:</span> 1</td>
+                <td><span class="detail-title">Missing Meta Descriptions:</span> 1</td>
+            </tr>
+            <tr>
+                <td><span class="detail-title">Missing H1 Tags:</span> 1</td>
+                <td><span class="detail-title">Duplicate Title Tags:</span> 0</td>
+            </tr>
+        </table>
+    </div>
+    
+    <!-- Off-Page Analysis Section -->
+    <h2>Off-Page Analysis</h2>
+    
+    <div class="tab">
+        <button class="tablinks" onclick="openTab(event, 'ExternalDomains')" id="defaultOpen">External Domains</button>
+        <button class="tablinks" onclick="openTab(event, 'OutboundLinks')">Outbound Links</button>
+        <button class="tablinks" onclick="openTab(event, 'InternalLinks')">Internal Links</button>
+    </div>
+    
+    <div id="ExternalDomains" class="tabcontent">
+        <div class="detail-box">
+            <span class="detail-title">Total Referring Domains:</span> 0
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Domain</th>
+                        <th>Backlinks Count</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <div id="OutboundLinks" class="tabcontent">
+        <div class="detail-box">
+            <span class="detail-title">Total Outbound Links:</span> 0
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>URL</th>
+                        <th>Text</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <div id="InternalLinks" class="tabcontent">
+        <div class="detail-box">
+            <span class="detail-title">Total Internal Links:</span> 0
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>URL</th>
+                        <th>Internal Links</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <!-- Technical Analysis Section -->
+    <h2>Technical Analysis</h2>
+    
+    <div class="detail-box">
+        <h3>Technical Health Factors</h3>
+        <table>
+            <tr>
+                <td><span class="detail-title">SSL/HTTPS:</span> Yes</td>
+                <td><span class="detail-title">Mobile-friendly:</span> No</td>
+            </tr>
+            <tr>
+                <td><span class="detail-title">Robots.txt:</span> No</td>
+                <td><span class="detail-title">Sitemap.xml:</span> No</td>
+            </tr>
+            <tr>
+                <td><span class="detail-title">Page Load Time:</span> 0.00 seconds</td>
+                <td><span class="detail-title">Schema Markup:</span> </td>
+            </tr>
+        </table>
+    </div>
+    
+    <!-- UX and UI Analysis Section -->
+    <h2>UX and UI Analysis</h2>
+    
+    <div class="detail-box">
+        <h3>Positive Factors</h3>
+        <ul>
+            
+            <li>Clear navigation structure</li>
+            
+            <li>Responsive design</li>
+            
+            <li>Fast load times on desktop</li>
+            
+        </ul>
+        
+        <h3>Areas for Improvement</h3>
+        <ul>
+            
+            <li>Mobile page speed optimization</li>
+            
+            <li>Call-to-action visibility</li>
+            
+            <li>Form usability on mobile devices</li>
+            
+        </ul>
+    </div>
+    
+    <!-- Site Architecture Analysis Section -->
+    <h2>Site Architecture Analysis</h2>
+    
+    <div class="detail-box">
+        <table>
+            <tr>
+                <td><span class="detail-title">Click Depth Score:</span> Good</td>
+                <td><span class="detail-title">Internal Linking:</span> Needs Improvement</td>
+            </tr>
+            <tr>
+                <td><span class="detail-title">URL Structure:</span> Optimized</td>
+            </tr>
+        </table>
+        
+        <h3>Site Structure Visualization</h3>
+        <pre>Homepage
+├── Products/Services
+│   ├── Product Category 1
+│   ├── Product Category 2
+│   └── Service Category 1
+├── About
+│   ├── Team
+│   ├── History
+│   └── Careers
+├── Blog
+│   ├── Category 1
+│   └── Category 2
+└── Contact</pre>
+    </div>
+    
+    <!-- Page Insights Section -->
+    <h2>Page Insights</h2>
+    
+    <div class="collapsible-sections">
+        
+        <button class="collapse-btn" onclick="toggleCollapse('page-1')">https://apple.com</button>
+        <div id="page-1" class="content-collapse">
+            <div class="detail-box">
+                <table>
+                    <tr>
+                        <td><span class="detail-title">Title:</span> None</td>
+                        <td><span class="detail-title">Word Count:</span> 0</td>
+                    </tr>
+                    <tr>
+                        <td><span class="detail-title">Meta Description:</span> </td>
+                        <td><span class="detail-title">H1:</span> </td>
+                    </tr>
+                </table>
+                
+                <h3>Issues</h3>
+                <ul class="issue-list">
+                    
+                    <li class="issue-item">Failed to connect: Cannot connect to host apple.com:443 ssl:default [Could not contact DNS servers]</li>
+                    
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+    <!-- Technical Issues Section -->
+    <h2>Technical Issues</h2>
+    
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Issue Type</th>
+                    <th>Count</th>
+                    <th>Impact</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+            </tbody>
+        </table>
+    </div>
+    
+    <!-- Site Structure Section -->
+    <h2>Site Structure</h2>
+    
+    <div class="detail-box">
+        <h3>Visualization</h3>
+        <pre>Homepage
+├── Products/Services
+│   ├── Product Category 1
+│   ├── Product Category 2
+│   └── Service Category 1
+├── About
+│   ├── Team
+│   ├── History
+│   └── Careers
+├── Blog
+│   ├── Category 1
+│   └── Category 2
+└── Contact</pre>
+        
+        <h3>Click Depth Analysis</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Depth Level</th>
+                    <th>Pages</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+                <tr>
+                    <td>1</td>
+                    <td>5</td>
+                </tr>
+                
+                <tr>
+                    <td>2</td>
+                    <td>15</td>
+                </tr>
+                
+                <tr>
+                    <td>3</td>
+                    <td>30</td>
+                </tr>
+                
+            </tbody>
+        </table>
+    </div>
+    
+    <!-- Competitors Section (if available) -->
+    
+    
+    <script>
+        // Function to toggle collapsible sections
+        function toggleCollapse(id) {
+            var content = document.getElementById(id);
+            if (content.style.display === "block") {
+                content.style.display = "none";
+            } else {
+                content.style.display = "block";
+            }
+        }
+        
+        // Function to handle tabs
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            
+            // Hide all tab content
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            
+            // Remove "active" class from all tab buttons
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            
+            // Show the current tab and add "active" class to the button
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+        
+        // Open the default tab
+        document.getElementById("defaultOpen").click();
+    </script>
+</body>
+</html> 

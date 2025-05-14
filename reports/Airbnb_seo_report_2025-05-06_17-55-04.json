@@ -1,0 +1,17 @@
+{
+  "company": "Airbnb",
+  "url": "https://airbnb.com",
+  "date": "2025-05-06 17:55:04",
+  "recommendations": [
+    {
+      "error": "Failed to validate JSON response",
+      "category": "General"
+    }
+  ],
+  "summary": {
+    "technical_score": 9.0,
+    "on_page_score": 6.5,
+    "off_page_score": 5.0,
+    "total_pages_analyzed": 2
+  }
+}

@@ -1,0 +1,679 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Www.cursor.com</title>
+        <style>
+            body {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                line-height: 1.6;
+                color: #333;
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 20px;
+            }
+            .header {
+                text-align: center;
+                padding: 30px 0;
+                border-bottom: 1px solid #eaeaea;
+                margin-bottom: 30px;
+            }
+            h1 {
+                font-size: 2.5rem;
+                margin-bottom: 10px;
+                color: #2c3e50;
+            }
+            h2 {
+                font-size: 1.8rem;
+                border-bottom: 2px solid #eaeaea;
+                padding-bottom: 10px;
+                margin-top: 40px;
+                color: #2c3e50;
+            }
+            h3 {
+                font-size: 1.3rem;
+                margin-top: 25px;
+                color: #34495e;
+            }
+            .score-container {
+                display: flex;
+                justify-content: space-around;
+                margin: 20px 0;
+                flex-wrap: wrap;
+            }
+            .score-box {
+                text-align: center;
+                padding: 15px;
+                border-radius: 10px;
+                min-width: 200px;
+                margin: 10px;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            }
+            .score-title {
+                font-size: 1.2rem;
+                margin-bottom: 10px;
+                font-weight: bold;
+            }
+            .score-value {
+                font-size: 2.5rem;
+                font-weight: bold;
+            }
+            .overall {
+                background-color: #4CAF50;
+                color: white;
+            }
+            .technical {
+                background-color: #3498db;
+                color: white;
+            }
+            .onpage {
+                background-color: #f39c12;
+                color: white;
+            }
+            .recommendations-section {
+                margin-top: 40px;
+            }
+            .recommendation {
+                background-color: white;
+                border-radius: 8px;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+                margin-bottom: 20px;
+                padding: 20px;
+                border-left: 5px solid #3498db;
+            }
+            .recommendation h3 {
+                margin-top: 0;
+                color: #2c3e50;
+            }
+            .recommendation-meta {
+                display: flex;
+                flex-wrap: wrap;
+                margin-top: 15px;
+                font-size: 0.9rem;
+            }
+            .meta-item {
+                background-color: #f8f9fa;
+                padding: 5px 10px;
+                border-radius: 15px;
+                margin-right: 10px;
+                margin-bottom: 10px;
+            }
+            .priority-high {
+                background-color: #e74c3c;
+                color: white;
+            }
+            .priority-medium {
+                background-color: #f39c12;
+                color: white;
+            }
+            .priority-low {
+                background-color: #3498db;
+                color: white;
+            }
+            .details-section {
+                margin-top: 40px;
+            }
+            .detail-box {
+                background-color: #f8f9fa;
+                border-radius: 8px;
+                padding: 20px;
+                margin-bottom: 20px;
+            }
+            .detail-title {
+                font-weight: bold;
+                margin-bottom: 10px;
+                display: block;
+            }
+            .table-container {
+                overflow-x: auto;
+                margin-bottom: 30px;
+            }
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 20px 0;
+            }
+            th, td {
+                padding: 12px;
+                text-align: left;
+                border-bottom: 1px solid #ddd;
+            }
+            th {
+                background-color: #f2f2f2;
+            }
+            tr:hover {
+                background-color: #f5f5f5;
+            }
+            .recommendations-table {
+                width: 100%;
+                border-collapse: collapse;
+            }
+            .category-header {
+                background-color: #34495e;
+                color: white;
+                padding: 10px;
+                font-weight: bold;
+            }
+            .priority-level {
+                text-align: center;
+                font-weight: bold;
+            }
+            .page-issues {
+                margin-top: 20px;
+            }
+            .page-url {
+                font-weight: bold;
+                margin-top: 15px;
+                margin-bottom: 5px;
+            }
+            .issue-list {
+                list-style-type: none;
+                padding-left: 20px;
+            }
+            .issue-item {
+                padding: 5px 0;
+                border-bottom: 1px solid #eee;
+            }
+            .competitor-section {
+                margin-top: 40px;
+            }
+            .competitor-box {
+                background-color: #f8f9fa;
+                border-radius: 8px;
+                padding: 20px;
+                margin-bottom: 20px;
+                border-left: 5px solid #9b59b6;
+            }
+            .reasoning {
+                background-color: #f5f5f5;
+                padding: 10px 15px;
+                margin-top: 15px;
+                margin-bottom: 15px;
+                border-left: 4px solid #4CAF50;
+                font-style: italic;
+                border-radius: 0 5px 5px 0;
+            }
+            .reasoning-title {
+                font-weight: bold;
+                color: #4CAF50;
+                margin-bottom: 5px;
+                display: block;
+            }
+            .recommendations-table .reasoning-cell {
+                background-color: #f9f9f9;
+                padding: 12px;
+                border-left: 3px solid #4CAF50;
+                font-style: italic;
+            }
+            /* Collapsible sections */
+            .collapsible-sections {
+                margin-top: 20px;
+                margin-bottom: 40px;
+            }
+            .collapse-btn {
+                background-color: #f8f9fa;
+                color: #2c3e50;
+                cursor: pointer;
+                padding: 12px;
+                width: 100%;
+                border: none;
+                text-align: left;
+                outline: none;
+                font-size: 1.1rem;
+                font-weight: bold;
+                margin-bottom: 2px;
+                border-left: 4px solid #3498db;
+                transition: 0.3s;
+            }
+            .collapse-btn:hover {
+                background-color: #e9ecef;
+            }
+            .content-collapse {
+                padding: 0 18px;
+                display: none;
+                overflow: hidden;
+                background-color: #f8f9fa;
+                border-left: 4px solid #3498db;
+            }
+            /* Competitor section */
+            .competitor-section {
+                margin-top: 40px;
+                margin-bottom: 40px;
+            }
+            .competitor-heading {
+                background-color: #34495e;
+                color: white;
+                padding: 10px;
+                font-weight: bold;
+                font-size: 1.2rem;
+                text-align: center;
+                margin-bottom: 1px;
+            }
+            .competitor-table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-top: 0;
+            }
+            .competitor-table th {
+                background-color: #445566;
+                color: white;
+                padding: 12px;
+                text-align: left;
+                font-weight: bold;
+                border-bottom: 1px solid #ddd;
+            }
+            .competitor-table td {
+                padding: 10px;
+                border-bottom: 1px solid #ddd;
+                text-align: left;
+            }
+            .competitor-table tr:nth-child(even) {
+                background-color: #f5f5f5;
+            }
+            .competitor-table tr:hover {
+                background-color: #e9ecef;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Www.cursor.com</h1>
+            <p>Analysis performed on May 09, 2025</p>
+        </div>
+        
+        <div class="score-container">
+            <div class="score-box overall">
+                <div class="score-title">Overall SEO Score</div>
+                <div class="score-value">8.2/10</div>
+            </div>
+            <div class="score-box technical">
+                <div class="score-title">Technical SEO</div>
+                <div class="score-value">9.4/10</div>
+            </div>
+            <div class="score-box onpage">
+                <div class="score-title">On-Page SEO</div>
+                <div class="score-value">7.0/10</div>
+            </div>
+        </div>
+        
+        <div class="recommendations-section">
+            <h2>Top SEO Recommendations</h2>
+    
+        <div class="recommendation">
+            <h3>1. Add schema markup to all pages</h3>
+            
+        <div class="reasoning">
+            <span class="reasoning-title">Why This Matters:</span>
+            This technical improvement is crucial for www.cursor.com as a e-commerce website. Add schema markup to all pages will directly address technical issues that are impacting both search engine crawling and user experience. Implementing this change will improve search visibility and create a more stable foundation for your website.
+        </div>
+        
+            <div class="recommendation-meta">
+                <div class="meta-item priority-high">Priority: 9/10</div>
+                <div class="meta-item">Impact: High</div>
+                <div class="meta-item">Difficulty: Medium</div>
+                <div class="meta-item">Est. Time: 6 hrs</div>
+                <div class="meta-item">Category: Technical</div>
+            </div>
+        </div>
+        <div class="recommendation">
+            <h3>2. Add alt text to all missing images</h3>
+            
+        <div class="reasoning">
+            <span class="reasoning-title">Why This Matters:</span>
+            This technical improvement is crucial for www.cursor.com as a e-commerce website. Add alt text to all missing images will directly address technical issues that are impacting both search engine crawling and user experience. Implementing this change will improve search visibility and create a more stable foundation for your website.
+        </div>
+        
+            <div class="recommendation-meta">
+                <div class="meta-item priority-high">Priority: 8/10</div>
+                <div class="meta-item">Impact: Medium</div>
+                <div class="meta-item">Difficulty: Low</div>
+                <div class="meta-item">Est. Time: 2 hrs</div>
+                <div class="meta-item">Category: Technical</div>
+            </div>
+        </div>
+        <div class="recommendation">
+            <h3>3. Fix missing title tags and H1 headings</h3>
+            
+        <div class="reasoning">
+            <span class="reasoning-title">Why This Matters:</span>
+            For www.cursor.com in the e-commerce industry, this on-page optimization is essential. Fix missing title tags and H1 headings will enhance your content's relevance and clarity for both users and search engines. This directly impacts how well your pages perform in search results for your target keywords.
+        </div>
+        
+            <div class="recommendation-meta">
+                <div class="meta-item priority-high">Priority: 9/10</div>
+                <div class="meta-item">Impact: High</div>
+                <div class="meta-item">Difficulty: Medium</div>
+                <div class="meta-item">Est. Time: 4 hrs</div>
+                <div class="meta-item">Category: On-Page</div>
+            </div>
+        </div>
+        <div class="recommendation">
+            <h3>4. Improve meta descriptions</h3>
+            
+        <div class="reasoning">
+            <span class="reasoning-title">Why This Matters:</span>
+            For www.cursor.com in the e-commerce industry, this on-page optimization is essential. Improve meta descriptions will enhance your content's relevance and clarity for both users and search engines. This directly impacts how well your pages perform in search results for your target keywords.
+        </div>
+        
+            <div class="recommendation-meta">
+                <div class="meta-item priority-medium">Priority: 7/10</div>
+                <div class="meta-item">Impact: Medium</div>
+                <div class="meta-item">Difficulty: Low</div>
+                <div class="meta-item">Est. Time: 3 hrs</div>
+                <div class="meta-item">Category: On-Page</div>
+            </div>
+        </div>
+        <div class="recommendation">
+            <h3>5. Improve Sitemap.xml Entry Count</h3>
+            
+        <div class="reasoning">
+            <span class="reasoning-title">Why This Matters:</span>
+            The sitemap currently has 0 entries, rendering it ineffective for search engine crawlers.  A comprehensive sitemap is crucial for ensuring all important pages are indexed.
+        </div>
+        
+            <div class="recommendation-meta">
+                <div class="meta-item priority-high">Priority: 10/10</div>
+                <div class="meta-item">Impact: High</div>
+                <div class="meta-item">Difficulty: Medium</div>
+                <div class="meta-item">Est. Time: 2 hrs</div>
+                <div class="meta-item">Category: ARCHITECTURE</div>
+            </div>
+        </div>
+        <div class="recommendation">
+            <h3>6. Enhance Internal Linking Strategy</h3>
+            
+        <div class="reasoning">
+            <span class="reasoning-title">Why This Matters:</span>
+            The provided internal linking sample is limited.  A robust internal linking structure is needed to improve site navigation and distribute link equity, boosting SEO and user experience.  Focus on linking relevant pages together, particularly from the homepage and high-authority pages.
+        </div>
+        
+            <div class="recommendation-meta">
+                <div class="meta-item priority-high">Priority: 9/10</div>
+                <div class="meta-item">Impact: High</div>
+                <div class="meta-item">Difficulty: Medium</div>
+                <div class="meta-item">Est. Time: 8 hrs</div>
+                <div class="meta-item">Category: ARCHITECTURE</div>
+            </div>
+        </div>
+        <h2>Complete Recommendations</h2>
+        <div class="table-container">
+            <table class="recommendations-table">
+                <thead>
+                    <tr>
+                        <th style="width: 20%;">Recommendation</th>
+                        <th style="width: 10%;">Priority</th>
+                        <th style="width: 35%;">Details</th>
+                        <th style="width: 35%;">Why It Matters</th>
+                    </tr>
+                </thead>
+                <tbody>
+    
+                    <tr>
+                        <td colspan="4" class="category-header">Technical</td>
+                    </tr>
+        
+                    <tr>
+                        <td style="width: 20%;">Add schema markup to all pages</td>
+                        <td style="width: 10%;" class="priority-level priority-high">9</td>
+                        <td style="width: 35%;">
+                Impact: High<br>
+                Difficulty: Medium<br>
+                Est. Time: 6 hrs
+            </td>
+                        <td style="width: 35%;" class="reasoning-cell">This technical improvement is crucial for www.cursor.com as a e-commerce website. Add schema markup to all pages will directly address technical issues that are impacting both search engine crawling and user experience. Implementing this change will improve search visibility and create a more stable foundation for your website.</td>
+                    </tr>
+            
+                    <tr>
+                        <td style="width: 20%;">Add alt text to all missing images</td>
+                        <td style="width: 10%;" class="priority-level priority-high">8</td>
+                        <td style="width: 35%;">
+                Impact: Medium<br>
+                Difficulty: Low<br>
+                Est. Time: 2 hrs
+            </td>
+                        <td style="width: 35%;" class="reasoning-cell">This technical improvement is crucial for www.cursor.com as a e-commerce website. Add alt text to all missing images will directly address technical issues that are impacting both search engine crawling and user experience. Implementing this change will improve search visibility and create a more stable foundation for your website.</td>
+                    </tr>
+            
+                    <tr>
+                        <td colspan="4" class="category-header">On-Page</td>
+                    </tr>
+        
+                    <tr>
+                        <td style="width: 20%;">Fix missing title tags and H1 headings</td>
+                        <td style="width: 10%;" class="priority-level priority-high">9</td>
+                        <td style="width: 35%;">
+                Impact: High<br>
+                Difficulty: Medium<br>
+                Est. Time: 4 hrs
+            </td>
+                        <td style="width: 35%;" class="reasoning-cell">For www.cursor.com in the e-commerce industry, this on-page optimization is essential. Fix missing title tags and H1 headings will enhance your content's relevance and clarity for both users and search engines. This directly impacts how well your pages perform in search results for your target keywords.</td>
+                    </tr>
+            
+                    <tr>
+                        <td style="width: 20%;">Improve meta descriptions</td>
+                        <td style="width: 10%;" class="priority-level priority-medium">7</td>
+                        <td style="width: 35%;">
+                Impact: Medium<br>
+                Difficulty: Low<br>
+                Est. Time: 3 hrs
+            </td>
+                        <td style="width: 35%;" class="reasoning-cell">For www.cursor.com in the e-commerce industry, this on-page optimization is essential. Improve meta descriptions will enhance your content's relevance and clarity for both users and search engines. This directly impacts how well your pages perform in search results for your target keywords.</td>
+                    </tr>
+            
+                    <tr>
+                        <td colspan="4" class="category-header">ARCHITECTURE</td>
+                    </tr>
+        
+                    <tr>
+                        <td style="width: 20%;">Improve Sitemap.xml Entry Count</td>
+                        <td style="width: 10%;" class="priority-level priority-high">10</td>
+                        <td style="width: 35%;">
+                Impact: High<br>
+                Difficulty: Medium<br>
+                Est. Time: 2 hrs
+            </td>
+                        <td style="width: 35%;" class="reasoning-cell">The sitemap currently has 0 entries, rendering it ineffective for search engine crawlers.  A comprehensive sitemap is crucial for ensuring all important pages are indexed.</td>
+                    </tr>
+            
+                    <tr>
+                        <td style="width: 20%;">Enhance Internal Linking Strategy</td>
+                        <td style="width: 10%;" class="priority-level priority-high">9</td>
+                        <td style="width: 35%;">
+                Impact: High<br>
+                Difficulty: Medium<br>
+                Est. Time: 8 hrs
+            </td>
+                        <td style="width: 35%;" class="reasoning-cell">The provided internal linking sample is limited.  A robust internal linking structure is needed to improve site navigation and distribute link equity, boosting SEO and user experience.  Focus on linking relevant pages together, particularly from the homepage and high-authority pages.</td>
+                    </tr>
+            
+                    <tr>
+                        <td style="width: 20%;">Standardize URL Structure</td>
+                        <td style="width: 10%;" class="priority-level priority-high">8</td>
+                        <td style="width: 35%;">
+                Impact: Medium<br>
+                Difficulty: Medium<br>
+                Est. Time: 6 hrs
+            </td>
+                        <td style="width: 35%;" class="reasoning-cell">The current URL structure shows inconsistencies (e.g., 'api/auth/login' vs. other simpler structures).  Implement a consistent and SEO-friendly URL structure using descriptive keywords and a logical hierarchy.  This improves crawlability and user understanding.</td>
+                    </tr>
+            
+                    <tr>
+                        <td style="width: 20%;">Improve Blog Organization</td>
+                        <td style="width: 10%;" class="priority-level priority-medium">7</td>
+                        <td style="width: 35%;">
+                Impact: Medium<br>
+                Difficulty: Low<br>
+                Est. Time: 4 hrs
+            </td>
+                        <td style="width: 35%;" class="reasoning-cell">The 'blog' category has children, suggesting a need for better organization within the blog section.  Implement a clear blog category structure with relevant subcategories to improve navigation and content discoverability.</td>
+                    </tr>
+            
+                    <tr>
+                        <td style="width: 20%;">Assess and Improve API Documentation Architecture</td>
+                        <td style="width: 10%;" class="priority-level priority-medium">7</td>
+                        <td style="width: 35%;">
+                Impact: Medium<br>
+                Difficulty: High<br>
+                Est. Time: 12 hrs
+            </td>
+                        <td style="width: 35%;" class="reasoning-cell">The 'api' category suggests the presence of an API. Ensure the API documentation is well-structured, easily navigable, and accessible to developers. This is crucial for developer experience and adoption.</td>
+                    </tr>
+            
+                    <tr>
+                        <td style="width: 20%;">Conduct a Thorough Mobile-Friendliness Audit</td>
+                        <td style="width: 10%;" class="priority-level priority-medium">6</td>
+                        <td style="width: 35%;">
+                Impact: Medium<br>
+                Difficulty: Medium<br>
+                Est. Time: 4 hrs
+            </td>
+                        <td style="width: 35%;" class="reasoning-cell">While no explicit mobile issues are mentioned, a comprehensive audit is necessary to ensure responsiveness across all devices and screen sizes.  This is crucial for user experience and SEO.</td>
+                    </tr>
+            
+                    <tr>
+                        <td colspan="4" class="category-header">UX_DESIGN</td>
+                    </tr>
+        
+                    <tr>
+                        <td style="width: 20%;">Implement a responsive design with viewport meta tag</td>
+                        <td style="width: 10%;" class="priority-level priority-high">9</td>
+                        <td style="width: 35%;">
+                Impact: High<br>
+                Difficulty: Low<br>
+                Est. Time: 2 hrs
+            </td>
+                        <td style="width: 35%;" class="reasoning-cell">Despite a high mobile optimization score, the lack of a viewport meta tag indicates potential inconsistencies across devices.  Adding this tag ensures proper scaling and rendering on all screen sizes, improving mobile usability and SEO.</td>
+                    </tr>
+            
+                    <tr>
+                        <td style="width: 20%;">Improve visual hierarchy and readability</td>
+                        <td style="width: 10%;" class="priority-level priority-high">8</td>
+                        <td style="width: 35%;">
+                Impact: Medium<br>
+                Difficulty: Medium<br>
+                Est. Time: 6 hrs
+            </td>
+                        <td style="width: 35%;" class="reasoning-cell">Analyze text sizes, font weights, and spacing to ensure clear visual hierarchy.  Improve readability by increasing contrast between text and background, and using appropriate line heights.</td>
+                    </tr>
+            
+                    <tr>
+                        <td style="width: 20%;">Conduct user testing to identify pain points</td>
+                        <td style="width: 10%;" class="priority-level priority-high">10</td>
+                        <td style="width: 35%;">
+                Impact: High<br>
+                Difficulty: Medium<br>
+                Est. Time: 12 hrs
+            </td>
+                        <td style="width: 35%;" class="reasoning-cell">Real user feedback is crucial for identifying usability issues not apparent through automated analysis.  Testing will reveal areas for improvement in navigation, information architecture, and overall user flow.</td>
+                    </tr>
+            
+                    <tr>
+                        <td style="width: 20%;">Optimize call-to-action (CTA) placement and design</td>
+                        <td style="width: 10%;" class="priority-level priority-medium">7</td>
+                        <td style="width: 35%;">
+                Impact: Medium<br>
+                Difficulty: Low<br>
+                Est. Time: 4 hrs
+            </td>
+                        <td style="width: 35%;" class="reasoning-cell">Strategically place CTAs throughout the site to guide users towards desired actions (e.g., signing up, requesting a demo).  Ensure CTAs are visually prominent and use clear, concise language.</td>
+                    </tr>
+            
+                    <tr>
+                        <td style="width: 20%;">Enhance navigation and information architecture</td>
+                        <td style="width: 10%;" class="priority-level priority-high">9</td>
+                        <td style="width: 35%;">
+                Impact: High<br>
+                Difficulty: Medium<br>
+                Est. Time: 8 hrs
+            </td>
+                        <td style="width: 35%;" class="reasoning-cell">Review the site's navigation structure to ensure it's intuitive and easy to use.  Improve information architecture by organizing content logically and making it easily discoverable.</td>
+                    </tr>
+            
+                </tbody>
+            </table>
+        </div>
+    
+        <h2>Analyzed Pages</h2>
+        <div class="collapsible-sections">
+            <button class="collapse-btn" onclick="toggleCollapse('technical-details')">Technical SEO Details</button>
+            <div id="technical-details" class="content-collapse">
+                <div class="detail-box">
+                    <table>
+                        <tr>
+                            <td><span class="detail-title">SSL/HTTPS:</span> Yes</td>
+                            <td><span class="detail-title">Mobile-friendly:</span> No</td>
+                        </tr>
+                        <tr>
+                            <td><span class="detail-title">Robots.txt:</span> Yes</td>
+                            <td><span class="detail-title">Sitemap.xml:</span> Yes</td>
+                        </tr>
+                        <tr>
+                            <td><span class="detail-title">Page Load Time:</span> 0.15 seconds</td>
+                            <td><span class="detail-title">Schema Markup:</span> </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            
+            <button class="collapse-btn" onclick="toggleCollapse('onpage-details')">On-Page SEO Details</button>
+            <div id="onpage-details" class="content-collapse">
+                <div class="detail-box">
+                    <table>
+                        <tr>
+                            <td><span class="detail-title">Avg. Content Length:</span> 1038 words</td>
+                            <td><span class="detail-title">Pages with Thin Content:</span> 1</td>
+                        </tr>
+                        <tr>
+                            <td><span class="detail-title">Missing Title Tags:</span> 1</td>
+                            <td><span class="detail-title">Missing Meta Descriptions:</span> 1</td>
+                        </tr>
+                        <tr>
+                            <td><span class="detail-title">Missing H1 Tags:</span> 3</td>
+                            <td><span class="detail-title">Duplicate Title Tags:</span> 0</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            
+            <button class="collapse-btn" onclick="toggleCollapse('ux-details')">UX & Page Design Details</button>
+            <div id="ux-details" class="content-collapse">
+                <div class="detail-box">
+                    <table>
+                        <tr>
+                            <td><span class="detail-title">Mobile Viewport:</span> No</td>
+                            <td><span class="detail-title">Font Size Legibility:</span> Good</td>
+                        </tr>
+                        <tr>
+                            <td><span class="detail-title">Tap Target Size:</span> Good</td>
+                            <td><span class="detail-title">Image Alt Tags:</span> Good</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            
+            <button class="collapse-btn" onclick="toggleCollapse('pages-details')">Page Details</button>
+            <div id="pages-details" class="content-collapse">
+                <div class="detail-box">
+                    <span class="detail-title">Analyzed Pages:</span> 10
+                    <div class="page-issues">
+                        <div class="page-url">https://www.cursor.com</div><ul class="issue-list"><li class="issue-item">7 images missing alt text</li><li class="issue-item">Page has no schema markup (structured data)</li></ul><div class="page-url">https://www.cursor.com/</div><ul class="issue-list"><li class="issue-item">7 images missing alt text</li><li class="issue-item">Page has no schema markup (structured data)</li></ul><div class="page-url">https://www.cursor.com/pricing</div><ul class="issue-list"><li class="issue-item">Meta description is too short (35 chars)</li><li class="issue-item">1 images missing alt text</li><li class="issue-item">Page has no schema markup (structured data)</li></ul><div class="page-url">https://www.cursor.com/features</div><ul class="issue-list"><li class="issue-item">Meta description is too short (21 chars)</li><li class="issue-item">39 images missing alt text</li><li class="issue-item">Page has no schema markup (structured data)</li></ul><div class="page-url">https://www.cursor.com/enterprise</div><ul class="issue-list"><li class="issue-item">4 images missing alt text</li><li class="issue-item">Page has no schema markup (structured data)</li></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    <script>
+        function toggleCollapse(id) {
+            var content = document.getElementById(id);
+            if (content.style.display === "block") {
+                content.style.display = "none";
+            } else {
+                content.style.display = "block";
+            }
+        }
+    </script>
+    
+</body>
+</html>

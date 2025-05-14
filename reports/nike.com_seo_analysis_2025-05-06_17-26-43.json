@@ -1,0 +1,39 @@
+{
+  "domain": "",
+  "url": "nike.com",
+  "pages_analyzed": 5,
+  "technical_seo_score": 7,
+  "on_page_seo_score": 2,
+  "technical_seo_findings": {
+    "has_ssl": true,
+    "avg_page_load_time": 0.3708793640136719,
+    "mobile_friendly_score": 0.0,
+    "has_robots_txt": true,
+    "has_sitemap_xml": true
+  },
+  "on_page_seo_findings": {
+    "avg_word_count": 98.6,
+    "thin_content_pages": 5,
+    "missing_title_pages": 1,
+    "missing_meta_desc_pages": 2,
+    "missing_h1_pages": 2
+  },
+  "performance_metrics": {
+    "total_load_time": 1.8543968200683594,
+    "total_page_size": 2.117856025695801,
+    "total_requests": 57,
+    "resource_counts": {
+      "images": 33,
+      "scripts": 0,
+      "stylesheets": 17,
+      "fonts": 2
+    }
+  },
+  "issues": [
+    {
+      "type": "site_analysis_error",
+      "details": "'PerformanceAnalyzer' object has no attribute 'merge_performance_data'"
+    }
+  ],
+  "execution_time_seconds": 3.009246826171875
+}

@@ -1,0 +1,85 @@
+{
+  "company": "Etsy",
+  "url": "https://etsy.com",
+  "date": "2025-05-06 17:58:54",
+  "recommendations": [
+    {
+      "recommendation": "Fix the HTTP 403 error. Investigate the cause (e.g., incorrect server configuration, robots.txt issues, or security restrictions) and implement the necessary changes to allow search engine crawlers access to the website's pages.",
+      "category": "Technical",
+      "priority_score": 10,
+      "impact": "high",
+      "implementation_difficulty": "medium",
+      "estimated_time_hours": 8
+    },
+    {
+      "recommendation": "Create and submit an XML sitemap to Google Search Console and Bing Webmaster Tools to help search engines efficiently crawl and index Etsy's vast product catalog.",
+      "category": "Technical",
+      "priority_score": 9,
+      "impact": "high",
+      "implementation_difficulty": "medium",
+      "estimated_time_hours": 4
+    },
+    {
+      "recommendation": "Conduct a thorough mobile-friendliness audit to identify and fix issues affecting Etsy's mobile experience.  Focus on responsive design, fast loading times, and easy navigation for mobile users.  Prioritize optimizing product pages for mobile.",
+      "category": "Technical",
+      "priority_score": 9,
+      "impact": "high",
+      "implementation_difficulty": "hard",
+      "estimated_time_hours": 20
+    },
+    {
+      "recommendation": "Write compelling and unique title tags (under 60 characters) and meta descriptions (under 160 characters) for all product and category pages.  Incorporate relevant keywords related to handmade, vintage, and craft supplies while maintaining a natural tone.",
+      "category": "On-Page",
+      "priority_score": 9,
+      "impact": "high",
+      "implementation_difficulty": "medium",
+      "estimated_time_hours": 10
+    },
+    {
+      "recommendation": "Implement schema markup (Product, Offer, AggregateRating) on all product pages to enhance search engine understanding of Etsy's product offerings and improve rich snippet visibility in search results.  Consider using JSON-LD for implementation.",
+      "category": "Technical",
+      "priority_score": 8,
+      "impact": "high",
+      "implementation_difficulty": "medium",
+      "estimated_time_hours": 12
+    },
+    {
+      "recommendation": "Ensure every product page includes a relevant and descriptive H1 heading that accurately reflects the product's name or key features.  Use H2-H6 headings to structure product descriptions logically and improve readability.",
+      "category": "On-Page",
+      "priority_score": 8,
+      "impact": "medium",
+      "implementation_difficulty": "medium",
+      "estimated_time_hours": 15
+    },
+    {
+      "recommendation": "Develop high-quality, detailed product descriptions for all items listed on Etsy.  Focus on highlighting unique selling points, materials used, dimensions, and care instructions.  Use relevant keywords naturally within the text, prioritizing user experience.",
+      "category": "On-Page",
+      "priority_score": 7,
+      "impact": "medium",
+      "implementation_difficulty": "hard",
+      "estimated_time_hours": 30
+    },
+    {
+      "recommendation": "Build high-quality backlinks from reputable websites in the arts, crafts, and e-commerce niches.  Target authoritative blogs, online publications, and relevant directories.  Focus on earning links naturally through content marketing and outreach.",
+      "category": "Off-Page",
+      "priority_score": 7,
+      "impact": "medium",
+      "implementation_difficulty": "hard",
+      "estimated_time_hours": 40
+    },
+    {
+      "recommendation": "Develop a comprehensive content marketing strategy focused on blog posts, articles, and tutorials related to handmade crafts, DIY projects, and sustainable living.  This will attract organic traffic and establish Etsy as a thought leader in its niche.",
+      "category": "Off-Page",
+      "priority_score": 6,
+      "impact": "medium",
+      "implementation_difficulty": "hard",
+      "estimated_time_hours": 60
+    }
+  ],
+  "summary": {
+    "technical_score": 5.0,
+    "on_page_score": 2.0,
+    "off_page_score": 5.0,
+    "total_pages_analyzed": 1
+  }
+}

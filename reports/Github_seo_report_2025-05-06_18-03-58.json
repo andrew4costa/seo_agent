@@ -1,0 +1,178 @@
+{
+  "company": "Github",
+  "url": "https://github.com",
+  "date": "2025-05-06 18:03:58",
+  "recommendations": [
+    {
+      "recommendation": "Conduct a comprehensive keyword research analysis targeting relevant terms within the software development, version control, and collaboration space, focusing on long-tail keywords to attract highly qualified leads. Integrate these keywords naturally into page content, meta descriptions, and title tags.",
+      "category": "On-Page",
+      "priority_score": 10,
+      "impact": "high",
+      "implementation_difficulty": "hard",
+      "estimated_time_hours": 20
+    },
+    {
+      "recommendation": "Develop and implement a robust content strategy focusing on educational blog posts, tutorials, and case studies showcasing GitHub's capabilities and addressing the needs of software developers.  This will establish GitHub as a thought leader and drive organic traffic.",
+      "category": "On-Page",
+      "priority_score": 10,
+      "impact": "high",
+      "implementation_difficulty": "hard",
+      "estimated_time_hours": 40
+    },
+    {
+      "recommendation": "Implement a sitemap.xml to improve crawlability and indexing of GitHub's vast content, ensuring all crucial pages are discoverable by search engines.",
+      "category": "Technical",
+      "priority_score": 9,
+      "impact": "high",
+      "implementation_difficulty": "medium",
+      "estimated_time_hours": 4
+    },
+    {
+      "recommendation": "Add alt text to the 14 images missing this crucial attribute.  Use descriptive alt text that accurately reflects the image content and incorporates relevant keywords where appropriate. This improves accessibility and allows search engines to understand the images' context, improving SEO and user experience.",
+      "category": "On-Page",
+      "priority_score": 9,
+      "impact": "high",
+      "implementation_difficulty": "medium",
+      "estimated_time_hours": 8
+    },
+    {
+      "recommendation": "Build high-quality backlinks from reputable sources within the software development and technology industry. Focus on securing links from relevant blogs, publications, and websites frequented by GitHub's target audience. Guest blogging and outreach to relevant influencers can be effective strategies.",
+      "category": "Off-Page",
+      "priority_score": 9,
+      "impact": "high",
+      "implementation_difficulty": "hard",
+      "estimated_time_hours": 20
+    },
+    {
+      "recommendation": "Address the excessively long title tags (77 characters) across GitHub's pages.  Optimize title tags to under 60 characters to improve click-through rates and visibility in search results, incorporating relevant keywords related to specific GitHub features (e.g., \"GitHub - Version Control, Collaboration & Code Management\").",
+      "category": "On-Page",
+      "priority_score": 8,
+      "impact": "medium",
+      "implementation_difficulty": "medium",
+      "estimated_time_hours": 6
+    },
+    {
+      "recommendation": "Implement schema markup (e.g., SoftwareApplication, Organization) to enhance search engine understanding of GitHub's offerings and improve rich snippet visibility in search results. This will increase click-through rates by showcasing key features and information directly in SERPs.",
+      "category": "Technical",
+      "priority_score": 8,
+      "impact": "high",
+      "implementation_difficulty": "hard",
+      "estimated_time_hours": 12
+    },
+    {
+      "recommendation": "Resolve instances of multiple H1 tags on pages.  Ensure each page has only one H1 tag, accurately reflecting the page's primary topic, to improve semantic HTML structure and search engine understanding.",
+      "category": "On-Page",
+      "priority_score": 7,
+      "impact": "medium",
+      "implementation_difficulty": "medium",
+      "estimated_time_hours": 5
+    }
+  ],
+  "analysis_data": {
+    "technical_seo": {
+      "score": 9.0,
+      "site_speed": {
+        "avg_load_time": 0.07770085334777832,
+        "issues": []
+      },
+      "mobile_optimisation": {
+        "score": 10.0,
+        "has_viewport_meta": true
+      },
+      "indexation": {
+        "robots_txt": {
+          "exists": true,
+          "content": "# If you would like to crawl GitHub contact us via https://support.github.com?tags=dotcom-robots\n# We also provide an extensive API: https://docs.github.com\nUser-agent: baidu\ncrawl-delay: 1\n\n\nUser-agent: *\n\nDisallow: /*/*/pulse\nDisallow: /*/*/projects\nDisallow: /*/*/forks\nDisallow: /*/*/issues/new\nDisallow: /*/*/issues/search\nDisallow: /*/*/commits/\nDisallow: /*/*/branches\nDisallow: /*/*/contributors\nDisallow: /*/*/tags\nDisallow: /*/*/stargazers\nDisallow: /*/*/watchers\nDisallow: /*/*/network\nDisallow: /*/*/graphs\nDisallow: /*/*/compare\n\nDisallow: /*/tree/\nDisallow: /gist/\nDisallow: /*/download\nDisallow: /*/revisions\nDisallow: /*/commits/*?author\nDisallow: /*/commits/*?path\nDisallow: /*/comments\nDisallow: /*/archive/\nDisallow: /*/blame/\nDisallow: /*/raw/\nDisallow: /*/cache/\nDisallow: /.git/\nDisallow: */.git/\nDisallow: /*.git$\nDisallow: /search/advanced\nDisallow: /search$\nDisallow: /*q=\nDisallow: /*.atom$\n\nDisallow: /ekansa/Open-Context-Data\nDisallow: /ekansa/opencontext-*\nDisallow: */tarball/\nDisallow: */zipball/\n\nDisallow: /*source=*\nDisallow: /*ref_cta=*\nDisallow: /*plan=*\nDisallow: /*return_to=*\nDisallow: /*ref_loc=*\nDisallow: /*setup_organization=*\nDisallow: /*source_repo=*\nDisallow: /*ref_page=*\nDisallow: /*source=*\nDisallow: /*referrer=*\nDisallow: /*report=*\nDisallow: /*author=*\nDisallow: /*since=*\nDisallow: /*until=*\nDisallow: /*commits?author=*\nDisallow: /*report-abuse?report=*\nDisallow: /*tab=*\nAllow: /*?tab=achievements&achievement=*\n\nDisallow: /account-login\nDisallow: /Explodingstuff/\n\n",
+          "issues": [
+            {
+              "type": "no_sitemap_in_robots",
+              "severity": "medium",
+              "description": "No Sitemap directive found in robots.txt"
+            }
+          ]
+        },
+        "sitemap": {
+          "exists": false,
+          "urls_count": 0,
+          "issues": [
+            {
+              "type": "sitemap_not_found",
+              "severity": "medium",
+              "description": "sitemap.xml not found (status code: 406)"
+            }
+          ]
+        }
+      },
+      "security": {
+        "has_ssl": true
+      },
+      "structured_data": {
+        "pages_with_schema": 0,
+        "schema_types": []
+      }
+    },
+    "on_page_seo": {
+      "score": 8.222222222222221,
+      "content_quality": {
+        "avg_word_count": 1488.0,
+        "thin_content_pages": 0
+      },
+      "meta_tags": {
+        "pages_without_title": 0,
+        "pages_without_description": 0
+      },
+      "heading_structure": {
+        "pages_without_h1": 0
+      },
+      "image_optimization": {
+        "images_without_alt": 14
+      }
+    },
+    "off_page_seo": {
+      "score": 5.0,
+      "backlinks": {
+        "note": "Backlink data requires third-party API integration"
+      },
+      "social_signals": {
+        "note": "Social signal data requires third-party API integration"
+      }
+    },
+    "analyzed_pages": {
+      "https://github.com": {
+        "title": "GitHub \u00b7 Build and ship software on a single, collaborative platform \u00b7 GitHub",
+        "description": "GitHub is where people build software. More than 150 million people use GitHub to discover, fork, and contribute to over 420 million projects.",
+        "word_count": 1488,
+        "load_time": 0.07770085334777832,
+        "issues": [
+          {
+            "type": "long_title",
+            "severity": "medium",
+            "description": "Title is too long (77 chars)"
+          },
+          {
+            "type": "multiple_h1",
+            "severity": "low",
+            "description": "Page has multiple H1 tags (4)"
+          },
+          {
+            "type": "images_missing_alt",
+            "severity": "medium",
+            "description": "14 images missing alt text"
+          },
+          {
+            "type": "missing_schema",
+            "severity": "medium",
+            "description": "Page has no schema markup (structured data)"
+          }
+        ]
+      }
+    },
+    "website_business_analysis": "```json\n{\n  \"industry\": \"Software Development Platform\",\n  \"businessType\": \"Software as a Service (SaaS)\",\n  \"productsServices\": [\n    \"Version control using Git\",\n    \"Code hosting and collaboration\",\n    \"Issue tracking\",\n    \"Continuous integration and continuous delivery (CI/CD)\",\n    \"Project management tools\",\n    \"Developer collaboration tools\",\n    \"Private and public repositories\",\n    \"GitHub Pages (static website hosting)\",\n    \"GitHub Actions (automation workflows)\",\n    \"GitHub Marketplace (apps and integrations)\"\n  ],\n  \"targetAudience\": {\n    \"demographics\": {\n      \"age\": \"18-55+\",\n      \"location\": \"Global\",\n      \"education\": \"Bachelor's degree or higher (predominantly)\",\n      \"occupation\": \"Software developers, engineers, data scientists, project managers, DevOps engineers\"\n    },\n    \"interests\": [\n      \"Software development\",\n      \"Open-source software\",\n      \"Version control\",\n      \"Collaboration\",\n      \"Cloud computing\",\n      \"DevOps\"\n    ]\n  },\n  \"competitors\": [\n    \"GitLab\",\n    \"Bitbucket\"\n  ],\n  \"uniqueSellingPropositions\": [\n    \"Large and active developer community\",\n    \"Extensive ecosystem of integrations and tools\",\n    \"Strong brand recognition and reputation\",\n    \"Comprehensive feature set for software development lifecycle management\"\n  ],\n  \"brandValues\": [\n    \"Collaboration\",\n    \"Innovation\",\n    \"Open source\",\n    \"Community\"\n  ]\n}\n```\n"
+  },
+  "summary": {
+    "technical_score": 9.0,
+    "on_page_score": 8.222222222222221,
+    "off_page_score": 5.0,
+    "total_pages_analyzed": 1
+  }
+}

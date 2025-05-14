@@ -1,0 +1,908 @@
+{% extends 'base.html' %}
+
+{% block title %}Analysis Results - {{ job.filename if job else 'Unknown Job' }}{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div id="jobRawDataContainer" data-raw-results='{{ job.raw_results | tojson | safe if job and job.raw_results else "null" }}' style="display:none;"></div>
+    {% if job %}
+        <h2>Analysis Results for: <span id="jobUrlDisplay">{{ job.url }}</span></h2>
+        <p><strong>Filename:</strong> <span id="jobFilenameDisplay">{{ job.filename }}</span></p>
+        <p><strong>Status:</strong> <span id="jobStatusDisplay">{{ job.status }}</span></p>
+        <p><strong>Progress:</strong> <span id="jobProgressDisplay">{{ job.progress | default(0) }}</span>%</p>
+        <p><strong>Current Step:</strong> <span id="jobCurrentStepDisplay">{{ job.current_step }}</span></p>
+        {% if job.error and job.status == 'failed' %}
+        <div class="alert alert-danger" role="alert">
+            <strong>Error:</strong> {{ job.error }}
+        </div>
+        {% endif %}
+    {% else %}
+        <h2>Analysis Results</h2>
+        <p class="alert alert-warning">Job details are not available. The analysis might not have been started correctly or the job ID is missing.</p>
+    {% endif %}
+
+    <!-- Progress Section (visible while pending/running) -->
+    <div id="progressSection" class="progress-container my-4" {% if job and job.status in ['completed', 'failed'] %}style="display:none;"{% endif %}>
+        <div class="card border-0 shadow-sm">
+            <div class="card-body p-4">
+                <h3 class="mb-4 text-center">Analyzing Your Website</h3>
+                
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <div>
+                        <span class="badge bg-primary px-3 py-2 rounded-pill" id="statusBadge">{{ job.status|upper if job else 'PENDING' }}</span>
+                        <span class="ms-2 text-muted" id="progressStatusText">{% if job %}{{ job.current_step }}{% else %}Starting analysis...{% endif %}</span>
+                    </div>
+                    <div>
+                        <span class="fs-4 fw-bold text-primary" id="progressPercentageText">{% if job %}{{ job.progress | default(0) }}{% else %}0{% endif %}%</span>
+                    </div>
+                </div>
+                
+                <div class="progress mb-3" style="height: 30px; background-color: #f0f4f8;">
+                    <div id="progressBarPolling" class="progress-bar progress-bar-striped progress-bar-animated"
+                         role="progressbar" 
+                         aria-valuenow="{{ job.progress | default(0) if job else 0 }}" 
+                         aria-valuemin="0" 
+                         aria-valuemax="100"
+                         data-progress="{{ job.progress | default(0) if job else 0 }}"
+                         style="font-size: 1rem; width: {{ job.progress | default(0) if job else 0 }}%;">
+                         {{ job.progress | default(0) if job else 0 }}%
+                    </div>
+                </div>
+                
+                <div class="analysis-steps mt-4">
+                    <div class="row text-center">
+                        <div class="col">
+                            <div class="analysis-step-box mb-2 p-3 rounded shadow-sm" id="webCrawlingStep">
+                                <div class="analysis-step-icon mb-2">
+                                    <i class="fas fa-spider fa-2x {% if job and job.progress > 25 %}text-success{% else %}text-muted{% endif %}"></i>
+                                </div>
+                                <div class="analysis-step-label fw-bold">Web Crawling</div>
+                                <div class="analysis-step-status small {% if job and job.progress > 25 %}text-success{% else %}text-muted{% endif %}" id="webCrawlingStatus">
+                                    {% if job and job.progress > 25 %}Complete{% else %}Pending{% endif %}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="analysis-step-box mb-2 p-3 rounded shadow-sm" id="dataAnalysisStep">
+                                <div class="analysis-step-icon mb-2">
+                                    <i class="fas fa-chart-line fa-2x {% if job and job.progress > 50 %}text-success{% else %}text-muted{% endif %}"></i>
+                                </div>
+                                <div class="analysis-step-label fw-bold">Data Analysis</div>
+                                <div class="analysis-step-status small {% if job and job.progress > 50 %}text-success{% else %}text-muted{% endif %}" id="dataAnalysisStatus">
+                                    {% if job and job.progress > 50 %}Complete{% elif job and job.progress > 25 %}In Progress{% else %}Pending{% endif %}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="analysis-step-box mb-2 p-3 rounded shadow-sm" id="seoEvaluationStep">
+                                <div class="analysis-step-icon mb-2">
+                                    <i class="fas fa-file-alt fa-2x {% if job and job.progress > 75 %}text-success{% else %}text-muted{% endif %}"></i>
+                                </div>
+                                <div class="analysis-step-label fw-bold">SEO Evaluation</div>
+                                <div class="analysis-step-status small {% if job and job.progress > 75 %}text-success{% else %}text-muted{% endif %}" id="seoEvaluationStatus">
+                                    {% if job and job.progress > 75 %}Complete{% elif job and job.progress > 50 %}In Progress{% else %}Pending{% endif %}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="analysis-step-box mb-2 p-3 rounded shadow-sm" id="recommendationsStep">
+                                <div class="analysis-step-icon mb-2">
+                                    <i class="fas fa-clipboard-check fa-2x {% if job and job.progress > 95 %}text-success{% else %}text-muted{% endif %}"></i>
+                                </div>
+                                <div class="analysis-step-label fw-bold">Recommendations</div>
+                                <div class="analysis-step-status small {% if job and job.progress > 95 %}text-success{% else %}text-muted{% endif %}" id="recommendationsStatus">
+                                    {% if job and job.progress > 95 %}Complete{% elif job and job.progress > 75 %}In Progress{% else %}Pending{% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center text-muted mt-4">
+                    <p class="mb-0"><small>This comprehensive analysis typically takes 1-3 minutes to complete.</small></p>
+                    <p><small>We're working to provide you with the most accurate SEO insights.</small></p>
+                </div>
+            </div>
+        </div>
+    </div>
+        
+    <!-- Results Preview Section (shown when analysis is ready) -->
+    <div id="resultsPreview" style="display:none;">
+        <div class="preview-section">
+            <div class="text-center mb-4">
+                <h2>Your SEO Analysis is Ready!</h2>
+                <p class="lead">Here's a preview of your comprehensive SEO report</p>
+            </div>
+            <div class="row mb-4">
+                <div class="col-md-4">
+                    <div class="card metric-card bg-light">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Overall Score</h5>
+                            <div id="previewScore" class="metric-value">--</div>
+                            <p class="card-text text-muted">out of 100</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card metric-card bg-light">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Analysis Date</h5>
+                            <div id="previewDate" class="metric-value" style="font-size: 1.5rem;">--</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card metric-card bg-light">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Issues Found</h5>
+                            <div id="previewIssues" class="metric-value">--</div>
+                            <p class="card-text text-muted">(Technical)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h3 class="mb-3">Key Recommendations Preview</h3>
+            <div id="previewRecommendations" class="recommendations">
+                <p>Loading recommendations preview...</p>
+            </div>
+        </div>
+        <div class="text-center mt-3 mb-3">
+            <h3>Complete SEO Analysis</h3>
+            <p>View your detailed insights and actionable recommendations below.</p>
+        </div>
+    </div>
+            
+    <!-- Report Display Area (for direct viewing or full JSON) -->
+    <div id="reportDisplayArea" class="mt-4">
+         {# This will be populated by JavaScript if not server-rendered #}
+         {% if job and job.status == 'completed' %}
+            {% if report_data_for_template and report_data_for_template.type == 'html_url' and report_data_for_template.url %}
+                <p>Report has been completed successfully:</p>
+                <div class="alert alert-success">
+                    <p><strong>The SEO report is ready to view!</strong></p>
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-center mt-3">
+                        <a href="/direct_view/{{ job.filename }}_analysis.json.html" target="_blank" class="btn btn-primary btn-lg">
+                            <i class="fas fa-external-link-alt"></i> View Full Report
+                        </a>
+                        <a href="{{ report_data_for_template.url }}" target="_blank" class="btn btn-outline-secondary btn-lg">
+                            <i class="fas fa-cloud-download-alt"></i> View in Cloud Storage
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="card mt-4">
+                    <div class="card-header bg-light">
+                        <h4 class="mb-0">Report Preview</h4>
+                    </div>
+                    <div class="card-body">
+                        <p>The full report has been generated and can be viewed by clicking the button above. Below is a limited preview:</p>
+                        
+                        <div id="reportEmbedContainer" style="border:1px solid #ccc; height:400px; width:100%; overflow:auto; position: relative;" class="mt-3">
+                            <div class="p-5 text-center">
+                                <h5>SEO Report for {{ job.url }}</h5>
+                                <p class="text-muted">Generated on: {{ job.completion_time }}</p>
+                                
+                                <div class="row mt-4">
+                                    <div class="col-md-4">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Technical Score</h5>
+                                                <h2 class="text-primary">{{ job.technical_score|default('N/A') }}</h2>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <h5 class="card-title">On-Page Score</h5>
+                                                <h2 class="text-success">{{ job.onpage_score|default('N/A') }}</h2>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Off-Page Score</h5>
+                                                <h2 class="text-warning">{{ job.offpage_score|default('N/A') }}</h2>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <p class="mt-4">Click the "View Full Report" button above to see the complete analysis.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            {% elif report_data_for_template and report_data_for_template.type == 'json' and report_data_for_template.data %}
+                <p>Report Data (JSON):</p>
+                <pre style="white-space: pre-wrap; word-wrap: break-word; background-color: #f8f9fa; padding:15px; border-radius: 4px;">{{ report_data_for_template.data | tojson(indent=2) }}</pre>
+            
+                 <p>Full report loaded below. 
+                    You can also <a href="{{ job.storage_url }}" target="_blank" rel="noopener noreferrer">open it in a new tab</a> or
+                    <a href="/direct_view/{{ job.filename }}_analysis.json.html" target="_blank" rel="noopener noreferrer" class="text-success">view directly without iframe</a>.
+                 </p>
+            {% else %}
+                 <p id="reportNotAvailableMsg" class="alert alert-info">Report is complete, but detailed viewable content is not available in the expected format. You may be able to download the HTML report if generated.</p>
+            {% endif %}
+        {% elif job and job.status == 'failed' and job.error %}
+            {# Error already shown at the top, this is just a placeholder if needed #}
+        {% elif not job or job.status not in ['completed', 'failed'] %}
+            {# Progress bar is shown above #}
+        {% endif %}
+    </div>
+
+    <!-- Download Button & Email Modal -->
+    <div class="mt-3 mb-5 text-center">
+        <button id="downloadReportBtn" class="btn btn-primary btn-lg" style="display:none;">Download HTML Report</button>
+    </div>
+
+    <div id="emailPromptModal" style="display:none; padding: 20px; border: 1px solid #ccc; background-color: #f9f9f9; margin-top:20px; max-width: 400px; border-radius: 5px; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1050; box-shadow: 0 5px 15px rgba(0,0,0,.5);">
+        <h4>Download Report</h4>
+        <p>Please enter your email address to receive the download link:</p>
+        <div class="form-group">
+            <input type="email" class="form-control mb-2" id="downloadEmailInput" placeholder="your@email.com" required>
+        </div>
+        <button id="submitEmailBtn" class="btn btn-success mr-2">Submit & Get Link</button>
+        <button type="button" id="cancelEmailBtn" class="btn btn-secondary">Cancel</button>
+        <div id="downloadMessages" style="margin-top:10px;">
+            <p id="downloadErrorMsg" style="color:red;"></p>
+            <p id="downloadSuccessMsg" style="color:green;"></p>
+        </div>
+    </div>
+    <div id="emailPromptModalBackdrop" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background-color:rgba(0,0,0,0.5); z-index:1040;"></div>
+
+</div>
+
+<style>
+.analysis-step-box {
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
+    transition: all 0.3s ease;
+}
+
+.analysis-step-box.active {
+    background-color: #e8f4f8;
+    border-color: #c7e6fb;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+.analysis-step-box.completed {
+    background-color: #e8f8f0;
+    border-color: #c3e6cb;
+}
+
+.analysis-step-status {
+    font-style: italic;
+}
+
+.progress-bar-animated {
+    animation: progress-bar-stripes 1s linear infinite;
+}
+</style>
+{% endblock %}
+
+{% block scripts %}
+{{ super() if super is defined else '' }}
+<script>
+    const jobFilename = "{{ job.filename | e if job else '' }}";
+    const initialJobStatus = "{{ job.status | e if job else 'pending' }}";
+    const initialStorageUrl = "{% if report_data_for_template and report_data_for_template.type == 'html_url' and report_data_for_template.url %}{{ report_data_for_template.url | e }}{% elif job and job.storage_url %}{{ job.storage_url | e }}{% else %}{% endif %}";
+    
+    const jobDataContainer = document.getElementById('jobRawDataContainer');
+    const rawJsonStringFromDataAttr = jobDataContainer ? jobDataContainer.getAttribute('data-raw-results') : 'null';
+    let initialRawResultsJson = null;
+
+    if (rawJsonStringFromDataAttr && rawJsonStringFromDataAttr !== 'null') {
+        try {
+            initialRawResultsJson = JSON.parse(rawJsonStringFromDataAttr);
+        } catch (e) {
+            console.error("Error parsing job.raw_results from data attribute:", e, rawJsonStringFromDataAttr);
+            initialRawResultsJson = null; // Default to null on error
+        }
+    } else if (rawJsonStringFromDataAttr === 'null') { // Handles the case where data attribute explicitly contains the string "null"
+        initialRawResultsJson = null;
+    }
+
+    let currentJobStatusTracker = initialJobStatus; 
+    let currentStorageUrlTracker = initialStorageUrl; 
+
+    console.log("[results.html] Initializing JS -> jobFilename:", jobFilename, "| status:", initialJobStatus, "| initialStorageUrl:", initialStorageUrl);
+    // console.log("[results.html] Initial raw_results (from template):", JSON.stringify(initialRawResultsJson, null, 2));
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const jobStatusSpan = document.getElementById('jobStatusDisplay');
+        const jobProgressSpan = document.getElementById('jobProgressDisplay');
+        const jobCurrentStepSpan = document.getElementById('jobCurrentStepDisplay');
+        const progressBar = document.getElementById('progressBarPolling');
+        const reportDisplayArea = document.getElementById('reportDisplayArea');
+        const progressSectionEl = document.getElementById('progressSection');
+        const resultsPreviewEl = document.getElementById('resultsPreview');
+        
+        // Add consistent styling to the page based on job status
+        const initialJobStatus = "{{ job.status | e if job else 'pending' }}";
+        const initialJobProgress = {{ job.progress | default(0) if job else 0 }};
+        
+        // Make the status and progress consistent on initial load
+        let statusToShow = initialJobStatus;
+        let progressToShow = initialJobProgress;
+        
+        // Ensure consistency between status and progress
+        if (statusToShow === 'completed' && progressToShow < 100) {
+            progressToShow = 100;
+        } else if (statusToShow === 'running' && progressToShow >= 100) {
+            progressToShow = 99; // Cap at 99% if still running
+        } else if (statusToShow === 'pending' && progressToShow > 0) {
+            statusToShow = 'running'; // If there's progress but status is pending, show running
+        }
+        
+        // Update the status badge on initial load
+        const statusBadge = document.getElementById('statusBadge');
+        if (statusBadge) {
+            statusBadge.textContent = statusToShow.toUpperCase();
+            if (statusToShow === 'completed') {
+                statusBadge.className = 'badge bg-success px-3 py-2 rounded-pill';
+            } else if (statusToShow === 'failed') {
+                statusBadge.className = 'badge bg-danger px-3 py-2 rounded-pill';
+            } else if (statusToShow === 'running') {
+                statusBadge.className = 'badge bg-primary px-3 py-2 rounded-pill';
+            } else {
+                statusBadge.className = 'badge bg-secondary px-3 py-2 rounded-pill';
+            }
+        }
+        
+        // Update the progress bar on initial load
+        if (progressBar) {
+            progressBar.style.width = progressToShow + '%';
+            progressBar.setAttribute('aria-valuenow', progressToShow);
+            progressBar.setAttribute('data-progress', progressToShow);
+            progressBar.textContent = progressToShow + '%';
+        }
+        
+        // Update the steps on initial load
+        updateAnalysisStepIcons(progressToShow);
+        
+        const previewScoreEl = document.getElementById('previewScore');
+        const previewDateEl = document.getElementById('previewDate');
+        const previewIssuesEl = document.getElementById('previewIssues');
+        const previewRecommendationsEl = document.getElementById('previewRecommendations');
+        
+        const downloadReportBtn = document.getElementById('downloadReportBtn');
+        const emailPromptModal = document.getElementById('emailPromptModal');
+        const emailPromptModalBackdrop = document.getElementById('emailPromptModalBackdrop');
+        const downloadEmailInput = document.getElementById('downloadEmailInput');
+        const submitEmailBtn = document.getElementById('submitEmailBtn');
+        const cancelEmailBtn = document.getElementById('cancelEmailBtn');
+        const downloadErrorMsg = document.getElementById('downloadErrorMsg');
+        const downloadSuccessMsg = document.getElementById('downloadSuccessMsg');
+
+        function populatePreview(reportContent) {
+            if (!resultsPreviewEl) { return; }
+
+            if (!reportContent) {
+                console.warn("[results.html] populatePreview: No reportContent provided.");
+                resultsPreviewEl.style.display = 'block';
+                if(previewScoreEl) { previewScoreEl.textContent = "--"; }
+                if(previewDateEl) { previewDateEl.textContent = "--"; }
+                if(previewIssuesEl) { previewIssuesEl.textContent = "--"; }
+                if(previewRecommendationsEl) { previewRecommendationsEl.innerHTML = "<p>Preview data could not be loaded.</p>"; }
+                return;
+            }
+
+            const analysisData = reportContent.analysis || {};
+            const recommendations = reportContent.recommendations || [];
+
+            resultsPreviewEl.style.display = 'block';
+            if (progressSectionEl) { progressSectionEl.style.display = 'none'; }
+            
+            let overallScoreVal;
+            const techScore = analysisData.technical_seo?.score;
+            const onPageScore = analysisData.on_page_seo?.score;
+
+            if (techScore !== undefined && onPageScore !== undefined && !isNaN(parseFloat(techScore)) && !isNaN(parseFloat(onPageScore))) {
+                overallScoreVal = ((parseFloat(techScore) + parseFloat(onPageScore)) / 2).toFixed(0);
+            } else if (analysisData.overall_score !== undefined && !isNaN(parseFloat(analysisData.overall_score))) { 
+                overallScoreVal = parseFloat(analysisData.overall_score).toFixed(0);
+            }
+
+            if (previewScoreEl) {
+                previewScoreEl.textContent = (overallScoreVal !== undefined) ? overallScoreVal : "--";
+                if (overallScoreVal !== undefined) { previewScoreEl.className = `metric-value ${getScoreColorClass(parseFloat(overallScoreVal))}`; }
+            }
+            if (previewDateEl) {
+                const dateToDisplay = analysisData.date || reportContent.date; 
+                if (dateToDisplay) {
+                    try { previewDateEl.textContent = new Date(dateToDisplay).toLocaleDateString(); } 
+                    catch (e) { 
+                        previewDateEl.textContent = dateToDisplay; 
+                        console.warn("Could not parse date for preview: ", dateToDisplay, e);
+                    }
+                } else { previewDateEl.textContent = "--"; }
+            }
+            if (previewIssuesEl) {
+                if (analysisData.technical_seo && Array.isArray(analysisData.technical_seo.issues)) { 
+                    previewIssuesEl.textContent = analysisData.technical_seo.issues.length; 
+                } else if (analysisData.technical_issues && Array.isArray(analysisData.technical_issues)) { 
+                     previewIssuesEl.textContent = analysisData.technical_issues.reduce((total, issue) => total + (parseInt(issue.count, 10) || 0), 0);
+                } else { previewIssuesEl.textContent = "--"; }
+            }
+            if (previewRecommendationsEl) {
+                if (Array.isArray(recommendations) && recommendations.length > 0) {
+                    previewRecommendationsEl.innerHTML = recommendations.slice(0, 3).map((rec) => `
+                        <div class="card mb-3 ${getImpactClass(rec.impact)}">
+                            <div class="card-body">
+                                <h5 class="card-title">${rec.recommendation || rec.title || 'Recommendation'}</h5>
+                                <p class="card-text">${(rec.reasoning || rec.description || 'No details provided.').substring(0, 120)}...</p>
+                                <div class="d-flex justify-content-between mb-3">
+                                    <span class="badge bg-${getImpactBadgeColor(rec.impact)}">${(rec.impact || 'N/A').toUpperCase()} Impact</span>
+                                    <span class="badge bg-secondary">${(rec.implementation_difficulty || rec.effort || 'N/A').toUpperCase()} Effort</span>
+                                </div>
+                            </div>
+                        </div>`).join('');
+                } else { previewRecommendationsEl.innerHTML = '<p>No recommendations preview available.</p>'; }
+            }
+        }
+
+        function updatePageElements(jobData) {
+            console.log("[results.html] updatePageElements with polled data:", jobData);
+            currentJobStatusTracker = jobData.status;
+            currentStorageUrlTracker = jobData.storage_url || currentStorageUrlTracker; 
+
+            if (jobStatusSpan) { jobStatusSpan.textContent = jobData.status; }
+            if (jobProgressSpan) { jobProgressSpan.textContent = jobData.progress || 0; }
+            if (jobCurrentStepSpan) { jobCurrentStepSpan.textContent = jobData.current_step || 'N/A'; }
+            
+            // Update the status badge to match actual status
+            const statusBadge = document.getElementById('statusBadge');
+            if (statusBadge) {
+                statusBadge.textContent = jobData.status.toUpperCase();
+                // Update badge color based on status
+                if (jobData.status === 'completed') {
+                    statusBadge.className = 'badge bg-success px-3 py-2 rounded-pill';
+                } else if (jobData.status === 'failed') {
+                    statusBadge.className = 'badge bg-danger px-3 py-2 rounded-pill';
+                } else if (jobData.status === 'running') {
+                    statusBadge.className = 'badge bg-primary px-3 py-2 rounded-pill';
+                } else {
+                    statusBadge.className = 'badge bg-secondary px-3 py-2 rounded-pill';
+                }
+            }
+            
+            if (progressBar) {
+                const progress = jobData.progress || 0;
+                progressBar.style.width = progress + '%';
+                progressBar.setAttribute('aria-valuenow', progress);
+                progressBar.setAttribute('data-progress', progress);
+                progressBar.textContent = progress + '%';
+                
+                // Update progress bar color based on progress value
+                if (progress > 75) { 
+                    progressBar.className = 'progress-bar progress-bar-striped progress-bar-animated bg-success'; 
+                } else if (progress > 50) { 
+                    progressBar.className = 'progress-bar progress-bar-striped progress-bar-animated bg-info'; 
+                } else if (progress > 25) { 
+                    progressBar.className = 'progress-bar progress-bar-striped progress-bar-animated bg-primary'; 
+                } else { 
+                    progressBar.className = 'progress-bar progress-bar-striped progress-bar-animated'; 
+                }
+                
+                // Update the icons in the analysis steps based on progress
+                updateAnalysisStepIcons(progress);
+            }
+            
+            // Update the progress status text
+            const progressStatusText = document.getElementById('progressStatusText');
+            if (progressStatusText) {
+                progressStatusText.textContent = jobData.current_step || 'Processing...';
+            }
+            
+            // Update the progress percentage text
+            const progressPercentageText = document.getElementById('progressPercentageText');
+            if (progressPercentageText) {
+                progressPercentageText.textContent = (jobData.progress || 0) + '%';
+            }
+            
+            showDownloadButton();
+        }
+        
+        function showDownloadButton() {
+            if (downloadReportBtn) {
+                if (currentJobStatusTracker === 'completed' && currentStorageUrlTracker) {
+                    downloadReportBtn.style.display = 'inline-block';
+                } else {
+                    downloadReportBtn.style.display = 'none';
+                }
+            }
+        }
+
+        function removeOverlay(overlay) {
+            if (overlay) {
+                overlay.style.display = 'none';
+            }
+        }
+
+        function displayReportContent(apiData) {
+            console.log("[results.html] displayReportContent called with:", apiData);
+            if (!reportDisplayArea) { console.error("reportDisplayArea element not found!"); return; }
+
+            if (apiData.report_type === 'html_url' && apiData.url) {
+                // Create URLs for direct viewing
+                const directViewUrl = `/direct_view/${encodeURIComponent(jobFilename)}_analysis.json.html`;
+                
+                reportDisplayArea.innerHTML = `
+                    <p>Report has been completed successfully:</p>
+                    <div class="alert alert-success">
+                        <p><strong>The SEO report is ready to view!</strong></p>
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-center mt-3">
+                            <a href="${directViewUrl}" target="_blank" class="btn btn-primary btn-lg">
+                                <i class="fas fa-external-link-alt"></i> View Full Report
+                            </a>
+                            <a href="${apiData.url}" target="_blank" class="btn btn-outline-secondary btn-lg">
+                                <i class="fas fa-cloud-download-alt"></i> View in Cloud Storage
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="card mt-4">
+                        <div class="card-header bg-light">
+                            <h4 class="mb-0">Report Preview</h4>
+                        </div>
+                        <div class="card-body">
+                            <p>The full report has been generated and can be viewed by clicking the button above. Below is a limited preview:</p>
+                            
+                            <div id="reportEmbedContainer" style="border:1px solid #ccc; height:400px; width:100%; overflow:auto; position: relative;" class="mt-3">
+                                <div class="p-5 text-center">
+                                    <h5>SEO Report for ${jobFilename.split('_')[0]}</h5>
+                                    <p class="text-muted">Generated on: ${new Date().toLocaleString()}</p>
+                                    
+                                    <div class="row mt-4" id="scorePreviewCards">
+                                        <!-- Score cards will be populated if data available -->
+                                    </div>
+                                    
+                                    <p class="mt-4">Click the "View Full Report" button above to see the complete analysis.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>`;
+                    
+                currentStorageUrlTracker = apiData.url;
+                
+                // Populate the score cards if data is available
+                if (apiData.raw_results) {
+                    populateScoreCards(apiData.raw_results);
+                }
+            } else if (apiData.raw_results) { 
+                reportDisplayArea.innerHTML = `
+                    <div class="alert alert-success">
+                        <p><strong>Report completed successfully!</strong></p>
+                        <p>The report data is available in JSON format.</p>
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-center mt-3">
+                            <a href="/direct_view/${encodeURIComponent(jobFilename)}_analysis.json.html" target="_blank" class="btn btn-primary btn-lg">
+                                <i class="fas fa-external-link-alt"></i> View Full Report
+                            </a>
+                        </div>
+                    </div>
+                    <p>Detailed Report Data (JSON):</p>
+                    <pre style="white-space: pre-wrap; word-wrap: break-word; background-color: #f8f9fa; padding:15px; border-radius: 4px; max-height: 400px; overflow: auto;">${JSON.stringify(apiData.raw_results, null, 2)}</pre>`;
+                currentStorageUrlTracker = null; 
+            } else {
+                reportDisplayArea.innerHTML = '<p class="alert alert-warning">Report completed, but viewable content is not in the expected format. Try downloading if available.</p>';
+            }
+            
+            if (apiData.raw_results) {
+                populatePreview(apiData.raw_results);
+            } else {
+                populatePreview(null); 
+            }
+            showDownloadButton();
+        }
+
+        // Helper function to populate the score cards
+        function populateScoreCards(data) {
+            const scoresContainer = document.getElementById('scorePreviewCards');
+            if (!scoresContainer || !data) return;
+            
+            try {
+                // Extract scores from data
+                let technicalScore = "N/A";
+                let onPageScore = "N/A";
+                let offPageScore = "N/A";
+                
+                if (data.analysis && data.analysis.technical_seo && data.analysis.technical_seo.score !== undefined) {
+                    technicalScore = data.analysis.technical_seo.score;
+                }
+                
+                if (data.analysis && data.analysis.on_page_seo && data.analysis.on_page_seo.score !== undefined) {
+                    onPageScore = data.analysis.on_page_seo.score;
+                }
+                
+                if (data.analysis && data.analysis.off_page_seo && data.analysis.off_page_seo.score !== undefined) {
+                    offPageScore = data.analysis.off_page_seo.score;
+                }
+                
+                // Create HTML for score cards
+                scoresContainer.innerHTML = `
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Technical Score</h5>
+                                <h2 class="text-primary">${technicalScore}</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">On-Page Score</h5>
+                                <h2 class="text-success">${onPageScore}</h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Off-Page Score</h5>
+                                <h2 class="text-warning">${offPageScore}</h2>
+                            </div>
+                        </div>
+                    </div>`;
+            } catch (err) {
+                console.error("Error populating score cards:", err);
+                scoresContainer.innerHTML = `
+                    <div class="col-12">
+                        <div class="alert alert-warning">
+                            <p>Score data could not be loaded.</p>
+                        </div>
+                    </div>`;
+            }
+        }
+
+        function fetchAndDisplayFinalResults() {
+            if (!jobFilename) {
+                console.error("[results.html] Cannot fetch final results, jobFilename is missing.");
+                if (reportDisplayArea) { reportDisplayArea.innerHTML = "<p class='alert alert-danger'>Error: Job identifier missing.</p>"; }
+                return;
+            }
+            console.log("[results.html] Fetching final results from /api/results_data/" + jobFilename);
+            fetch(`/api/results_data/${jobFilename}`)
+                .then(response => {
+                    if (!response.ok) {
+                        if (response.status === 202) { 
+                            return response.json().then(data => { throw new Error(data.message || 'Analysis still in progress (202)'); });
+                        }
+                        return response.json().then(errData => { 
+                            throw new Error(`API Error ${response.status}: ${errData.error || errData.message || 'Unknown error fetching results'}`); 
+                        });
+                    }
+                    return response.json();
+                })
+                .then(apiData => {
+                    console.log("[results.html] Received final results data:", apiData);
+                    if (apiData.status === 'completed') {
+                        if (progressSectionEl) { progressSectionEl.style.display = 'none'; }
+                        displayReportContent(apiData);
+                    } else if (apiData.status === 'failed') {
+                        if (reportDisplayArea) { reportDisplayArea.innerHTML = `<div class="alert alert-danger" role="alert"><strong>Error:</strong> ${apiData.error || 'Analysis failed.'}</div>`; }
+                         populatePreview(null); 
+                    } else { 
+                        if (reportDisplayArea) { reportDisplayArea.innerHTML = `<p>Analysis status: ${apiData.status}. Message: ${apiData.message || 'Waiting for completion.'}</p>`; }
+                    }
+                })
+                .catch(error => {
+                    console.error("[results.html] Error fetching full results data:", error);
+                    if (reportDisplayArea) { reportDisplayArea.innerHTML = `<div class="alert alert-warning">Could not load final report: ${error.message}</div>`; }
+                    populatePreview(null); 
+                });
+        }
+
+        function pollJobStatus() {
+            if (currentJobStatusTracker === 'completed' || currentJobStatusTracker === 'failed' || !jobFilename) {
+                if (window.pollingInterval) { clearInterval(window.pollingInterval); }
+                return;
+            }
+
+            fetch(`/api/progress/${jobFilename}`)
+                .then(response => {
+                    if (!response.ok) {
+                         return response.json().then(errData => { 
+                            throw new Error(`API Error ${response.status}: ${errData.message || errData.error || 'Polling failed'}`); 
+                         });
+                    }
+                    return response.json();
+                })
+                .then(jobData => {
+                    updatePageElements(jobData); 
+                    if (jobData.status === 'completed') {
+                        if (window.pollingInterval) { clearInterval(window.pollingInterval); }
+                        console.log("[results.html] Polling: Job completed. Fetching final results.");
+                        fetchAndDisplayFinalResults(); 
+                    } else if (jobData.status === 'failed') {
+                        if (window.pollingInterval) { clearInterval(window.pollingInterval); }
+                        if (reportDisplayArea) { reportDisplayArea.innerHTML = `<div class="alert alert-danger" role="alert"><strong>Error:</strong> ${jobData.error || 'Analysis failed.'}</div>`; }
+                        console.log("[results.html] Polling: Job failed.");
+                        populatePreview(null); 
+                    }
+                })
+                .catch(error => {
+                    console.error("[results.html] Error polling job status:", error);
+                    if (jobCurrentStepSpan) { jobCurrentStepSpan.textContent = "Error fetching status: " + error.message; }
+                    if (window.pollingInterval) { clearInterval(window.pollingInterval); }
+                });
+        }
+
+        // --- Initialize Page ---
+        if (jobFilename) { 
+            showDownloadButton(); 
+
+            if (initialJobStatus === 'completed') {
+                console.log("[results.html] Initial: Job loaded as COMPLETED.");
+                if (initialRawResultsJson) { 
+                    console.log("[results.html] Initial: Using initialRawResultsJson for preview.");
+                    populatePreview(initialRawResultsJson);
+                }
+                const existingContent = reportDisplayArea ? reportDisplayArea.querySelector('pre') : null;
+                if (!existingContent) {
+                    console.log("[results.html] Initial: Main content area needs update. Fetching final results.");
+                    fetchAndDisplayFinalResults();
+                } else if (!initialRawResultsJson && !existingContent) {
+                    console.log("[results.html] Initial: No initial raw results and no server-rendered content. Fetching final results.");
+                    fetchAndDisplayFinalResults();
+                } else {
+                    console.log("[results.html] Initial: Content seems to be server-rendered and/or preview populated.");
+                }
+            } else if (initialJobStatus !== 'failed') {
+                console.log("[results.html] Initial: Job status is (" + initialJobStatus + "). Starting polling.");
+                if (progressSectionEl) { progressSectionEl.style.display = 'block'; } // Ensure progress is shown
+                window.pollingInterval = setInterval(pollJobStatus, 5000);
+            } else { 
+                 console.log("[results.html] Initial: Job loaded as FAILED.");
+                 if (reportDisplayArea && !reportDisplayArea.querySelector('.alert-danger') && typeof job !== 'undefined' && job.error) {
+                    reportDisplayArea.innerHTML = `<div class="alert alert-danger" role="alert"><strong>Error:</strong> ${job.error}</div>`;
+                 }
+                 populatePreview(null); 
+            }
+        } else {
+            console.error("[results.html] CRITICAL: jobFilename is empty. UI will not update correctly.");
+            if(jobStatusSpan) { jobStatusSpan.textContent = "Error: Job ID missing."; }
+            if(reportDisplayArea) { reportDisplayArea.innerHTML = "<p class='alert alert-danger'>Cannot display results: Job identifier is missing.</p>"; }
+            if(progressSectionEl) { progressSectionEl.style.display = 'none'; }
+            if(resultsPreviewEl) { resultsPreviewEl.style.display = 'block'; }
+            populatePreview(null);
+        }
+
+        // --- Event Listeners for Download Modal ---
+        if (downloadReportBtn) {
+            downloadReportBtn.addEventListener('click', () => {
+                if (emailPromptModal && emailPromptModalBackdrop) {
+                    emailPromptModal.style.display = 'block';
+                    emailPromptModalBackdrop.style.display = 'block';
+                    if(downloadEmailInput) { downloadEmailInput.value = ''; }
+                    if(downloadErrorMsg) { downloadErrorMsg.textContent = ''; }
+                    if(downloadSuccessMsg) { downloadSuccessMsg.innerHTML = ''; }
+                }
+            });
+        }
+        function closeDownloadModal() {
+            if(emailPromptModal) { emailPromptModal.style.display = 'none'; }
+            if(emailPromptModalBackdrop) { emailPromptModalBackdrop.style.display = 'none'; }
+        }
+        if (cancelEmailBtn) { cancelEmailBtn.addEventListener('click', closeDownloadModal); }
+        if (emailPromptModalBackdrop) { emailPromptModalBackdrop.addEventListener('click', closeDownloadModal); }
+
+        if (submitEmailBtn) {
+            submitEmailBtn.addEventListener('click', async () => {
+                const email = downloadEmailInput.value;
+                if (!email || !validateEmail(email)) {
+                    if(downloadErrorMsg) { downloadErrorMsg.textContent = 'Please enter a valid email address.'; }
+                    if(downloadSuccessMsg) { downloadSuccessMsg.innerHTML = ''; }
+                    return;
+                }
+                if(downloadErrorMsg) { downloadErrorMsg.textContent = ''; }
+                if(downloadSuccessMsg) { downloadSuccessMsg.innerHTML = ''; }
+                submitEmailBtn.disabled = true;
+                submitEmailBtn.textContent = 'Processing...';
+
+                try {
+                    const formData = new FormData();
+                    formData.append('email', email);
+                    const response = await fetch(`/api/request_download/${jobFilename}`, {
+                        method: 'POST',
+                        body: formData,
+                    });
+                    const result = await response.json();
+                    if (response.ok && result.status === 'success' && result.download_url) {
+                        if(downloadSuccessMsg) { downloadSuccessMsg.innerHTML = `Download link ready: <a href="${result.download_url}" target="_blank" download="${jobFilename}.html">Download ${jobFilename}.html</a><br><small>(You can close this pop-up now)</small>`; }
+                    } else {
+                        if(downloadErrorMsg) { downloadErrorMsg.textContent = result.message || 'Could not process download request.'; }
+                    }
+                } catch (error) {
+                    console.error('[results.html] Error requesting download:', error);
+                    if(downloadErrorMsg) { downloadErrorMsg.textContent = 'An unexpected error occurred. Please try again.'; }
+                } finally {
+                    submitEmailBtn.disabled = false;
+                    submitEmailBtn.textContent = 'Submit & Get Link';
+                }
+            });
+        }
+
+        // --- Helper functions ---
+        function validateEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(String(email).toLowerCase());
+        }
+        function getScoreColorClass(score) {
+            if (score === undefined || score === null || isNaN(score)) return 'text-secondary';
+            score = parseFloat(score);
+            if (score >= 80) return 'text-success';
+            if (score >= 50) return 'text-warning';
+            return 'text-danger';
+        }
+        function getImpactClass(impact) { 
+            if (!impact || typeof impact !== 'string') return 'low-impact';
+            const lowerImpact = impact.toLowerCase();
+            if (lowerImpact === 'high') return 'high-impact';
+            if (lowerImpact === 'medium') return 'medium-impact';
+            return 'low-impact';
+        }
+        function getImpactBadgeColor(impact) { 
+            if (impact && typeof impact !== 'string') {
+                const lowerImpact = impact.toLowerCase();
+                if (lowerImpact === 'high') return 'danger';
+                if (lowerImpact === 'medium') return 'warning';
+                if (lowerImpact === 'low') return 'info';
+            }
+            return 'secondary';
+        }
+        function formatIssueType(type) { 
+             if (!type || typeof type !== 'string') return 'N/A';
+            return type.split('_').map(word => 
+                word.charAt(0).toUpperCase() + word.slice(1)
+            ).join(' ');
+        }
+
+        // Function to update analysis step icons based on progress
+        function updateAnalysisStepIcons(progress) {
+            // Web Crawling (0-25%)
+            updateStepStatus('webCrawlingStep', 'webCrawlingStatus', progress, 25);
+            
+            // Data Analysis (25-50%)
+            updateStepStatus('dataAnalysisStep', 'dataAnalysisStatus', progress, 50, 25);
+            
+            // SEO Evaluation (50-75%)
+            updateStepStatus('seoEvaluationStep', 'seoEvaluationStatus', progress, 75, 50);
+            
+            // Recommendations (75-100%)
+            updateStepStatus('recommendationsStep', 'recommendationsStatus', progress, 95, 75);
+        }
+
+        function updateStepStatus(stepId, statusId, currentProgress, completeThreshold, startThreshold = 0) {
+            const stepEl = document.getElementById(stepId);
+            const statusEl = document.getElementById(statusId);
+            const iconEl = stepEl ? stepEl.querySelector('.analysis-step-icon i') : null;
+            
+            if (!stepEl || !statusEl || !iconEl) return;
+            
+            if (currentProgress >= completeThreshold) {
+                // Step is complete
+                stepEl.className = 'analysis-step-box mb-2 p-3 rounded shadow-sm completed';
+                iconEl.className = iconEl.className.replace('text-muted', 'text-success');
+                statusEl.textContent = 'Complete';
+                statusEl.className = 'analysis-step-status small text-success';
+            } else if (currentProgress > startThreshold) {
+                // Step is in progress
+                stepEl.className = 'analysis-step-box mb-2 p-3 rounded shadow-sm active';
+                iconEl.className = iconEl.className.replace('text-success', 'text-primary').replace('text-muted', 'text-primary');
+                statusEl.textContent = 'In Progress';
+                statusEl.className = 'analysis-step-status small text-primary';
+            } else {
+                // Step is pending
+                stepEl.className = 'analysis-step-box mb-2 p-3 rounded shadow-sm';
+                iconEl.className = iconEl.className.replace('text-success', 'text-muted').replace('text-primary', 'text-muted');
+                statusEl.textContent = 'Pending';
+                statusEl.className = 'analysis-step-status small text-muted';
+            }
+        }
+    });
+</script>
+{% endblock %}

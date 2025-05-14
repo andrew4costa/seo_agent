@@ -1,0 +1,61 @@
+{
+  "company": "Airbnb",
+  "url": "https://airbnb.com",
+  "date": "2025-05-06 17:58:32",
+  "recommendations": [
+    {
+      "recommendation": "Add alt text to all 167 images identified as missing alt text.  Use descriptive and keyword-rich alt text that accurately represents the image content, focusing on location, accommodation features, and experience highlights.  Prioritize alt text for images showcasing unique selling propositions like luxurious amenities or culturally significant locations.",
+      "category": "On-Page",
+      "priority_score": 10,
+      "impact": "high",
+      "implementation_difficulty": "medium",
+      "estimated_time_hours": 8
+    },
+    {
+      "recommendation": "Implement a sitemap.xml to improve crawlability and indexing of Airbnb's vast inventory of listings and experiences.  Ensure the sitemap includes all relevant URLs, prioritizing high-value pages like popular destinations and unique accommodation types.",
+      "category": "Technical",
+      "priority_score": 9,
+      "impact": "high",
+      "implementation_difficulty": "medium",
+      "estimated_time_hours": 4
+    },
+    {
+      "recommendation": "Develop and implement a content strategy focused on creating high-quality, engaging content that highlights Airbnb's unique selling propositions.  This could include blog posts focusing on unique travel experiences, destination guides, and articles showcasing the benefits of staying in Airbnb accommodations compared to traditional hotels.  Target long-tail keywords related to specific travel interests and demographics.",
+      "category": "On-Page",
+      "priority_score": 9,
+      "impact": "high",
+      "implementation_difficulty": "hard",
+      "estimated_time_hours": 20
+    },
+    {
+      "recommendation": "Add appropriate H1 headings to the two pages identified as missing them.  Ensure these H1s accurately reflect the page's main content, using keywords relevant to the specific listing or experience.",
+      "category": "On-Page",
+      "priority_score": 8,
+      "impact": "medium",
+      "implementation_difficulty": "easy",
+      "estimated_time_hours": 2
+    },
+    {
+      "recommendation": "Conduct a comprehensive schema markup audit and implement rich snippets for key pages, such as individual listings and experiences.  Include relevant schema types like 'Accommodation', 'Event', and 'Offer' to enhance search results and improve click-through rates.  Focus on showcasing key information like price, location, ratings, and availability.",
+      "category": "Technical",
+      "priority_score": 7,
+      "impact": "medium",
+      "implementation_difficulty": "hard",
+      "estimated_time_hours": 12
+    },
+    {
+      "recommendation": "Analyze competitor strategies (Booking.com, Expedia, VRBO) to identify opportunities for content enhancement and keyword targeting.  Specifically, investigate their use of long-tail keywords and explore content gaps related to specific travel niches or unique experiences that Airbnb could dominate.",
+      "category": "Off-Page",
+      "priority_score": 6,
+      "impact": "medium",
+      "implementation_difficulty": "medium",
+      "estimated_time_hours": 6
+    }
+  ],
+  "summary": {
+    "technical_score": 9.0,
+    "on_page_score": 6.5,
+    "off_page_score": 5.0,
+    "total_pages_analyzed": 2
+  }
+}

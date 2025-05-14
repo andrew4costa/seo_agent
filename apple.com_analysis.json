@@ -1,0 +1,55 @@
+{
+  "domain": "",
+  "url": "apple.com",
+  "pages_analyzed": 3,
+  "technical_seo_score": 10,
+  "on_page_seo_score": 5,
+  "technical_seo_findings": {
+    "has_ssl": true,
+    "avg_page_load_time": 0.3683027426401774,
+    "mobile_friendly_score": 10.0,
+    "has_robots_txt": true,
+    "has_sitemap_xml": true
+  },
+  "on_page_seo_findings": {
+    "avg_word_count": 331.6666666666667,
+    "thin_content_pages": 2,
+    "missing_title_pages": 0,
+    "missing_meta_desc_pages": 2,
+    "missing_h1_pages": 0
+  },
+  "performance_metrics": {
+    "total_load_time": 1.1049082279205322,
+    "total_page_size": 0.5667495727539062,
+    "total_requests": 27,
+    "resource_counts": {
+      "images": 2,
+      "scripts": 0,
+      "stylesheets": 22,
+      "fonts": 0
+    }
+  },
+  "issues": [
+    {
+      "type": "robots_txt_issue",
+      "details": "Issue with robots.txt: Unknown error"
+    },
+    {
+      "type": "sitemap_issue",
+      "details": "Issue with sitemap: Unknown error"
+    },
+    {
+      "type": "thin_content_pages",
+      "details": "2 pages have thin content (<300 words)"
+    },
+    {
+      "type": "missing_descriptions",
+      "details": "2 pages missing meta descriptions"
+    },
+    {
+      "type": "duplicate_titles",
+      "details": "1 duplicate title tags found"
+    }
+  ],
+  "execution_time_seconds": 1.5028417110443115
+}

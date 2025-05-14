@@ -1,0 +1,100 @@
+{
+  "technical_seo": {
+    "score": 8.0,
+    "site_speed": {
+      "avg_load_time": 0.17816591262817383,
+      "issues": []
+    },
+    "mobile_optimisation": {
+      "score": 10.0,
+      "has_viewport_meta": true
+    },
+    "indexation": {
+      "robots_txt": {
+        "exists": false,
+        "content": null,
+        "issues": [
+          {
+            "type": "robots_not_found",
+            "severity": "medium",
+            "description": "robots.txt not found (status code: 404)"
+          }
+        ]
+      },
+      "sitemap": {
+        "exists": false,
+        "urls_count": 0,
+        "issues": [
+          {
+            "type": "sitemap_not_found",
+            "severity": "medium",
+            "description": "sitemap.xml not found (status code: 404)"
+          }
+        ]
+      }
+    },
+    "security": {
+      "has_ssl": true
+    },
+    "structured_data": {
+      "pages_with_schema": 0,
+      "schema_types": []
+    }
+  },
+  "on_page_seo": {
+    "score": 5.5,
+    "content_quality": {
+      "avg_word_count": 30.0,
+      "thin_content_pages": 1
+    },
+    "meta_tags": {
+      "pages_without_title": 0,
+      "pages_without_description": 1
+    },
+    "heading_structure": {
+      "pages_without_h1": 0
+    },
+    "image_optimization": {
+      "images_without_alt": 0
+    }
+  },
+  "off_page_seo": {
+    "score": 5.0,
+    "backlinks": {
+      "note": "Backlink data requires third-party API integration"
+    },
+    "social_signals": {
+      "note": "Social signal data requires third-party API integration"
+    }
+  },
+  "analyzed_pages": {
+    "https://example.com": {
+      "title": "Example Domain",
+      "description": null,
+      "word_count": 30,
+      "load_time": 0.17816591262817383,
+      "issues": [
+        {
+          "type": "missing_meta_description",
+          "severity": "medium",
+          "description": "Page is missing a meta description"
+        },
+        {
+          "type": "thin_content",
+          "severity": "medium",
+          "description": "Page has thin content (30 words)"
+        },
+        {
+          "type": "missing_schema",
+          "severity": "medium",
+          "description": "Page has no schema markup (structured data)"
+        },
+        {
+          "type": "few_internal_links",
+          "severity": "medium",
+          "description": "Page has few internal links (0)"
+        }
+      ]
+    }
+  }
+}

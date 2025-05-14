@@ -1,0 +1,315 @@
+{
+  "technical_seo": {
+    "score": 9.0,
+    "site_speed": {
+      "avg_load_time": 0.7623510360717773,
+      "issues": []
+    },
+    "mobile_optimisation": {
+      "score": 10,
+      "has_viewport_meta": true
+    },
+    "indexation": {
+      "robots_txt": {
+        "exists": true,
+        "content": "User-agent: *\nAllow: /\n",
+        "issues": [
+          {
+            "type": "no_sitemap_in_robots",
+            "severity": "medium",
+            "description": "No Sitemap directive found in robots.txt"
+          }
+        ]
+      },
+      "sitemap": {
+        "exists": false,
+        "urls_count": 0,
+        "issues": [
+          {
+            "type": "sitemap_not_found",
+            "severity": "medium",
+            "description": "sitemap.xml not found (status code: 404)"
+          }
+        ]
+      }
+    },
+    "security": {
+      "has_ssl": true
+    },
+    "structured_data": {
+      "pages_with_schema": 0,
+      "schema_types": []
+    },
+    "performance": {
+      "total_load_time_seconds": 0.6388669013977051,
+      "total_page_size_kb": 151.58671875,
+      "total_requests": 66,
+      "resource_counts": {
+        "images": 52,
+        "scripts": 10,
+        "stylesheets": 2,
+        "fonts": 1
+      },
+      "performance_issues": [
+        {
+          "type": "too_many_images",
+          "severity": "medium",
+          "description": "Page has too many images: 52"
+        },
+        {
+          "type": "render_blocking_resources",
+          "severity": "medium",
+          "description": "Page has 10 render-blocking script resources"
+        }
+      ]
+    }
+  },
+  "on_page_seo": {
+    "score": 7.211538461538462,
+    "content_quality": {
+      "avg_word_count": 1089,
+      "thin_content_pages": 0
+    },
+    "meta_tags": {
+      "pages_without_title": 0,
+      "pages_without_description": 0
+    },
+    "heading_structure": {
+      "pages_without_h1": 0
+    },
+    "image_optimization": {
+      "images_without_alt": 31
+    }
+  },
+  "off_page_seo": {
+    "score": 5.0,
+    "backlinks": {
+      "note": "Backlink data requires third-party API integration"
+    },
+    "social_signals": {
+      "note": "Social signal data requires third-party API integration"
+    }
+  },
+  "content_analysis": {
+    "avg_readability_score": 44.61,
+    "keyword_consistency": {
+      "top_site_keywords": [
+        [
+          "learn",
+          1
+        ],
+        [
+          "code",
+          1
+        ],
+        [
+          "language",
+          1
+        ],
+        [
+          "packages",
+          1
+        ],
+        [
+          "use",
+          1
+        ],
+        [
+          "services",
+          1
+        ],
+        [
+          "build",
+          1
+        ],
+        [
+          "get",
+          1
+        ],
+        [
+          "view",
+          1
+        ],
+        [
+          "fast",
+          1
+        ]
+      ],
+      "keyword_consistency_score": 10
+    },
+    "content_structure": {
+      "total_h1_tags": 1,
+      "total_h2_tags": 4,
+      "total_h3_tags": 4,
+      "avg_h1_per_page": 1.0,
+      "avg_h2_per_page": 4.0,
+      "avg_h3_per_page": 4.0
+    }
+  },
+  "analyzed_pages": {
+    "https://go.dev": {
+      "title": "The Go Programming Language",
+      "description": "Go is an open source programming language that makes it simple to build secure, scalable systems.",
+      "word_count": 1089,
+      "load_time": 0.7623510360717773,
+      "content_analysis": {
+        "word_count": 847,
+        "readability": {
+          "average_sentence_length": 19.23,
+          "average_syllables_per_word": 1.69,
+          "flesch_reading_ease": 44.61,
+          "grade_level": "College (Difficult)"
+        },
+        "keyword_analysis": {
+          "top_keywords": [
+            [
+              "learn",
+              8
+            ],
+            [
+              "code",
+              7
+            ],
+            [
+              "language",
+              6
+            ],
+            [
+              "packages",
+              6
+            ],
+            [
+              "use",
+              6
+            ],
+            [
+              "services",
+              6
+            ],
+            [
+              "build",
+              5
+            ],
+            [
+              "get",
+              5
+            ],
+            [
+              "view",
+              5
+            ],
+            [
+              "fast",
+              5
+            ]
+          ],
+          "top_phrases": [
+            [
+              "get started",
+              4
+            ],
+            [
+              "view case",
+              4
+            ],
+            [
+              "case study",
+              4
+            ],
+            [
+              "popular packages",
+              4
+            ],
+            [
+              "learn arrowforward",
+              4
+            ]
+          ],
+          "url_keywords": [],
+          "keyword_density": {
+            "learn": 0.97,
+            "code": 0.85,
+            "language": 0.73,
+            "packages": 0.73,
+            "use": 0.73,
+            "services": 0.73,
+            "build": 0.6,
+            "get": 0.6,
+            "view": 0.6,
+            "fast": 0.6
+          }
+        },
+        "content_structure": {
+          "heading_structure": {
+            "h1_count": 1,
+            "h1_text": [
+              "Build simple, secure, scalable systems with Go"
+            ],
+            "h2_count": 4,
+            "h2_text": [
+              "Companies using Go",
+              "Try Go",
+              "What\u2019s possible with Go"
+            ],
+            "h3_count": 4,
+            "h3_text": [
+              "Cloud & Network Services",
+              "Command-line Interfaces",
+              "Web Development"
+            ],
+            "h4_count": 0,
+            "h5_count": 0,
+            "h6_count": 0
+          },
+          "list_elements": {
+            "unordered_lists": 10,
+            "ordered_lists": 0,
+            "list_items": 60
+          },
+          "emphasis_elements": 7,
+          "strong_elements": 7,
+          "tables": 0,
+          "blockquotes": 0
+        }
+      },
+      "issues": [
+        {
+          "type": "images_missing_alt",
+          "severity": "medium",
+          "description": "31 images missing alt text"
+        },
+        {
+          "type": "missing_schema",
+          "severity": "medium",
+          "description": "Page has no schema markup (structured data)"
+        }
+      ]
+    }
+  },
+  "competitor_analysis": {
+    "main_url": "go.dev",
+    "competitors_analyzed": 2,
+    "competitor_data": {
+      "https://rust-lang.org": {
+        "url": "https://rust-lang.org",
+        "load_time_seconds": 1.0359830856323242,
+        "word_count": 517,
+        "has_schema": false,
+        "meta_tags_present": true,
+        "internal_links_count": 31,
+        "external_links_count": 5,
+        "status_code": 200
+      },
+      "https://kotlin.org": {
+        "url": "https://kotlin.org",
+        "load_time_seconds": 0,
+        "word_count": 0,
+        "has_schema": false,
+        "meta_tags_present": false,
+        "internal_links_count": 0,
+        "external_links_count": 0,
+        "error": "Cannot connect to host kotlin.org:443 ssl:default [nodename nor servname provided, or not known]"
+      }
+    }
+  }
+}

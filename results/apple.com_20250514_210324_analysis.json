@@ -1,0 +1,406 @@
+{
+  "user_id": null,
+  "guest_session_id": "fdeb4522-587e-4f83-8fc6-39686b1e5a0f",
+  "filename": "apple.com_20250514_210324_analysis.json",
+  "url": "https://apple.com",
+  "pages": 5,
+  "keyword": "",
+  "status": "completed",
+  "progress": 100,
+  "current_step": "Analysis completed",
+  "steps_completed": 10,
+  "total_steps": 10,
+  "start_time": "2025-05-14T21:03:24.914462+00:00",
+  "end_time": "2025-05-14T21:03:54.549424+00:00",
+  "error": null,
+  "storage_url": "https://xkxzvijcnpztolydczeo.supabase.co/storage/v1/object/public/seo-reports/apple.com_20250514_210324_analysis.json.html",
+  "raw_results": {
+    "analysis": {
+      "technical_seo": {
+        "score": 10.0,
+        "site_speed": {
+          "avg_load_time": 0.27665057182312014,
+          "issues": []
+        },
+        "mobile_optimisation": {
+          "score": 10.0,
+          "has_viewport_meta": true
+        },
+        "indexation": {
+          "robots_txt": {
+            "exists": true,
+            "content": "# robots.txt for https://www.apple.com/\n\nUser-agent: *\nDisallow: /*shop/browse/overlay/*\nDisallow: /*shop/iphone/payments/overlay/*\nDisallow: /cn/*/aow/*\nDisallow: /tmall*\nAllow: /ac/globalnav/2.0/*/images/ac-globalnav/globalnav/search/* \t\n\nUser-agent: Baiduspider\nDisallow: /*\nAllow: /cn/*\nAllow: /cn-edu/*\nAllow: /cn-k12/*\n\nUser-agent: HaoSouSpider\nDisallow: /*\nAllow: /cn/*\nAllow: /cn-edu/*\nAllow: /cn-k12/*\n\nUser-agent: Sogou web spider\nDisallow: /*\nAllow: /cn/*\nAllow: /cn-k12/*\n\nUser-agent: Sogou inst spider\nDisallow: /*\nAllow: /cn/*\nAllow: /cn-k12/*\n\nUser-agent: Sogou spider2\nDisallow: /*\nAllow: /cn/*\nAllow: /cn-k12/*\n\n#DaumWebMasterTool:6ff40e0f09564a9d4e3bc80e7cbde7c196677a2f5f610eb9c029836774f9a8e9:D9a8IEFAzmC/NWsQ3tB0Wg==\n\nSitemap: https://www.apple.com/shop/sitemap.xml\nSitemap: https://www.apple.com/autopush/sitemap/sitemap-index.xml\nSitemap: https://www.apple.com/newsroom/sitemap.xml\nSitemap: https://www.apple.com/retail/sitemap/sitemap.xml\nSitemap: https://www.apple.com/today/sitemap-index.xml\n",
+            "issues": []
+          },
+          "sitemap": {
+            "exists": true,
+            "urls_count": 820,
+            "issues": []
+          }
+        },
+        "security": {
+          "has_ssl": true
+        },
+        "structured_data": {
+          "pages_with_schema": 0,
+          "schema_types": []
+        }
+      },
+      "on_page_seo": {
+        "score": 7.5,
+        "content_quality": {
+          "avg_word_count": 2817.4,
+          "thin_content_pages": 0
+        },
+        "meta_tags": {
+          "pages_without_title": 0,
+          "pages_without_description": 3
+        },
+        "heading_structure": {
+          "pages_without_h1": 0
+        },
+        "image_optimization": {
+          "images_without_alt": 110
+        }
+      },
+      "off_page_seo": {
+        "score": 5.0,
+        "backlinks": {
+          "note": "Backlink data requires third-party API integration"
+        },
+        "social_signals": {
+          "note": "Social signal data requires third-party API integration"
+        }
+      },
+      "analyzed_pages": {
+        "https://apple.com": {
+          "title": "Apple",
+          "description": null,
+          "word_count": 1027,
+          "load_time": 0.13948869705200195,
+          "issues": [
+            {
+              "type": "short_title",
+              "severity": "medium",
+              "description": "Title is too short (5 chars)"
+            },
+            {
+              "type": "missing_meta_description",
+              "severity": "medium",
+              "description": "Page is missing a meta description"
+            },
+            {
+              "type": "missing_schema",
+              "severity": "medium",
+              "description": "Page has no schema markup (structured data)"
+            }
+          ]
+        },
+        "https://apple.com/": {
+          "title": "Apple",
+          "description": null,
+          "word_count": 1027,
+          "load_time": 0.1608879566192627,
+          "issues": [
+            {
+              "type": "short_title",
+              "severity": "medium",
+              "description": "Title is too short (5 chars)"
+            },
+            {
+              "type": "missing_meta_description",
+              "severity": "medium",
+              "description": "Page is missing a meta description"
+            },
+            {
+              "type": "missing_schema",
+              "severity": "medium",
+              "description": "Page has no schema markup (structured data)"
+            }
+          ]
+        },
+        "https://apple.com/us/shop/goto/store": {
+          "title": "Apple Store Online - Apple",
+          "description": "Shop the latest Apple products, accessories and offers. Compare models, get expert shopping help, plus flexible payment and delivery options.",
+          "word_count": 6438,
+          "load_time": 0.7417340278625488,
+          "issues": [
+            {
+              "type": "images_missing_alt",
+              "severity": "medium",
+              "description": "2 images missing alt text"
+            },
+            {
+              "type": "missing_schema",
+              "severity": "medium",
+              "description": "Page has no schema markup (structured data)"
+            }
+          ]
+        },
+        "https://apple.com/mac/": {
+          "title": "Mac - Apple",
+          "description": null,
+          "word_count": 3941,
+          "load_time": 0.18077301979064941,
+          "issues": [
+            {
+              "type": "missing_meta_description",
+              "severity": "medium",
+              "description": "Page is missing a meta description"
+            },
+            {
+              "type": "images_missing_alt",
+              "severity": "medium",
+              "description": "69 images missing alt text"
+            },
+            {
+              "type": "missing_schema",
+              "severity": "medium",
+              "description": "Page has no schema markup (structured data)"
+            }
+          ]
+        },
+        "https://apple.com/ipad/": {
+          "title": "iPad - Apple",
+          "description": "Explore the world of iPad. Featuring iPad Pro, iPad Air, iPad mini, and iPad.",
+          "word_count": 1654,
+          "load_time": 0.1603691577911377,
+          "issues": [
+            {
+              "type": "images_missing_alt",
+              "severity": "medium",
+              "description": "39 images missing alt text"
+            },
+            {
+              "type": "missing_schema",
+              "severity": "medium",
+              "description": "Page has no schema markup (structured data)"
+            }
+          ]
+        }
+      },
+      "competitors": {
+        "competitors": [
+          {
+            "brand": "Samsung",
+            "website": "https://www.samsung.com",
+            "ESTIMATE_DR": 95,
+            "Referring_Domains": "N/A",
+            "Backlinks": "N/A",
+            "Total_Keywords": "N/A"
+          },
+          {
+            "brand": "Google",
+            "website": "https://www.google.com",
+            "ESTIMATE_DR": 100,
+            "Referring_Domains": "N/A",
+            "Backlinks": "N/A",
+            "Total_Keywords": "N/A"
+          },
+          {
+            "brand": "Microsoft",
+            "website": "https://www.microsoft.com",
+            "ESTIMATE_DR": 98,
+            "Referring_Domains": "N/A",
+            "Backlinks": "N/A",
+            "Total_Keywords": "N/A"
+          },
+          {
+            "brand": "Dell",
+            "website": "https://www.dell.com",
+            "ESTIMATE_DR": 92,
+            "Referring_Domains": "N/A",
+            "Backlinks": "N/A",
+            "Total_Keywords": "N/A"
+          },
+          {
+            "brand": "HP",
+            "website": "https://www.hp.com",
+            "ESTIMATE_DR": 90,
+            "Referring_Domains": "N/A",
+            "Backlinks": "N/A",
+            "Total_Keywords": "N/A"
+          }
+        ]
+      }
+    },
+    "recommendations": [
+      {
+        "recommendation": "Optimize for Core Web Vitals beyond current high scores",
+        "category": "Technical",
+        "priority_score": 9,
+        "impact": "High",
+        "implementation_difficulty": "Medium",
+        "estimated_time_hours": 40,
+        "reasoning": "While current load time (0.28s) is excellent, maintaining this speed across all devices and network conditions is crucial for Apple's scale and brand reputation.  Proactive monitoring and optimization for Largest Contentful Paint (LCP), Cumulative Layout Shift (CLS), and First Input Delay (FID) are necessary to prevent future regressions and ensure a consistently seamless user experience, especially on older devices or slower networks.  Given Apple's high-value products, even minor performance dips could significantly impact conversion rates."
+      },
+      {
+        "recommendation": "Enhance On-Page Schema Markup for Product Pages",
+        "category": "On-Page",
+        "priority_score": 8,
+        "impact": "High",
+        "implementation_difficulty": "Medium",
+        "estimated_time_hours": 30,
+        "reasoning": "Apple's high On-Page score (7.5) suggests a good foundation, but richer schema markup on product pages (Mac, iPad, etc.) is crucial for improved search visibility and rich snippets in SERPs.  Implementing structured data for product details (price, availability, reviews, images) will increase click-through rates and improve overall search performance.  This is especially important given the competitive nature of the consumer electronics market."
+      },
+      {
+        "recommendation": "Conduct a thorough content gap analysis for unspecified consumer electronics",
+        "category": "Content",
+        "priority_score": 7,
+        "impact": "Medium",
+        "implementation_difficulty": "Medium",
+        "estimated_time_hours": 20,
+        "reasoning": "The provided business context lacks detail on 'Other consumer electronics'.  A comprehensive content gap analysis is needed to identify keywords and topics related to these products that Apple isn't currently covering. This will reveal opportunities to expand content coverage and capture relevant search traffic for a wider range of products.  This analysis should include competitor research to identify underserved niches."
+      },
+      {
+        "recommendation": "Develop a clear target audience persona and refine the unique selling proposition (USP)",
+        "category": "Strategic",
+        "priority_score": 10,
+        "impact": "High",
+        "implementation_difficulty": "Hard",
+        "estimated_time_hours": 60,
+        "reasoning": "The lack of defined target audience and USP hinders effective SEO strategy.  Creating detailed buyer personas will inform content strategy, keyword targeting, and overall messaging.  Clearly articulating Apple's USP for each product category (e.g., premium design, seamless ecosystem integration, innovative technology) is essential for differentiating from competitors and resonating with the target audience.  This will guide content creation and improve conversion rates."
+      },
+      {
+        "recommendation": "Implement advanced internal linking strategy",
+        "category": "Technical",
+        "priority_score": 6,
+        "impact": "Medium",
+        "implementation_difficulty": "Medium",
+        "estimated_time_hours": 25,
+        "reasoning": "Given the extensive product catalog, a robust internal linking strategy is critical for distributing link equity and improving site navigation.  Strategically linking related product pages, blog posts, and support documentation will improve user experience and boost rankings for relevant keywords.  This requires a thorough site audit to identify linking opportunities and ensure a logical site architecture."
+      },
+      {
+        "recommendation": "Improve Sitemap Coverage",
+        "reasoning": "While a sitemap exists, it currently contains zero entries.  A comprehensive sitemap is crucial for SEO and ensuring search engines can crawl and index all important pages on apple.com.  This should include all product pages, category pages, and other key content.",
+        "priority_score": 10,
+        "impact": "High",
+        "implementation_difficulty": "Medium",
+        "estimated_time_hours": 8,
+        "category": "ARCHITECTURE"
+      },
+      {
+        "recommendation": "Standardize URL Structure",
+        "reasoning": "The provided URL samples show inconsistencies.  Implement a consistent and logical URL structure using descriptive keywords to improve SEO and user experience. For example, consider using a more structured approach for product pages, such as `/products/mac/macbook-pro-16-inch/`. This will improve crawlability and user understanding.",
+        "priority_score": 9,
+        "impact": "High",
+        "implementation_difficulty": "High",
+        "estimated_time_hours": 24,
+        "category": "ARCHITECTURE"
+      },
+      {
+        "recommendation": "Enhance Information Architecture",
+        "reasoning": "Analyze the current information architecture to ensure a clear and intuitive structure for users to navigate the website.  Improve the logical grouping of content and create clear pathways for users to find what they need. This may involve restructuring sections and categories.",
+        "priority_score": 8,
+        "impact": "High",
+        "implementation_difficulty": "High",
+        "estimated_time_hours": 16,
+        "category": "ARCHITECTURE"
+      },
+      {
+        "recommendation": "Optimize Mobile Architecture",
+        "reasoning": "Ensure the website is fully responsive and provides an optimal user experience across all devices.  Conduct thorough testing on various devices and screen sizes to identify and fix any mobile-related issues.  Consider using Accelerated Mobile Pages (AMP) for faster loading times on mobile.",
+        "priority_score": 7,
+        "impact": "Medium",
+        "implementation_difficulty": "Medium",
+        "estimated_time_hours": 12,
+        "category": "ARCHITECTURE"
+      },
+      {
+        "recommendation": "Implement Robust Navigation",
+        "reasoning": "The website's navigation should be intuitive and easy to use.  Ensure clear and concise menus, breadcrumbs, and internal linking to guide users effectively.  Consider user testing to identify areas for improvement.",
+        "priority_score": 6,
+        "impact": "Medium",
+        "implementation_difficulty": "Medium",
+        "estimated_time_hours": 8,
+        "category": "ARCHITECTURE"
+      },
+      {
+        "recommendation": "Optimize for various screen sizes and orientations.",
+        "reasoning": "While mobile-friendly, ensure consistent experience across all devices and orientations to avoid layout issues or content truncation.",
+        "category": "UX_DESIGN",
+        "priority": 7,
+        "difficulty": 5,
+        "hours": 20
+      },
+      {
+        "recommendation": "Improve discoverability of key features and information.",
+        "reasoning": "Streamline navigation to ensure users can easily find products, support, and other important sections.",
+        "category": "UX_DESIGN",
+        "priority": 8,
+        "difficulty": 6,
+        "hours": 30
+      },
+      {
+        "recommendation": "Enhance visual hierarchy and readability.",
+        "reasoning": "Optimize typography, spacing, and visual cues to improve scannability and comprehension of content.",
+        "category": "UX_DESIGN",
+        "priority": 6,
+        "difficulty": 4,
+        "hours": 15
+      },
+      {
+        "recommendation": "Conduct A/B testing on different design elements.",
+        "reasoning": "Test variations of calls-to-action, layouts, and content to identify what resonates best with users and improves conversion rates.",
+        "category": "UX_DESIGN",
+        "priority": 9,
+        "difficulty": 7,
+        "hours": 40
+      },
+      {
+        "recommendation": "Implement progressive enhancement for slower connections.",
+        "reasoning": "While load time is fast, ensure graceful degradation for users with slower internet speeds to maintain a positive experience.",
+        "category": "UX_DESIGN",
+        "priority": 5,
+        "difficulty": 3,
+        "hours": 10
+      }
+    ],
+    "competitor_data": {
+      "competitors": [
+        {
+          "brand": "Samsung",
+          "website": "https://www.samsung.com",
+          "ESTIMATE_DR": 95,
+          "Referring_Domains": "N/A",
+          "Backlinks": "N/A",
+          "Total_Keywords": "N/A"
+        },
+        {
+          "brand": "Google",
+          "website": "https://www.google.com",
+          "ESTIMATE_DR": 100,
+          "Referring_Domains": "N/A",
+          "Backlinks": "N/A",
+          "Total_Keywords": "N/A"
+        },
+        {
+          "brand": "Microsoft",
+          "website": "https://www.microsoft.com",
+          "ESTIMATE_DR": 98,
+          "Referring_Domains": "N/A",
+          "Backlinks": "N/A",
+          "Total_Keywords": "N/A"
+        },
+        {
+          "brand": "Dell",
+          "website": "https://www.dell.com",
+          "ESTIMATE_DR": 92,
+          "Referring_Domains": "N/A",
+          "Backlinks": "N/A",
+          "Total_Keywords": "N/A"
+        },
+        {
+          "brand": "HP",
+          "website": "https://www.hp.com",
+          "ESTIMATE_DR": 90,
+          "Referring_Domains": "N/A",
+          "Backlinks": "N/A",
+          "Total_Keywords": "N/A"
+        }
+      ]
+    },
+    "dataforseo_data": {},
+    "report_path": "/Users/andrewcosta/seo_reports/Apple_com_seo_report_2025-05-14_23-03-53.html"
+  }
+}

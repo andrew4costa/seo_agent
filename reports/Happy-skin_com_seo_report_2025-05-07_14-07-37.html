@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEO Report - Happy-skin.com</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2, h3, h4 {
+            color: #2c3e50;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+        }
+        .scores-container {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        .score-card {
+            flex: 1;
+            min-width: 200px;
+            text-align: center;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .technical {
+            background-color: #e3f2fd;
+        }
+        .onpage {
+            background-color: #e8f5e9;
+        }
+        .offpage {
+            background-color: #fff3e0;
+        }
+        .score {
+            font-size: 36px;
+            font-weight: bold;
+        }
+        .recommendations {
+            margin-top: 30px;
+        }
+        .recommendation {
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            background-color: #f8f9fa;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .recommendation h3 {
+            margin-top: 0;
+        }
+        .recommendation-meta {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+        .meta-item {
+            background-color: #e9ecef;
+            padding: 5px 10px;
+            border-radius: 15px;
+            margin-right: 10px;
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+        .priority-high {
+            background-color: #ffcccc;
+        }
+        .priority-medium {
+            background-color: #ffffcc;
+        }
+        .priority-low {
+            background-color: #e6f2ff;
+        }
+        .issues {
+            margin-top: 30px;
+        }
+        .issue {
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+        .severity-high {
+            background-color: #ffebee;
+            border-left: 5px solid #f44336;
+        }
+        .severity-medium {
+            background-color: #fff8e1;
+            border-left: 5px solid #ffc107;
+        }
+        .severity-low {
+            background-color: #e8f5e9;
+            border-left: 5px solid #4caf50;
+        }
+        .pages {
+            margin-top: 30px;
+        }
+        .page {
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            background-color: #f8f9fa;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .collapse-btn {
+            background-color: #f1f1f1;
+            padding: 10px 15px;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+            border-radius: 5px;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .collapse-content {
+            display: none;
+            padding: 15px;
+            overflow: hidden;
+            background-color: #fafafa;
+            border-radius: 5px;
+        }
+        .recommendations-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .recommendations-table th {
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            padding: 10px;
+        }
+        .recommendations-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            vertical-align: top;
+        }
+        .priority-level {
+            font-weight: bold;
+            text-align: center;
+        }
+        .high {
+            color: #d32f2f;
+        }
+        .medium {
+            color: #f57c00;
+        }
+        .low {
+            color: #388e3c;
+        }
+        .competitor-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 2px 3px rgba(0,0,0,0.1);
+        }
+        .competitor-table th {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 12px;
+            border: 1px solid #ddd;
+            font-weight: bold;
+        }
+        .competitor-table td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+        .competitor-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .competitor-table tr:hover {
+            background-color: #f1f1f1;
+        }
+        .competitor-heading {
+            background-color: #f8f9fa;
+            padding: 10px;
+            margin-top: 30px;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: bold;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>SEO Analysis Report</h1>
+        <h2>Happy-skin.com</h2>
+        <p>URL: <a href="https://happy-skin.com" target="_blank">https://happy-skin.com</a></p>
+        <p>Generated on: 2025-05-07 14:07:37</p>
+        <p>Pages analyzed: 4</p>
+    </div>
+
+    <div class="scores-container">
+        <div class="score-card technical">
+            <h3>Technical SEO</h3>
+            <div class="score">9.5/10</div>
+        </div>
+        <div class="score-card onpage">
+            <h3>On-Page SEO</h3>
+            <div class="score">9.0/10</div>
+        </div>
+        <div class="score-card offpage">
+            <h3>Off-Page SEO</h3>
+            <div class="score">5.0/10</div>
+        </div>
+    </div>
+
+    <div class="recommendations">
+        <h2>SEO Recommendations</h2>
+
+        <table class="recommendations-table">
+            <thead>
+                <tr>
+                    <th>Recommendation</th>
+                    <th>Priority</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td colspan="3" style="background-color: #e9ecef; font-weight: bold; text-align: center;">ARCHITECTURE</td>
+                </tr>
+            
+                    <tr>
+                        <td style="width: 25%;">Implement Consistent URL Structure</td>
+                        <td style="width: 15%;" class="priority-level high">High</td>
+                        <td style="width: 60%;">Establish a clear and consistent URL structure across the entire website.  Use hyphens to separate words and maintain a logical hierarchy.  Analyze the full sitemap to identify inconsistencies and implement a standardized pattern.</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Expand IA Documentation</td>
+                        <td style="width: 15%;" class="priority-level high">High</td>
+                        <td style="width: 60%;">Create a comprehensive sitemap and information architecture diagram to visualize the entire website structure, including all categories, subcategories, and pages. This will help identify gaps and inconsistencies.</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Define Clear Content Hierarchy</td>
+                        <td style="width: 15%;" class="priority-level high">High</td>
+                        <td style="width: 60%;">Establish a clear hierarchy for website content, ensuring logical grouping and categorization of pages.  Prioritize user experience and intuitive navigation.</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Navigation Structure Assessment: 4/10</td>
+                        <td style="width: 15%;" class="priority-level high">High</td>
+                        <td style="width: 60%;">Internal linking data is insufficient to assess the overall navigation structure.  The sample shows limited internal links.
+
+Recommendation: Improve Navigation Structure</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Implement Comprehensive Internal Linking</td>
+                        <td style="width: 15%;" class="priority-level high">High</td>
+                        <td style="width: 60%;">Implement a robust internal linking strategy to connect related pages and improve site navigation.  Ensure all important pages are easily accessible from other relevant sections of the website.</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Analyze and Improve Navigation</td>
+                        <td style="width: 15%;" class="priority-level high">High</td>
+                        <td style="width: 60%;">Conduct a thorough analysis of the website's navigation to identify areas for improvement.  Consider user testing to assess navigation intuitiveness.</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Develop a Content Strategy</td>
+                        <td style="width: 15%;" class="priority-level high">High</td>
+                        <td style="width: 60%;">Develop a comprehensive content strategy that defines clear categories and subcategories for all website content.  This should align with the overall information architecture.</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Conduct Mobile Usability Testing</td>
+                        <td style="width: 15%;" class="priority-level high">High</td>
+                        <td style="width: 60%;">Conduct thorough mobile usability testing to identify any issues with responsive design or mobile-specific functionality.  Address any identified problems to ensure a positive mobile user experience.</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Url Structure Assessment: 6/10</td>
+                        <td style="width: 15%;" class="priority-level medium">Medium</td>
+                        <td style="width: 60%;">URLs are currently short and descriptive for the limited sample provided.  However,  lack of data prevents a comprehensive assessment of broader URL structure consistency and SEO-friendliness across the entire site.
+
+Recommendation: Improve Url Structure</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Keyword Optimization in URLs</td>
+                        <td style="width: 15%;" class="priority-level medium">Medium</td>
+                        <td style="width: 60%;">Where appropriate, incorporate relevant keywords into URLs to improve SEO.  This should be done naturally and avoid keyword stuffing.</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Information Architecture Assessment: 5/10</td>
+                        <td style="width: 15%;" class="priority-level medium">Medium</td>
+                        <td style="width: 60%;">Based on the limited data, the information architecture appears shallow.  The provided categories are essential legal pages but lack context regarding the main website content and structure.
+
+Recommendation: Improve Information Architecture</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Content Categorization Assessment: 5/10</td>
+                        <td style="width: 15%;" class="priority-level medium">Medium</td>
+                        <td style="width: 60%;">Content categorization is limited to essential legal pages.  Further analysis is needed to assess the organization of the main website content.
+
+Recommendation: Improve Content Categorization</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Review and Refine Categories</td>
+                        <td style="width: 15%;" class="priority-level medium">Medium</td>
+                        <td style="width: 60%;">Regularly review and refine content categories to ensure they remain relevant and effective.  This should be an ongoing process based on user behavior and website analytics.</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Mobile Architecture Assessment: 7/10</td>
+                        <td style="width: 15%;" class="priority-level medium">Medium</td>
+                        <td style="width: 60%;">No data provided to assess mobile architecture.  This score assumes a baseline level of responsiveness unless proven otherwise.
+
+Recommendation: Improve Mobile Architecture</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Implement Mobile-First Approach</td>
+                        <td style="width: 15%;" class="priority-level medium">Medium</td>
+                        <td style="width: 60%;">Consider adopting a mobile-first approach to website design and development, prioritizing the mobile user experience in the design process.</td>
+                    </tr>
+                
+                <tr>
+                    <td colspan="3" style="background-color: #e9ecef; font-weight: bold; text-align: center;">UX & PAGE DESIGN</td>
+                </tr>
+            
+                    <tr>
+                        <td style="width: 25%;">Enhance Image Resolution</td>
+                        <td style="width: 15%;" class="priority-level high">High</td>
+                        <td style="width: 60%;">Replace lower-resolution product and banner images with higher-quality alternatives for a more professional and engaging visual experience.</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Implement Site Search</td>
+                        <td style="width: 15%;" class="priority-level high">High</td>
+                        <td style="width: 60%;">Add a prominent search bar to allow users to quickly find specific products or information.</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Enhance CTA Design</td>
+                        <td style="width: 15%;" class="priority-level high">High</td>
+                        <td style="width: 60%;">Improve the visual appeal and prominence of call-to-action buttons (e.g., "Add to Cart," "Buy Now") to encourage conversions.</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Improve Text Contrast</td>
+                        <td style="width: 15%;" class="priority-level medium">Medium</td>
+                        <td style="width: 60%;">Slightly increase the contrast between text and background colors, particularly for body text, to improve readability across different screen sizes and lighting conditions.</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Layout Structure Assessment: 7/10</td>
+                        <td style="width: 15%;" class="priority-level medium">Medium</td>
+                        <td style="width: 60%;">Layout is generally clean and well-organized.  However, whitespace usage could be optimized on product pages to improve visual breathing room and highlight key information.
+
+Recommendation: Improve Layout Structure</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Optimize Whitespace</td>
+                        <td style="width: 15%;" class="priority-level medium">Medium</td>
+                        <td style="width: 60%;">Increase whitespace around product images and descriptions on product pages to improve visual hierarchy and reduce visual clutter.</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Improve Footer Navigation</td>
+                        <td style="width: 15%;" class="priority-level medium">Medium</td>
+                        <td style="width: 60%;">Enhance the footer navigation by making links more prominent and visually distinct.</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Interactive Elements Assessment: 7/10</td>
+                        <td style="width: 15%;" class="priority-level medium">Medium</td>
+                        <td style="width: 60%;">Buttons and forms are functional but could be improved visually for better user engagement.  Call-to-actions could be more prominent.
+
+Recommendation: Improve Interactive Elements</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Improve Form Feedback</td>
+                        <td style="width: 15%;" class="priority-level medium">Medium</td>
+                        <td style="width: 60%;">Provide clear and immediate feedback to users after form submission, confirming successful actions or highlighting errors.</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Visual Design Assessment: 8/10</td>
+                        <td style="width: 15%;" class="priority-level low">Low</td>
+                        <td style="width: 60%;">Visually appealing with a consistent brand aesthetic.  However, some imagery could be higher resolution, and the color palette, while pleasant, could benefit from slightly more contrast for better readability.
+
+Recommendation: Improve Visual Design</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Refine Grid System</td>
+                        <td style="width: 15%;" class="priority-level low">Low</td>
+                        <td style="width: 60%;">Slightly adjust the grid system to ensure consistent spacing and alignment across all page elements for a more polished and professional look.</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Navigation Accessibility Assessment: 9/10</td>
+                        <td style="width: 15%;" class="priority-level low">Low</td>
+                        <td style="width: 60%;">Navigation is intuitive and easy to use.  The sitemap is clear and accessible.  However, adding a search functionality would enhance usability.
+
+Recommendation: Improve Navigation Accessibility</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Mobile Experience Assessment: 10/10</td>
+                        <td style="width: 15%;" class="priority-level low">Low</td>
+                        <td style="width: 60%;">Excellent mobile responsiveness and touch-friendly design.  The site adapts seamlessly to different screen sizes and orientations.
+
+Recommendation: Improve Mobile Experience</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Maintain Mobile Excellence</td>
+                        <td style="width: 15%;" class="priority-level low">Low</td>
+                        <td style="width: 60%;">Continue to prioritize mobile-first design principles during future updates and feature additions.</td>
+                    </tr>
+                
+                <tr>
+                    <td colspan="3" style="background-color: #e9ecef; font-weight: bold; text-align: center;">General</td>
+                </tr>
+            
+                    <tr>
+                        <td style="width: 25%;">Review SEO issues for happy-skin</td>
+                        <td style="width: 15%;" class="priority-level medium">Medium</td>
+                        <td style="width: 60%;">Review SEO issues for happy-skin.com (manual review needed - raw response attached)</td>
+                    </tr>
+                
+            </tbody>
+        </table>
+    </div>
+
+    <div class="recommendations">
+        <h2>Top Recommendations Details</h2>
+
+        <div class="recommendation">
+            <h3>1. Review SEO issues for happy-skin.com (manual review needed - raw response attached)</h3>
+            <div class="recommendation-meta">
+                <div class="meta-item priority-medium">Priority: 5/10</div>
+                <div class="meta-item">Impact: medium</div>
+                <div class="meta-item">Difficulty: medium</div>
+                <div class="meta-item">Est. Time: 2 hrs</div>
+                <div class="meta-item">Category: General</div>
+            </div>
+        </div>
+        <div class="recommendation">
+            <h3>2. Improve Url Structure</h3>
+            <div class="recommendation-meta">
+                <div class="meta-item priority-medium">Priority: 6/10</div>
+                <div class="meta-item">Impact: medium</div>
+                <div class="meta-item">Difficulty: medium</div>
+                <div class="meta-item">Est. Time: 8 hrs</div>
+                <div class="meta-item">Category: ARCHITECTURE</div>
+            </div>
+        </div>
+        <div class="recommendation">
+            <h3>3. Establish a clear and consistent URL structure across the entire website.  Use hyphens to separate words and maintain a logical hierarchy.  Analyze the full sitemap to identify inconsistencies and implement a standardized pattern.</h3>
+            <div class="recommendation-meta">
+                <div class="meta-item priority-high">Priority: 9/10</div>
+                <div class="meta-item">Impact: high</div>
+                <div class="meta-item">Difficulty: medium</div>
+                <div class="meta-item">Est. Time: 5 hrs</div>
+                <div class="meta-item">Category: ARCHITECTURE</div>
+            </div>
+        </div>
+        <div class="recommendation">
+            <h3>4. Where appropriate, incorporate relevant keywords into URLs to improve SEO.  This should be done naturally and avoid keyword stuffing.</h3>
+            <div class="recommendation-meta">
+                <div class="meta-item priority-medium">Priority: 6/10</div>
+                <div class="meta-item">Impact: medium</div>
+                <div class="meta-item">Difficulty: medium</div>
+                <div class="meta-item">Est. Time: 5 hrs</div>
+                <div class="meta-item">Category: ARCHITECTURE</div>
+            </div>
+        </div>
+        <div class="recommendation">
+            <h3>5. Improve Information Architecture</h3>
+            <div class="recommendation-meta">
+                <div class="meta-item priority-medium">Priority: 6/10</div>
+                <div class="meta-item">Impact: medium</div>
+                <div class="meta-item">Difficulty: medium</div>
+                <div class="meta-item">Est. Time: 8 hrs</div>
+                <div class="meta-item">Category: ARCHITECTURE</div>
+            </div>
+        </div>
+        <div class="recommendation">
+            <h3>6. Create a comprehensive sitemap and information architecture diagram to visualize the entire website structure, including all categories, subcategories, and pages. This will help identify gaps and inconsistencies.</h3>
+            <div class="recommendation-meta">
+                <div class="meta-item priority-high">Priority: 9/10</div>
+                <div class="meta-item">Impact: high</div>
+                <div class="meta-item">Difficulty: medium</div>
+                <div class="meta-item">Est. Time: 5 hrs</div>
+                <div class="meta-item">Category: ARCHITECTURE</div>
+            </div>
+        </div>
+    <div class="issues">
+        <h2>Key Issues Found</h2>
+
+        <div class="issue severity-high">
+            <h4>Slow Page</h4>
+            <p></p>
+            <p><strong>Page:</strong> https://happy-skin.com</p>
+        </div>
+        <div class="issue severity-medium">
+            <h4>Images Missing Alt</h4>
+            <p></p>
+            <p><strong>Page:</strong> https://happy-skin.com</p>
+        </div>
+        <div class="issue severity-medium">
+            <h4>Missing Schema</h4>
+            <p></p>
+            <p><strong>Page:</strong> https://happy-skin.com</p>
+        </div>
+        <div class="issue severity-medium">
+            <h4>Missing Schema</h4>
+            <p></p>
+            <p><strong>Page:</strong> https://happy-skin.com/privacy-policy</p>
+        </div>
+        <div class="issue severity-medium">
+            <h4>Few Internal Links</h4>
+            <p></p>
+            <p><strong>Page:</strong> https://happy-skin.com/privacy-policy</p>
+        </div>
+        <div class="issue severity-medium">
+            <h4>Missing Schema</h4>
+            <p></p>
+            <p><strong>Page:</strong> https://happy-skin.com/cookie-policy/</p>
+        </div>
+        <div class="issue severity-medium">
+            <h4>Few Internal Links</h4>
+            <p></p>
+            <p><strong>Page:</strong> https://happy-skin.com/cookie-policy/</p>
+        </div>
+        <div class="issue severity-medium">
+            <h4>Missing Schema</h4>
+            <p></p>
+            <p><strong>Page:</strong> https://happy-skin.com/terms-conditions/</p>
+        </div>
+        <div class="issue severity-medium">
+            <h4>Few Internal Links</h4>
+            <p></p>
+            <p><strong>Page:</strong> https://happy-skin.com/terms-conditions/</p>
+        </div>
+        <div class="issue severity-low">
+            <h4>Long Meta Description</h4>
+            <p></p>
+            <p><strong>Page:</strong> https://happy-skin.com</p>
+        </div>
+    </div>
+    
+    <div class="pages">
+        <h2>Analyzed Pages</h2>
+
+        <button class="collapse-btn" onclick="toggleCollapse('technical-details')">Technical SEO Details</button>
+        <div id="technical-details" class="collapse-content">
+
+            <h3>Site Speed</h3>
+            <p>Average Load Time: 1.7636762261390686 seconds</p>
+            
+            <h3>Mobile Optimization</h3>
+            <p>Mobile-Friendly: Yes</p>
+            
+            <h3>Security</h3>
+            <p>HTTPS Implemented: Yes</p>
+            
+            <h3>Indexation</h3>
+            <p>Robots.txt: Found</p>
+            <p>Sitemap.xml: Found</p>
+    
+        </div>
+        
+        <button class="collapse-btn" onclick="toggleCollapse('onpage-details')">On-Page SEO Details</button>
+        <div id="onpage-details" class="collapse-content">
+
+            <h3>Content Quality</h3>
+            <p>Average Word Count: 1866.0 words</p>
+            <p>Pages with Thin Content: 0</p>
+            
+            <h3>Meta Tags</h3>
+            <p>Pages Missing Title Tags: 0</p>
+            <p>Pages Missing Meta Descriptions: 0</p>
+            
+            <h3>Heading Structure</h3>
+            <p>Pages Missing H1 Headings: 0</p>
+            
+            <h3>Image Optimization</h3>
+            <p>Images Without Alt Text: 6</p>
+    
+        </div>
+        
+        <button class="collapse-btn" onclick="toggleCollapse('ux-details')">UX & Page Design Details</button>
+        <div id="ux-details" class="collapse-content">
+
+                <h3>Visual Design</h3>
+                <p><strong>Score:</strong> 8/10</p>
+                <p>Visually appealing with a consistent brand aesthetic.  However, some imagery could be higher resolution, and the color palette, while pleasant, could benefit from slightly more contrast for better readability.</p>
+                
+                <h3>Layout Structure</h3>
+                <p><strong>Score:</strong> 7/10</p>
+                <p>Layout is generally clean and well-organized.  However, whitespace usage could be optimized on product pages to improve visual breathing room and highlight key information.</p>
+                
+                <h3>Navigation Accessibility</h3>
+                <p><strong>Score:</strong> 9/10</p>
+                <p>Navigation is intuitive and easy to use.  The sitemap is clear and accessible.  However, adding a search functionality would enhance usability.</p>
+                
+                <h3>Interactive Elements</h3>
+                <p><strong>Score:</strong> 7/10</p>
+                <p>Buttons and forms are functional but could be improved visually for better user engagement.  Call-to-actions could be more prominent.</p>
+                
+                <h3>Mobile Experience</h3>
+                <p><strong>Score:</strong> 10/10</p>
+                <p>Excellent mobile responsiveness and touch-friendly design.  The site adapts seamlessly to different screen sizes and orientations.</p>
+                
+        </div>
+        
+        <button class="collapse-btn" onclick="toggleCollapse('pages-details')">Page Details</button>
+        <div id="pages-details" class="collapse-content">
+
+            <table>
+                <tr>
+                    <th>URL</th>
+                    <th>Title</th>
+                    <th>Word Count</th>
+                    <th>Issues</th>
+                </tr>
+    
+                <tr>
+                    <td><a href="https://happy-skin.com" target="_blank">https://happy-skin.com</a></td>
+                    <td>Eczema Clothing UK for Kids, Babies & Children | HappySkin</td>
+                    <td>1726</td>
+                    <td>4</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://happy-skin.com/privacy-policy" target="_blank">https://happy-skin.com/privacy-policy</a></td>
+                    <td>Privacy Policy HappySkin® | HappySkin</td>
+                    <td>2015</td>
+                    <td>2</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://happy-skin.com/cookie-policy/" target="_blank">https://happy-skin.com/cookie-policy/</a></td>
+                    <td>Cookie Policy : HappySkin | HappySkin</td>
+                    <td>971</td>
+                    <td>2</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://happy-skin.com/terms-conditions/" target="_blank">https://happy-skin.com/terms-conditions/</a></td>
+                    <td>Terms and Conditions : HappySkin | HappySkin</td>
+                    <td>2752</td>
+                    <td>2</td>
+                </tr>
+        
+            </table>
+        </div>
+    </div>
+
+    <div class="competitor-heading">Competitor Brands</div>
+    <table class="competitor-table">
+        <tr>
+            <th>Brand</th>
+            <th>DR</th>
+            <th>Referring Domains</th>
+            <th>Backlinks</th>
+            <th>Total Keywords</th>
+        </tr>
+
+        <tr>
+            <td>Little Sleepies</td>
+            <td>65</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+        </tr>
+
+        <tr>
+            <td>Burt's Bees Baby</td>
+            <td>70</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+        </tr>
+
+        <tr>
+            <td>Aden + Anais</td>
+            <td>60</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+        </tr>
+
+        <tr>
+            <td>Kyte BABY</td>
+            <td>55</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+        </tr>
+
+    </table>
+
+    <script>
+        function toggleCollapse(id) {
+            var content = document.getElementById(id);
+            if (content.style.display === "block") {
+                content.style.display = "none";
+            } else {
+                content.style.display = "block";
+            }
+        }
+    </script>
+
+</body>
+</html>

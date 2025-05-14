@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Skin SEO Analysis</title>
+    <style>
+        :root {
+            --primary-color: #4285f4;
+            --secondary-color: #34A853;
+            --warning-color: #FBBC05;
+            --danger-color: #EA4335;
+            --light-bg: #f8f9fa;
+            --dark-text: #333;
+            --medium-text: #555;
+            --light-text: #777;
+            --border-radius: 8px;
+            --card-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+        
+        body {
+            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-text);
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0;
+            background-color: #f5f7f9;
+        }
+        
+        .header {
+            background-color: #1e2126;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .header-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin: 0;
+        }
+        
+        .header-links a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 0.9rem;
+        }
+        
+        .content {
+            padding: 30px;
+        }
+        
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 5px;
+            color: #252930;
+        }
+        
+        h2 {
+            font-size: 1.8rem;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            color: #252930;
+            text-align: center;
+        }
+        
+        .analysis-date {
+            color: var(--medium-text);
+            margin-top: 0;
+            margin-bottom: 40px;
+        }
+        
+        .overview-heading {
+            text-align: center;
+            margin: 30px 0;
+        }
+        
+        .overview-heading h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        
+        .overview-heading p {
+            color: var(--medium-text);
+            font-size: 1.1rem;
+            margin-top: 0;
+        }
+        
+        .cards-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        
+        .card {
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--card-shadow);
+            padding: 25px;
+            text-align: center;
+            flex: 1;
+        }
+        
+        .card-title {
+            font-size: 1.2rem;
+            color: var(--medium-text);
+            margin-bottom: 20px;
+        }
+        
+        .card-value {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--secondary-color);
+            margin: 10px 0;
+        }
+        
+        .card-value.issues {
+            color: var(--warning-color);
+        }
+        
+        .card-subtext {
+            color: var(--light-text);
+            font-size: 0.9rem;
+        }
+        
+        .recommendations {
+            margin-top: 50px;
+        }
+        
+        .recommendation-item {
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--card-shadow);
+            margin-bottom: 20px;
+            padding: 20px;
+            border-left: 5px solid #4285f4;
+        }
+        
+        .recommendation-item.medium {
+            border-left-color: var(--warning-color);
+        }
+        
+        .recommendation-item.high {
+            border-left-color: var(--danger-color);
+        }
+        
+        .recommendation-item.low {
+            border-left-color: var(--primary-color);
+        }
+        
+        .recommendation-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        
+        .recommendation-description {
+            margin-bottom: 20px;
+            color: var(--medium-text);
+        }
+        
+        .tag-container {
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .tag {
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .impact {
+            background-color: #e1f0ff;
+            color: #0366d6;
+        }
+        
+        .impact.high {
+            background-color: #ffeaea;
+            color: #d73a49;
+        }
+        
+        .impact.medium {
+            background-color: #fff8e1;
+            color: #e36c09;
+        }
+        
+        .impact.low {
+            background-color: #e1f0ff;
+            color: #0366d6;
+        }
+        
+        .effort {
+            background-color: #eaecef;
+            color: #586069;
+        }
+        
+        .details-btn {
+            background-color: transparent;
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+        }
+        
+        .details-btn:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .complete-analysis {
+            text-align: center;
+            margin: 60px 0 30px;
+        }
+        
+        .complete-analysis h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+        
+        .complete-analysis p {
+            color: var(--medium-text);
+            font-size: 1.1rem;
+            margin-top: 0;
+        }
+        
+        /* Detailed sections styling */
+        .section {
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--card-shadow);
+            margin-bottom: 30px;
+            padding: 25px;
+        }
+        
+        .section-title {
+            font-size: 1.4rem;
+            margin-top: 0;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eaecef;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #eaecef;
+        }
+        
+        th {
+            background-color: #f6f8fa;
+            font-weight: 600;
+        }
+        
+        tr:hover {
+            background-color: #f6f8fa;
+        }
+        
+        .score-container {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        
+        .score-box {
+            text-align: center;
+            padding: 15px;
+            min-width: 200px;
+            margin: 10px;
+        }
+        
+        .score-title {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: var(--medium-text);
+        }
+        
+        .score-value {
+            font-size: 2.2rem;
+            font-weight: 700;
+        }
+        
+        .technical {
+            color: var(--primary-color);
+        }
+        
+        .onpage {
+            color: var(--warning-color);
+        }
+        
+        .overall {
+            color: var(--secondary-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-title">SEO Analyzer</div>
+        <div class="header-links">
+            <a href="#">Home</a>
+            <a href="#">My Reports</a>
+        </div>
+    </div>
+    
+    <div class="content">
+        <h1>SEO Analysis for https://happy-skin.com</h1>
+        <p class="analysis-date">Analysis completed on 2025-05-13 09:44:53</p>
+        
+        <div class="overview-heading">
+            <h2>Your SEO Analysis is Ready!</h2>
+            <p>Here's a preview of your comprehensive SEO report</p>
+        </div>
+        
+        <div class="cards-container">
+            <div class="card">
+                <div class="card-title">Overall Score</div>
+                <div class="card-value">78</div>
+                <div class="card-subtext">out of 100</div>
+            </div>
+            
+            <div class="card">
+                <div class="card-title">Analysis Date</div>
+                <div class="card-value" style="font-size: 2rem;">2025-05-13</div>
+                <div class="card-subtext">&nbsp;</div>
+            </div>
+            
+            <div class="card">
+                <div class="card-title">Issues Found</div>
+                <div class="card-value issues">3</div>
+                <div class="card-subtext">to fix</div>
+            </div>
+        </div>
+        
+        <div class="recommendations">
+            <h2>Recommendations</h2>
+            
+            
+                
+                    
+                    <div class="recommendation-item medium">
+                        <h3 class="recommendation-title">Improve meta descriptions</h3>
+                        <p class="recommendation-description">Fix meta description issues on 2 pages. Ensure descriptions are 120-160 characters and compelling.</p>
+                        <div class="tag-container">
+                            <div>
+                                <span class="tag impact medium">
+                                    MEDIUM Impact
+                                </span>
+                                <span class="tag effort">
+                                    MEDIUM Effort
+                                </span>
+                            </div>
+                            <button class="details-btn">Show Details</button>
+                        </div>
+                    </div>
+                    
+                
+                    
+                    <div class="recommendation-item low">
+                        <h3 class="recommendation-title">Improve content-to-HTML ratio</h3>
+                        <p class="recommendation-description">Clean up HTML code on 4 pages to improve the text-to-code ratio.</p>
+                        <div class="tag-container">
+                            <div>
+                                <span class="tag impact low">
+                                    LOW Impact
+                                </span>
+                                <span class="tag effort">
+                                    MEDIUM Effort
+                                </span>
+                            </div>
+                            <button class="details-btn">Show Details</button>
+                        </div>
+                    </div>
+                    
+                
+                    
+                    <div class="recommendation-item medium">
+                        <h3 class="recommendation-title">Add schema markup</h3>
+                        <p class="recommendation-description">Implement structured data markup on key pages to enhance search visibility.</p>
+                        <div class="tag-container">
+                            <div>
+                                <span class="tag impact medium">
+                                    MEDIUM Impact
+                                </span>
+                                <span class="tag effort">
+                                    MEDIUM Effort
+                                </span>
+                            </div>
+                            <button class="details-btn">Show Details</button>
+                        </div>
+                    </div>
+                    
+                
+                    
+                    <div class="recommendation-item high">
+                        <h3 class="recommendation-title">Optimize page speed</h3>
+                        <p class="recommendation-description">Improve page loading time by optimizing images and implementing lazy loading.</p>
+                        <div class="tag-container">
+                            <div>
+                                <span class="tag impact high">
+                                    HIGH Impact
+                                </span>
+                                <span class="tag effort">
+                                    MEDIUM Effort
+                                </span>
+                            </div>
+                            <button class="details-btn">Show Details</button>
+                        </div>
+                    </div>
+                    
+                
+            
+                
+                    
+                    <div class="recommendation-item high">
+                        <h3 class="recommendation-title">Improve mobile-friendliness</h3>
+                        <p class="recommendation-description">Optimize 4 pages for mobile devices by adding proper viewport tags and responsive design.</p>
+                        <div class="tag-container">
+                            <div>
+                                <span class="tag impact high">
+                                    HIGH Impact
+                                </span>
+                                <span class="tag effort">
+                                    HIGH Effort
+                                </span>
+                            </div>
+                            <button class="details-btn">Show Details</button>
+                        </div>
+                    </div>
+                    
+                
+            
+        </div>
+        
+        <div class="complete-analysis">
+            <h2>Complete SEO Analysis</h2>
+            <p>View your detailed insights and actionable recommendations below</p>
+        </div>
+        
+        <!-- Technical Analysis Section -->
+        <div class="section">
+            <h3 class="section-title">Technical Analysis</h3>
+            <div class="score-container">
+                <div class="score-box">
+                    <div class="score-title">Technical Score</div>
+                    <div class="score-value technical">75</div>
+                </div>
+            </div>
+            <table>
+                <tr>
+                    <td><strong>SSL/HTTPS:</strong></td>
+                    <td>Yes</td>
+                    <td><strong>Mobile-friendly:</strong></td>
+                    <td>Yes</td>
+                </tr>
+                <tr>
+                    <td><strong>Robots.txt:</strong></td>
+                    <td>Yes</td>
+                    <td><strong>Sitemap.xml:</strong></td>
+                    <td>Yes</td>
+                </tr>
+                <tr>
+                    <td><strong>Page Load Time:</strong></td>
+                    <td>2.8 seconds</td>
+                    <td><strong>Schema Markup:</strong></td>
+                    <td>Product, Organization</td>
+                </tr>
+            </table>
+        </div>
+        
+        <!-- On-Page Analysis Section -->
+        <div class="section">
+            <h3 class="section-title">On-Page Analysis</h3>
+            <div class="score-container">
+                <div class="score-box">
+                    <div class="score-title">On-Page Score</div>
+                    <div class="score-value onpage">82</div>
+                </div>
+            </div>
+            <table>
+                <tr>
+                    <td><strong>Avg. Content Length:</strong></td>
+                    <td>812 words</td>
+                    <td><strong>Pages with Thin Content:</strong></td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td><strong>Missing Title Tags:</strong></td>
+                    <td>0</td>
+                    <td><strong>Missing Meta Descriptions:</strong></td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td><strong>Missing H1 Tags:</strong></td>
+                    <td>1</td>
+                    <td><strong>Duplicate Title Tags:</strong></td>
+                    <td>0</td>
+                </tr>
+            </table>
+        </div>
+        
+        <!-- Page Details Section -->
+        <div class="section">
+            <h3 class="section-title">Analyzed Pages</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>URL</th>
+                        <th>Title</th>
+                        <th>Word Count</th>
+                        <th>Issues</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    <tr>
+                        <td><a href="https://happy-skin.com/" target="_blank">https://happy-skin.com/</a></td>
+                        <td>Happy Skin - Natural Skincare Products</td>
+                        <td>850</td>
+                        <td>2</td>
+                    </tr>
+                    
+                    <tr>
+                        <td><a href="https://happy-skin.com/products" target="_blank">https://happy-skin.com/products</a></td>
+                        <td>Our Products - Happy Skin</td>
+                        <td>750</td>
+                        <td>2</td>
+                    </tr>
+                    
+                    <tr>
+                        <td><a href="https://happy-skin.com/about" target="_blank">https://happy-skin.com/about</a></td>
+                        <td>About Us - Happy Skin</td>
+                        <td>1200</td>
+                        <td>0</td>
+                    </tr>
+                    
+                    <tr>
+                        <td><a href="https://happy-skin.com/contact" target="_blank">https://happy-skin.com/contact</a></td>
+                        <td>Contact - Happy Skin</td>
+                        <td>450</td>
+                        <td>1</td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+        
+        <!-- Add more sections as needed -->
+        
+    </div>
+</body>
+</html> 

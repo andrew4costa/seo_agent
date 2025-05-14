@@ -1,0 +1,1378 @@
+{
+  "user_id": null,
+  "guest_session_id": "fdeb4522-587e-4f83-8fc6-39686b1e5a0f",
+  "filename": "apple.com_20250514_101448_analysis.json",
+  "url": "https://apple.com",
+  "pages": 50,
+  "keyword": "",
+  "status": "completed",
+  "progress": 100,
+  "current_step": "Analysis completed",
+  "steps_completed": 10,
+  "total_steps": 10,
+  "start_time": "2025-05-14T10:14:48.664488+00:00",
+  "end_time": "2025-05-14T10:15:40.514053+00:00",
+  "error": null,
+  "storage_url": "https://xkxzvijcnpztolydczeo.supabase.co/storage/v1/object/public/seo-reports/apple.com_20250514_101448_analysis.json.html",
+  "raw_results": {
+    "analysis": {
+      "technical_seo": {
+        "score": 10.0,
+        "site_speed": {
+          "avg_load_time": 0.49946706295013427,
+          "issues": []
+        },
+        "mobile_optimisation": {
+          "score": 10.0,
+          "has_viewport_meta": true
+        },
+        "indexation": {
+          "robots_txt": {
+            "exists": true,
+            "content": "# robots.txt for https://www.apple.com/\n\nUser-agent: *\nDisallow: /*shop/browse/overlay/*\nDisallow: /*shop/iphone/payments/overlay/*\nDisallow: /cn/*/aow/*\nDisallow: /tmall*\nAllow: /ac/globalnav/2.0/*/images/ac-globalnav/globalnav/search/* \t\n\nUser-agent: Baiduspider\nDisallow: /*\nAllow: /cn/*\nAllow: /cn-edu/*\nAllow: /cn-k12/*\n\nUser-agent: HaoSouSpider\nDisallow: /*\nAllow: /cn/*\nAllow: /cn-edu/*\nAllow: /cn-k12/*\n\nUser-agent: Sogou web spider\nDisallow: /*\nAllow: /cn/*\nAllow: /cn-k12/*\n\nUser-agent: Sogou inst spider\nDisallow: /*\nAllow: /cn/*\nAllow: /cn-k12/*\n\nUser-agent: Sogou spider2\nDisallow: /*\nAllow: /cn/*\nAllow: /cn-k12/*\n\n#DaumWebMasterTool:6ff40e0f09564a9d4e3bc80e7cbde7c196677a2f5f610eb9c029836774f9a8e9:D9a8IEFAzmC/NWsQ3tB0Wg==\n\nSitemap: https://www.apple.com/shop/sitemap.xml\nSitemap: https://www.apple.com/autopush/sitemap/sitemap-index.xml\nSitemap: https://www.apple.com/newsroom/sitemap.xml\nSitemap: https://www.apple.com/retail/sitemap/sitemap.xml\nSitemap: https://www.apple.com/today/sitemap-index.xml\n",
+            "issues": []
+          },
+          "sitemap": {
+            "exists": true,
+            "urls_count": 820,
+            "issues": []
+          }
+        },
+        "security": {
+          "has_ssl": true
+        },
+        "structured_data": {
+          "pages_with_schema": 0,
+          "schema_types": []
+        }
+      },
+      "on_page_seo": {
+        "score": 7.5,
+        "content_quality": {
+          "avg_word_count": 2770.26,
+          "thin_content_pages": 2
+        },
+        "meta_tags": {
+          "pages_without_title": 0,
+          "pages_without_description": 30
+        },
+        "heading_structure": {
+          "pages_without_h1": 1
+        },
+        "image_optimization": {
+          "images_without_alt": 1868
+        }
+      },
+      "off_page_seo": {
+        "score": 5.0,
+        "backlinks": {
+          "note": "Backlink data requires third-party API integration"
+        },
+        "social_signals": {
+          "note": "Social signal data requires third-party API integration"
+        }
+      },
+      "analyzed_pages": {
+        "https://apple.com": {
+          "title": "Apple",
+          "description": null,
+          "word_count": 1027,
+          "load_time": 0.5660021305084229,
+          "issues": [
+            {
+              "type": "short_title",
+              "severity": "medium",
+              "description": "Title is too short (5 chars)"
+            },
+            {
+              "type": "missing_meta_description",
+              "severity": "medium",
+              "description": "Page is missing a meta description"
+            },
+            {
+              "type": "missing_schema",
+              "severity": "medium",
+              "description": "Page has no schema markup (structured data)"
+            }
+          ]
+        },
+        "https://apple.com/": {
+          "title": "Apple",
+          "description": null,
+          "word_count": 1027,
+          "load_time": 0.17966222763061523,
+          "issues": [
+            {
+              "type": "short_title",
+              "severity": "medium",
+              "description": "Title is too short (5 chars)"
+            },
+            {
+              "type": "missing_meta_description",
+              "severity": "medium",
+              "description": "Page is missing a meta description"
+            },
+            {
+              "type": "missing_schema",
+              "severity": "medium",
+              "description": "Page has no schema markup (structured data)"
+            }
+          ]
+        },
+        "https://apple.com/us/shop/goto/store": {
+          "title": "Apple Store Online - Apple",
+          "description": "Shop the latest Apple products, accessories and offers. Compare models, get expert shopping help, plus flexible payment and delivery options.",
+          "word_count": 6438,
+          "load_time": 0.8248691558837891,
+          "issues": [
+            {
+              "type": "images_missing_alt",
+              "severity": "medium",
+              "description": "2 images missing alt text"
+            },
+            {
+              "type": "missing_schema",
+              "severity": "medium",
+              "description": "Page has no schema markup (structured data)"
+            }
+          ]
+        },
+        "https://apple.com/mac/": {
+          "title": "Mac - Apple",
+          "description": null,
+          "word_count": 3941,
+          "load_time": 0.2038562297821045,
+          "issues": [
+            {
+              "type": "missing_meta_description",
+              "severity": "medium",
+              "description": "Page is missing a meta description"
+            },
+            {
+              "type": "images_missing_alt",
+              "severity": "medium",
+              "description": "69 images missing alt text"
+            },
+            {
+              "type": "missing_schema",
+              "severity": "medium",
+              "description": "Page has no schema markup (structured data)"
+            }
+          ]
+        },
+        "https://apple.com/ipad/": {
+          "title": "iPad - Apple",
+          "description": "Explore the world of iPad. Featuring iPad Pro, iPad Air, iPad mini, and iPad.",
+          "word_count": 1654,
+          "load_time": 0.11721110343933105,
+          "issues": [
+            {
+              "type": "images_missing_alt",
+              "severity": "medium",
+              "description": "39 images missing alt text"
+            },
+            {
+              "type": "missing_schema",
+              "severity": "medium",
+              "description": "Page has no schema markup (structured data)"
+            }
+          ]
+        },
+        "https://apple.com/iphone/": {
+          "title": "iPhone - Apple",
+          "description": null,
+          "word_count": 9449,
+          "load_time": 0.15873312950134277,
+          "issues": [
+            {
+              "type": "missing_meta_description",
+              "severity": "medium",
+              "description": "Page is missing a meta description"
+            },
+            {
+              "type": "images_missing_alt",
+              "severity": "medium",
+              "description": "54 images missing alt text"
+            },
+            {
+              "type": "missing_schema",
+              "severity": "medium",
+              "description": "Page has no schema markup (structured data)"
+            }
+          ]
+        },
+        "https://apple.com/watch/": {
+          "title": "Apple Watch - Apple",
+          "description": null,
+          "word_count": 4719,
+          "load_time": 0.18752002716064453,
+          "issues": [
+            {
+              "type": "missing_meta_description",
+              "severity": "medium",
+              "description": "Page is missing a meta description"
+            },
+            {
+              "type": "images_missing_alt",
+              "severity": "medium",
+              "description": "47 images missing alt text"
+            },
+            {
+              "type": "missing_schema",
+              "severity": "medium",
+              "description": "Page has no schema markup (structured data)"
+            }
+          ]
+        },
+        "https://apple.com/apple-vision-pro/": {
+          "title": "Apple Vision Pro - Apple",
+          "description": null,
+          "word_count": 3810,
+          "load_time": 0.46084094047546387,
+          "issues": [
+            {
+              "type": "missing_meta_description",
+              "severity": "medium",
+              "description": "Page is missing a meta description"
+            },
+            {
+              "type": "images_missing_alt",
+              "severity": "medium",
+              "description": "121 images missing alt text"
+            },
+            {
+              "type": "missing_schema",
+              "severity": "medium",
+              "description": "Page has no schema markup (structured data)"
+            }
+          ]
+        },
+        "https://apple.com/airpods/": {
+          "title": "AirPods - Apple",
+          "description": null,
+          "word_count": 2244,
+          "load_time": 0.16563200950622559,
+          "issues": [
+            {
+              "type": "missing_meta_description",
+              "severity": "medium",
+              "description": "Page is missing a meta description"
+            },
+            {
+              "type": "images_missing_alt",
+              "severity": "medium",
+              "description": "26 images missing alt text"
+            },
+            {
+              "type": "missing_schema",
+              "severity": "medium",
+              "description": "Page has no schema markup (structured data)"
+            }
+          ]
+        },
+        "https://apple.com/tv-home/": {
+          "title": "TV & Home - Apple",
+          "description": null,
+          "word_count": 1210,
+          "load_time": 0.1469428539276123,
+          "issues": [
+            {
+              "type": "missing_meta_description",
+              "severity": "medium",
+              "description": "Page is missing a meta description"
+            },
+            {
+              "type": "images_missing_alt",
+              "severity": "medium",
+              "description": "22 images missing alt text"
+            },
+            {
+              "type": "missing_schema",
+              "severity": "medium",
+              "description": "Page has no schema markup (structured data)"
+            }
+          ]
+        },
+        "https://apple.com/entertainment/": {
+          "title": "Entertainment - Services - Apple",
+          "description": null,
+          "word_count": 634,
+          "load_time": 0.38496994972229004,
+          "issues": [
+            {
+              "type": "missing_meta_description",
+              "severity": "medium",
+              "description": "Page is missing a meta description"
+            },
+            {
+              "type": "images_missing_alt",
+              "severity": "medium",
+              "description": "15 images missing alt text"
+            },
+            {
+              "type": "missing_schema",
+              "severity": "medium",
+              "description": "Page has no schema markup (structured data)"
+            }
+          ]
+        },
+        "https://apple.com/us/shop/goto/buy_accessories": {
+          "title": "Apple Accessories for Apple Watch, iPhone, iPad, Mac and Vision Pro - Apple",
+          "description": "Shop Apple accessories for Apple Watch, iPhone, iPad, Mac, and Vision Pro. Search by product lines or browse by categories. Buy now with fast, free shipping.",
+          "word_count": 1167,
+          "load_time": 1.2194859981536865,
+          "issues": [
+            {
+              "type": "long_title",
+              "severity": "medium",
+              "description": "Title is too long (75 chars)"
+            },
+            {
+              "type": "images_missing_alt",
+              "severity": "medium",
+              "description": "30 images missing alt text"
+            },
+            {
+              "type": "missing_schema",
+              "severity": "medium",
+              "description": "Page has no schema markup (structured data)"
+            }
+          ]
+        },
+        "https://apple.com/us/search": {
+          "title": "Apple Store Search Results - Apple",
+          "description": "Apple Store Search Results",
+          "word_count": 305,
+          "load_time": 0.37964582443237305,
+          "issues": [
+            {
+              "type": "short_meta_description",
+              "severity": "low",
+              "description": "Meta description is too short (26 chars)"
+            },
+            {
+              "type": "missing_h1",
+              "severity": "medium",
+              "description": "Page is missing an H1 tag"
+            },
+            {
+              "type": "images_missing_alt",
+              "severity": "medium",
+              "description": "2 images missing alt text"
+            },
+            {
+              "type": "missing_schema",
+              "severity": "medium",
+              "description": "Page has no schema markup (structured data)"
+            }
+          ]
+        },
+        "https://apple.com/us/shop/goto/bag": {
+          "title": "Bag - Apple",
+          "description": "Bag",
+          "word_count": 262,
+          "load_time": 1.2590670585632324,
+          "issues": [
+            {
+              "type": "short_meta_description",
+              "severity": "low",
+              "description": "Meta description is too short (3 chars)"
+            },
+            {
+              "type": "images_missing_alt",
+              "severity": "medium",
+              "description": "2 images missing alt text"
+            },
+            {
+              "type": "thin_content",
+              "severity": "medium",
+              "description": "Page has thin content (262 words)"
+            },
+            {
+              "type": "missing_schema",
+              "severity": "medium",
+              "description": "Page has no schema markup (structured data)"
+            },
+            {
+              "type": "few_internal_links",
+              "severity": "medium",
+              "description": "Page has few internal links (2)"
+            }
+          ]
+        },
+        "https://apple.com/us/shop/goto/buy_iphone": {
+          "title": "Buy iPhone - Apple",
+          "description": "Shop the latest iPhone models and accessories. Save with Apple Trade In, carrier offers, and flexible monthly payment options. Get expert help today.",
+          "word_count": 6375,
+          "load_time": 1.1579968929290771,
+          "issues": [
+            {
+              "type": "images_missing_alt",
+              "severity": "medium",
+              "description": "2 images missing alt text"
+            },
+            {
+              "type": "missing_schema",
+              "severity": "medium",
+              "description": "Page has no schema markup (structured data)"
+            }
+          ]
+        },
+        "https://apple.com/macbook-air/": {
+          "title": "MacBook Air 13-inch and MacBook Air 15-inch - Apple",
+          "description": null,
+          "word_count": 6031,
+          "load_time": 0.17631220817565918,
+          "issues": [
+            {
+              "type": "missing_meta_description",
+              "severity": "medium",
+              "description": "Page is missing a meta description"
+            },
+            {
+              "type": "images_missing_alt",
+              "severity": "medium",
+              "description": "74 images missing alt text"
+            },
+            {
+              "type": "missing_schema",
+              "severity": "medium",
+              "description": "Page has no schema markup (structured data)"
+            }
+          ]
+        },
+        "https://apple.com/us/shop/goto/buy_mac/macbook_air": {
+          "title": "Buy MacBook Air - Apple",
+          "description": "Get a new MacBook Air laptop with the M4 chip from only $83.25 per month. Select a model or customize your own. Buy now at apple.com.",
+          "word_count": 3742,
+          "load_time": 0.8373067378997803,
+          "issues": [
+            {
+              "type": "images_missing_alt",
+              "severity": "medium",
+              "description": "30 images missing alt text"
+            },
+            {
+              "type": "missing_schema",
+              "severity": "medium",
+              "description": "Page has no schema markup (structured data)"
+            }
+          ]
+        },
+        "https://apple.com/apple-watch-series-10/": {
+          "title": "Apple Watch Series 10 - Apple",
+          "description": null,
+          "word_count": 4475,
+          "load_time": 0.16704392433166504,
+          "issues": [
+            {
+              "type": "missing_meta_description",
+              "severity": "medium",
+              "description": "Page is missing a meta description"
+            },
+            {
+              "type": "images_missing_alt",
+              "severity": "medium",
+              "description": "84 images missing alt text"
+            },
+            {
+              "type": "missing_schema",
+              "severity": "medium",
+              "description": "Page has no schema markup (structured data)"
+            }
+          ]
+        },
+        "https://apple.com/us/shop/goto/buy_watch/apple_watch_series_10": {
+          "title": "Buy Apple\u00a0Watch Series\u00a010 - Apple",
+          "description": "Get $30 - $385 off a new Apple Watch Series 10 when you trade in an Apple Watch. Buy now at apple.com.",
+          "word_count": 5044,
+          "load_time": 1.616304874420166,
+          "issues": [
+            {
+              "type": "images_missing_alt",
+              "severity": "medium",
+              "description": "16 images missing alt text"
+            },
+            {
+              "type": "missing_schema",
+              "severity": "medium",
+              "description": "Page has no schema markup (structured data)"
+            }
+          ]
+        },
+        "https://apple.com/education/college-students/": {
+          "title": "Education - College Students - Apple",
+          "description": null,
+          "word_count": 2530,
+          "load_time": 0.7297406196594238,
+          "issues": [
+            {
+              "type": "missing_meta_description",
+              "severity": "medium",
+              "description": "Page is missing a meta description"
+            },
+            {
+              "type": "images_missing_alt",
+              "severity": "medium",
+              "description": "54 images missing alt text"
+            },
+            {
+              "type": "missing_schema",
+              "severity": "medium",
+              "description": "Page has no schema markup (structured data)"
+            }
+          ]
+        },
+        "https://apple.com/ipad-air/": {
+          "title": "iPad Air - Apple",
+          "description": null,
+          "word_count": 4366,
+          "load_time": 0.16789507865905762,
+          "issues": [
+            {
+              "type": "missing_meta_description",
+              "severity": "medium",
+              "description": "Page is missing a meta description"
+            },
+            {
+              "type": "images_missing_alt",
+              "severity": "medium",
+              "description": "210 images missing alt text"
+            },
+            {
+              "type": "missing_schema",
+              "severity": "medium",
+              "description": "Page has no schema markup (structured data)"
+            }
+          ]
+        },
+        "https://apple.com/us/shop/goto/buy_ipad/ipad_air": {
+          "title": "Buy iPad\u00a0Air - Apple",
+          "description": "Get $35 - $710 off a new 11-inch or 13-inch iPad Air when you trade in with Apple. Available in four bold colors. Buy now at apple.com.",
+          "word_count": 4260,
+          "load_time": 1.1150689125061035,
+          "issues": [
+            {
+              "type": "images_missing_alt",
+              "severity": "medium",
+              "description": "30 images missing alt text"
+            },
+            {
+              "type": "missing_schema",
+              "severity": "medium",
+              "description": "Page has no schema markup (structured data)"
+            }
+          ]
+        },
+        "https://apple.com/airpods-pro/hearing-health/": {
+          "title": "AirPods Pro 2 - Hearing Health - Apple",
+          "description": null,
+          "word_count": 1380,
+          "load_time": 0.1631162166595459,
+          "issues": [
+            {
+              "type": "missing_meta_description",
+              "severity": "medium",
+              "description": "Page is missing a meta description"
+            },
+            {
+              "type": "images_missing_alt",
+              "severity": "medium",
+              "description": "42 images missing alt text"
+            },
+            {
+              "type": "missing_schema",
+              "severity": "medium",
+              "description": "Page has no schema markup (structured data)"
+            }
+          ]
+        },
+        "https://apple.com/us/shop/goto/buy_airpods/airpods_pro_2": {
+          "title": "AirPods Pro 2 - Apple",
+          "description": "AirPods Pro 2 with pro-level Active Noise Cancellation. The first all-in-one hearing health experience. Free shipping and engraving at apple.com.",
+          "word_count": 2494,
+          "load_time": 1.1203510761260986,
+          "issues": [
+            {
+              "type": "images_missing_alt",
+              "severity": "medium",
+              "description": "26 images missing alt text"
+            },
+            {
+              "type": "missing_schema",
+              "severity": "medium",
+              "description": "Page has no schema markup (structured data)"
+            }
+          ]
+        },
+        "https://apple.com/macbook-pro/": {
+          "title": "MacBook Pro - Apple",
+          "description": null,
+          "word_count": 11510,
+          "load_time": 0.208967924118042,
+          "issues": [
+            {
+              "type": "missing_meta_description",
+              "severity": "medium",
+              "description": "Page is missing a meta description"
+            },
+            {
+              "type": "images_missing_alt",
+              "severity": "medium",
+              "description": "158 images missing alt text"
+            },
+            {
+              "type": "missing_schema",
+              "severity": "medium",
+              "description": "Page has no schema markup (structured data)"
+            }
+          ]
+        },
+        "https://apple.com/us/shop/goto/buy_mac/macbook_pro": {
+          "title": "Buy MacBook Pro - Apple",
+          "description": "Discover the MacBook Pro laptop with the M4 family of chips, built for Apple Intelligence. Get credit when you trade in an eligible Mac. Buy now.",
+          "word_count": 3604,
+          "load_time": 0.44385719299316406,
+          "issues": [
+            {
+              "type": "images_missing_alt",
+              "severity": "medium",
+              "description": "30 images missing alt text"
+            },
+            {
+              "type": "missing_schema",
+              "severity": "medium",
+              "description": "Page has no schema markup (structured data)"
+            }
+          ]
+        },
+        "https://apple.com/us/shop/goto/trade_in": {
+          "title": "Apple Trade In - Apple",
+          "description": "Trade in your iPhone, iPad, Mac, Watch, or any other device for credit toward a new one, or recycle it responsibly for free with Apple Trade In.",
+          "word_count": 2490,
+          "load_time": 0.8400859832763672,
+          "issues": [
+            {
+              "type": "images_missing_alt",
+              "severity": "medium",
+              "description": "4 images missing alt text"
+            },
+            {
+              "type": "missing_schema",
+              "severity": "medium",
+              "description": "Page has no schema markup (structured data)"
+            }
+          ]
+        },
+        "https://apple.com/apple-card/": {
+          "title": "Apple Card - Apple",
+          "description": null,
+          "word_count": 5047,
+          "load_time": 0.35660481452941895,
+          "issues": [
+            {
+              "type": "missing_meta_description",
+              "severity": "medium",
+              "description": "Page is missing a meta description"
+            },
+            {
+              "type": "images_missing_alt",
+              "severity": "medium",
+              "description": "6 images missing alt text"
+            },
+            {
+              "type": "missing_schema",
+              "severity": "medium",
+              "description": "Page has no schema markup (structured data)"
+            }
+          ]
+        },
+        "https://apple.com/airtag/": {
+          "title": "AirTag - Apple",
+          "description": null,
+          "word_count": 1547,
+          "load_time": 0.2502100467681885,
+          "issues": [
+            {
+              "type": "missing_meta_description",
+              "severity": "medium",
+              "description": "Page is missing a meta description"
+            },
+            {
+              "type": "images_missing_alt",
+              "severity": "medium",
+              "description": "2 images missing alt text"
+            },
+            {
+              "type": "missing_schema",
+              "severity": "medium",
+              "description": "Page has no schema markup (structured data)"
+            }
+          ]
+        },
+        "https://apple.com/us/shop/goto/giftcards": {
+          "title": "Apple Gift Card - Apple",
+          "description": "The Apple Gift Card for everything Apple: products, accessories, services and more. Corporate gift cards and electronic gift cards are also available.",
+          "word_count": 671,
+          "load_time": 0.8215582370758057,
+          "issues": [
+            {
+              "type": "images_missing_alt",
+              "severity": "medium",
+              "description": "22 images missing alt text"
+            },
+            {
+              "type": "missing_schema",
+              "severity": "medium",
+              "description": "Page has no schema markup (structured data)"
+            }
+          ]
+        },
+        "https://apple.com/wallet/": {
+          "title": "Wallet - Apple",
+          "description": null,
+          "word_count": 3918,
+          "load_time": 0.20745325088500977,
+          "issues": [
+            {
+              "type": "missing_meta_description",
+              "severity": "medium",
+              "description": "Page is missing a meta description"
+            },
+            {
+              "type": "images_missing_alt",
+              "severity": "medium",
+              "description": "126 images missing alt text"
+            },
+            {
+              "type": "missing_schema",
+              "severity": "medium",
+              "description": "Page has no schema markup (structured data)"
+            }
+          ]
+        },
+        "https://apple.com/apple-pay/": {
+          "title": "Apple Pay - Apple",
+          "description": null,
+          "word_count": 3074,
+          "load_time": 0.14696383476257324,
+          "issues": [
+            {
+              "type": "missing_meta_description",
+              "severity": "medium",
+              "description": "Page is missing a meta description"
+            },
+            {
+              "type": "images_missing_alt",
+              "severity": "medium",
+              "description": "32 images missing alt text"
+            },
+            {
+              "type": "missing_schema",
+              "severity": "medium",
+              "description": "Page has no schema markup (structured data)"
+            }
+          ]
+        },
+        "https://apple.com/apple-cash/": {
+          "title": "Apple Cash - Apple",
+          "description": null,
+          "word_count": 2912,
+          "load_time": 0.18804597854614258,
+          "issues": [
+            {
+              "type": "missing_meta_description",
+              "severity": "medium",
+              "description": "Page is missing a meta description"
+            },
+            {
+              "type": "images_missing_alt",
+              "severity": "medium",
+              "description": "66 images missing alt text"
+            },
+            {
+              "type": "missing_schema",
+              "severity": "medium",
+              "description": "Page has no schema markup (structured data)"
+            }
+          ]
+        },
+        "https://apple.com/us/shop/goto/account": {
+          "title": "Sign in - Apple",
+          "description": "Sign in",
+          "word_count": 72,
+          "load_time": 2.203047037124634,
+          "issues": [
+            {
+              "type": "short_meta_description",
+              "severity": "low",
+              "description": "Meta description is too short (7 chars)"
+            },
+            {
+              "type": "images_missing_alt",
+              "severity": "medium",
+              "description": "2 images missing alt text"
+            },
+            {
+              "type": "thin_content",
+              "severity": "medium",
+              "description": "Page has thin content (72 words)"
+            },
+            {
+              "type": "missing_schema",
+              "severity": "medium",
+              "description": "Page has no schema markup (structured data)"
+            },
+            {
+              "type": "few_internal_links",
+              "severity": "medium",
+              "description": "Page has few internal links (2)"
+            }
+          ]
+        },
+        "https://apple.com/apple-one/": {
+          "title": "Apple One - Apple",
+          "description": null,
+          "word_count": 1634,
+          "load_time": 0.19300413131713867,
+          "issues": [
+            {
+              "type": "missing_meta_description",
+              "severity": "medium",
+              "description": "Page is missing a meta description"
+            },
+            {
+              "type": "missing_schema",
+              "severity": "medium",
+              "description": "Page has no schema markup (structured data)"
+            }
+          ]
+        },
+        "https://apple.com/apple-tv-plus/": {
+          "title": "Apple TV+ - Apple",
+          "description": null,
+          "word_count": 1119,
+          "load_time": 0.15964293479919434,
+          "issues": [
+            {
+              "type": "missing_meta_description",
+              "severity": "medium",
+              "description": "Page is missing a meta description"
+            },
+            {
+              "type": "missing_schema",
+              "severity": "medium",
+              "description": "Page has no schema markup (structured data)"
+            }
+          ]
+        },
+        "https://apple.com/apple-music/": {
+          "title": "Apple Music - Apple",
+          "description": null,
+          "word_count": 2959,
+          "load_time": 0.15662312507629395,
+          "issues": [
+            {
+              "type": "missing_meta_description",
+              "severity": "medium",
+              "description": "Page is missing a meta description"
+            },
+            {
+              "type": "images_missing_alt",
+              "severity": "medium",
+              "description": "50 images missing alt text"
+            },
+            {
+              "type": "missing_schema",
+              "severity": "medium",
+              "description": "Page has no schema markup (structured data)"
+            }
+          ]
+        },
+        "https://apple.com/apple-arcade/": {
+          "title": "Apple Arcade - Apple",
+          "description": null,
+          "word_count": 1327,
+          "load_time": 0.2057790756225586,
+          "issues": [
+            {
+              "type": "missing_meta_description",
+              "severity": "medium",
+              "description": "Page is missing a meta description"
+            },
+            {
+              "type": "images_missing_alt",
+              "severity": "medium",
+              "description": "25 images missing alt text"
+            },
+            {
+              "type": "missing_schema",
+              "severity": "medium",
+              "description": "Page has no schema markup (structured data)"
+            }
+          ]
+        },
+        "https://apple.com/apple-fitness-plus/": {
+          "title": "Apple Fitness+ - Apple",
+          "description": null,
+          "word_count": 2027,
+          "load_time": 0.22156214714050293,
+          "issues": [
+            {
+              "type": "missing_meta_description",
+              "severity": "medium",
+              "description": "Page is missing a meta description"
+            },
+            {
+              "type": "images_missing_alt",
+              "severity": "medium",
+              "description": "204 images missing alt text"
+            },
+            {
+              "type": "missing_schema",
+              "severity": "medium",
+              "description": "Page has no schema markup (structured data)"
+            }
+          ]
+        },
+        "https://apple.com/apple-news/": {
+          "title": "Apple News+ - Apple",
+          "description": null,
+          "word_count": 1539,
+          "load_time": 0.15282297134399414,
+          "issues": [
+            {
+              "type": "missing_meta_description",
+              "severity": "medium",
+              "description": "Page is missing a meta description"
+            },
+            {
+              "type": "images_missing_alt",
+              "severity": "medium",
+              "description": "12 images missing alt text"
+            },
+            {
+              "type": "missing_schema",
+              "severity": "medium",
+              "description": "Page has no schema markup (structured data)"
+            }
+          ]
+        },
+        "https://apple.com/apple-podcasts/": {
+          "title": "Apple Podcasts - Apple",
+          "description": null,
+          "word_count": 1413,
+          "load_time": 0.18225383758544922,
+          "issues": [
+            {
+              "type": "missing_meta_description",
+              "severity": "medium",
+              "description": "Page is missing a meta description"
+            },
+            {
+              "type": "images_missing_alt",
+              "severity": "medium",
+              "description": "52 images missing alt text"
+            },
+            {
+              "type": "missing_schema",
+              "severity": "medium",
+              "description": "Page has no schema markup (structured data)"
+            }
+          ]
+        },
+        "https://apple.com/apple-books/": {
+          "title": "Apple Books - Apple",
+          "description": null,
+          "word_count": 938,
+          "load_time": 0.23650407791137695,
+          "issues": [
+            {
+              "type": "missing_meta_description",
+              "severity": "medium",
+              "description": "Page is missing a meta description"
+            },
+            {
+              "type": "images_missing_alt",
+              "severity": "medium",
+              "description": "21 images missing alt text"
+            },
+            {
+              "type": "missing_schema",
+              "severity": "medium",
+              "description": "Page has no schema markup (structured data)"
+            }
+          ]
+        },
+        "https://apple.com/app-store/": {
+          "title": "App Store - Apple",
+          "description": null,
+          "word_count": 1914,
+          "load_time": 0.16344308853149414,
+          "issues": [
+            {
+              "type": "missing_meta_description",
+              "severity": "medium",
+              "description": "Page is missing a meta description"
+            },
+            {
+              "type": "images_missing_alt",
+              "severity": "medium",
+              "description": "38 images missing alt text"
+            },
+            {
+              "type": "missing_schema",
+              "severity": "medium",
+              "description": "Page has no schema markup (structured data)"
+            }
+          ]
+        },
+        "https://apple.com/retail/": {
+          "title": "Apple Store - Find a Store - Apple",
+          "description": "Find an Apple Store and shop for Mac, iPhone, iPad, Apple Watch, and more. Sign up for Today at Apple programs. Or get support at the Genius Bar.",
+          "word_count": 509,
+          "load_time": 0.12502121925354004,
+          "issues": [
+            {
+              "type": "missing_schema",
+              "severity": "medium",
+              "description": "Page has no schema markup (structured data)"
+            }
+          ]
+        },
+        "https://apple.com/retail/geniusbar/": {
+          "title": "Genius Bar Reservation and Apple Support Options - Apple",
+          "description": null,
+          "word_count": 431,
+          "load_time": 0.1360173225402832,
+          "issues": [
+            {
+              "type": "missing_meta_description",
+              "severity": "medium",
+              "description": "Page is missing a meta description"
+            },
+            {
+              "type": "missing_schema",
+              "severity": "medium",
+              "description": "Page has no schema markup (structured data)"
+            }
+          ]
+        },
+        "https://apple.com/today/": {
+          "title": "Today at Apple - Apple",
+          "description": "Learn, create, and be inspired in hands-on sessions at your Apple Store. Find out what\u2019s going on near you with Today at Apple.",
+          "word_count": 1593,
+          "load_time": 0.449840784072876,
+          "issues": [
+            {
+              "type": "missing_schema",
+              "severity": "medium",
+              "description": "Page has no schema markup (structured data)"
+            }
+          ]
+        },
+        "https://apple.com/today/groups/": {
+          "title": "Today at Apple - Group Reservations - Apple",
+          "description": "Book a hands-on Today at Apple session just for your group. And get more out of the products you love, right in the Apple Store.",
+          "word_count": 579,
+          "load_time": 0.5656840801239014,
+          "issues": [
+            {
+              "type": "missing_schema",
+              "severity": "medium",
+              "description": "Page has no schema markup (structured data)"
+            }
+          ]
+        },
+        "https://apple.com/today/camp/": {
+          "title": "Today at Apple - Apple Camp - Apple",
+          "description": "Get notified when registration opens for Apple Camp, a summer program at the Apple Store that teaches kids ages 8\u201312 how to do fun stuff.",
+          "word_count": 399,
+          "load_time": 0.8105649948120117,
+          "issues": [
+            {
+              "type": "missing_schema",
+              "severity": "medium",
+              "description": "Page has no schema markup (structured data)"
+            }
+          ]
+        },
+        "https://apple.com/us/shop/goto/special_deals": {
+          "title": "Certified Refurbished Products - Apple",
+          "description": "Every Apple Certified Refurbished product includes savings up to 15%, and comes with a one-year warranty and full functional testing. Shop & save now.",
+          "word_count": 643,
+          "load_time": 0.8467810153961182,
+          "issues": [
+            {
+              "type": "images_missing_alt",
+              "severity": "medium",
+              "description": "3 images missing alt text"
+            },
+            {
+              "type": "missing_schema",
+              "severity": "medium",
+              "description": "Page has no schema markup (structured data)"
+            }
+          ]
+        },
+        "https://apple.com/us/shop/goto/payment_plan": {
+          "title": "Financing and Credit - Apple",
+          "description": "Get special financing on Apple products. Pay over time, interest-free with Apple Card Monthly Installments. And get 3% Daily Cash back with Apple Card.",
+          "word_count": 6060,
+          "load_time": 1.1954388618469238,
+          "issues": [
+            {
+              "type": "images_missing_alt",
+              "severity": "medium",
+              "description": "18 images missing alt text"
+            },
+            {
+              "type": "missing_schema",
+              "severity": "medium",
+              "description": "Page has no schema markup (structured data)"
+            }
+          ]
+        }
+      },
+      "competitors": {
+        "competitors": [
+          {
+            "brand": "Samsung",
+            "website": "https://www.samsung.com",
+            "ESTIMATE_DR": 95,
+            "Referring_Domains": "N/A",
+            "Backlinks": "N/A",
+            "Total_Keywords": "N/A"
+          },
+          {
+            "brand": "Microsoft",
+            "website": "https://www.microsoft.com",
+            "ESTIMATE_DR": 98,
+            "Referring_Domains": "N/A",
+            "Backlinks": "N/A",
+            "Total_Keywords": "N/A"
+          },
+          {
+            "brand": "Google",
+            "website": "https://www.google.com",
+            "ESTIMATE_DR": 100,
+            "Referring_Domains": "N/A",
+            "Backlinks": "N/A",
+            "Total_Keywords": "N/A"
+          },
+          {
+            "brand": "Dell",
+            "website": "https://www.dell.com",
+            "ESTIMATE_DR": 92,
+            "Referring_Domains": "N/A",
+            "Backlinks": "N/A",
+            "Total_Keywords": "N/A"
+          },
+          {
+            "brand": "HP",
+            "website": "https://www.hp.com",
+            "ESTIMATE_DR": 90,
+            "Referring_Domains": "N/A",
+            "Backlinks": "N/A",
+            "Total_Keywords": "N/A"
+          }
+        ]
+      }
+    },
+    "recommendations": [
+      {
+        "recommendation": "Optimize for featured snippets in relevant product categories",
+        "category": "On-Page",
+        "priority_score": 9,
+        "impact": "high",
+        "implementation_difficulty": "medium",
+        "estimated_time_hours": 40,
+        "reasoning": "Apple's high technical score allows focus on schema markup optimization to increase visibility in Google's featured snippets for product searches like \"best macbook pro\" or \"ipad pro deals\".  This directly targets high-intent searches and drives qualified traffic."
+      },
+      {
+        "recommendation": "Deepen content strategy for \"Other consumer electronics\"",
+        "category": "Content",
+        "priority_score": 8,
+        "impact": "medium",
+        "implementation_difficulty": "medium",
+        "estimated_time_hours": 60,
+        "reasoning": "The unspecified \"Other consumer electronics\" category lacks strategic focus.  Conduct keyword research to identify high-volume, low-competition keywords related to Apple's offerings in this area (e.g., AirPods, Apple Watch, accessories). Create in-depth, engaging content around these keywords, improving content length and SEO performance."
+      },
+      {
+        "recommendation": "Implement structured data for improved product schema",
+        "category": "Technical",
+        "priority_score": 7,
+        "impact": "medium",
+        "implementation_difficulty": "medium",
+        "estimated_time_hours": 30,
+        "reasoning": "While the site has a good technical score, enhancing structured data for products (using schema.org vocabulary) will improve search engine understanding of product attributes, leading to richer snippets and potentially higher click-through rates. Focus on improving the accuracy and completeness of product data markup."
+      },
+      {
+        "recommendation": "Refine target audience definition and create buyer personas",
+        "category": "Strategic",
+        "priority_score": 10,
+        "impact": "high",
+        "implementation_difficulty": "hard",
+        "estimated_time_hours": 80,
+        "reasoning": "Lack of clear target audience definition hinders effective content creation and SEO strategy.  Develop detailed buyer personas for each product category (Mac, iPad, etc.) to tailor content, keywords, and messaging for specific user needs and preferences."
+      },
+      {
+        "recommendation": "Analyze competitor backlink profiles",
+        "category": "Strategic",
+        "priority_score": 6,
+        "impact": "medium",
+        "implementation_difficulty": "hard",
+        "estimated_time_hours": 50,
+        "reasoning": "Apple's strong technical foundation necessitates a competitive analysis of backlinks. Identify high-authority sites linking to competitors and develop a strategy to acquire similar backlinks for improved domain authority and organic rankings."
+      },
+      {
+        "recommendation": "Improve Sitemap Entry Count",
+        "reasoning": "While a sitemap exists, it currently contains zero entries.  A comprehensive sitemap is crucial for SEO and indexing by search engines.  Adding all relevant URLs will significantly improve discoverability.",
+        "priority_score": 10,
+        "impact": "High",
+        "implementation_difficulty": "Medium",
+        "estimated_time_hours": 8,
+        "category": "ARCHITECTURE"
+      },
+      {
+        "recommendation": "Implement Consistent URL Structure",
+        "reasoning": "Maintain a consistent and logical URL structure across all product categories.  For example, using a consistent structure like `/product-category/product-name` will improve user experience and SEO.",
+        "priority_score": 9,
+        "impact": "High",
+        "implementation_difficulty": "High",
+        "estimated_time_hours": 24,
+        "category": "ARCHITECTURE"
+      },
+      {
+        "recommendation": "Enhance Information Architecture",
+        "reasoning": "Analyze the current information architecture to ensure a clear and intuitive structure.  Consider user flows and create a sitemap reflecting the logical grouping of content for improved navigation and user experience.",
+        "priority_score": 8,
+        "impact": "High",
+        "implementation_difficulty": "High",
+        "estimated_time_hours": 16,
+        "category": "ARCHITECTURE"
+      },
+      {
+        "recommendation": "Optimize Navigation",
+        "reasoning": "Ensure clear and prominent navigation menus across all pages.  Implement intuitive breadcrumbs to help users understand their location within the website and easily navigate back to previous sections.",
+        "priority_score": 7,
+        "impact": "Medium",
+        "implementation_difficulty": "Medium",
+        "estimated_time_hours": 12,
+        "category": "ARCHITECTURE"
+      },
+      {
+        "recommendation": "Refine Content Categorization",
+        "reasoning": "Review the current content categorization to ensure logical grouping and clear labeling.  This will improve user experience and make it easier for search engines to understand the content.",
+        "priority_score": 6,
+        "impact": "Medium",
+        "implementation_difficulty": "Medium",
+        "estimated_time_hours": 8,
+        "category": "ARCHITECTURE"
+      },
+      {
+        "recommendation": "Ensure Responsive Mobile Architecture",
+        "reasoning": "Verify that the website is fully responsive and provides an optimal user experience across all devices (desktops, tablets, and smartphones).  Conduct thorough testing on various devices and screen sizes.",
+        "priority_score": 9,
+        "impact": "High",
+        "implementation_difficulty": "Medium",
+        "estimated_time_hours": 10,
+        "category": "ARCHITECTURE"
+      },
+      {
+        "recommendation": "Optimize for various screen sizes and orientations.",
+        "reasoning": "While the mobile score is perfect, ensure consistent UX across all mobile devices and orientations (portrait/landscape).",
+        "category": "UX_DESIGN",
+        "priority": 7,
+        "difficulty": 3,
+        "hours": 16
+      },
+      {
+        "recommendation": "Improve accessibility for users with disabilities.",
+        "reasoning": "Ensure compliance with WCAG guidelines for better inclusivity.",
+        "category": "UX_DESIGN",
+        "priority": 9,
+        "difficulty": 5,
+        "hours": 40
+      },
+      {
+        "recommendation": "A/B test different homepage layouts.",
+        "reasoning": "Experiment with different layouts to optimize user engagement and conversion rates.",
+        "category": "UX_DESIGN",
+        "priority": 6,
+        "difficulty": 4,
+        "hours": 24
+      },
+      {
+        "recommendation": "Enhance product page information architecture.",
+        "reasoning": "Improve navigation and information clarity on product pages for better user experience.",
+        "category": "UX_DESIGN",
+        "priority": 8,
+        "difficulty": 6,
+        "hours": 32
+      },
+      {
+        "recommendation": "Conduct user research to identify pain points.",
+        "reasoning": "Gather user feedback to identify areas for improvement in the user journey.",
+        "category": "UX_DESIGN",
+        "priority": 10,
+        "difficulty": 7,
+        "hours": 48
+      },
+      {
+        "recommendation": "Refine the checkout process.",
+        "reasoning": "Streamline the checkout process to reduce cart abandonment and improve conversion rates.",
+        "category": "UX_DESIGN",
+        "priority": 5,
+        "difficulty": 4,
+        "hours": 24
+      }
+    ],
+    "competitor_data": {
+      "competitors": [
+        {
+          "brand": "Samsung",
+          "website": "https://www.samsung.com",
+          "ESTIMATE_DR": 95,
+          "Referring_Domains": "N/A",
+          "Backlinks": "N/A",
+          "Total_Keywords": "N/A"
+        },
+        {
+          "brand": "Microsoft",
+          "website": "https://www.microsoft.com",
+          "ESTIMATE_DR": 98,
+          "Referring_Domains": "N/A",
+          "Backlinks": "N/A",
+          "Total_Keywords": "N/A"
+        },
+        {
+          "brand": "Google",
+          "website": "https://www.google.com",
+          "ESTIMATE_DR": 100,
+          "Referring_Domains": "N/A",
+          "Backlinks": "N/A",
+          "Total_Keywords": "N/A"
+        },
+        {
+          "brand": "Dell",
+          "website": "https://www.dell.com",
+          "ESTIMATE_DR": 92,
+          "Referring_Domains": "N/A",
+          "Backlinks": "N/A",
+          "Total_Keywords": "N/A"
+        },
+        {
+          "brand": "HP",
+          "website": "https://www.hp.com",
+          "ESTIMATE_DR": 90,
+          "Referring_Domains": "N/A",
+          "Backlinks": "N/A",
+          "Total_Keywords": "N/A"
+        }
+      ]
+    },
+    "dataforseo_data": {},
+    "report_path": "/Users/andrewcosta/seo_reports/Apple_com_seo_report_2025-05-14_12-15-39.html"
+  }
+}

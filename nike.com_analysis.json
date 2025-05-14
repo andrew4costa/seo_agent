@@ -1,0 +1,84 @@
+{
+  "technical_seo": {
+    "score": 9.0,
+    "site_speed": {
+      "avg_load_time": 0.6992487907409668,
+      "issues": []
+    },
+    "mobile_optimisation": {
+      "score": 10.0,
+      "has_viewport_meta": true
+    },
+    "indexation": {
+      "robots_txt": {
+        "exists": true,
+        "content": "# www.nike.com robots.txt -- just crawl it.\n\nUser-agent: *\n\nDisallow: */member/inbox\nDisallow: */member/settings\nDisallow: */p/\nDisallow: */checkout/\nDisallow: /*.swf$\nDisallow: /*.pdf$\nDisallow: /pdf/\nDisallow: /ar/help/\nDisallow: /br/help/\nDisallow: /hk/help/\nDisallow: /uy/help/\nDisallow: /xf/help/\nDisallow: /xl/help/\nDisallow: /xm/help/\nDisallow: /fragments/recommendations-carousel\nDisallow: /kr/en$\nDisallow: /kr/en/\n\nUser-agent: Baiduspider\nAllow: /cn$\nAllow: /cn/\nAllow: /CN$\nAllow: /CN/\nAllow: /assets/\nAllow: /static/\nAllow: /styleguide/\nDisallow: */w?q=\nDisallow: */w/?q=\nDisallow: /\n \nUser-agent: HaoSouSpider\nAllow: /cn$\nAllow: /cn/\nAllow: /CN$\nAllow: /CN/\nAllow: /assets/\nAllow: /static/\nAllow: /styleguide/\nDisallow: */w?q=\nDisallow: */w/?q=\nDisallow: /\n\nUser-agent: Sogou web spider\nAllow: /cn$\nAllow: /cn/\nAllow: /CN$\nAllow: /CN/\nAllow: /assets/\nAllow: /static/\nAllow: /styleguide/\nDisallow: */w?q=\nDisallow: */w/?q=\nDisallow: /\n\nUser-agent: Sogou inst spider\nAllow: /cn$\nAllow: /cn/\nAllow: /CN$\nAllow: /CN/\nAllow: /assets/\nAllow: /static/\nAllow: /styleguide/\nDisallow: */w?q=\nDisallow: */w/?q=\nDisallow: /\n\nUser-agent: Sogou spider2\nAllow: /cn$\nAllow: /cn/\nAllow: /CN$\nAllow: /CN/\nAllow: /assets/\nAllow: /static/\nAllow: /styleguide/\nDisallow: */w?q=\nDisallow: */w/?q=\nDisallow: /\n\nSitemap: https://www.nike.com/sitemap-us-help.xml\nSitemap: https://www.nike.com/sitemap-v2-landingpage-index.xml\nSitemap: https://www.nike.com/sitemap-v2-pdp-index.xml\nSitemap: https://www.nike.com/sitemap-v2-snkrsweb-index.xml\nSitemap: https://www.nike.com/sitemap-v2-gridwall-index.xml\nSitemap: https://www.nike.com/sitemap-v2-article-index.xml\nSitemap: https://www.nike.com/sitemap-locator-index.xml\n\n#                                                                                                    \n#                 ``                                                                        ```.`    \n#               `+/                                                                 ``.-/+o+:-.      \n#             `/mo                                                          ``.-:+syhdhs/-`          \n#            -hMd                                                    `..:+oyhmNNmds/-`               \n#          `oNMM/                                            ``.-/oyhdmMMMMNdy+:.                    \n#         .hMMMM-                                     `.-/+shdmNMMMMMMNdy+:.                         \n#        :mMMMMM+                             `.-:+sydmNMMMMMMMMMNmho:.`                             \n#       :NMMMMMMN:                    `.-:/oyhmmNMMMMMMMMMMMNmho:.`                                  \n#      .NMMMMMMMMNy:`          `.-/oshdmNMMMMMMMMMMMMMMMmhs/-`                                       \n#      hMMMMMMMMMMMMmhysooosyhdmNMMMMMMMMMMMMMMMMMMmds/-`                                            \n#     .MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNdy+-.`                                                \n#     -MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNdy+-.`                                                     \n#     `NMMMMMMMMMMMMMMMMMMMMMMMMMMMMMmyo:.`                                                          \n#      /NMMMMMMMMMMMMMMMMMMMMMMMmho:.`                                                               \n#       .yNMMMMMMMMMMMMMMMMmhs/.`                                                                    \n#         ./shdmNNmmdhyo/-``                                                                         \n#              `````                 \n",
+        "issues": []
+      },
+      "sitemap": {
+        "exists": false,
+        "urls_count": 0,
+        "issues": [
+          {
+            "type": "sitemap_not_found",
+            "severity": "medium",
+            "description": "sitemap.xml not found (status code: 404)"
+          }
+        ]
+      }
+    },
+    "security": {
+      "has_ssl": true
+    },
+    "structured_data": {
+      "pages_with_schema": 0,
+      "schema_types": []
+    }
+  },
+  "on_page_seo": {
+    "score": 9.0,
+    "content_quality": {
+      "avg_word_count": 884.0,
+      "thin_content_pages": 0
+    },
+    "meta_tags": {
+      "pages_without_title": 0,
+      "pages_without_description": 0
+    },
+    "heading_structure": {
+      "pages_without_h1": 0
+    },
+    "image_optimization": {
+      "images_without_alt": 0
+    }
+  },
+  "off_page_seo": {
+    "score": 5.0,
+    "backlinks": {
+      "note": "Backlink data requires third-party API integration"
+    },
+    "social_signals": {
+      "note": "Social signal data requires third-party API integration"
+    }
+  },
+  "analyzed_pages": {
+    "https://nike.com": {
+      "title": "Nike. Just Do It. Nike IT",
+      "description": "Nike offre prodotti, esperienze e servizi innovativi per ispirare ogni atleta.",
+      "word_count": 884,
+      "load_time": 0.6992487907409668,
+      "issues": [
+        {
+          "type": "missing_schema",
+          "severity": "medium",
+          "description": "Page has no schema markup (structured data)"
+        },
+        {
+          "type": "few_internal_links",
+          "severity": "medium",
+          "description": "Page has few internal links (0)"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "company": "Airbnb",
+  "url": "https://airbnb.com",
+  "date": "2025-05-06 17:59:58",
+  "recommendations": [
+    {
+      "recommendation": "Add descriptive alt text to all 85 images currently missing alt attributes.  Focus on keywords relevant to the listing (e.g., \"cozy cabin in the woods,\" \"modern city apartment with balcony\") to improve accessibility and SEO.",
+      "category": "On-Page",
+      "priority_score": 10,
+      "impact": "high",
+      "implementation_difficulty": "medium",
+      "estimated_time_hours": 8
+    },
+    {
+      "recommendation": "Implement a sitemap.xml to improve crawlability and indexing of Airbnb's vast inventory of listings and experiences.",
+      "category": "Technical",
+      "priority_score": 9,
+      "impact": "high",
+      "implementation_difficulty": "medium",
+      "estimated_time_hours": 4
+    },
+    {
+      "recommendation": "Add H1 headings to the two pages identified as missing them.  Ensure the H1 accurately reflects the page's content and targets relevant keywords related to the listing or experience.",
+      "category": "On-Page",
+      "priority_score": 9,
+      "impact": "medium",
+      "implementation_difficulty": "easy",
+      "estimated_time_hours": 2
+    },
+    {
+      "recommendation": "Implement structured data markup (schema.org) beyond ListItem. Utilize specific schema types such as  'Hotel', 'Apartment', 'House', 'Place', and 'Event' to enhance rich snippets in search results and improve click-through rates. This will help Airbnb listings stand out from competitors like Booking.com and VRBO.",
+      "category": "Technical",
+      "priority_score": 8,
+      "impact": "high",
+      "implementation_difficulty": "hard",
+      "estimated_time_hours": 20
+    },
+    {
+      "recommendation": "Conduct a comprehensive keyword research study focusing on long-tail keywords related to specific accommodation types, locations, and travel experiences. Integrate these keywords naturally into page titles, meta descriptions, H1-H6 headings, image alt text, and body content to improve organic search rankings for highly specific queries.",
+      "category": "On-Page",
+      "priority_score": 7,
+      "impact": "high",
+      "implementation_difficulty": "medium",
+      "estimated_time_hours": 12
+    },
+    {
+      "recommendation": "Analyze competitor backlink profiles (Booking.com, VRBO, Expedia) to identify high-quality link building opportunities. Focus on acquiring backlinks from authoritative travel blogs, review sites, and relevant publications to enhance Airbnb's domain authority and improve organic search visibility.",
+      "category": "Off-Page",
+      "priority_score": 6,
+      "impact": "medium",
+      "implementation_difficulty": "hard",
+      "estimated_time_hours": 15
+    }
+  ],
+  "summary": {
+    "technical_score": 9.0,
+    "on_page_score": 6.5,
+    "off_page_score": 5.0,
+    "total_pages_analyzed": 2
+  }
+}

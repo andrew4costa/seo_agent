@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline';">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEO Report - Happy-skin.com</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2, h3, h4 {
+            color: #2c3e50;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+        }
+        .scores-container {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        .score-card {
+            flex: 1;
+            min-width: 200px;
+            text-align: center;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .technical {
+            background-color: #e3f2fd;
+        }
+        .onpage {
+            background-color: #e8f5e9;
+        }
+        .offpage {
+            background-color: #fff3e0;
+        }
+        .score {
+            font-size: 36px;
+            font-weight: bold;
+        }
+        .recommendations {
+            margin-top: 30px;
+        }
+        .recommendation {
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            background-color: #f8f9fa;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .recommendation h3 {
+            margin-top: 0;
+        }
+        .recommendation-meta {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+        .meta-item {
+            background-color: #e9ecef;
+            padding: 5px 10px;
+            border-radius: 15px;
+            margin-right: 10px;
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+        .priority-high {
+            background-color: #ffcccc;
+        }
+        .priority-medium {
+            background-color: #ffffcc;
+        }
+        .priority-low {
+            background-color: #e6f2ff;
+        }
+        .issues {
+            margin-top: 30px;
+        }
+        .issue {
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+        .severity-high {
+            background-color: #ffebee;
+            border-left: 5px solid #f44336;
+        }
+        .severity-medium {
+            background-color: #fff8e1;
+            border-left: 5px solid #ffc107;
+        }
+        .severity-low {
+            background-color: #e8f5e9;
+            border-left: 5px solid #4caf50;
+        }
+        .pages {
+            margin-top: 30px;
+        }
+        .page {
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            background-color: #f8f9fa;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .collapse-btn {
+            background-color: #f1f1f1;
+            padding: 10px 15px;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+            border-radius: 5px;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .collapse-content {
+            display: none;
+            padding: 15px;
+            overflow: hidden;
+            background-color: #fafafa;
+            border-radius: 5px;
+        }
+        .recommendations-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .recommendations-table th {
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            padding: 10px;
+        }
+        .recommendations-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            vertical-align: top;
+        }
+        .priority-level {
+            font-weight: bold;
+            text-align: center;
+        }
+        .high {
+            color: #d32f2f;
+        }
+        .medium {
+            color: #f57c00;
+        }
+        .low {
+            color: #388e3c;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>SEO Analysis Report</h1>
+        <h2>Happy-skin.com</h2>
+        <p>URL: <a href="https://happy-skin.com" target="_blank">https://happy-skin.com</a></p>
+        <p>Generated on: 2025-05-14 11:31:44</p>
+        <p>Pages analyzed: 4</p>
+    </div>
+
+    <div class="scores-container">
+        <div class="score-card technical">
+            <h3>Technical SEO</h3>
+            <div class="score">10.0/10</div>
+        </div>
+        <div class="score-card onpage">
+            <h3>On-Page SEO</h3>
+            <div class="score">8.1/10</div>
+        </div>
+        <div class="score-card offpage">
+            <h3>Off-Page SEO</h3>
+            <div class="score">5.0/10</div>
+        </div>
+    </div>
+
+    <div class="recommendations">
+        <h2>SEO Recommendations</h2>
+
+        <table class="recommendations-table">
+            <thead>
+                <tr>
+                    <th>Recommendation</th>
+                    <th>Priority</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td colspan="3" style="background-color: #e9ecef; font-weight: bold; text-align: center;">Strategic</td>
+                </tr>
+        
+                <tr>
+                    <td style="width: 25%;">Refine Unique Selling Proposition (USP)</td>
+                    <td style="width: 15%;" class="priority-level high">High</td>
+                    <td style="width: 60%;">Refine Unique Selling Proposition (USP)</td>
+                </tr>
+            
+                <tr>
+                    <td colspan="3" style="background-color: #e9ecef; font-weight: bold; text-align: center;">Technical</td>
+                </tr>
+        
+                <tr>
+                    <td style="width: 25%;">Implement Schema Markup for Product Pages</td>
+                    <td style="width: 15%;" class="priority-level high">High</td>
+                    <td style="width: 60%;">Implement Schema Markup for Product Pages</td>
+                </tr>
+            
+                <tr>
+                    <td style="width: 25%;">Improve Image Optimization</td>
+                    <td style="width: 15%;" class="priority-level medium">Medium</td>
+                    <td style="width: 60%;">Improve Image Optimization</td>
+                </tr>
+            
+                <tr>
+                    <td colspan="3" style="background-color: #e9ecef; font-weight: bold; text-align: center;">On-Page</td>
+                </tr>
+        
+                <tr>
+                    <td style="width: 25%;">Optimize Product Page Content for Eczema-Specific Keywords</td>
+                    <td style="width: 15%;" class="priority-level high">High</td>
+                    <td style="width: 60%;">Optimize Product Page Content for Eczema-Specific Keywords</td>
+                </tr>
+            
+                <tr>
+                    <td style="width: 25%;">Target UK-Specific Keywords and Location Signals</td>
+                    <td style="width: 15%;" class="priority-level medium">Medium</td>
+                    <td style="width: 60%;">Target UK-Specific Keywords and Location Signals</td>
+                </tr>
+            
+                <tr>
+                    <td colspan="3" style="background-color: #e9ecef; font-weight: bold; text-align: center;">Content</td>
+                </tr>
+        
+                <tr>
+                    <td style="width: 25%;">Develop Comprehensive Eczema Information Hub</td>
+                    <td style="width: 15%;" class="priority-level high">High</td>
+                    <td style="width: 60%;">Develop Comprehensive Eczema Information Hub</td>
+                </tr>
+            
+                <tr>
+                    <td colspan="3" style="background-color: #e9ecef; font-weight: bold; text-align: center;">UX_DESIGN</td>
+                </tr>
+        
+                <tr>
+                    <td style="width: 25%;">Optimize hero image loading for faster initial page load</td>
+                    <td style="width: 15%;" class="priority-level low">Low</td>
+                    <td style="width: 60%;">Optimize hero image loading for faster initial page load</td>
+                </tr>
+            
+                <tr>
+                    <td style="width: 25%;">Improve accessibility of navigation menus on mobile</td>
+                    <td style="width: 15%;" class="priority-level low">Low</td>
+                    <td style="width: 60%;">Improve accessibility of navigation menus on mobile</td>
+                </tr>
+            
+                <tr>
+                    <td style="width: 25%;">Enhance clarity and conciseness of legal pages (Privacy & Cookie Policies)</td>
+                    <td style="width: 15%;" class="priority-level low">Low</td>
+                    <td style="width: 60%;">Enhance clarity and conciseness of legal pages (Privacy & Cookie Policies)</td>
+                </tr>
+            
+                <tr>
+                    <td style="width: 25%;">Conduct user testing on mobile devices</td>
+                    <td style="width: 15%;" class="priority-level low">Low</td>
+                    <td style="width: 60%;">Conduct user testing on mobile devices</td>
+                </tr>
+            
+                <tr>
+                    <td style="width: 25%;">Implement a more prominent call to action (CTA)</td>
+                    <td style="width: 15%;" class="priority-level low">Low</td>
+                    <td style="width: 60%;">Implement a more prominent call to action (CTA)</td>
+                </tr>
+            
+                <tr>
+                    <td colspan="3" style="background-color: #e9ecef; font-weight: bold; text-align: center;">ARCHITECTURE</td>
+                </tr>
+        
+                <tr>
+                    <td style="width: 25%;">Improve Sitemap Content</td>
+                    <td style="width: 15%;" class="priority-level high">High</td>
+                    <td style="width: 60%;">Improve Sitemap Content</td>
+                </tr>
+            
+                <tr>
+                    <td style="width: 25%;">Implement a Consistent URL Structure</td>
+                    <td style="width: 15%;" class="priority-level high">High</td>
+                    <td style="width: 60%;">Implement a Consistent URL Structure</td>
+                </tr>
+            
+                <tr>
+                    <td style="width: 25%;">Enhance Information Architecture with Clear Navigation</td>
+                    <td style="width: 15%;" class="priority-level high">High</td>
+                    <td style="width: 60%;">Enhance Information Architecture with Clear Navigation</td>
+                </tr>
+            
+                <tr>
+                    <td style="width: 25%;">Optimize for Mobile Responsiveness</td>
+                    <td style="width: 15%;" class="priority-level high">High</td>
+                    <td style="width: 60%;">Optimize for Mobile Responsiveness</td>
+                </tr>
+            
+            </tbody>
+        </table>
+    </div>
+
+    <div class="recommendations">
+        <h2>Top Recommendations Details</h2>
+
+        <div class="recommendation">
+            <h3>1. Refine Unique Selling Proposition (USP)</h3>
+            <div class="recommendation-meta">
+                <div class="meta-item priority-high">Priority: 10/10</div>
+                <div class="meta-item">Impact: high</div>
+                <div class="meta-item">Difficulty: medium</div>
+                <div class="meta-item">Est. Time: 8 hrs</div>
+                <div class="meta-item">Category: Strategic</div>
+            </div>
+        </div>
+        <div class="recommendation">
+            <h3>2. Implement Schema Markup for Product Pages</h3>
+            <div class="recommendation-meta">
+                <div class="meta-item priority-high">Priority: 9/10</div>
+                <div class="meta-item">Impact: high</div>
+                <div class="meta-item">Difficulty: medium</div>
+                <div class="meta-item">Est. Time: 12 hrs</div>
+                <div class="meta-item">Category: Technical</div>
+            </div>
+        </div>
+        <div class="recommendation">
+            <h3>3. Optimize Product Page Content for Eczema-Specific Keywords</h3>
+            <div class="recommendation-meta">
+                <div class="meta-item priority-high">Priority: 9/10</div>
+                <div class="meta-item">Impact: high</div>
+                <div class="meta-item">Difficulty: medium</div>
+                <div class="meta-item">Est. Time: 16 hrs</div>
+                <div class="meta-item">Category: On-Page</div>
+            </div>
+        </div>
+        <div class="recommendation">
+            <h3>4. Develop Comprehensive Eczema Information Hub</h3>
+            <div class="recommendation-meta">
+                <div class="meta-item priority-high">Priority: 8/10</div>
+                <div class="meta-item">Impact: high</div>
+                <div class="meta-item">Difficulty: hard</div>
+                <div class="meta-item">Est. Time: 24 hrs</div>
+                <div class="meta-item">Category: Content</div>
+            </div>
+        </div>
+        <div class="recommendation">
+            <h3>5. Target UK-Specific Keywords and Location Signals</h3>
+            <div class="recommendation-meta">
+                <div class="meta-item priority-medium">Priority: 7/10</div>
+                <div class="meta-item">Impact: medium</div>
+                <div class="meta-item">Difficulty: easy</div>
+                <div class="meta-item">Est. Time: 4 hrs</div>
+                <div class="meta-item">Category: On-Page</div>
+            </div>
+        </div>
+        <div class="recommendation">
+            <h3>6. Improve Image Optimization</h3>
+            <div class="recommendation-meta">
+                <div class="meta-item priority-medium">Priority: 6/10</div>
+                <div class="meta-item">Impact: medium</div>
+                <div class="meta-item">Difficulty: medium</div>
+                <div class="meta-item">Est. Time: 8 hrs</div>
+                <div class="meta-item">Category: Technical</div>
+            </div>
+        </div>
+    <div class="issues">
+        <h2>Key Issues Found</h2>
+
+        <div class="issue severity-medium">
+            <h4>Images Missing Alt</h4>
+            <p></p>
+            <p><strong>Page:</strong> https://happy-skin.com</p>
+        </div>
+        <div class="issue severity-medium">
+            <h4>Missing Schema</h4>
+            <p></p>
+            <p><strong>Page:</strong> https://happy-skin.com</p>
+        </div>
+        <div class="issue severity-medium">
+            <h4>Missing Schema</h4>
+            <p></p>
+            <p><strong>Page:</strong> https://happy-skin.com/privacy-policy</p>
+        </div>
+        <div class="issue severity-medium">
+            <h4>Few Internal Links</h4>
+            <p></p>
+            <p><strong>Page:</strong> https://happy-skin.com/privacy-policy</p>
+        </div>
+        <div class="issue severity-medium">
+            <h4>Missing Schema</h4>
+            <p></p>
+            <p><strong>Page:</strong> https://happy-skin.com/cookie-policy/</p>
+        </div>
+        <div class="issue severity-medium">
+            <h4>Few Internal Links</h4>
+            <p></p>
+            <p><strong>Page:</strong> https://happy-skin.com/cookie-policy/</p>
+        </div>
+        <div class="issue severity-medium">
+            <h4>Missing Schema</h4>
+            <p></p>
+            <p><strong>Page:</strong> https://happy-skin.com/terms-conditions/</p>
+        </div>
+        <div class="issue severity-medium">
+            <h4>Few Internal Links</h4>
+            <p></p>
+            <p><strong>Page:</strong> https://happy-skin.com/terms-conditions/</p>
+        </div>
+        <div class="issue severity-low">
+            <h4>Long Meta Description</h4>
+            <p></p>
+            <p><strong>Page:</strong> https://happy-skin.com</p>
+        </div>
+    </div>
+    
+    <div class="pages">
+        <h2>Analyzed Pages</h2>
+
+        <button class="collapse-btn" onclick="toggleCollapse('technical-details')">Technical SEO Details</button>
+        <div id="technical-details" class="collapse-content">
+
+            <h3>Site Speed</h3>
+            <p>Average Load Time: 0.3339177370071411 seconds</p>
+            
+            <h3>Mobile Optimization</h3>
+            <p>Mobile-Friendly: Yes</p>
+            
+            <h3>Security</h3>
+            <p>HTTPS Implemented: Yes</p>
+            
+            <h3>Indexation</h3>
+            <p>Robots.txt: Found</p>
+            <p>Sitemap.xml: Found</p>
+    
+        </div>
+        
+        <button class="collapse-btn" onclick="toggleCollapse('onpage-details')">On-Page SEO Details</button>
+        <div id="onpage-details" class="collapse-content">
+
+            <h3>Content Quality</h3>
+            <p>Average Word Count: 1866.0 words</p>
+            <p>Pages with Thin Content: 0</p>
+            
+            <h3>Meta Tags</h3>
+            <p>Pages Missing Title Tags: 0</p>
+            <p>Pages Missing Meta Descriptions: 0</p>
+            
+            <h3>Heading Structure</h3>
+            <p>Pages Missing H1 Headings: 0</p>
+            
+            <h3>Image Optimization</h3>
+            <p>Images Without Alt Text: 6</p>
+    
+        </div>
+        
+        <button class="collapse-btn" onclick="toggleCollapse('pages-details')">Page Details</button>
+        <div id="pages-details" class="collapse-content">
+
+            <table>
+                <tr>
+                    <th>URL</th>
+                    <th>Title</th>
+                    <th>Word Count</th>
+                    <th>Issues</th>
+                </tr>
+    
+                <tr>
+                    <td><a href="https://happy-skin.com" target="_blank">https://happy-skin.com</a></td>
+                    <td>Eczema Clothing UK for Kids, Babies & Children | HappySkin</td>
+                    <td>1726</td>
+                    <td>3</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://happy-skin.com/privacy-policy" target="_blank">https://happy-skin.com/privacy-policy</a></td>
+                    <td>Privacy Policy HappySkin® | HappySkin</td>
+                    <td>2015</td>
+                    <td>2</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://happy-skin.com/cookie-policy/" target="_blank">https://happy-skin.com/cookie-policy/</a></td>
+                    <td>Cookie Policy : HappySkin | HappySkin</td>
+                    <td>971</td>
+                    <td>2</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://happy-skin.com/terms-conditions/" target="_blank">https://happy-skin.com/terms-conditions/</a></td>
+                    <td>Terms and Conditions : HappySkin | HappySkin</td>
+                    <td>2752</td>
+                    <td>2</td>
+                </tr>
+        
+            </table>
+        </div>
+    </div>
+
+    <script>
+        function toggleCollapse(id) {
+            var content = document.getElementById(id);
+            if (content.style.display === "block") {
+                content.style.display = "none";
+            } else {
+                content.style.display = "block";
+            }
+        }
+    </script>
+
+
+    <script>
+        /* Helper functions for iframe display */
+        function removeOverlay(overlay) {
+            if (overlay) {
+                overlay.style.display = 'none';
+            }
+        }
+        
+        function checkIframeContent(iframe) {
+            // This is a stub function that may be called by the parent frame
+            console.log("checkIframeContent called");
+            // No need to do anything here since we're being displayed directly
+        }
+        
+        // Function to toggle collapsible sections
+        function toggleCollapse(id) {
+            var content = document.getElementById(id);
+            if (content.style.display === "block") {
+                content.style.display = "none";
+            } else {
+                content.style.display = "block";
+            }
+        }
+        
+        // Make tab functions available if needed
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+        
+        // Initialize tab system if it exists
+        document.addEventListener('DOMContentLoaded', function() {
+            var defaultOpen = document.getElementById("defaultOpen");
+            if (defaultOpen) {
+                defaultOpen.click();
+            }
+        });
+    </script>
+    
+</body>
+</html>

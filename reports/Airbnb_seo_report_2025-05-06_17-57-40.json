@@ -1,0 +1,61 @@
+{
+  "company": "Airbnb",
+  "url": "https://airbnb.com",
+  "date": "2025-05-06 17:57:40",
+  "recommendations": [
+    {
+      "recommendation": "Add descriptive alt text to all 85 images currently missing alt tags.  Focus on using keywords relevant to the listing (location, property type, amenities) and ensuring alt text accurately describes the image content for accessibility and SEO.",
+      "category": "On-Page",
+      "priority_score": 10,
+      "impact": "high",
+      "implementation_difficulty": "medium",
+      "estimated_time_hours": 10
+    },
+    {
+      "recommendation": "Implement a sitemap.xml to improve crawlability and indexing of Airbnb's vast inventory of listings and experiences.  Prioritize including location-specific pages and high-value content pages in the sitemap.",
+      "category": "Technical",
+      "priority_score": 9,
+      "impact": "high",
+      "implementation_difficulty": "medium",
+      "estimated_time_hours": 8
+    },
+    {
+      "recommendation": "Refine schema markup implementation beyond ListItem. Leverage schema types such as  'Accommodation', 'Event', and 'LocalBusiness' to enrich search results and improve click-through rates. This will improve visibility for both listings and experiences.",
+      "category": "Technical",
+      "priority_score": 9,
+      "impact": "high",
+      "implementation_difficulty": "hard",
+      "estimated_time_hours": 15
+    },
+    {
+      "recommendation": "Add H1 headings to the two pages identified as missing them. Ensure the H1 accurately reflects the main topic of each page, using relevant keywords related to location, property type, or experience offered.",
+      "category": "On-Page",
+      "priority_score": 8,
+      "impact": "medium",
+      "implementation_difficulty": "easy",
+      "estimated_time_hours": 2
+    },
+    {
+      "recommendation": "Conduct a comprehensive audit of all listing pages and experience pages to identify and correct any further instances of missing H1 tags or missing alt text on images. Implement a system to prevent these issues from recurring during content updates.",
+      "category": "On-Page",
+      "priority_score": 7,
+      "impact": "medium",
+      "implementation_difficulty": "medium",
+      "estimated_time_hours": 20
+    },
+    {
+      "recommendation": "Analyze competitor strategies (Booking.com, VRBO, Expedia) to identify opportunities for content expansion.  Develop high-quality blog posts and guides targeting relevant keywords related to travel planning, destination guides, and unique travel experiences to increase organic traffic and establish thought leadership.",
+      "category": "Off-Page",
+      "priority_score": 7,
+      "impact": "medium",
+      "implementation_difficulty": "hard",
+      "estimated_time_hours": 30
+    }
+  ],
+  "summary": {
+    "technical_score": 9.0,
+    "on_page_score": 6.5,
+    "off_page_score": 5.0,
+    "total_pages_analyzed": 2
+  }
+}

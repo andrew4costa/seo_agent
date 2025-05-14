@@ -1,0 +1,18 @@
+{
+  "user_id": null,
+  "guest_session_id": "fdeb4522-587e-4f83-8fc6-39686b1e5a0f",
+  "filename": "apple.com_20250514_090757_analysis.json",
+  "url": "https://apple.com",
+  "pages": 50,
+  "keyword": "",
+  "status": "failed",
+  "progress": 95,
+  "current_step": "Analysis failed",
+  "steps_completed": 9,
+  "total_steps": 10,
+  "start_time": "2025-05-14T09:07:57.092457+00:00",
+  "end_time": "2025-05-14T09:07:59.124908+00:00",
+  "error": "AI analysis did not produce a report or failed.",
+  "storage_url": null,
+  "raw_results": null
+}

@@ -1,0 +1,236 @@
+{
+  "url": "https://happy-skin.com",
+  "date": "2025-05-12T15:46:04.068214",
+  "pages_analyzed": 4,
+  "overall_score": 80,
+  "recommendations": [
+    {
+      "title": "Improve meta descriptions",
+      "description": "Fix meta description issues on 1 pages. Ensure descriptions are 120-160 characters and compelling.",
+      "impact": "medium",
+      "effort": "medium"
+    },
+    {
+      "title": "Add missing alt text",
+      "description": "Add alt text to images on 1 pages for better accessibility and SEO.",
+      "impact": "medium",
+      "effort": "medium"
+    },
+    {
+      "title": "Improve content-to-HTML ratio",
+      "description": "Clean up HTML code on 2 pages to improve the text-to-code ratio.",
+      "impact": "low",
+      "effort": "medium"
+    },
+    {
+      "title": "Improve mobile-friendliness",
+      "description": "Optimize 4 pages for mobile devices by adding proper viewport tags and responsive design.",
+      "impact": "high",
+      "effort": "high"
+    }
+  ],
+  "page_insights": [
+    {
+      "url": "https://happy-skin.com/cookie-policy/",
+      "title": "Cookie Policy : HappySkin | HappySkin",
+      "meta_description": "This is our HappySkin Cookie Policy. By accepting these cookies, your our helping the website run smoother.",
+      "h1": "Cookie Policy",
+      "word_count": 965,
+      "load_time": 1.21,
+      "has_viewport": true,
+      "internal_links": 8,
+      "external_links": 80,
+      "content_ratio": 4.99,
+      "keyword_info": {
+        "top_keywords": [
+          [
+            "cookies",
+            2.2703818369453046
+          ],
+          [
+            "your",
+            1.7543859649122806
+          ],
+          [
+            "eczema",
+            1.6511867905056758
+          ],
+          [
+            "baby",
+            1.0319917440660475
+          ],
+          [
+            "these",
+            1.0319917440660475
+          ]
+        ],
+        "total_words": 969
+      },
+      "issues": 2,
+      "issue_details": [
+        "Low content-to-HTML ratio (5.0%)",
+        "No 'Vary: User-Agent' header found"
+      ]
+    },
+    {
+      "url": "https://happy-skin.com/terms-conditions/",
+      "title": "Terms and Conditions : HappySkin | HappySkin",
+      "meta_description": "Terms and Conditions for HappySkin. Please read these carefully and make sure you agree with them.",
+      "h1": "Terms & Conditions",
+      "word_count": 2745,
+      "load_time": 1.34,
+      "has_viewport": true,
+      "internal_links": 8,
+      "external_links": 80,
+      "content_ratio": 12.24,
+      "keyword_info": {
+        "top_keywords": [
+          [
+            "your",
+            1.4925373134328357
+          ],
+          [
+            "will",
+            1.2013105205678922
+          ],
+          [
+            "these",
+            0.8372770294867127
+          ],
+          [
+            "goods",
+            0.8008736803785949
+          ],
+          [
+            "happyskin",
+            0.691663633054241
+          ]
+        ],
+        "total_words": 2747
+      },
+      "issues": 1,
+      "issue_details": [
+        "No 'Vary: User-Agent' header found"
+      ]
+    },
+    {
+      "url": "https://happy-skin.com",
+      "title": "Eczema Clothing UK for Kids, Babies & Children | HappySkin",
+      "meta_description": "Relieve and protect baby\u2019s sensitive skin with HappySkin eczema clothing UK. Our baby eczema clothing soothes, repairs, and shields dry, damaged skin, offering a steroid-free, permanent solution for eczema in babies, toddlers, and children. Experience comfort and care with HappySkin",
+      "h1": "HappySkin Baby Eczema-Friendly Clothes",
+      "word_count": 1716,
+      "load_time": 1.63,
+      "has_viewport": true,
+      "internal_links": 9,
+      "external_links": 129,
+      "content_ratio": 6.56,
+      "keyword_info": {
+        "top_keywords": [
+          [
+            "eczema",
+            3.663423010875787
+          ],
+          [
+            "baby",
+            1.8889524899828276
+          ],
+          [
+            "happyskin",
+            1.602747567258157
+          ],
+          [
+            "pack",
+            1.4310246136233544
+          ],
+          [
+            "your",
+            1.316542644533486
+          ]
+        ],
+        "total_words": 1747
+      },
+      "issues": 4,
+      "issue_details": [
+        "Meta description too long",
+        "Missing alt text on 6 images",
+        "Low content-to-HTML ratio (6.6%)",
+        "No 'Vary: User-Agent' header found"
+      ]
+    },
+    {
+      "url": "https://happy-skin.com/privacy-policy",
+      "title": "Privacy Policy HappySkin\u00ae | HappySkin",
+      "meta_description": "Please review our HappySkin\u00ae Privacy Policy. If you have any concerns please do not hesitate to contact us.",
+      "h1": "Privacy Policy",
+      "word_count": 2010,
+      "load_time": 1.29,
+      "has_viewport": true,
+      "internal_links": 8,
+      "external_links": 82,
+      "content_ratio": 10.35,
+      "keyword_info": {
+        "top_keywords": [
+          [
+            "information",
+            1.9221528111484865
+          ],
+          [
+            "technologies",
+            1.5857760691975011
+          ],
+          [
+            "intelligent",
+            1.4896684286400768
+          ],
+          [
+            "fabric",
+            1.4896684286400768
+          ],
+          [
+            "your",
+            1.2974531475252282
+          ]
+        ],
+        "total_words": 2081
+      },
+      "issues": 1,
+      "issue_details": [
+        "No 'Vary: User-Agent' header found"
+      ]
+    }
+  ],
+  "performance_metrics": {
+    "page_speed": 72,
+    "mobile_friendly": true,
+    "load_time": 1.37,
+    "render_time": 0.96,
+    "server_response_time": 0.41
+  },
+  "technical_issues": [
+    {
+      "type": "low_content-to-html_ratio_(x.x%)",
+      "count": 2,
+      "impact": "medium"
+    },
+    {
+      "type": "no_'vary:_user-agent'_header_found",
+      "count": 4,
+      "impact": "medium"
+    },
+    {
+      "type": "meta_description_too_long",
+      "count": 1,
+      "impact": "medium"
+    },
+    {
+      "type": "missing_alt_text_on_x_images",
+      "count": 1,
+      "impact": "low"
+    }
+  ],
+  "status": "completed",
+  "progress": 100,
+  "current_step": "completed",
+  "steps_completed": 5,
+  "end_time": "2025-05-12T13:46:08.075836+00:00"
+}

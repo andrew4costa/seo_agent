@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEO Report - Etsy.com</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2, h3, h4 {
+            color: #2c3e50;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+        }
+        .scores-container {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        .score-card {
+            flex: 1;
+            min-width: 200px;
+            text-align: center;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .technical {
+            background-color: #e3f2fd;
+        }
+        .onpage {
+            background-color: #e8f5e9;
+        }
+        .offpage {
+            background-color: #fff3e0;
+        }
+        .score {
+            font-size: 36px;
+            font-weight: bold;
+        }
+        .recommendations {
+            margin-top: 30px;
+        }
+        .recommendation {
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            background-color: #f8f9fa;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .recommendation h3 {
+            margin-top: 0;
+        }
+        .recommendation-meta {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+        .meta-item {
+            background-color: #e9ecef;
+            padding: 5px 10px;
+            border-radius: 15px;
+            margin-right: 10px;
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+        .priority-high {
+            background-color: #ffcccc;
+        }
+        .priority-medium {
+            background-color: #ffffcc;
+        }
+        .priority-low {
+            background-color: #e6f2ff;
+        }
+        .issues {
+            margin-top: 30px;
+        }
+        .issue {
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+        .severity-high {
+            background-color: #ffebee;
+            border-left: 5px solid #f44336;
+        }
+        .severity-medium {
+            background-color: #fff8e1;
+            border-left: 5px solid #ffc107;
+        }
+        .severity-low {
+            background-color: #e8f5e9;
+            border-left: 5px solid #4caf50;
+        }
+        .pages {
+            margin-top: 30px;
+        }
+        .page {
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            background-color: #f8f9fa;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .collapse-btn {
+            background-color: #f1f1f1;
+            padding: 10px 15px;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+            border-radius: 5px;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .collapse-content {
+            display: none;
+            padding: 15px;
+            overflow: hidden;
+            background-color: #fafafa;
+            border-radius: 5px;
+        }
+        .recommendations-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .recommendations-table th {
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            padding: 10px;
+        }
+        .recommendations-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            vertical-align: top;
+        }
+        .priority-level {
+            font-weight: bold;
+            text-align: center;
+        }
+        .high {
+            color: #d32f2f;
+        }
+        .medium {
+            color: #f57c00;
+        }
+        .low {
+            color: #388e3c;
+        }
+        .competitor-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 2px 3px rgba(0,0,0,0.1);
+        }
+        .competitor-table th {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 12px;
+            border: 1px solid #ddd;
+            font-weight: bold;
+        }
+        .competitor-table td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+        .competitor-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .competitor-table tr:hover {
+            background-color: #f1f1f1;
+        }
+        .competitor-heading {
+            background-color: #f8f9fa;
+            padding: 10px;
+            margin-top: 30px;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: bold;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>SEO Analysis Report</h1>
+        <h2>Etsy.com</h2>
+        <p>URL: <a href="https://etsy.com" target="_blank">https://etsy.com</a></p>
+        <p>Generated on: 2025-05-06 21:58:41</p>
+        <p>Pages analyzed: 1</p>
+    </div>
+
+    <div class="scores-container">
+        <div class="score-card technical">
+            <h3>Technical SEO</h3>
+            <div class="score">5.0/10</div>
+        </div>
+        <div class="score-card onpage">
+            <h3>On-Page SEO</h3>
+            <div class="score">2.0/10</div>
+        </div>
+        <div class="score-card offpage">
+            <h3>Off-Page SEO</h3>
+            <div class="score">5.0/10</div>
+        </div>
+    </div>
+
+    <div class="recommendations">
+        <h2>SEO Recommendations</h2>
+
+        <table class="recommendations-table">
+            <thead>
+                <tr>
+                    <th>Recommendation</th>
+                    <th>Priority</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td colspan="3" style="background-color: #e9ecef; font-weight: bold; text-align: center;">Technical</td>
+                </tr>
+            
+                    <tr>
+                        <td style="width: 25%;">Implement a sitemap</td>
+                        <td style="width: 15%;" class="priority-level high">High</td>
+                        <td style="width: 60%;">Implement a sitemap.xml to improve crawlability and indexing of Etsy's vast product catalog.  Ensure the sitemap includes all relevant product pages, category pages, and other crucial pages.</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Investigate and resolve the HTTP 403 error</td>
+                        <td style="width: 15%;" class="priority-level high">High</td>
+                        <td style="width: 60%;">Investigate and resolve the HTTP 403 error. This is a critical issue impacting accessibility and potentially search engine indexing.  Determine the cause (e.g., incorrect .htaccess rules, server configuration) and implement the necessary fix.</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Conduct a thorough mobile-friendliness audit and address any issues hindering the mobile user experience</td>
+                        <td style="width: 15%;" class="priority-level high">High</td>
+                        <td style="width: 60%;">Conduct a thorough mobile-friendliness audit and address any issues hindering the mobile user experience. Given Etsy's global reach, mobile optimization is paramount.  Focus on page speed, responsiveness, and ease of navigation on various devices.</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Implement comprehensive schema markup (Product, Organization, Review) across all product pages to enhance search result visibility and improve click-through rates</td>
+                        <td style="width: 15%;" class="priority-level high">High</td>
+                        <td style="width: 60%;">Implement comprehensive schema markup (Product, Organization, Review) across all product pages to enhance search result visibility and improve click-through rates. This is crucial for an e-commerce site like Etsy.</td>
+                    </tr>
+                
+                <tr>
+                    <td colspan="3" style="background-color: #e9ecef; font-weight: bold; text-align: center;">On-Page</td>
+                </tr>
+            
+                    <tr>
+                        <td style="width: 25%;">Create compelling and unique title tags and meta descriptions for all product pages and category pages</td>
+                        <td style="width: 15%;" class="priority-level high">High</td>
+                        <td style="width: 60%;">Create compelling and unique title tags and meta descriptions for all product pages and category pages.  Incorporate relevant keywords related to handmade goods, vintage items, and craft supplies, while also reflecting Etsy's brand voice and unique selling propositions.</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Ensure all product pages include a relevant and descriptive H1 heading that accurately reflects the product's name and key features</td>
+                        <td style="width: 15%;" class="priority-level high">High</td>
+                        <td style="width: 60%;">Ensure all product pages include a relevant and descriptive H1 heading that accurately reflects the product's name and key features. This improves on-page SEO and user experience.</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Develop high-quality, detailed product descriptions for all items listed on Etsy</td>
+                        <td style="width: 15%;" class="priority-level medium">Medium</td>
+                        <td style="width: 60%;">Develop high-quality, detailed product descriptions for all items listed on Etsy.  Encourage sellers to write compelling descriptions that highlight the unique aspects of their products and incorporate relevant keywords.  Provide guidelines and templates to sellers to ensure consistency and quality.</td>
+                    </tr>
+                
+                <tr>
+                    <td colspan="3" style="background-color: #e9ecef; font-weight: bold; text-align: center;">Off-Page</td>
+                </tr>
+            
+                    <tr>
+                        <td style="width: 25%;">Implement a robust content strategy focused on blog posts, articles, and guides related to arts and crafts, DIY projects, and sustainable living</td>
+                        <td style="width: 15%;" class="priority-level medium">Medium</td>
+                        <td style="width: 60%;">Implement a robust content strategy focused on blog posts, articles, and guides related to arts and crafts, DIY projects, and sustainable living. This will attract organic traffic, build brand authority, and align with Etsy's brand values and target audience interests.</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Build high-quality backlinks from reputable websites in the arts and crafts, DIY, and e-commerce niches</td>
+                        <td style="width: 15%;" class="priority-level medium">Medium</td>
+                        <td style="width: 60%;">Build high-quality backlinks from reputable websites in the arts and crafts, DIY, and e-commerce niches.  Focus on earning links from relevant and authoritative sources to improve Etsy's domain authority and search engine rankings.</td>
+                    </tr>
+                
+                <tr>
+                    <td colspan="3" style="background-color: #e9ecef; font-weight: bold; text-align: center;">ARCHITECTURE</td>
+                </tr>
+            
+                    <tr>
+                        <td style="width: 25%;">Url Structure Assessment: 3/10</td>
+                        <td style="width: 15%;" class="priority-level high">High</td>
+                        <td style="width: 60%;">Insufficient data provided to assess Etsy's URL structure comprehensively.  The sample data shows a lack of URL patterns and categories, hindering a proper evaluation of SEO-friendliness, consistency, and organization.
+
+Recommendation: Improve Url Structure</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Gather comprehensive URL data</td>
+                        <td style="width: 15%;" class="priority-level high">High</td>
+                        <td style="width: 60%;">Collect a representative sample of Etsy's URLs to analyze patterns, identify inconsistencies, and assess SEO best practices adherence.  This should include category pages, product pages, and other key sections.</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Analyze for keyword usage in URLs</td>
+                        <td style="width: 15%;" class="priority-level high">High</td>
+                        <td style="width: 60%;">Once URL data is collected, analyze the use of relevant keywords in URLs.  Ensure URLs are concise, descriptive, and user-friendly, incorporating relevant keywords where appropriate.</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Implement consistent URL structure</td>
+                        <td style="width: 15%;" class="priority-level high">High</td>
+                        <td style="width: 60%;">Establish a clear and consistent URL structure across the entire site.  This will improve crawlability and user experience.  Consider using a hierarchical structure reflecting the site's information architecture.</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Information Architecture Assessment: 4/10</td>
+                        <td style="width: 15%;" class="priority-level high">High</td>
+                        <td style="width: 60%;">Limited data prevents a thorough assessment of Etsy's information architecture.  The lack of category and directory information makes it impossible to evaluate the site's hierarchy, depth, and overall organization.
+
+Recommendation: Improve Information Architecture</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Map the site's information architecture</td>
+                        <td style="width: 15%;" class="priority-level high">High</td>
+                        <td style="width: 60%;">Create a comprehensive sitemap visualizing the hierarchy and relationships between different sections of Etsy. This will help identify areas for improvement in organization and navigation.</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Analyze category depth and breadth</td>
+                        <td style="width: 15%;" class="priority-level high">High</td>
+                        <td style="width: 60%;">Once the sitemap is created, analyze the depth and breadth of categories.  Ensure categories are well-defined, not overly nested, and provide a logical structure for users to find products.</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Navigation Structure Assessment: 2/10</td>
+                        <td style="width: 15%;" class="priority-level high">High</td>
+                        <td style="width: 60%;">The provided data is insufficient to assess Etsy's internal linking and navigation structure.  Without information on internal links, it's impossible to evaluate the effectiveness of navigation and its impact on SEO.
+
+Recommendation: Improve Navigation Structure</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Analyze internal linking strategy</td>
+                        <td style="width: 15%;" class="priority-level high">High</td>
+                        <td style="width: 60%;">Conduct a comprehensive analysis of Etsy's internal linking structure.  Identify opportunities to improve the flow of users and search engine crawlers through the site using relevant anchor text and strategic link placement.</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Implement a robust sitemap</td>
+                        <td style="width: 15%;" class="priority-level high">High</td>
+                        <td style="width: 60%;">Create and submit an XML sitemap to search engines to ensure all important pages are indexed.  This will improve crawlability and visibility.</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Content Categorization Assessment: 3/10</td>
+                        <td style="width: 15%;" class="priority-level high">High</td>
+                        <td style="width: 60%;">Lack of data on categories and content organization prevents a meaningful assessment of Etsy's content categorization strategy.
+
+Recommendation: Improve Content Categorization</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Analyze product categorization</td>
+                        <td style="width: 15%;" class="priority-level high">High</td>
+                        <td style="width: 60%;">Examine how Etsy categorizes its products.  Ensure categories are well-defined, comprehensive, and allow for easy browsing and searching.</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Conduct mobile usability testing</td>
+                        <td style="width: 15%;" class="priority-level high">High</td>
+                        <td style="width: 60%;">Perform thorough usability testing on various mobile devices to ensure a seamless and intuitive user experience.</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Optimize for mobile speed</td>
+                        <td style="width: 15%;" class="priority-level high">High</td>
+                        <td style="width: 60%;">Ensure the site loads quickly on mobile devices.  Optimize images, minimize HTTP requests, and leverage browser caching to improve performance.</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Verify responsive design implementation</td>
+                        <td style="width: 15%;" class="priority-level high">High</td>
+                        <td style="width: 60%;">Verify that Etsy's responsive design adapts seamlessly to different screen sizes and orientations.  Ensure all elements are properly displayed and functional on all devices.</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Improve category labeling and descriptions</td>
+                        <td style="width: 15%;" class="priority-level medium">Medium</td>
+                        <td style="width: 60%;">Review category labels and descriptions for clarity and accuracy.  Ensure they accurately reflect the products within each category and are optimized for search engines.</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Improve navigation menus</td>
+                        <td style="width: 15%;" class="priority-level medium">Medium</td>
+                        <td style="width: 60%;">Review the main navigation menus on Etsy's website.  Ensure they are intuitive, easy to use, and provide clear paths to key sections of the site.</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Improve content tagging and metadata</td>
+                        <td style="width: 15%;" class="priority-level medium">Medium</td>
+                        <td style="width: 60%;">Implement a robust system for tagging and categorizing product listings.  This will improve searchability and allow users to find relevant products easily.</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Review content hierarchy</td>
+                        <td style="width: 15%;" class="priority-level medium">Medium</td>
+                        <td style="width: 60%;">Analyze the hierarchy of content on Etsy.  Ensure that content is logically organized and easily accessible to users.</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Mobile Architecture Assessment: 5/10</td>
+                        <td style="width: 15%;" class="priority-level medium">Medium</td>
+                        <td style="width: 60%;">No data provided to assess Etsy's mobile architecture.  A visual inspection is needed to determine responsiveness and mobile-friendliness.
+
+Recommendation: Improve Mobile Architecture</td>
+                    </tr>
+                
+                <tr>
+                    <td colspan="3" style="background-color: #e9ecef; font-weight: bold; text-align: center;">UX & PAGE DESIGN</td>
+                </tr>
+            
+                    <tr>
+                        <td style="width: 25%;">Standardize Typography</td>
+                        <td style="width: 15%;" class="priority-level high">High</td>
+                        <td style="width: 60%;">Implement a consistent typography system across the entire site, defining specific font families, sizes, and weights for headings, body text, and calls to action. This will improve readability and brand consistency.</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Optimize Whitespace</td>
+                        <td style="width: 15%;" class="priority-level high">High</td>
+                        <td style="width: 60%;">Increase whitespace strategically around key elements to improve readability and reduce visual clutter.  This will make the site feel less overwhelming and more user-friendly.</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Improve Search Functionality</td>
+                        <td style="width: 15%;" class="priority-level high">High</td>
+                        <td style="width: 60%;">Enhance the search functionality with auto-suggestions, filters, and better search result presentation.  Ensure accessibility compliance for screen readers.</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Enhance Accessibility</td>
+                        <td style="width: 15%;" class="priority-level high">High</td>
+                        <td style="width: 60%;">Implement robust accessibility features, including proper ARIA attributes, alt text for images, keyboard navigation, and sufficient color contrast.  Conduct accessibility audits regularly.</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Mobile Experience Assessment: 1/10</td>
+                        <td style="width: 15%;" class="priority-level high">High</td>
+                        <td style="width: 60%;">Based on the provided data, the mobile experience is extremely poor.  The lack of viewport meta tag and a mobile optimization score of 0.0/10 indicate significant issues.
+
+Recommendation: Improve Mobile Experience</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Improve Visual Hierarchy</td>
+                        <td style="width: 15%;" class="priority-level medium">Medium</td>
+                        <td style="width: 60%;">Enhance visual hierarchy through strategic use of size, color, and whitespace to guide users' attention to key elements like product titles, prices, and calls to action.  Consider A/B testing different visual hierarchies.</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Layout Structure Assessment: 7/10</td>
+                        <td style="width: 15%;" class="priority-level medium">Medium</td>
+                        <td style="width: 60%;">The layout is generally well-organized, but some sections feel cluttered.  Whitespace usage could be improved to enhance readability and visual appeal. The grid system isn't consistently applied across all pages.
+
+Recommendation: Improve Layout Structure</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Consistent Grid System</td>
+                        <td style="width: 15%;" class="priority-level medium">Medium</td>
+                        <td style="width: 60%;">Implement a consistent grid system across all pages to ensure visual harmony and a more organized layout. This will improve the overall aesthetic appeal and user experience.</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Navigation Accessibility Assessment: 6/10</td>
+                        <td style="width: 15%;" class="priority-level medium">Medium</td>
+                        <td style="width: 60%;">Main navigation is relatively intuitive, but secondary navigation and search functionality could be improved.  Accessibility features need significant enhancement.
+
+Recommendation: Improve Navigation Accessibility</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Interactive Elements Assessment: 7/10</td>
+                        <td style="width: 15%;" class="priority-level medium">Medium</td>
+                        <td style="width: 60%;">Buttons and forms are generally functional, but could benefit from improved visual design and feedback mechanisms.  Loading indicators are lacking in some areas.
+
+Recommendation: Improve Interactive Elements</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Improve Button Design</td>
+                        <td style="width: 15%;" class="priority-level medium">Medium</td>
+                        <td style="width: 60%;">Improve button design for better visual appeal and clarity.  Ensure sufficient contrast and clear labeling.  Consider using micro-interactions to provide feedback on clicks.</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Add Loading Indicators</td>
+                        <td style="width: 15%;" class="priority-level medium">Medium</td>
+                        <td style="width: 60%;">Implement loading indicators for all interactive elements that require time to process, such as form submissions and search queries. This will improve user experience and reduce frustration.</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Implement Responsive Design</td>
+                        <td style="width: 15%;" class="priority-level medium">Medium</td>
+                        <td style="width: 60%;">Develop a fully responsive design that adapts seamlessly to different screen sizes and devices.  Ensure optimal performance and usability on all mobile platforms.</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Thorough Mobile Testing</td>
+                        <td style="width: 15%;" class="priority-level medium">Medium</td>
+                        <td style="width: 60%;">Conduct thorough mobile testing across various devices and browsers to identify and fix any usability issues.  Use tools to analyze mobile performance and identify areas for improvement.</td>
+                    </tr>
+                
+                    <tr>
+                        <td style="width: 25%;">Visual Design Assessment: 8/10</td>
+                        <td style="width: 15%;" class="priority-level low">Low</td>
+                        <td style="width: 60%;">Etsy's visual design is generally appealing, leveraging its brand colors effectively. However, some inconsistencies exist in typography and spacing across different sections.  The use of high-quality product images is a strength.
+
+Recommendation: Improve Visual Design</td>
+                    </tr>
+                
+            </tbody>
+        </table>
+    </div>
+
+    <div class="recommendations">
+        <h2>Top Recommendations Details</h2>
+
+        <div class="recommendation">
+            <h3>1. Implement a sitemap.xml to improve crawlability and indexing of Etsy's vast product catalog.  Ensure the sitemap includes all relevant product pages, category pages, and other crucial pages.</h3>
+            <div class="recommendation-meta">
+                <div class="meta-item priority-high">Priority: 10/10</div>
+                <div class="meta-item">Impact: high</div>
+                <div class="meta-item">Difficulty: medium</div>
+                <div class="meta-item">Est. Time: 8 hrs</div>
+                <div class="meta-item">Category: Technical</div>
+            </div>
+        </div>
+        <div class="recommendation">
+            <h3>2. Investigate and resolve the HTTP 403 error. This is a critical issue impacting accessibility and potentially search engine indexing.  Determine the cause (e.g., incorrect .htaccess rules, server configuration) and implement the necessary fix.</h3>
+            <div class="recommendation-meta">
+                <div class="meta-item priority-high">Priority: 10/10</div>
+                <div class="meta-item">Impact: high</div>
+                <div class="meta-item">Difficulty: hard</div>
+                <div class="meta-item">Est. Time: 12 hrs</div>
+                <div class="meta-item">Category: Technical</div>
+            </div>
+        </div>
+        <div class="recommendation">
+            <h3>3. Conduct a thorough mobile-friendliness audit and address any issues hindering the mobile user experience. Given Etsy's global reach, mobile optimization is paramount.  Focus on page speed, responsiveness, and ease of navigation on various devices.</h3>
+            <div class="recommendation-meta">
+                <div class="meta-item priority-high">Priority: 9/10</div>
+                <div class="meta-item">Impact: high</div>
+                <div class="meta-item">Difficulty: medium</div>
+                <div class="meta-item">Est. Time: 10 hrs</div>
+                <div class="meta-item">Category: Technical</div>
+            </div>
+        </div>
+        <div class="recommendation">
+            <h3>4. Implement comprehensive schema markup (Product, Organization, Review) across all product pages to enhance search result visibility and improve click-through rates. This is crucial for an e-commerce site like Etsy.</h3>
+            <div class="recommendation-meta">
+                <div class="meta-item priority-high">Priority: 8/10</div>
+                <div class="meta-item">Impact: high</div>
+                <div class="meta-item">Difficulty: medium</div>
+                <div class="meta-item">Est. Time: 20 hrs</div>
+                <div class="meta-item">Category: Technical</div>
+            </div>
+        </div>
+        <div class="recommendation">
+            <h3>5. Create compelling and unique title tags and meta descriptions for all product pages and category pages.  Incorporate relevant keywords related to handmade goods, vintage items, and craft supplies, while also reflecting Etsy's brand voice and unique selling propositions.</h3>
+            <div class="recommendation-meta">
+                <div class="meta-item priority-high">Priority: 9/10</div>
+                <div class="meta-item">Impact: high</div>
+                <div class="meta-item">Difficulty: medium</div>
+                <div class="meta-item">Est. Time: 15 hrs</div>
+                <div class="meta-item">Category: On-Page</div>
+            </div>
+        </div>
+        <div class="recommendation">
+            <h3>6. Ensure all product pages include a relevant and descriptive H1 heading that accurately reflects the product's name and key features. This improves on-page SEO and user experience.</h3>
+            <div class="recommendation-meta">
+                <div class="meta-item priority-high">Priority: 8/10</div>
+                <div class="meta-item">Impact: medium</div>
+                <div class="meta-item">Difficulty: easy</div>
+                <div class="meta-item">Est. Time: 5 hrs</div>
+                <div class="meta-item">Category: On-Page</div>
+            </div>
+        </div>
+    <div class="issues">
+        <h2>Key Issues Found</h2>
+
+        <div class="issue severity-high">
+            <h4>Http Status</h4>
+            <p></p>
+            <p><strong>Page:</strong> https://etsy.com</p>
+        </div>
+    </div>
+    
+    <div class="pages">
+        <h2>Analyzed Pages</h2>
+
+        <button class="collapse-btn" onclick="toggleCollapse('technical-details')">Technical SEO Details</button>
+        <div id="technical-details" class="collapse-content">
+
+            <h3>Site Speed</h3>
+            <p>Average Load Time: 0.10342812538146973 seconds</p>
+            
+            <h3>Mobile Optimization</h3>
+            <p>Mobile-Friendly: No</p>
+            
+            <h3>Security</h3>
+            <p>HTTPS Implemented: Yes</p>
+            
+            <h3>Indexation</h3>
+            <p>Robots.txt: Found</p>
+            <p>Sitemap.xml: Not Found</p>
+    
+        </div>
+        
+        <button class="collapse-btn" onclick="toggleCollapse('onpage-details')">On-Page SEO Details</button>
+        <div id="onpage-details" class="collapse-content">
+
+            <h3>Content Quality</h3>
+            <p>Average Word Count: 0.0 words</p>
+            <p>Pages with Thin Content: 0</p>
+            
+            <h3>Meta Tags</h3>
+            <p>Pages Missing Title Tags: 1</p>
+            <p>Pages Missing Meta Descriptions: 1</p>
+            
+            <h3>Heading Structure</h3>
+            <p>Pages Missing H1 Headings: 1</p>
+            
+            <h3>Image Optimization</h3>
+            <p>Images Without Alt Text: 0</p>
+    
+        </div>
+        
+        <button class="collapse-btn" onclick="toggleCollapse('ux-details')">UX & Page Design Details</button>
+        <div id="ux-details" class="collapse-content">
+
+                <h3>Visual Design</h3>
+                <p><strong>Score:</strong> 8/10</p>
+                <p>Etsy's visual design is generally appealing, leveraging its brand colors effectively. However, some inconsistencies exist in typography and spacing across different sections.  The use of high-quality product images is a strength.</p>
+                
+                <h3>Layout Structure</h3>
+                <p><strong>Score:</strong> 7/10</p>
+                <p>The layout is generally well-organized, but some sections feel cluttered.  Whitespace usage could be improved to enhance readability and visual appeal. The grid system isn't consistently applied across all pages.</p>
+                
+                <h3>Navigation Accessibility</h3>
+                <p><strong>Score:</strong> 6/10</p>
+                <p>Main navigation is relatively intuitive, but secondary navigation and search functionality could be improved.  Accessibility features need significant enhancement.</p>
+                
+                <h3>Interactive Elements</h3>
+                <p><strong>Score:</strong> 7/10</p>
+                <p>Buttons and forms are generally functional, but could benefit from improved visual design and feedback mechanisms.  Loading indicators are lacking in some areas.</p>
+                
+                <h3>Mobile Experience</h3>
+                <p><strong>Score:</strong> 1/10</p>
+                <p>Based on the provided data, the mobile experience is extremely poor.  The lack of viewport meta tag and a mobile optimization score of 0.0/10 indicate significant issues.</p>
+                
+        </div>
+        
+        <button class="collapse-btn" onclick="toggleCollapse('pages-details')">Page Details</button>
+        <div id="pages-details" class="collapse-content">
+
+            <table>
+                <tr>
+                    <th>URL</th>
+                    <th>Title</th>
+                    <th>Word Count</th>
+                    <th>Issues</th>
+                </tr>
+    
+                <tr>
+                    <td><a href="https://etsy.com" target="_blank">https://etsy.com</a></td>
+                    <td>None</td>
+                    <td>0</td>
+                    <td>1</td>
+                </tr>
+        
+            </table>
+        </div>
+    </div>
+
+    <div class="competitor-heading">Competitor Brands</div>
+    <table class="competitor-table">
+        <tr>
+            <th>Brand</th>
+            <th>DR</th>
+            <th>Referring Domains</th>
+            <th>Backlinks</th>
+            <th>Total Keywords</th>
+        </tr>
+
+        <tr>
+            <td>Amazon Handmade</td>
+            <td>95</td>
+            <td>500,000</td>
+            <td>5,000,000</td>
+            <td>500,000</td>
+        </tr>
+
+        <tr>
+            <td>eBay</td>
+            <td>90</td>
+            <td>250,000</td>
+            <td>2,500,000</td>
+            <td>250,000</td>
+        </tr>
+
+        <tr>
+            <td>Shopify</td>
+            <td>85</td>
+            <td>100,000</td>
+            <td>1,000,000</td>
+            <td>100,000</td>
+        </tr>
+
+        <tr>
+            <td>Etsy</td>
+            <td>80</td>
+            <td>75,000</td>
+            <td>750,000</td>
+            <td>75,000</td>
+        </tr>
+
+        <tr>
+            <td>Facebook Marketplace</td>
+            <td>98</td>
+            <td>1,000,000</td>
+            <td>10,000,000</td>
+            <td>1,000,000</td>
+        </tr>
+
+    </table>
+
+    <script>
+        function toggleCollapse(id) {
+            var content = document.getElementById(id);
+            if (content.style.display === "block") {
+                content.style.display = "none";
+            } else {
+                content.style.display = "block";
+            }
+        }
+    </script>
+
+</body>
+</html>

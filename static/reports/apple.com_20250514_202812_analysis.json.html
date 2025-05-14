@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEO Report - Apple.com</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2, h3, h4 {
+            color: #2c3e50;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+        }
+        .scores-container {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        .score-card {
+            flex: 1;
+            min-width: 200px;
+            text-align: center;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .technical {
+            background-color: #e3f2fd;
+        }
+        .onpage {
+            background-color: #e8f5e9;
+        }
+        .offpage {
+            background-color: #fff3e0;
+        }
+        .score {
+            font-size: 36px;
+            font-weight: bold;
+        }
+        .recommendations {
+            margin-top: 30px;
+        }
+        .recommendation {
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            background-color: #f8f9fa;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .recommendation h3 {
+            margin-top: 0;
+        }
+        .recommendation-meta {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+        .meta-item {
+            background-color: #e9ecef;
+            padding: 5px 10px;
+            border-radius: 15px;
+            margin-right: 10px;
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+        .priority-high {
+            background-color: #ffcccc;
+        }
+        .priority-medium {
+            background-color: #ffffcc;
+        }
+        .priority-low {
+            background-color: #e6f2ff;
+        }
+        .issues {
+            margin-top: 30px;
+        }
+        .issue {
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+        .severity-high {
+            background-color: #ffebee;
+            border-left: 5px solid #f44336;
+        }
+        .severity-medium {
+            background-color: #fff8e1;
+            border-left: 5px solid #ffc107;
+        }
+        .severity-low {
+            background-color: #e8f5e9;
+            border-left: 5px solid #4caf50;
+        }
+        .pages {
+            margin-top: 30px;
+        }
+        .page {
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            background-color: #f8f9fa;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .collapse-btn {
+            background-color: #f1f1f1;
+            padding: 10px 15px;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+            border-radius: 5px;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .collapse-content {
+            display: none;
+            padding: 15px;
+            overflow: hidden;
+            background-color: #fafafa;
+            border-radius: 5px;
+        }
+        .recommendations-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .recommendations-table th {
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            padding: 10px;
+        }
+        .recommendations-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            vertical-align: top;
+        }
+        .priority-level {
+            font-weight: bold;
+            text-align: center;
+        }
+        .high {
+            color: #d32f2f;
+        }
+        .medium {
+            color: #f57c00;
+        }
+        .low {
+            color: #388e3c;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>SEO Analysis Report</h1>
+        <h2>Apple.com</h2>
+        <p>URL: <a href="https://apple.com" target="_blank">https://apple.com</a></p>
+        <p>Generated on: 2025-05-14 22:28:32</p>
+        <p>Pages analyzed: 5</p>
+    </div>
+
+    <div class="scores-container">
+        <div class="score-card technical">
+            <h3>Technical SEO</h3>
+            <div class="score">10.0/10</div>
+        </div>
+        <div class="score-card onpage">
+            <h3>On-Page SEO</h3>
+            <div class="score">7.5/10</div>
+        </div>
+        <div class="score-card offpage">
+            <h3>Off-Page SEO</h3>
+            <div class="score">5.0/10</div>
+        </div>
+    </div>
+
+    <div class="recommendations">
+        <h2>SEO Recommendations</h2>
+
+        <table class="recommendations-table">
+            <thead>
+                <tr>
+                    <th>Recommendation</th>
+                    <th>Priority</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td colspan="3" style="background-color: #e9ecef; font-weight: bold; text-align: center;">On-Page</td>
+                </tr>
+        
+                <tr>
+                    <td style="width: 25%;">Optimize for featured snippets in relevant product categories</td>
+                    <td style="width: 15%;" class="priority-level high">High</td>
+                    <td style="width: 60%;">Optimize for featured snippets in relevant product categories</td>
+                </tr>
+            
+                <tr>
+                    <td style="width: 25%;">Improve On-Page Optimization of Product Pages: Schema Markup Implementation</td>
+                    <td style="width: 15%;" class="priority-level high">High</td>
+                    <td style="width: 60%;">Improve On-Page Optimization of Product Pages: Schema Markup Implementation</td>
+                </tr>
+            
+                <tr>
+                    <td colspan="3" style="background-color: #e9ecef; font-weight: bold; text-align: center;">Strategic</td>
+                </tr>
+        
+                <tr>
+                    <td style="width: 25%;">Conduct a thorough keyword gap analysis against key competitors (Samsung, Microsoft, etc</td>
+                    <td style="width: 15%;" class="priority-level high">High</td>
+                    <td style="width: 60%;">Conduct a thorough keyword gap analysis against key competitors (Samsung, Microsoft, etc.)</td>
+                </tr>
+            
+                <tr>
+                    <td style="width: 25%;">Refine target audience definition and buyer personas</td>
+                    <td style="width: 15%;" class="priority-level high">High</td>
+                    <td style="width: 60%;">Refine target audience definition and buyer personas</td>
+                </tr>
+            
+                <tr>
+                    <td colspan="3" style="background-color: #e9ecef; font-weight: bold; text-align: center;">Technical</td>
+                </tr>
+        
+                <tr>
+                    <td style="width: 25%;">Analyze and refine internal linking structure for improved product discoverability</td>
+                    <td style="width: 15%;" class="priority-level medium">Medium</td>
+                    <td style="width: 60%;">Analyze and refine internal linking structure for improved product discoverability</td>
+                </tr>
+            
+                <tr>
+                    <td colspan="3" style="background-color: #e9ecef; font-weight: bold; text-align: center;">Content</td>
+                </tr>
+        
+                <tr>
+                    <td style="width: 25%;">Deepen content strategy focusing on user reviews and testimonials</td>
+                    <td style="width: 15%;" class="priority-level medium">Medium</td>
+                    <td style="width: 60%;">Deepen content strategy focusing on user reviews and testimonials</td>
+                </tr>
+            
+                <tr>
+                    <td colspan="3" style="background-color: #e9ecef; font-weight: bold; text-align: center;">UX_DESIGN</td>
+                </tr>
+        
+                <tr>
+                    <td style="width: 25%;">Optimize for fold visibility on various mobile devices</td>
+                    <td style="width: 15%;" class="priority-level low">Low</td>
+                    <td style="width: 60%;">Optimize for fold visibility on various mobile devices.</td>
+                </tr>
+            
+                <tr>
+                    <td style="width: 25%;">A/B test different hero image/video approaches</td>
+                    <td style="width: 15%;" class="priority-level low">Low</td>
+                    <td style="width: 60%;">A/B test different hero image/video approaches.</td>
+                </tr>
+            
+                <tr>
+                    <td style="width: 25%;">Improve discoverability of key features and functionalities</td>
+                    <td style="width: 15%;" class="priority-level low">Low</td>
+                    <td style="width: 60%;">Improve discoverability of key features and functionalities.</td>
+                </tr>
+            
+                <tr>
+                    <td style="width: 25%;">Conduct user testing on the shop pages</td>
+                    <td style="width: 15%;" class="priority-level low">Low</td>
+                    <td style="width: 60%;">Conduct user testing on the shop pages.</td>
+                </tr>
+            
+                <tr>
+                    <td style="width: 25%;">Ensure consistent branding and visual hierarchy across all pages</td>
+                    <td style="width: 15%;" class="priority-level low">Low</td>
+                    <td style="width: 60%;">Ensure consistent branding and visual hierarchy across all pages.</td>
+                </tr>
+            
+                <tr>
+                    <td colspan="3" style="background-color: #e9ecef; font-weight: bold; text-align: center;">ARCHITECTURE</td>
+                </tr>
+        
+                <tr>
+                    <td style="width: 25%;">Improve Sitemap Entry Count</td>
+                    <td style="width: 15%;" class="priority-level high">High</td>
+                    <td style="width: 60%;">Improve Sitemap Entry Count</td>
+                </tr>
+            
+                <tr>
+                    <td style="width: 25%;">Standardize URL Structure</td>
+                    <td style="width: 15%;" class="priority-level high">High</td>
+                    <td style="width: 60%;">Standardize URL Structure</td>
+                </tr>
+            
+                <tr>
+                    <td style="width: 25%;">Enhance Information Architecture</td>
+                    <td style="width: 15%;" class="priority-level high">High</td>
+                    <td style="width: 60%;">Enhance Information Architecture</td>
+                </tr>
+            
+                <tr>
+                    <td style="width: 25%;">Implement Robust Internal Linking</td>
+                    <td style="width: 15%;" class="priority-level medium">Medium</td>
+                    <td style="width: 60%;">Implement Robust Internal Linking</td>
+                </tr>
+            
+                <tr>
+                    <td style="width: 25%;">Optimize Mobile Architecture</td>
+                    <td style="width: 15%;" class="priority-level high">High</td>
+                    <td style="width: 60%;">Optimize Mobile Architecture</td>
+                </tr>
+            
+            </tbody>
+        </table>
+    </div>
+
+    <div class="recommendations">
+        <h2>Top Recommendations Details</h2>
+
+        <div class="recommendation">
+            <h3>1. Optimize for featured snippets in relevant product categories</h3>
+            <div class="recommendation-meta">
+                <div class="meta-item priority-high">Priority: 9/10</div>
+                <div class="meta-item">Impact: high</div>
+                <div class="meta-item">Difficulty: medium</div>
+                <div class="meta-item">Est. Time: 40 hrs</div>
+                <div class="meta-item">Category: On-Page</div>
+            </div>
+        </div>
+        <div class="recommendation">
+            <h3>2. Conduct a thorough keyword gap analysis against key competitors (Samsung, Microsoft, etc.)</h3>
+            <div class="recommendation-meta">
+                <div class="meta-item priority-high">Priority: 10/10</div>
+                <div class="meta-item">Impact: high</div>
+                <div class="meta-item">Difficulty: medium</div>
+                <div class="meta-item">Est. Time: 20 hrs</div>
+                <div class="meta-item">Category: Strategic</div>
+            </div>
+        </div>
+        <div class="recommendation">
+            <h3>3. Improve On-Page Optimization of Product Pages: Schema Markup Implementation</h3>
+            <div class="recommendation-meta">
+                <div class="meta-item priority-high">Priority: 8/10</div>
+                <div class="meta-item">Impact: medium</div>
+                <div class="meta-item">Difficulty: medium</div>
+                <div class="meta-item">Est. Time: 30 hrs</div>
+                <div class="meta-item">Category: On-Page</div>
+            </div>
+        </div>
+        <div class="recommendation">
+            <h3>4. Analyze and refine internal linking structure for improved product discoverability</h3>
+            <div class="recommendation-meta">
+                <div class="meta-item priority-medium">Priority: 7/10</div>
+                <div class="meta-item">Impact: medium</div>
+                <div class="meta-item">Difficulty: hard</div>
+                <div class="meta-item">Est. Time: 60 hrs</div>
+                <div class="meta-item">Category: Technical</div>
+            </div>
+        </div>
+        <div class="recommendation">
+            <h3>5. Deepen content strategy focusing on user reviews and testimonials</h3>
+            <div class="recommendation-meta">
+                <div class="meta-item priority-medium">Priority: 6/10</div>
+                <div class="meta-item">Impact: medium</div>
+                <div class="meta-item">Difficulty: medium</div>
+                <div class="meta-item">Est. Time: 30 hrs</div>
+                <div class="meta-item">Category: Content</div>
+            </div>
+        </div>
+        <div class="recommendation">
+            <h3>6. Refine target audience definition and buyer personas</h3>
+            <div class="recommendation-meta">
+                <div class="meta-item priority-high">Priority: 10/10</div>
+                <div class="meta-item">Impact: high</div>
+                <div class="meta-item">Difficulty: medium</div>
+                <div class="meta-item">Est. Time: 20 hrs</div>
+                <div class="meta-item">Category: Strategic</div>
+            </div>
+        </div>
+    <div class="issues">
+        <h2>Key Issues Found</h2>
+
+        <div class="issue severity-medium">
+            <h4>Short Title</h4>
+            <p></p>
+            <p><strong>Page:</strong> https://apple.com</p>
+        </div>
+        <div class="issue severity-medium">
+            <h4>Missing Meta Description</h4>
+            <p></p>
+            <p><strong>Page:</strong> https://apple.com</p>
+        </div>
+        <div class="issue severity-medium">
+            <h4>Missing Schema</h4>
+            <p></p>
+            <p><strong>Page:</strong> https://apple.com</p>
+        </div>
+        <div class="issue severity-medium">
+            <h4>Short Title</h4>
+            <p></p>
+            <p><strong>Page:</strong> https://apple.com/</p>
+        </div>
+        <div class="issue severity-medium">
+            <h4>Missing Meta Description</h4>
+            <p></p>
+            <p><strong>Page:</strong> https://apple.com/</p>
+        </div>
+        <div class="issue severity-medium">
+            <h4>Missing Schema</h4>
+            <p></p>
+            <p><strong>Page:</strong> https://apple.com/</p>
+        </div>
+        <div class="issue severity-medium">
+            <h4>Images Missing Alt</h4>
+            <p></p>
+            <p><strong>Page:</strong> https://apple.com/us/shop/goto/store</p>
+        </div>
+        <div class="issue severity-medium">
+            <h4>Missing Schema</h4>
+            <p></p>
+            <p><strong>Page:</strong> https://apple.com/us/shop/goto/store</p>
+        </div>
+        <div class="issue severity-medium">
+            <h4>Missing Meta Description</h4>
+            <p></p>
+            <p><strong>Page:</strong> https://apple.com/mac/</p>
+        </div>
+        <div class="issue severity-medium">
+            <h4>Images Missing Alt</h4>
+            <p></p>
+            <p><strong>Page:</strong> https://apple.com/mac/</p>
+        </div>
+    </div>
+    
+    <div class="pages">
+        <h2>Analyzed Pages</h2>
+
+        <button class="collapse-btn" onclick="toggleCollapse('technical-details')">Technical SEO Details</button>
+        <div id="technical-details" class="collapse-content">
+
+            <h3>Site Speed</h3>
+            <p>Average Load Time: 0.27845067977905275 seconds</p>
+            
+            <h3>Mobile Optimization</h3>
+            <p>Mobile-Friendly: Yes</p>
+            
+            <h3>Security</h3>
+            <p>HTTPS Implemented: Yes</p>
+            
+            <h3>Indexation</h3>
+            <p>Robots.txt: Found</p>
+            <p>Sitemap.xml: Found</p>
+    
+        </div>
+        
+        <button class="collapse-btn" onclick="toggleCollapse('onpage-details')">On-Page SEO Details</button>
+        <div id="onpage-details" class="collapse-content">
+
+            <h3>Content Quality</h3>
+            <p>Average Word Count: 2817.4 words</p>
+            <p>Pages with Thin Content: 0</p>
+            
+            <h3>Meta Tags</h3>
+            <p>Pages Missing Title Tags: 0</p>
+            <p>Pages Missing Meta Descriptions: 3</p>
+            
+            <h3>Heading Structure</h3>
+            <p>Pages Missing H1 Headings: 0</p>
+            
+            <h3>Image Optimization</h3>
+            <p>Images Without Alt Text: 110</p>
+    
+        </div>
+        
+        <button class="collapse-btn" onclick="toggleCollapse('pages-details')">Page Details</button>
+        <div id="pages-details" class="collapse-content">
+
+            <table>
+                <tr>
+                    <th>URL</th>
+                    <th>Title</th>
+                    <th>Word Count</th>
+                    <th>Issues</th>
+                </tr>
+    
+                <tr>
+                    <td><a href="https://apple.com" target="_blank">https://apple.com</a></td>
+                    <td>Apple</td>
+                    <td>1027</td>
+                    <td>3</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://apple.com/" target="_blank">https://apple.com/</a></td>
+                    <td>Apple</td>
+                    <td>1027</td>
+                    <td>3</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://apple.com/us/shop/goto/store" target="_blank">https://apple.com/us/shop/goto/store</a></td>
+                    <td>Apple Store Online - Apple</td>
+                    <td>6438</td>
+                    <td>2</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://apple.com/mac/" target="_blank">https://apple.com/mac/</a></td>
+                    <td>Mac - Apple</td>
+                    <td>3941</td>
+                    <td>3</td>
+                </tr>
+        
+                <tr>
+                    <td><a href="https://apple.com/ipad/" target="_blank">https://apple.com/ipad/</a></td>
+                    <td>iPad - Apple</td>
+                    <td>1654</td>
+                    <td>2</td>
+                </tr>
+        
+            </table>
+        </div>
+    </div>
+
+    <script>
+        function toggleCollapse(id) {
+            var content = document.getElementById(id);
+            if (content.style.display === "block") {
+                content.style.display = "none";
+            } else {
+                content.style.display = "block";
+            }
+        }
+    </script>
+
+</body>
+</html>

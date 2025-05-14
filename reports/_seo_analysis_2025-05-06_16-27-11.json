@@ -1,0 +1,330 @@
+{
+  "technical_seo": {
+    "score": 9.0,
+    "site_speed": {
+      "avg_load_time": 0.04468083381652832,
+      "issues": []
+    },
+    "mobile_optimisation": {
+      "score": 10,
+      "has_viewport_meta": true
+    },
+    "indexation": {
+      "robots_txt": {
+        "exists": true,
+        "content": "# If you would like to crawl GitHub contact us via https://support.github.com?tags=dotcom-robots\n# We also provide an extensive API: https://docs.github.com\nUser-agent: baidu\ncrawl-delay: 1\n\n\nUser-agent: *\n\nDisallow: /*/*/pulse\nDisallow: /*/*/projects\nDisallow: /*/*/forks\nDisallow: /*/*/issues/new\nDisallow: /*/*/issues/search\nDisallow: /*/*/commits/\nDisallow: /*/*/branches\nDisallow: /*/*/contributors\nDisallow: /*/*/tags\nDisallow: /*/*/stargazers\nDisallow: /*/*/watchers\nDisallow: /*/*/network\nDisallow: /*/*/graphs\nDisallow: /*/*/compare\n\nDisallow: /*/tree/\nDisallow: /gist/\nDisallow: /*/download\nDisallow: /*/revisions\nDisallow: /*/commits/*?author\nDisallow: /*/commits/*?path\nDisallow: /*/comments\nDisallow: /*/archive/\nDisallow: /*/blame/\nDisallow: /*/raw/\nDisallow: /*/cache/\nDisallow: /.git/\nDisallow: */.git/\nDisallow: /*.git$\nDisallow: /search/advanced\nDisallow: /search$\nDisallow: /*q=\nDisallow: /*.atom$\n\nDisallow: /ekansa/Open-Context-Data\nDisallow: /ekansa/opencontext-*\nDisallow: */tarball/\nDisallow: */zipball/\n\nDisallow: /*source=*\nDisallow: /*ref_cta=*\nDisallow: /*plan=*\nDisallow: /*return_to=*\nDisallow: /*ref_loc=*\nDisallow: /*setup_organization=*\nDisallow: /*source_repo=*\nDisallow: /*ref_page=*\nDisallow: /*source=*\nDisallow: /*referrer=*\nDisallow: /*report=*\nDisallow: /*author=*\nDisallow: /*since=*\nDisallow: /*until=*\nDisallow: /*commits?author=*\nDisallow: /*report-abuse?report=*\nDisallow: /*tab=*\nAllow: /*?tab=achievements&achievement=*\n\nDisallow: /account-login\nDisallow: /Explodingstuff/\n\n",
+        "issues": [
+          {
+            "type": "no_sitemap_in_robots",
+            "severity": "medium",
+            "description": "No Sitemap directive found in robots.txt"
+          }
+        ]
+      },
+      "sitemap": {
+        "exists": false,
+        "urls_count": 0,
+        "issues": [
+          {
+            "type": "sitemap_not_found",
+            "severity": "medium",
+            "description": "sitemap.xml not found (status code: 406)"
+          }
+        ]
+      }
+    },
+    "security": {
+      "has_ssl": true
+    },
+    "structured_data": {
+      "pages_with_schema": 0,
+      "schema_types": []
+    },
+    "performance": {
+      "total_load_time_seconds": 0.17863011360168457,
+      "total_page_size_kb": 1010.5,
+      "total_requests": 125,
+      "resource_counts": {
+        "images": 54,
+        "scripts": 57,
+        "stylesheets": 13,
+        "fonts": 0
+      },
+      "performance_issues": [
+        {
+          "type": "too_many_images",
+          "severity": "medium",
+          "description": "Page has too many images: 54"
+        },
+        {
+          "type": "too_many_scripts",
+          "severity": "medium",
+          "description": "Page has too many script files: 57"
+        },
+        {
+          "type": "render_blocking_resources",
+          "severity": "medium",
+          "description": "Page has 1 render-blocking script resources"
+        }
+      ]
+    }
+  },
+  "on_page_seo": {
+    "score": 8.222222222222221,
+    "content_quality": {
+      "avg_word_count": 1488,
+      "thin_content_pages": 0
+    },
+    "meta_tags": {
+      "pages_without_title": 0,
+      "pages_without_description": 0
+    },
+    "heading_structure": {
+      "pages_without_h1": 0
+    },
+    "image_optimization": {
+      "images_without_alt": 14
+    }
+  },
+  "off_page_seo": {
+    "score": 5.0,
+    "backlinks": {
+      "note": "Backlink data requires third-party API integration"
+    },
+    "social_signals": {
+      "note": "Social signal data requires third-party API integration"
+    }
+  },
+  "content_analysis": {
+    "avg_readability_score": 49.54,
+    "keyword_consistency": {
+      "top_site_keywords": [
+        [
+          "github",
+          1
+        ],
+        [
+          "code",
+          1
+        ],
+        [
+          "copilot",
+          1
+        ],
+        [
+          "window",
+          1
+        ],
+        [
+          "chat",
+          1
+        ],
+        [
+          "issues",
+          1
+        ],
+        [
+          "build",
+          1
+        ],
+        [
+          "read",
+          1
+        ],
+        [
+          "time",
+          1
+        ],
+        [
+          "security",
+          1
+        ]
+      ],
+      "keyword_consistency_score": 10
+    },
+    "content_structure": {
+      "total_h1_tags": 4,
+      "total_h2_tags": 11,
+      "total_h3_tags": 18,
+      "avg_h1_per_page": 4.0,
+      "avg_h2_per_page": 11.0,
+      "avg_h3_per_page": 18.0
+    }
+  },
+  "analyzed_pages": {
+    "https://github.com": {
+      "title": "GitHub \u00b7 Build and ship software on a single, collaborative platform \u00b7 GitHub",
+      "description": "GitHub is where people build software. More than 150 million people use GitHub to discover, fork, and contribute to over 420 million projects.",
+      "word_count": 1488,
+      "load_time": 0.04468083381652832,
+      "content_analysis": {
+        "word_count": 1053,
+        "readability": {
+          "average_sentence_length": 17.2,
+          "average_syllables_per_word": 1.65,
+          "flesch_reading_ease": 49.54,
+          "grade_level": "College (Difficult)"
+        },
+        "keyword_analysis": {
+          "top_keywords": [
+            [
+              "github",
+              33
+            ],
+            [
+              "code",
+              16
+            ],
+            [
+              "copilot",
+              14
+            ],
+            [
+              "window",
+              7
+            ],
+            [
+              "chat",
+              7
+            ],
+            [
+              "issues",
+              7
+            ],
+            [
+              "build",
+              6
+            ],
+            [
+              "read",
+              6
+            ],
+            [
+              "time",
+              6
+            ],
+            [
+              "security",
+              6
+            ]
+          ],
+          "top_phrases": [
+            [
+              "github copilot",
+              9
+            ],
+            [
+              "read customer",
+              4
+            ],
+            [
+              "customer story",
+              4
+            ],
+            [
+              "another tab",
+              3
+            ],
+            [
+              "tab window",
+              3
+            ]
+          ],
+          "url_keywords": [],
+          "keyword_density": {
+            "github": 3.15,
+            "code": 1.53,
+            "copilot": 1.33,
+            "window": 0.67,
+            "chat": 0.67,
+            "issues": 0.67,
+            "build": 0.57,
+            "read": 0.57,
+            "time": 0.57,
+            "security": 0.57
+          }
+        },
+        "content_structure": {
+          "heading_structure": {
+            "h1_count": 1,
+            "h1_text": [
+              "Build and ship software on a single, collaborative platform"
+            ],
+            "h2_count": 4,
+            "h2_text": [
+              "GitHub features",
+              "GitHub is used by",
+              "Millions of developers and businesses call GitHub home"
+            ],
+            "h3_count": 13,
+            "h3_text": [
+              "Work 55% faster.Jump to footnote1Increase productivity with AI-powered coding assistance, including code completion, chat, and more.",
+              "Automate any workflow",
+              "Get up and running in seconds"
+            ],
+            "h4_count": 0,
+            "h5_count": 0,
+            "h6_count": 0
+          },
+          "list_elements": {
+            "unordered_lists": 1,
+            "ordered_lists": 1,
+            "list_items": 7
+          },
+          "emphasis_elements": 0,
+          "strong_elements": 0,
+          "tables": 0,
+          "blockquotes": 1
+        }
+      },
+      "issues": [
+        {
+          "type": "long_title",
+          "severity": "medium",
+          "description": "Title is too long (77 chars)"
+        },
+        {
+          "type": "multiple_h1",
+          "severity": "low",
+          "description": "Page has multiple H1 tags (4)"
+        },
+        {
+          "type": "images_missing_alt",
+          "severity": "medium",
+          "description": "14 images missing alt text"
+        },
+        {
+          "type": "missing_schema",
+          "severity": "medium",
+          "description": "Page has no schema markup (structured data)"
+        }
+      ]
+    }
+  },
+  "competitor_analysis": {
+    "main_url": "github.com",
+    "competitors_analyzed": 2,
+    "competitor_data": {
+      "https://gitlab.com": {
+        "url": "https://gitlab.com",
+        "load_time_seconds": 0.4898951053619385,
+        "word_count": 856,
+        "has_schema": false,
+        "meta_tags_present": true,
+        "internal_links_count": 49,
+        "external_links_count": 1,
+        "status_code": 200
+      },
+      "https://bitbucket.org": {
+        "url": "https://bitbucket.org",
+        "load_time_seconds": 0.15750503540039062,
+        "word_count": 1452,
+        "has_schema": false,
+        "meta_tags_present": true,
+        "internal_links_count": 12,
+        "external_links_count": 51,
+        "status_code": 200
+      }
+    }
+  }
+}

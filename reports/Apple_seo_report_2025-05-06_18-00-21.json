@@ -1,0 +1,53 @@
+{
+  "company": "Apple",
+  "url": "https://apple.com",
+  "date": "2025-05-06 18:00:21",
+  "recommendations": [
+    {
+      "recommendation": "Implement schema markup (e.g., Product, Organization, Review) on all product and service pages to enhance search engine understanding and improve rich snippet visibility in SERPs.  Prioritize product pages for iPhones, Macs, and iPads.",
+      "category": "On-Page",
+      "priority_score": 9,
+      "impact": "high",
+      "implementation_difficulty": "medium",
+      "estimated_time_hours": 20
+    },
+    {
+      "recommendation": "Review and optimize all meta descriptions across the website, ensuring they are compelling, keyword-rich (relevant to Apple's products and services), and accurately reflect each page's content.  Pay close attention to product pages and key landing pages.",
+      "category": "On-Page",
+      "priority_score": 8,
+      "impact": "medium",
+      "implementation_difficulty": "medium",
+      "estimated_time_hours": 15
+    },
+    {
+      "recommendation": "Lengthen all titles to at least 50-60 characters while incorporating relevant keywords to improve click-through rates (CTR) from search engine results pages (SERPs). Focus on titles that clearly communicate the value proposition of each page.",
+      "category": "On-Page",
+      "priority_score": 8,
+      "impact": "medium",
+      "implementation_difficulty": "medium",
+      "estimated_time_hours": 12
+    },
+    {
+      "recommendation": "Conduct a thorough audit of all pages to identify and correct any additional instances of missing meta descriptions or short titles.  Prioritize pages with high organic search traffic.",
+      "category": "On-Page",
+      "priority_score": 7,
+      "impact": "medium",
+      "implementation_difficulty": "medium",
+      "estimated_time_hours": 8
+    },
+    {
+      "recommendation": "Implement structured data for reviews (e.g., using schema.org vocabulary) to leverage star ratings in search results, thereby improving click-through rates from organic search.",
+      "category": "On-Page",
+      "priority_score": 7,
+      "impact": "medium",
+      "implementation_difficulty": "medium",
+      "estimated_time_hours": 10
+    }
+  ],
+  "summary": {
+    "technical_score": 10.0,
+    "on_page_score": 7.5,
+    "off_page_score": 5.0,
+    "total_pages_analyzed": 2
+  }
+}

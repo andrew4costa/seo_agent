@@ -1,0 +1,276 @@
+{
+  "technical_seo": {
+    "score": 9.0,
+    "site_speed": {
+      "avg_load_time": 0.050189971923828125,
+      "issues": []
+    },
+    "mobile_optimisation": {
+      "score": 10,
+      "has_viewport_meta": true
+    },
+    "indexation": {
+      "robots_txt": {
+        "exists": true,
+        "content": "# Directions for robots.  See this URL:\n# http://www.robotstxt.org/robotstxt.html\n# for a description of the file format.\n\nUser-agent: HTTrack\nUser-agent: puf\nUser-agent: MSIECrawler\nDisallow: /\n\n# The Krugle web crawler (though based on Nutch) is OK.\nUser-agent: Krugle\nAllow: /\nDisallow: /~guido/orlijn/\nDisallow: /webstats/\n\n# No one should be crawling us with Nutch.\nUser-agent: Nutch\nDisallow: /\n\n# Hide old versions of the documentation and various large sets of files.\nUser-agent: *\nDisallow: /~guido/orlijn/\nDisallow: /webstats/\n",
+        "issues": [
+          {
+            "type": "no_sitemap_in_robots",
+            "severity": "medium",
+            "description": "No Sitemap directive found in robots.txt"
+          }
+        ]
+      },
+      "sitemap": {
+        "exists": false,
+        "urls_count": 0,
+        "issues": [
+          {
+            "type": "sitemap_not_found",
+            "severity": "medium",
+            "description": "sitemap.xml not found (status code: 404)"
+          }
+        ]
+      }
+    },
+    "security": {
+      "has_ssl": true
+    },
+    "structured_data": {
+      "pages_with_schema": 0,
+      "schema_types": []
+    },
+    "performance": {
+      "total_load_time_seconds": 0.08062887191772461,
+      "total_page_size_kb": 221.7158203125,
+      "total_requests": 14,
+      "resource_counts": {
+        "images": 1,
+        "scripts": 8,
+        "stylesheets": 4,
+        "fonts": 0
+      },
+      "performance_issues": [
+        {
+          "type": "render_blocking_resources",
+          "severity": "medium",
+          "description": "Page has 8 render-blocking script resources"
+        }
+      ]
+    }
+  },
+  "on_page_seo": {
+    "score": 9.0,
+    "content_quality": {
+      "avg_word_count": 1057,
+      "thin_content_pages": 0
+    },
+    "meta_tags": {
+      "pages_without_title": 0,
+      "pages_without_description": 0
+    },
+    "heading_structure": {
+      "pages_without_h1": 0
+    },
+    "image_optimization": {
+      "images_without_alt": 0
+    }
+  },
+  "off_page_seo": {
+    "score": 5.0,
+    "backlinks": {
+      "note": "Backlink data requires third-party API integration"
+    },
+    "social_signals": {
+      "note": "Social signal data requires third-party API integration"
+    }
+  },
+  "content_analysis": {
+    "avg_readability_score": 54.7,
+    "keyword_consistency": {
+      "top_site_keywords": [
+        [
+          "2025",
+          1
+        ],
+        [
+          "python",
+          1
+        ],
+        [
+          "software",
+          1
+        ],
+        [
+          "available",
+          1
+        ],
+        [
+          "open",
+          1
+        ],
+        [
+          "foundation",
+          1
+        ],
+        [
+          "psf",
+          1
+        ],
+        [
+          "data",
+          1
+        ],
+        [
+          "development",
+          1
+        ],
+        [
+          "javascript",
+          1
+        ]
+      ],
+      "keyword_consistency_score": 10
+    },
+    "content_structure": {
+      "total_h1_tags": 6,
+      "total_h2_tags": 9,
+      "total_h3_tags": 0,
+      "avg_h1_per_page": 6.0,
+      "avg_h2_per_page": 9.0,
+      "avg_h3_per_page": 0.0
+    }
+  },
+  "analyzed_pages": {
+    "https://python.org": {
+      "title": "Welcome to Python.org",
+      "description": "The official home of the Python Programming Language",
+      "word_count": 1057,
+      "load_time": 0.050189971923828125,
+      "content_analysis": {
+        "word_count": 373,
+        "readability": {
+          "average_sentence_length": 12.81,
+          "average_syllables_per_word": 1.64,
+          "flesch_reading_ease": 54.7,
+          "grade_level": "10th-12th grade (Fairly difficult)"
+        },
+        "keyword_analysis": {
+          "top_keywords": [
+            [
+              "2025",
+              15
+            ],
+            [
+              "python",
+              14
+            ],
+            [
+              "software",
+              4
+            ],
+            [
+              "available",
+              3
+            ],
+            [
+              "open",
+              3
+            ],
+            [
+              "foundation",
+              3
+            ],
+            [
+              "psf",
+              3
+            ],
+            [
+              "data",
+              3
+            ],
+            [
+              "development",
+              3
+            ],
+            [
+              "javascript",
+              2
+            ]
+          ],
+          "top_phrases": [
+            [
+              "python software",
+              3
+            ],
+            [
+              "software foundation",
+              3
+            ],
+            [
+              "use python",
+              2
+            ],
+            [
+              "2025 0501",
+              2
+            ],
+            [
+              "2025 0510",
+              2
+            ]
+          ],
+          "url_keywords": [],
+          "keyword_density": {
+            "2025": 4.34,
+            "python": 4.05,
+            "software": 1.16,
+            "available": 0.87,
+            "open": 0.87,
+            "foundation": 0.87,
+            "psf": 0.87,
+            "data": 0.87,
+            "development": 0.87,
+            "javascript": 0.58
+          }
+        },
+        "content_structure": {
+          "heading_structure": {
+            "h1_count": 0,
+            "h2_count": 9,
+            "h2_text": [
+              "Get Started",
+              "Download",
+              "Docs"
+            ],
+            "h3_count": 0,
+            "h4_count": 0,
+            "h5_count": 0,
+            "h6_count": 0
+          },
+          "list_elements": {
+            "unordered_lists": 3,
+            "ordered_lists": 0,
+            "list_items": 15
+          },
+          "emphasis_elements": 2,
+          "strong_elements": 7,
+          "tables": 1,
+          "blockquotes": 1
+        }
+      },
+      "issues": [
+        {
+          "type": "multiple_h1",
+          "severity": "low",
+          "description": "Page has multiple H1 tags (6)"
+        },
+        {
+          "type": "missing_schema",
+          "severity": "medium",
+          "description": "Page has no schema markup (structured data)"
+        }
+      ]
+    }
+  }
+}

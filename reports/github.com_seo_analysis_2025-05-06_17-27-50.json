@@ -1,0 +1,55 @@
+{
+  "domain": "",
+  "url": "github.com",
+  "pages_analyzed": 3,
+  "technical_seo_score": 9,
+  "on_page_seo_score": 8,
+  "technical_seo_findings": {
+    "has_ssl": true,
+    "avg_page_load_time": 0.10494502385457356,
+    "mobile_friendly_score": 10.0,
+    "has_robots_txt": true,
+    "has_sitemap_xml": false
+  },
+  "on_page_seo_findings": {
+    "avg_word_count": 734.3333333333334,
+    "thin_content_pages": 1,
+    "missing_title_pages": 0,
+    "missing_meta_desc_pages": 0,
+    "missing_h1_pages": 0
+  },
+  "performance_metrics": {
+    "total_load_time": 0.3148350715637207,
+    "total_page_size": 6.777055740356445,
+    "total_requests": 188,
+    "resource_counts": {
+      "images": 108,
+      "scripts": 0,
+      "stylesheets": 75,
+      "fonts": 2
+    }
+  },
+  "issues": [
+    {
+      "type": "robots_txt_issue",
+      "details": "Issue with robots.txt: Unknown error"
+    },
+    {
+      "type": "sitemap_issue",
+      "details": "Issue with sitemap: Unknown error"
+    },
+    {
+      "type": "thin_content_pages",
+      "details": "1 pages have thin content (<300 words)"
+    },
+    {
+      "type": "duplicate_titles",
+      "details": "1 duplicate title tags found"
+    },
+    {
+      "type": "duplicate_descriptions",
+      "details": "1 duplicate meta descriptions found"
+    }
+  ],
+  "execution_time_seconds": 0.8000867366790771
+}

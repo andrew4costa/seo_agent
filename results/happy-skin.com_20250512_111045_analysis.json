@@ -1,0 +1,137 @@
+{
+  "url": "https://happy-skin.com",
+  "date": "2025-05-12T13:10:45.969293",
+  "pages_analyzed": 5,
+  "overall_score": 65,
+  "recommendations": [
+    {
+      "title": "Improve page loading speed",
+      "description": "Optimize images and use browser caching to improve page loading speed",
+      "impact": "high",
+      "effort": "medium"
+    },
+    {
+      "title": "Add more relevant keywords",
+      "description": "Increase keyword density for main search terms",
+      "impact": "medium",
+      "effort": "low"
+    },
+    {
+      "title": "Improve meta descriptions",
+      "description": "Add unique and descriptive meta descriptions to all pages",
+      "impact": "medium",
+      "effort": "medium"
+    },
+    {
+      "title": "Fix broken links",
+      "description": "Identify and fix or redirect broken links to improve user experience",
+      "impact": "medium",
+      "effort": "low"
+    },
+    {
+      "title": "Add structured data",
+      "description": "Implement schema markup to help search engines understand your content",
+      "impact": "medium",
+      "effort": "high"
+    }
+  ],
+  "page_insights": [
+    {
+      "url": "https://happy-skin.com",
+      "title": "Page 1 Title",
+      "meta_description": "Description for page 1",
+      "h1": "Heading for page 1",
+      "word_count": 500,
+      "load_time": 0.5,
+      "issues": 3
+    },
+    {
+      "url": "https://happy-skin.com/page-2",
+      "title": "Page 2 Title",
+      "meta_description": "Description for page 2",
+      "h1": "Heading for page 2",
+      "word_count": 600,
+      "load_time": 0.6,
+      "issues": 3
+    },
+    {
+      "url": "https://happy-skin.com/page-3",
+      "title": "Page 3 Title",
+      "meta_description": "Description for page 3",
+      "h1": "Heading for page 3",
+      "word_count": 700,
+      "load_time": 0.7,
+      "issues": 3
+    },
+    {
+      "url": "https://happy-skin.com/page-4",
+      "title": "Page 4 Title",
+      "meta_description": "Description for page 4",
+      "h1": "Heading for page 4",
+      "word_count": 800,
+      "load_time": 0.8,
+      "issues": 3
+    },
+    {
+      "url": "https://happy-skin.com/page-5",
+      "title": "Page 5 Title",
+      "meta_description": "Description for page 5",
+      "h1": "Heading for page 5",
+      "word_count": 900,
+      "load_time": 0.9,
+      "issues": 3
+    }
+  ],
+  "performance_metrics": {
+    "page_speed": 85,
+    "mobile_friendly": true,
+    "load_time": 2.3,
+    "render_time": 1.2,
+    "server_response_time": 0.5
+  },
+  "keyword_analysis": {
+    "seo": {
+      "count": 5,
+      "density": 0.005,
+      "competition": 0.3
+    },
+    "website": {
+      "count": 6,
+      "density": 0.006,
+      "competition": 0.4
+    },
+    "optimization": {
+      "count": 7,
+      "density": 0.007,
+      "competition": 0.5
+    },
+    "content": {
+      "count": 8,
+      "density": 0.008,
+      "competition": 0.6
+    },
+    "analysis": {
+      "count": 9,
+      "density": 0.009,
+      "competition": 0.7
+    }
+  },
+  "backlink_analysis": {},
+  "technical_issues": [
+    {
+      "type": "missing_alt_tags",
+      "count": 12,
+      "impact": "medium"
+    },
+    {
+      "type": "broken_links",
+      "count": 3,
+      "impact": "high"
+    }
+  ],
+  "status": "completed",
+  "progress": 100,
+  "current_step": "completed",
+  "steps_completed": 5,
+  "end_time": "2025-05-12T11:10:55.082238+00:00"
+}

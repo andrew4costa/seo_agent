@@ -1,0 +1,308 @@
+{
+  "analysis": {
+    "technical_seo": {
+      "score": 10.0,
+      "site_speed": {
+        "avg_load_time": 0.3881657600402832,
+        "issues": []
+      },
+      "mobile_optimisation": {
+        "score": 10.0,
+        "has_viewport_meta": true
+      },
+      "indexation": {
+        "robots_txt": {
+          "exists": true,
+          "content": "Sitemap: https://www.digitalocean.com/sitemaps/community-tutorial-collections-0.xml.gz\nSitemap: https://www.digitalocean.com/sitemaps/community-tutorial-series-0.xml.gz\nSitemap: https://www.digitalocean.com/sitemaps/community-pages-0.xml.gz\nSitemap: https://www.digitalocean.com/sitemaps/community-tags-0.xml.gz\nSitemap: https://www.digitalocean.com/sitemaps/community-tools-0.xml.gz\nSitemap: https://www.digitalocean.com/sitemaps/community-indexes-0.xml.gz\nSitemap: https://www.digitalocean.com/sitemaps/trust-0.xml.gz\nSitemap: https://www.digitalocean.com/sitemaps/solutions-0.xml.gz\nSitemap: https://www.digitalocean.com/sitemaps/resources-0.xml.gz\nSitemap: https://www.digitalocean.com/sitemaps/resource-authors-0.xml.gz\nSitemap: https://www.digitalocean.com/sitemaps/reports-0.xml.gz\nSitemap: https://www.digitalocean.com/sitemaps/products-0.xml.gz\nSitemap: https://www.digitalocean.com/sitemaps/pricing-0.xml.gz\nSitemap: https://www.digitalocean.com/sitemaps/product-tours-0.xml.gz\nSitemap: https://www.digitalocean.com/sitemaps/landing-0.xml.gz\nSitemap: https://www.digitalocean.com/sitemaps/legal-0.xml.gz\nSitemap: https://www.digitalocean.com/sitemaps/leadership-0.xml.gz\nSitemap: https://www.digitalocean.com/sitemaps/currents-0.xml.gz\nSitemap: https://www.digitalocean.com/sitemaps/companyContact-0.xml.gz\nSitemap: https://www.digitalocean.com/sitemaps/careers-0.xml.gz\nSitemap: https://www.digitalocean.com/sitemaps/impact-0.xml.gz\nSitemap: https://www.digitalocean.com/sitemaps/indexes-0.xml.gz\nSitemap: https://www.digitalocean.com/sitemaps/hatch-0.xml.gz\nSitemap: https://www.digitalocean.com/sitemaps/open-source-0.xml.gz\nSitemap: https://www.digitalocean.com/sitemaps/partners-0.xml.gz\nSitemap: https://www.digitalocean.com/sitemaps/press-0.xml.gz\nSitemap: https://www.digitalocean.com/sitemaps/security-0.xml.gz",
+          "issues": []
+        },
+        "sitemap": {
+          "exists": true,
+          "urls_count": 0,
+          "issues": [
+            {
+              "type": "empty_sitemap",
+              "severity": "medium",
+              "description": "Sitemap exists but contains no URLs"
+            }
+          ]
+        }
+      },
+      "security": {
+        "has_ssl": true
+      },
+      "structured_data": {
+        "pages_with_schema": 0,
+        "schema_types": []
+      }
+    },
+    "on_page_seo": {
+      "score": 7.9,
+      "content_quality": {
+        "avg_word_count": 2740.0,
+        "thin_content_pages": 0
+      },
+      "meta_tags": {
+        "pages_without_title": 0,
+        "pages_without_description": 0
+      },
+      "heading_structure": {
+        "pages_without_h1": 1
+      },
+      "image_optimization": {
+        "images_without_alt": 325
+      }
+    },
+    "off_page_seo": {
+      "score": 5.0,
+      "backlinks": {
+        "note": "Backlink data requires third-party API integration"
+      },
+      "social_signals": {
+        "note": "Social signal data requires third-party API integration"
+      }
+    },
+    "analyzed_pages": {
+      "https://www.digitalocean.com": {
+        "title": "DigitalOcean | Cloud Infrastructure for Developers",
+        "description": "An ocean of simple, scalable cloud solutions.",
+        "word_count": 1651,
+        "load_time": 0.05051088333129883,
+        "issues": [
+          {
+            "type": "short_meta_description",
+            "severity": "low",
+            "description": "Meta description is too short (45 chars)"
+          },
+          {
+            "type": "images_missing_alt",
+            "severity": "medium",
+            "description": "19 images missing alt text"
+          },
+          {
+            "type": "missing_schema",
+            "severity": "medium",
+            "description": "Page has no schema markup (structured data)"
+          }
+        ]
+      },
+      "https://www.digitalocean.com/blog": {
+        "title": "DigitalOcean Blog",
+        "description": "Dive into DigitalOcean product updates, company news, and educational content on how developers and startups can leverage the cloud.",
+        "word_count": 2244,
+        "load_time": 0.1063239574432373,
+        "issues": [
+          {
+            "type": "missing_schema",
+            "severity": "medium",
+            "description": "Page has no schema markup (structured data)"
+          }
+        ]
+      },
+      "https://www.digitalocean.com/support": {
+        "title": "Support Home | DigitalOcean Documentation",
+        "description": "Looking for technical support with your DigitalOcean account or infrastructure? Start here.",
+        "word_count": 7149,
+        "load_time": 1.1284310817718506,
+        "issues": [
+          {
+            "type": "images_missing_alt",
+            "severity": "medium",
+            "description": "283 images missing alt text"
+          },
+          {
+            "type": "missing_schema",
+            "severity": "medium",
+            "description": "Page has no schema markup (structured data)"
+          }
+        ]
+      },
+      "https://www.digitalocean.com/company/contact/sales?referrer=tophat": {
+        "title": "Contact Sales at DigitalOcean",
+        "description": "Get in touch with our team to help scale and migrate your applications to DigitalOcean.",
+        "word_count": 1005,
+        "load_time": 0.6113510131835938,
+        "issues": [
+          {
+            "type": "missing_h1",
+            "severity": "medium",
+            "description": "Page is missing an H1 tag"
+          },
+          {
+            "type": "images_missing_alt",
+            "severity": "medium",
+            "description": "4 images missing alt text"
+          },
+          {
+            "type": "missing_schema",
+            "severity": "medium",
+            "description": "Page has no schema markup (structured data)"
+          }
+        ]
+      },
+      "https://www.digitalocean.com/": {
+        "title": "DigitalOcean | Cloud Infrastructure for Developers",
+        "description": "An ocean of simple, scalable cloud solutions.",
+        "word_count": 1651,
+        "load_time": 0.04421186447143555,
+        "issues": [
+          {
+            "type": "short_meta_description",
+            "severity": "low",
+            "description": "Meta description is too short (45 chars)"
+          },
+          {
+            "type": "images_missing_alt",
+            "severity": "medium",
+            "description": "19 images missing alt text"
+          },
+          {
+            "type": "missing_schema",
+            "severity": "medium",
+            "description": "Page has no schema markup (structured data)"
+          }
+        ]
+      }
+    }
+  },
+  "recommendations": [
+    {
+      "recommendation": "Implement schema markup for all service pages (Cloud servers, Managed databases, etc.)",
+      "category": "On-Page",
+      "priority_score": 10,
+      "impact": "High",
+      "implementation_difficulty": "Medium",
+      "estimated_time_hours": 8,
+      "reasoning": "For www.digitalocean.com in the e-commerce industry, this on-page optimization is essential. Implement schema markup for all service pages (Cloud servers, Managed databases, etc.) will enhance your content's relevance and clarity for both users and search engines. This directly impacts how well your pages perform in search results for your target keywords."
+    },
+    {
+      "recommendation": "Add alt text to all missing images across the website",
+      "category": "Technical",
+      "priority_score": 9,
+      "impact": "Medium",
+      "implementation_difficulty": "Medium",
+      "estimated_time_hours": 12,
+      "reasoning": "This technical improvement is crucial for www.digitalocean.com as a e-commerce website. Add alt text to all missing images across the website will directly address technical issues that are impacting both search engine crawling and user experience. Implementing this change will improve search visibility and create a more stable foundation for your website."
+    },
+    {
+      "recommendation": "Lengthen meta descriptions to at least 155 characters",
+      "category": "On-Page",
+      "priority_score": 8,
+      "impact": "Medium",
+      "implementation_difficulty": "Easy",
+      "estimated_time_hours": 4,
+      "reasoning": "For www.digitalocean.com in the e-commerce industry, this on-page optimization is essential. Lengthen meta descriptions to at least 155 characters will enhance your content's relevance and clarity for both users and search engines. This directly impacts how well your pages perform in search results for your target keywords."
+    },
+    {
+      "recommendation": "Ensure all pages have an H1 tag, particularly those missing one",
+      "category": "On-Page",
+      "priority_score": 7,
+      "impact": "Medium",
+      "implementation_difficulty": "Easy",
+      "estimated_time_hours": 2,
+      "reasoning": "For www.digitalocean.com in the e-commerce industry, this on-page optimization is essential. Ensure all pages have an H1 tag, particularly those missing one will enhance your content's relevance and clarity for both users and search engines. This directly impacts how well your pages perform in search results for your target keywords."
+    },
+    {
+      "recommendation": "Improve Sitemap Coverage",
+      "reasoning": "While a sitemap exists, it currently has zero entries.  This prevents search engines from efficiently discovering and indexing all of DigitalOcean's pages.  A comprehensive sitemap is crucial for optimal crawlability and indexing.",
+      "priority_score": 10,
+      "impact": "High",
+      "implementation_difficulty": "Medium",
+      "estimated_time_hours": 8,
+      "category": "ARCHITECTURE"
+    },
+    {
+      "recommendation": "Expand Internal Linking Strategy",
+      "reasoning": "The provided sample of internal linking is extremely limited.  A robust internal linking structure is essential for distributing link equity, improving site navigation, and guiding search engine crawlers through the website's content.  Focus on strategically linking relevant pages within the blog, support, and company sections.",
+      "priority_score": 9,
+      "impact": "High",
+      "implementation_difficulty": "Medium",
+      "estimated_time_hours": 12,
+      "category": "ARCHITECTURE"
+    },
+    {
+      "recommendation": "Deepen Content Categorization",
+      "reasoning": "The current categorization appears shallow.  The 'company' category, for example, needs further sub-categorization to improve organization and user experience.  This will also improve the clarity of the site's information architecture for both users and search engines.",
+      "priority_score": 8,
+      "impact": "Medium",
+      "implementation_difficulty": "Medium",
+      "estimated_time_hours": 6,
+      "category": "ARCHITECTURE"
+    },
+    {
+      "recommendation": "Analyze and Optimize URL Structure for SEO",
+      "reasoning": "While the provided URL patterns are relatively straightforward, a comprehensive review is needed to ensure all URLs are concise, descriptive, and keyword-rich.  This will improve both user experience and search engine optimization.",
+      "priority_score": 7,
+      "impact": "Medium",
+      "implementation_difficulty": "Medium",
+      "estimated_time_hours": 4,
+      "category": "ARCHITECTURE"
+    },
+    {
+      "recommendation": "Enhance Navigation Structure",
+      "reasoning": "The limited internal linking data suggests a potential lack of clear navigation.  Improve the site's navigation to ensure users can easily find what they need, regardless of their entry point.  This will improve user experience and reduce bounce rates.",
+      "priority_score": 7,
+      "impact": "Medium",
+      "implementation_difficulty": "Medium",
+      "estimated_time_hours": 6,
+      "category": "ARCHITECTURE"
+    },
+    {
+      "recommendation": "Improve Homepage Hero Section Clarity",
+      "reasoning": "The current homepage hero section could benefit from clearer value proposition and call to action.  While visually appealing, the messaging isn't immediately obvious to a first-time visitor.  A more concise headline and stronger CTA would improve conversion.",
+      "priority_score": 9,
+      "impact": "High",
+      "implementation_difficulty": "Medium",
+      "estimated_time_hours": 8,
+      "category": "UX_DESIGN"
+    },
+    {
+      "recommendation": "Enhance Blog Post Readability",
+      "reasoning": "Blog posts on DigitalOcean's blog could benefit from improved readability.  Consider increasing font size slightly, adjusting line height, and incorporating more white space for better visual hierarchy and scannability. This will improve user engagement and time on page.",
+      "priority_score": 7,
+      "impact": "Medium",
+      "implementation_difficulty": "Low",
+      "estimated_time_hours": 4,
+      "category": "UX_DESIGN"
+    },
+    {
+      "recommendation": "Optimize Support Section Navigation",
+      "reasoning": "The support section's navigation could be improved for easier access to relevant information.  A more intuitive categorization of support articles and FAQs, potentially with a search bar prominently displayed, would enhance user experience and reduce frustration.",
+      "priority_score": 8,
+      "impact": "High",
+      "implementation_difficulty": "Medium",
+      "estimated_time_hours": 6,
+      "category": "UX_DESIGN"
+    },
+    {
+      "recommendation": "Streamline Contact Sales Form",
+      "reasoning": "The contact sales form could be simplified.  Reduce the number of required fields to only essential information, and clearly indicate the expected response time. This will improve conversion rates by reducing friction in the process.",
+      "priority_score": 7,
+      "impact": "Medium",
+      "implementation_difficulty": "Low",
+      "estimated_time_hours": 2,
+      "category": "UX_DESIGN"
+    },
+    {
+      "recommendation": "Implement Consistent Visual Design Language",
+      "reasoning": "Ensure consistent use of typography, color palettes, and button styles across all pages.  This will create a more cohesive and professional brand identity, improving user trust and overall experience.",
+      "priority_score": 6,
+      "impact": "Medium",
+      "implementation_difficulty": "High",
+      "estimated_time_hours": 12,
+      "category": "UX_DESIGN"
+    }
+  ],
+  "competitor_data": {
+    "competitors": []
+  },
+  "dataforseo_data": {
+    "backlinks": {},
+    "domain_info": {},
+    "rank_overview": {},
+    "competitors": {
+      "competitors": []
+    }
+  },
+  "report_path": "/Users/andrewcosta/Desktop/seo_agent/reports/Digitalocean.com_seo_report_2025-05-09_13-42-59.html"
+}

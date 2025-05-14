@@ -1,0 +1,55 @@
+{
+  "domain": "",
+  "url": "nike.com",
+  "pages_analyzed": 5,
+  "technical_seo_score": 10,
+  "on_page_seo_score": 2,
+  "technical_seo_findings": {
+    "has_ssl": true,
+    "avg_page_load_time": 0.9290582656860351,
+    "mobile_friendly_score": 10.0,
+    "has_robots_txt": true,
+    "has_sitemap_xml": true
+  },
+  "on_page_seo_findings": {
+    "avg_word_count": 98.6,
+    "thin_content_pages": 5,
+    "missing_title_pages": 1,
+    "missing_meta_desc_pages": 2,
+    "missing_h1_pages": 2
+  },
+  "performance_metrics": {
+    "total_load_time": 4.645291328430176,
+    "total_page_size": 2.117856025695801,
+    "total_requests": 57,
+    "resource_counts": {
+      "images": 33,
+      "scripts": 0,
+      "stylesheets": 17,
+      "fonts": 2
+    }
+  },
+  "issues": [
+    {
+      "type": "robots_txt_issue",
+      "details": "Issue with robots.txt: Unknown error"
+    },
+    {
+      "type": "sitemap_issue",
+      "details": "Issue with sitemap: Unknown error"
+    },
+    {
+      "type": "thin_content_pages",
+      "details": "5 pages have thin content (<300 words)"
+    },
+    {
+      "type": "missing_titles",
+      "details": "1 pages missing title tags"
+    },
+    {
+      "type": "missing_descriptions",
+      "details": "2 pages missing meta descriptions"
+    }
+  ],
+  "execution_time_seconds": 5.6084442138671875
+}

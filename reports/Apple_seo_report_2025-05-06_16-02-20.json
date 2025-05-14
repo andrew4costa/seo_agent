@@ -1,0 +1,61 @@
+{
+  "company": "Apple",
+  "url": "https://apple.com",
+  "date": "2025-05-06 16:02:20",
+  "recommendations": [
+    {
+      "recommendation": "Optimize images and other media to reduce page load time.  Given Apple's focus on user experience and premium brand image, slow load times (like the 4.28 seconds observed) directly impact user satisfaction and brand perception.  Implement lazy loading and consider using a CDN for faster content delivery.",
+      "category": "Technical",
+      "priority_score": 10,
+      "impact": "high",
+      "implementation_difficulty": "medium",
+      "estimated_time_hours": 40
+    },
+    {
+      "recommendation": "Address the two pages missing meta descriptions.  For a brand like Apple, compelling meta descriptions are crucial for attracting clicks from search engine results pages (SERPs).  Craft unique, concise descriptions highlighting key product features or benefits for each page.",
+      "category": "On-Page",
+      "priority_score": 9,
+      "impact": "medium",
+      "implementation_difficulty": "easy",
+      "estimated_time_hours": 8
+    },
+    {
+      "recommendation": "Implement schema markup on all relevant pages. Given Apple's diverse product range (iPhones, iPads, etc.) and its use of rich media, structured data will help search engines better understand your content, improving visibility and potentially leading to rich snippets in search results.",
+      "category": "On-Page",
+      "priority_score": 8,
+      "impact": "high",
+      "implementation_difficulty": "medium",
+      "estimated_time_hours": 20
+    },
+    {
+      "recommendation": "Lengthen titles to improve click-through rates (CTR).  The current 5-character titles are far too short.  Apple's brand recognition allows for longer, more descriptive titles that accurately reflect page content and entice users to click.",
+      "category": "On-Page",
+      "priority_score": 7,
+      "impact": "medium",
+      "implementation_difficulty": "easy",
+      "estimated_time_hours": 10
+    },
+    {
+      "recommendation": "Conduct a comprehensive audit of all pages to identify and correct any further instances of missing meta descriptions or short titles. This will ensure consistency and optimize your SEO across the entire website.",
+      "category": "On-Page",
+      "priority_score": 6,
+      "impact": "medium",
+      "implementation_difficulty": "medium",
+      "estimated_time_hours": 30
+    },
+    {
+      "recommendation": "Given Apple's high brand recognition, explore opportunities for strategic partnerships and collaborations to enhance off-page SEO.  Focus on collaborations that align with Apple's brand image and target audience, such as partnerships with technology reviewers or influential figures in the tech industry.",
+      "category": "Off-Page",
+      "priority_score": 5,
+      "impact": "high",
+      "implementation_difficulty": "hard",
+      "estimated_time_hours": 80
+    }
+  ],
+  "summary": {
+    "technical_score": 9.5,
+    "on_page_score": 7.5,
+    "off_page_score": 5.0,
+    "total_pages_analyzed": 2
+  }
+}

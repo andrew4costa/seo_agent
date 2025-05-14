@@ -1,0 +1,41 @@
+{
+  "url": "https://happy-skin.com",
+  "date": "2025-05-13 15:43:23",
+  "score": 0,
+  "page_insights": [],
+  "recommendations": [],
+  "top_issues": {},
+  "performance": {
+    "page_speed": 88,
+    "mobile_friendly": false,
+    "load_time": 0.6,
+    "render_time": 0.42,
+    "server_response_time": 0.18,
+    "has_ssl": true,
+    "has_robots": true,
+    "has_sitemap": true,
+    "has_schema": false
+  },
+  "technical_issues": [],
+  "ux_analysis": {},
+  "architecture_analysis": {},
+  "click_depth": {},
+  "analyzed_urls": [
+    "https://www.happy-skin.com/",
+    "https://www.happy-skin.com/accessoriesbaby-child/",
+    "https://www.happy-skin.com/accessoriesbaby-child/eczema-gloves/",
+    "https://www.happy-skin.com/baby0-3-yrs/",
+    "https://www.happy-skin.com/baby0-3-yrs/baby-long-sleeve-bodysuit/",
+    "https://www.happy-skin.com/child3-12-yrs/",
+    "https://www.happy-skin.com/advicefor-eczema/",
+    "https://www.happy-skin.com/eczema-support-group/",
+    "https://www.happy-skin.com/faqs/",
+    "https://www.happy-skin.com/how-it-works/"
+  ],
+  "backlink_data": {},
+  "status": "completed",
+  "progress": 100,
+  "current_step": "completed",
+  "steps_completed": 5,
+  "end_time": "2025-05-13T13:43:49.271670+00:00"
+}
